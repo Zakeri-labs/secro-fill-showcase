@@ -42,6 +42,7 @@
   --color-ivory: var(--ivory);
   --color-emerald-deep: var(--emerald-deep);
   --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
   --color-gold-soft: var(--gold-soft);
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Jost", system-ui, sans-serif;
@@ -52,6 +53,7 @@
   --ivory: oklch(0.978 0.008 90);
   --emerald-deep: oklch(0.32 0.062 165);
   --gold: oklch(0.78 0.079 84);
+  --gold-deep: oklch(0.6 0.09 84);
   --gold-soft: oklch(0.9 0.038 88);
 
   --background: var(--ivory);

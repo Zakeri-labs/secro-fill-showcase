@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight, MessageCircle, Quote } from "lucide-react";
 import { useState } from "react";
 
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/Hero-image-Web.webp";
 import bodyImg from "@/assets/product-body.jpg";
 import deep3xImg from "@/assets/product-deep-3x.jpg";
 import deep10Img from "@/assets/product-deep-10ml.jpg";
@@ -39,45 +39,63 @@ function SectionHead({
 }
 
 function Hero() {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
+  const title = t("hero.title");
+  const goldPhrase = {
+    en: "Refined Beauty",
+    ar: "الراقي",
+    fa: "اصیل",
+  }[lang];
+  const goldStart = title.lastIndexOf(goldPhrase);
+  const titleBeforeGold = goldStart >= 0 ? title.slice(0, goldStart) : title;
+  const titleGold = goldStart >= 0 ? title.slice(goldStart) : "";
+
   return (
-    <section id="top" className="relative min-h-[92svh] overflow-hidden">
+    <section
+      id="top"
+      className="relative min-h-[840px] overflow-hidden bg-[#f4ede4] sm:min-h-[900px] lg:min-h-[94svh]"
+    >
       <Image
         src={heroImg}
         alt="Close-up portrait of a woman with luminous skin illustrating premium medical aesthetics results"
-        width={1920}
-        height={1280}
+        width={1671}
+        height={941}
         priority
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[68%_center] sm:object-[62%_center] lg:object-center"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0"
+        className="absolute inset-0 bg-gradient-to-r from-[#f4ede4]/95 via-[#f4ede4]/68 to-transparent lg:from-[#f4ede4]/92 lg:via-[#f4ede4]/38 lg:to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-[#f4ede4]/78 via-transparent to-[#f4ede4]/10 lg:from-transparent"
         style={{
-          background:
-            "linear-gradient(to top, oklch(0.2 0.03 165 / 0.92), oklch(0.2 0.03 165 / 0.45) 55%, oklch(0.2 0.03 165 / 0.55))",
+          mixBlendMode: "normal",
         }}
       />
-      <div className="relative mx-auto flex min-h-[92svh] max-w-7xl flex-col justify-end px-5 pt-32 pb-20 lg:px-10 lg:pb-28">
-        <div className="animate-rise max-w-2xl">
-          <p className="eyebrow text-accent">{t("hero.eyebrow")}</p>
-          <h1 className="mt-6 text-4xl leading-[1.05] text-primary-foreground sm:text-6xl lg:text-7xl">
-            {t("hero.title")}
+      <div className="relative mx-auto flex min-h-[840px] max-w-7xl flex-col justify-end px-5 pt-40 pb-36 sm:min-h-[900px] lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
+        <div className="animate-rise max-w-xl lg:max-w-[38rem]">
+          <p className="eyebrow text-primary">{t("hero.eyebrow")}</p>
+          <div aria-hidden="true" className="hairline mt-4 w-14" />
+          <h1 className="mt-6 text-4xl leading-[1.05] sm:text-6xl lg:text-7xl">
+            <span className="text-primary">{titleBeforeGold}</span>
+            {titleGold && <span className="text-gold-deep">{titleGold}</span>}
           </h1>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-primary-foreground/80 sm:text-base">
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-foreground/80 sm:text-base">
             {t("hero.sub")}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5"
             >
               {t("hero.cta1")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
               href="#services"
-              className="inline-flex items-center border border-primary-foreground/40 px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-primary-foreground transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex items-center rounded-full border border-primary/45 bg-white/25 px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50"
             >
               {t("hero.cta2")}
             </a>

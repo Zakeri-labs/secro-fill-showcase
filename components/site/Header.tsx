@@ -33,26 +33,28 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
   const solid = scrolled || open;
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        solid ? "border-b border-border/70 bg-background/85 backdrop-blur-xl" : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 sm:px-5 sm:pt-5 lg:px-8">
+      <div
+        className={`mx-auto grid max-w-[1480px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-[24px] border px-4 py-3.5 shadow-[0_18px_45px_-35px_var(--primary)] transition-all duration-500 sm:px-5 xl:grid-cols-[auto_minmax(0,1fr)_auto_auto] xl:px-7 ${
+          solid
+            ? "border-border/80 bg-background backdrop-blur-xl"
+            : "border-white/10 bg-white/[0.02] backdrop-blur-xl"
+        }`}
+      >
         <Link href="/" className="min-w-0" aria-label="SECRO-FILL home">
-          <BrandLock light={!solid} />
+          <BrandLock light={false} />
         </Link>
 
-        <div className="flex items-center gap-6">
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
+        <div className="flex items-center justify-end gap-4 xl:contents">
+          <nav className="hidden items-center justify-center gap-6 xl:flex" aria-label="Main">
             {links.map((l) => (
               <a
                 key={l.key}
                 href={l.href}
-                className={`text-[0.7rem] tracking-[0.2em] uppercase transition-colors ${
+                className={`text-[0.68rem] tracking-[0.12em] uppercase transition-colors ${
                   solid
                     ? "text-muted-foreground hover:text-primary"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    : "text-primary/80 hover:text-primary"
                 }`}
               >
                 {t(l.key)}
@@ -60,18 +62,15 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
-            <LanguageSwitcher light={!solid} />
+          <div className="hidden xl:block">
+            <LanguageSwitcher light={false} />
           </div>
 
           <a
             href="/#contact"
-            className="hidden shrink-0 border border-accent px-5 py-2.5 text-[0.68rem] tracking-[0.2em] uppercase transition-colors lg:inline-block"
-            style={{ color: "inherit" }}
+            className="hidden shrink-0 rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_-16px_var(--primary)] transition-transform hover:-translate-y-0.5 xl:inline-block"
           >
-            <span className={solid ? "text-primary" : "text-primary-foreground"}>
-              {t("cta.partner")}
-            </span>
+            <span>{t("cta.partner")}</span>
           </a>
 
           <button
@@ -79,9 +78,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
             aria-expanded={open}
-            className={`shrink-0 p-2 lg:hidden ${
-              solid ? "text-foreground" : "text-primary-foreground"
-            }`}
+            className={`shrink-0 p-2 xl:hidden ${"text-foreground"}`}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -89,7 +86,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       </div>
 
       {open && (
-        <div className="animate-rise border-t border-border/60 bg-background/95 px-5 pt-4 pb-8 backdrop-blur-xl lg:hidden">
+        <div className="animate-rise border-t border-border/60 bg-background/95 px-5 pt-4 pb-8 backdrop-blur-xl xl:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
             {links.map((l) => (
               <a
@@ -107,7 +104,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             <a
               href="/#contact"
               onClick={() => setOpen(false)}
-              className="bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-primary-foreground"
+              className="bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white"
             >
               {t("cta.partner")}
             </a>
