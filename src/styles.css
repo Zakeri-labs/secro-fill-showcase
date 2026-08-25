@@ -1,5 +1,8 @@
 @import "tailwindcss" source(none);
 @source "../src";
+@source "../components";
+@source "../lib";
+@source "../hooks";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -71,11 +74,7 @@
   --input: oklch(0.9 0.014 92);
   --ring: var(--gold);
 
-  --gradient-emerald: linear-gradient(
-    135deg,
-    oklch(0.28 0.05 165),
-    oklch(0.38 0.07 168)
-  );
+  --gradient-emerald: linear-gradient(135deg, oklch(0.28 0.05 165), oklch(0.38 0.07 168));
   --gradient-gold: linear-gradient(100deg, var(--gold), var(--gold-soft), var(--gold));
   --shadow-luxe: 0 24px 60px -30px oklch(0.32 0.062 165 / 0.28);
   --shadow-card: 0 2px 30px -18px oklch(0.32 0.062 165 / 0.35);
