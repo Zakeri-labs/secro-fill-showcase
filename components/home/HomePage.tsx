@@ -14,6 +14,9 @@ import beforeNose from "@/assets/Before-nose.png";
 import bodyImg from "@/assets/product-body.jpg";
 import deep3xImg from "@/assets/product-deep-3x.jpg";
 import deep10Img from "@/assets/product-deep-10ml.jpg";
+import testimonialClinicDirector from "@/assets/testimonial-clinic-director.webp";
+import testimonialDistributor from "@/assets/testimonial-distributor.webp";
+import testimonialPhysician from "@/assets/testimonial-physician.webp";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
@@ -433,26 +436,67 @@ function Process() {
 function Testimonials() {
   const { t } = useI18n();
   const items = [
-    { q: "testi.t1", r: "testi.r1" },
-    { q: "testi.t2", r: "testi.r2" },
-    { q: "testi.t3", r: "testi.r3" },
+    { q: "testi.t1", r: "testi.r1", avatar: testimonialClinicDirector },
+    { q: "testi.t2", r: "testi.r2", avatar: testimonialDistributor },
+    { q: "testi.t3", r: "testi.r3", avatar: testimonialPhysician },
   ];
 
   return (
-    <section id="testimonials" className="px-5 py-24 lg:px-10 lg:py-32">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="testimonials"
+      className="relative overflow-hidden bg-[#faf7f1] px-5 py-24 lg:px-10 lg:py-32"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -start-56 top-[-12rem] h-[42rem] w-[42rem] rounded-full border border-gold-deep/10"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -end-64 bottom-[-20rem] h-[44rem] w-[44rem] rounded-full border border-gold-deep/10"
+      />
+      <div className="relative mx-auto max-w-7xl">
         <Reveal>
-          <SectionHead eyebrow={t("testi.eyebrow")} title={t("testi.title")} sub={t("testi.sub")} />
+          <div className="relative mx-auto max-w-4xl text-center">
+            <Quote
+              aria-hidden="true"
+              className="absolute -start-2 top-5 hidden h-16 w-16 text-gold-deep/10 lg:block"
+            />
+            <Quote
+              aria-hidden="true"
+              className="absolute -end-2 top-5 hidden h-16 w-16 rotate-180 text-gold-deep/10 lg:block"
+            />
+            <p className="eyebrow text-gold-deep">{t("testi.eyebrow")}</p>
+            <div aria-hidden="true" className="hairline mx-auto mt-4 w-16" />
+            <h2 className="mt-5 text-4xl leading-tight text-primary sm:text-5xl lg:text-6xl">
+              {t("testi.title")}
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              {t("testi.sub")}
+            </p>
+          </div>
         </Reveal>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {items.map((it, i) => (
             <Reveal key={it.q} delay={i * 120}>
-              <blockquote className="card-luxe flex h-full flex-col p-8">
-                <Quote className="h-6 w-6 text-accent rtl:rotate-180" />
-                <p className="mt-6 flex-1 text-base leading-relaxed">{t(it.q)}</p>
-                <div className="hairline mt-7 w-10" />
-                <footer className="mt-4 text-[0.65rem] tracking-[0.2em] uppercase text-muted-foreground">
-                  {t(it.r)}
+              <blockquote className="card-luxe relative flex h-full flex-col p-8">
+                <Quote className="h-10 w-10 text-gold-deep rtl:rotate-180" />
+                <Quote
+                  aria-hidden="true"
+                  className="absolute end-8 top-8 h-12 w-12 rotate-180 text-gold-deep/10"
+                />
+                <p className="mt-8 flex-1 text-base leading-[1.9] text-foreground sm:text-[1.05rem]">
+                  {t(it.q)}
+                </p>
+                <div className="hairline mt-8 w-14" />
+                <footer className="mt-6 flex items-center gap-4 text-[0.65rem] tracking-[0.2em] uppercase text-primary">
+                  <Image
+                    src={it.avatar}
+                    alt={t(it.r)}
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 rounded-full border-2 border-gold-deep/60 object-cover p-0.5"
+                  />
+                  <span className="leading-relaxed">{t(it.r)}</span>
                 </footer>
               </blockquote>
             </Reveal>

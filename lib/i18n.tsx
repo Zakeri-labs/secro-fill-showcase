@@ -100,16 +100,16 @@ const en: Dict = {
 
   "testi.eyebrow": "Testimonials",
   "testi.title": "Trusted by Professionals",
-  "testi.sub": "Placeholder testimonials — replace with approved partner statements.",
+  "testi.sub": "Partner testimonials will be added here.",
   "testi.t1":
     "The consistency between batches is what convinced our clinic. Results are predictable, treatment after treatment.",
   "testi.t2":
     "Documentation and logistics were handled with real German discipline. Our distribution launch was effortless.",
   "testi.t3":
     "Patients notice the smoothness of the result. For body contouring it has become our standard choice.",
-  "testi.r1": "Aesthetic Clinic Director — Placeholder",
-  "testi.r2": "Regional Distributor — Placeholder",
-  "testi.r3": "Plastic Surgeon — Placeholder",
+  "testi.r1": "Aesthetic Clinic Director",
+  "testi.r2": "Regional Distributor",
+  "testi.r3": "Plastic Surgeon",
 
   "contact.eyebrow": "Partnership",
   "contact.title": "Let's Build Something Refined",
@@ -208,13 +208,13 @@ const ar: Dict = {
 
   "testi.eyebrow": "الشهادات",
   "testi.title": "ثقة المحترفين",
-  "testi.sub": "شهادات مؤقتة — استبدلها بتصريحات شركاء معتمدة.",
+  "testi.sub": "ستُضاف شهادات الشركاء هنا.",
   "testi.t1": "الثبات بين الدفعات هو ما أقنع عيادتنا. النتائج متوقعة في كل علاج.",
   "testi.t2": "الوثائق والخدمات اللوجستية أُديرت بانضباط ألماني حقيقي. كان إطلاق التوزيع سهلاً.",
   "testi.t3": "يلاحظ المرضى نعومة النتيجة. أصبح خيارنا القياسي لنحت الجسم.",
-  "testi.r1": "مدير عيادة تجميل — نموذج",
-  "testi.r2": "موزع إقليمي — نموذج",
-  "testi.r3": "جراح تجميل — نموذج",
+  "testi.r1": "مدير عيادة تجميل",
+  "testi.r2": "موزع إقليمي",
+  "testi.r3": "جراح تجميل",
 
   "contact.eyebrow": "الشراكة",
   "contact.title": "لنبنِ شيئاً راقياً",
@@ -316,13 +316,13 @@ const fa: Dict = {
 
   "testi.eyebrow": "نظرات",
   "testi.title": "اعتماد متخصصان",
-  "testi.sub": "نظرات نمونه — با اظهارات تأییدشده شرکا جایگزین کنید.",
+  "testi.sub": "نظرات شرکا در اینجا اضافه می‌شود.",
   "testi.t1": "یکدستی میان بچ‌ها کلینیک ما را متقاعد کرد. نتایج در هر درمان قابل پیش‌بینی است.",
   "testi.t2": "مستندات و لجستیک با نظم واقعی آلمانی انجام شد. راه‌اندازی توزیع ما بی‌دغدغه بود.",
   "testi.t3": "بیماران نرمی نتیجه را حس می‌کنند. برای کنتور بدن انتخاب استاندارد ما شده است.",
-  "testi.r1": "مدیر کلینیک زیبایی — نمونه",
-  "testi.r2": "توزیع‌کننده منطقه‌ای — نمونه",
-  "testi.r3": "جراح پلاستیک — نمونه",
+  "testi.r1": "مدیر کلینیک زیبایی",
+  "testi.r2": "توزیع‌کننده منطقه‌ای",
+  "testi.r3": "جراح پلاستیک",
 
   "contact.eyebrow": "همکاری",
   "contact.title": "بیایید چیزی ماندگار بسازیم",
