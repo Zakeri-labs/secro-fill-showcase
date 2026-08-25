@@ -73,7 +73,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[840px] overflow-hidden bg-[#f4ede4] sm:min-h-[900px] lg:min-h-[94svh]"
+      className="relative min-h-[790px] overflow-hidden sm:min-h-[900px] lg:min-h-[94svh]"
     >
       <picture className="absolute inset-0 block">
         <source media="(max-width: 639px)" srcSet={mobileHeroImg.src} />
@@ -83,65 +83,48 @@ function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center] sm:object-[62%_center] lg:object-center"
+          className="object-cover object-[100%_center] sm:object-[62%_center] lg:object-center"
         />
       </picture>
-      <div
-        aria-hidden="true"
-        className="absolute inset-y-0 left-0 w-[68%] bg-gradient-to-r from-[#f4ede4]/95 via-[#f4ede4]/68 to-transparent opacity-[0.03] sm:w-[60%] lg:w-[55%] lg:from-[#f4ede4]/92 lg:via-[#f4ede4]/38"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-y-0 right-0 w-[32%] bg-[#f4ede4]/[0.06] sm:w-[40%] lg:w-[45%]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-[#f4ede4]/78 via-transparent to-[#f4ede4]/10 lg:from-transparent"
-        style={{
-          mixBlendMode: "normal",
-        }}
-      />
-      <div className="relative mx-auto flex min-h-[840px] max-w-7xl flex-col justify-end px-5 pt-40 pb-0 sm:min-h-[900px] sm:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
-        <div className="animate-rise max-w-[11.75rem] sm:max-w-xl lg:max-w-[38rem]">
-          <div className="relative -top-[13rem] sm:top-0">
-            <p className="eyebrow whitespace-nowrap text-[0.58rem] tracking-[0.18em] text-primary sm:text-[0.6875rem] sm:tracking-[0.28em]">
-              {t("hero.eyebrow")}
-            </p>
-            <div aria-hidden="true" className="hairline mt-4 w-14" />
-            <h1 className="mt-6 text-[1.75rem] leading-[1.08] sm:text-6xl lg:text-7xl">
-              {lang === "en" ? (
-                englishTitleParts.map((part, index) => (
-                  <span
-                    key={`${part}-${index}`}
-                    className={
-                      part === "Science" || part === "Beauty" ? "text-gold-deep" : "text-primary"
-                    }
-                  >
-                    {part}
-                  </span>
-                ))
-              ) : (
-                <>
-                  <span className="text-primary">{titleBeforeGold}</span>
-                  {titleGold && <span className="text-gold-deep">{titleGold}</span>}
-                </>
-              )}
-            </h1>
-          </div>
-          <p className="mt-6 max-w-[11.75rem] text-sm leading-relaxed text-foreground/80 sm:max-w-xl sm:text-base">
+      <div className="relative mx-auto flex min-h-[790px] max-w-7xl flex-col justify-start px-5 pt-36 pb-16 sm:min-h-[900px] sm:justify-end sm:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
+        <div className="animate-rise max-w-[9.75rem] sm:max-w-xl lg:max-w-[38rem]">
+          <p className="eyebrow whitespace-nowrap text-[0.55rem] tracking-[0.16em] text-primary sm:text-[0.6875rem] sm:tracking-[0.28em]">
+            {t("hero.eyebrow")}
+          </p>
+          <div aria-hidden="true" className="hairline mt-3 w-12 sm:mt-4 sm:w-14" />
+          <h1 className="mt-5 text-[1.62rem] leading-[1.08] sm:mt-6 sm:text-6xl lg:text-7xl">
+            {lang === "en" ? (
+              englishTitleParts.map((part, index) => (
+                <span
+                  key={`${part}-${index}`}
+                  className={
+                    part === "Science" || part === "Beauty" ? "text-gold-deep" : "text-primary"
+                  }
+                >
+                  {part}
+                </span>
+              ))
+            ) : (
+              <>
+                <span className="text-primary">{titleBeforeGold}</span>
+                {titleGold && <span className="text-gold-deep">{titleGold}</span>}
+              </>
+            )}
+          </h1>
+          <p className="mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 sm:mt-6 sm:max-w-xl sm:text-base sm:leading-relaxed">
             {t("hero.sub")}
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-2.5 sm:mt-10 sm:gap-3 sm:flex-row">
             <a
               href="#contact"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-3 py-4 text-[0.58rem] tracking-[0.12em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-7 sm:text-[0.7rem] sm:tracking-[0.2em]"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em]"
             >
               {t("hero.cta1")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
               href="#services"
-              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-3 py-4 text-[0.58rem] tracking-[0.12em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 sm:w-auto sm:px-7 sm:text-[0.7rem] sm:tracking-[0.2em]"
+              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em]"
             >
               {t("hero.cta2")}
             </a>
