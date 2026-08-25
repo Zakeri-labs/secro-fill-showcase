@@ -1,15 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, MessageCircle, Quote } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Quote } from "lucide-react";
+import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
 import heroImg from "@/assets/Hero-image-Web.webp";
+import afterBody from "@/assets/After-Body.png";
+import afterChin from "@/assets/after-chin.png";
+import afterNose from "@/assets/After-nose.png";
+import beforeBody from "@/assets/Before-Body.png";
+import beforeChin from "@/assets/before-chin.png";
+import beforeNose from "@/assets/Before-nose.png";
 import bodyImg from "@/assets/product-body.jpg";
 import deep3xImg from "@/assets/product-deep-3x.jpg";
 import deep10Img from "@/assets/product-deep-10ml.jpg";
-import faceAfter from "@/assets/portfolio-face.jpg";
-import bodyAfter from "@/assets/portfolio-body.jpg";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
@@ -237,28 +241,137 @@ function About() {
   );
 }
 
+function BeforeAfterCard({
+  before,
+  after,
+  alt,
+  title,
+}: {
+  before: typeof beforeNose;
+  after: typeof afterNose;
+  alt: string;
+  title: string;
+}) {
+  const { t } = useI18n();
+  const stageRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const updatePosition = useCallback((clientX: number) => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const bounds = stage.getBoundingClientRect();
+    const nextPosition = ((clientX - bounds.left) / bounds.width) * 100;
+    setPosition(Math.min(100, Math.max(0, nextPosition)));
+  }, []);
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setIsDragging(true);
+    updatePosition(event.clientX);
+  };
+
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (isDragging) updatePosition(event.clientX);
+  };
+
+  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    setIsDragging(false);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    setPosition((current) => Math.min(100, Math.max(0, current + direction * 5)));
+  };
+
+  return (
+    <figure className="card-luxe overflow-hidden rounded-[24px]">
+      <div
+        ref={stageRef}
+        role="slider"
+        tabIndex={0}
+        aria-label={`${title} before and after comparison`}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(position)}
+        style={{ aspectRatio: `${before.width} / ${before.height}` }}
+        className={`relative touch-none select-none overflow-hidden bg-secondary outline-none focus-visible:ring-2 focus-visible:ring-accent ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
+        onKeyDown={handleKeyDown}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
+      >
+        <Image
+          src={after}
+          alt={`${alt} after`}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          draggable={false}
+          className="pointer-events-none object-contain"
+        />
+        <Image
+          src={before}
+          alt={`${alt} before`}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          draggable={false}
+          className="pointer-events-none object-contain"
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 z-10 w-px bg-white shadow-[0_0_0_1px_rgba(24,55,45,0.12)]"
+          style={{ left: `${position}%` }}
+        >
+          <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-lg">
+            <ChevronLeft className="h-4 w-4" />
+            <ChevronRight className="-ms-1 h-4 w-4" />
+          </span>
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between p-4">
+          <span className="rounded-full bg-primary/80 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-white backdrop-blur-sm">
+            {t("portfolio.before")}
+          </span>
+          <span className="rounded-full bg-accent/90 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-accent-foreground backdrop-blur-sm">
+            {t("portfolio.after")}
+          </span>
+        </div>
+      </div>
+      <figcaption className="p-6">
+        <h3 className="text-xl">{title}</h3>
+      </figcaption>
+    </figure>
+  );
+}
+
 function Portfolio() {
   const { t } = useI18n();
   const items = [
     {
       key: "portfolio.i1",
-      img: faceAfter,
-      alt: "Mid-face contour aesthetic result documentation — replaceable before and after image",
+      before: beforeNose,
+      after: afterNose,
+      alt: "Nose contour aesthetic result documentation",
     },
     {
       key: "portfolio.i2",
-      img: faceAfter,
-      alt: "Jawline definition aesthetic result documentation — replaceable before and after image",
+      before: beforeChin,
+      after: afterChin,
+      alt: "Chin contour aesthetic result documentation",
     },
     {
       key: "portfolio.i3",
-      img: bodyAfter,
-      alt: "Body volumisation contour result documentation — replaceable before and after image",
-    },
-    {
-      key: "portfolio.i4",
-      img: bodyAfter,
-      alt: "Full facial harmony aesthetic result documentation — replaceable before and after image",
+      before: beforeBody,
+      after: afterBody,
+      alt: "Body volumisation contour result documentation",
     },
   ];
 
@@ -272,30 +385,10 @@ function Portfolio() {
             sub={t("portfolio.sub")}
           />
         </Reveal>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
           {items.map((it, i) => (
             <Reveal key={it.key} delay={i * 100}>
-              <figure className="card-luxe group h-full overflow-hidden">
-                <div className="relative aspect-3/4 overflow-hidden bg-secondary">
-                  <Image
-                    src={it.img}
-                    alt={it.alt}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-x-0 bottom-0 flex justify-between px-3 py-2 text-[0.6rem] tracking-[0.2em] uppercase text-primary-foreground backdrop-blur-sm"
-                    style={{ background: "oklch(0.25 0.03 165 / 0.55)" }}
-                  >
-                    <span>{t("portfolio.before")}</span>
-                    <span className="text-accent">{t("portfolio.after")}</span>
-                  </div>
-                </div>
-                <figcaption className="p-5 text-[0.7rem] tracking-[0.2em] uppercase text-muted-foreground">
-                  {t(it.key)}
-                </figcaption>
-              </figure>
+              <BeforeAfterCard before={it.before} after={it.after} alt={it.alt} title={t(it.key)} />
             </Reveal>
           ))}
         </div>
