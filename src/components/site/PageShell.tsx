@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, type ReactNode } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
