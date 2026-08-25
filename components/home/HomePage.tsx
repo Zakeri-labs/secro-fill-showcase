@@ -1,7 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Quote } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Factory,
+  Globe2,
+  MessageCircle,
+  Microscope,
+  Quote,
+} from "lucide-react";
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
 import heroImg from "@/assets/Hero-image-Web.webp";
@@ -14,6 +23,7 @@ import beforeNose from "@/assets/Before-nose.png";
 import bodyImg from "@/assets/product-body.jpg";
 import deep3xImg from "@/assets/product-deep-3x.jpg";
 import deep10Img from "@/assets/product-deep-10ml.jpg";
+import positioningImg from "@/assets/Positiononig-Section.webp";
 import testimonialClinicDirector from "@/assets/testimonial-clinic-director.webp";
 import testimonialDistributor from "@/assets/testimonial-distributor.webp";
 import testimonialPhysician from "@/assets/testimonial-physician.webp";
@@ -207,17 +217,31 @@ function Services() {
 
 function About() {
   const { t } = useI18n();
-  const cards = ["c1", "c2", "c3"];
+  const cards = [
+    { key: "c1", Icon: Microscope },
+    { key: "c2", Icon: Factory },
+    { key: "c3", Icon: Globe2 },
+  ];
 
   return (
     <section
       id="about"
-      className="bg-emerald-gradient px-5 py-24 text-primary-foreground lg:px-10 lg:py-32"
+      className="relative isolate overflow-hidden bg-emerald-gradient px-5 py-24 text-primary-foreground lg:px-10 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <Image
+        src={positioningImg}
+        alt=""
+        fill
+        sizes="100vw"
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-primary/35" />
+      <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <div className="max-w-2xl">
             <p className="eyebrow text-accent">{t("about.eyebrow")}</p>
+            <div aria-hidden="true" className="hairline mt-4 w-14" />
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               {t("about.title")}
             </h2>
@@ -226,15 +250,25 @@ function About() {
             </p>
           </div>
         </Reveal>
-        <div className="mt-16 grid gap-px overflow-hidden border border-primary-foreground/15 md:grid-cols-3">
-          {cards.map((c, i) => (
-            <Reveal key={c} delay={i * 120}>
-              <div className="h-full border-primary-foreground/15 bg-primary-foreground/5 p-8 md:border-e md:last:border-e-0">
-                <span className="text-xs tracking-[0.3em] text-accent">0{i + 1}</span>
-                <h3 className="mt-5 text-xl">{t(`about.${c}.title`)}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
-                  {t(`about.${c}.desc`)}
+        <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
+          {cards.map(({ key, Icon }, i) => (
+            <Reveal key={key} delay={i * 120}>
+              <div className="card-luxe relative flex h-full flex-col overflow-hidden !border-accent/35 !bg-primary/35 p-5 text-primary-foreground shadow-card backdrop-blur-sm">
+                <span className="absolute start-0 top-0 bg-gradient-to-br from-gold-soft to-gold-deep px-5 py-3 text-2xl leading-none text-accent-foreground">
+                  0{i + 1}
+                </span>
+                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-accent/80 text-accent">
+                  <Icon className="h-9 w-9" strokeWidth={1.25} />
+                </div>
+                <h3 className="mt-5 text-xl text-primary-foreground">{t(`about.${key}.title`)}</h3>
+                <div className="hairline mt-3 w-12" />
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-primary-foreground/80">
+                  {t(`about.${key}.desc`)}
                 </p>
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-gold-deep via-gold-soft to-gold-deep"
+                />
               </div>
             </Reveal>
           ))}
