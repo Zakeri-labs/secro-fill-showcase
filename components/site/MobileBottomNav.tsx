@@ -2,6 +2,7 @@
 
 import { MessageCircle, Package, Phone, Sparkles } from "lucide-react";
 
+import { WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 export function MobileBottomNav() {
@@ -30,7 +31,7 @@ export function MobileBottomNav() {
           </a>
         ))}
         <a
-          href="https://wa.me/49000000000"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer noopener"
           className="flex flex-col items-center justify-center gap-1 bg-primary py-3 text-primary-foreground"

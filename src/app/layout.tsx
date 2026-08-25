@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import { AppProviders } from "@/components/providers/AppProviders";
+import { COMPANY_NAME } from "@/lib/company";
 
 import "./globals.css";
 
@@ -11,8 +12,7 @@ export const metadata: Metadata = {
     default: "SECRO-FILL — German Premium Dermal Fillers",
     template: "%s | SECRO-FILL",
   },
-  description:
-    "SECRO-FILL: German medical aesthetics brand producing premium dermal fillers for clinics, physicians and distributors.",
+  description: `${COMPANY_NAME}: German medical aesthetics company behind SECRO-FILL premium dermal fillers for clinics, physicians and distributors.`,
   openGraph: {
     siteName: "SECRO-FILL",
     type: "website",

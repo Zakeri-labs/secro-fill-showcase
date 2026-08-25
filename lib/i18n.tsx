@@ -120,7 +120,7 @@ const en: Dict = {
   "form.country": "Country / Market",
   "form.message": "How would you like to work with SECRO-FILL?",
   "form.submit": "Send Partnership Request",
-  "form.sent": "Thank you — this is a demo form, no data was sent.",
+  "form.sent": "WhatsApp opened with your request ready to send.",
 
   "footer.rights": "All rights reserved.",
   "footer.note": "Professional use only. For clinics, physicians and distributors.",
@@ -225,7 +225,7 @@ const ar: Dict = {
   "form.country": "الدولة / السوق",
   "form.message": "كيف ترغب في العمل مع SECRO-FILL؟",
   "form.submit": "إرسال طلب الشراكة",
-  "form.sent": "شكراً لك — هذا نموذج تجريبي ولم يتم إرسال بيانات.",
+  "form.sent": "تم فتح واتساب وطلبك جاهز للإرسال.",
 
   "footer.rights": "جميع الحقوق محفوظة.",
   "footer.note": "للاستخدام المهني فقط. للعيادات والأطباء والموزعين.",
@@ -333,7 +333,7 @@ const fa: Dict = {
   "form.country": "کشور / بازار",
   "form.message": "چگونه می‌خواهید با SECRO-FILL کار کنید؟",
   "form.submit": "ارسال درخواست همکاری",
-  "form.sent": "سپاسگزاریم — این فرم نمایشی است و داده‌ای ارسال نشد.",
+  "form.sent": "واتساپ باز شد و درخواست شما آماده ارسال است.",
 
   "footer.rights": "تمام حقوق محفوظ است.",
   "footer.note": "تنها برای استفاده حرفه‌ای. کلینیک‌ها، پزشکان و توزیع‌کنندگان.",

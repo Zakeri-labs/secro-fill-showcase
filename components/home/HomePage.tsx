@@ -13,7 +13,8 @@ import {
 } from "lucide-react";
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
-import heroImg from "@/assets/Hero-image-Web.webp";
+import heroImg from "@/assets/Hero-image-Web.png";
+import mobileHeroImg from "@/assets/Hero-image-Mobile.png";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
 import afterNose from "@/assets/After-nose.png";
@@ -31,6 +32,7 @@ import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
 import { Reveal } from "@/components/site/Reveal";
+import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 function SectionHead({
@@ -66,23 +68,31 @@ function Hero() {
   const goldStart = title.lastIndexOf(goldPhrase);
   const titleBeforeGold = goldStart >= 0 ? title.slice(0, goldStart) : title;
   const titleGold = goldStart >= 0 ? title.slice(goldStart) : "";
+  const englishTitleParts = title.split(/(Science|Beauty)/g);
 
   return (
     <section
       id="top"
       className="relative min-h-[840px] overflow-hidden bg-[#f4ede4] sm:min-h-[900px] lg:min-h-[94svh]"
     >
-      <Image
-        src={heroImg}
-        alt="Close-up portrait of a woman with luminous skin illustrating premium medical aesthetics results"
-        width={1671}
-        height={941}
-        priority
-        className="absolute inset-0 h-full w-full object-cover object-[68%_center] sm:object-[62%_center] lg:object-center"
+      <picture className="absolute inset-0 block">
+        <source media="(max-width: 639px)" srcSet={mobileHeroImg.src} />
+        <Image
+          src={heroImg}
+          alt="Close-up portrait of a woman with luminous skin illustrating premium medical aesthetics results"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_center] sm:object-[62%_center] lg:object-center"
+        />
+      </picture>
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 left-0 w-[68%] bg-gradient-to-r from-[#f4ede4]/95 via-[#f4ede4]/68 to-transparent opacity-[0.03] sm:w-[60%] lg:w-[55%] lg:from-[#f4ede4]/92 lg:via-[#f4ede4]/38"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-[#f4ede4]/95 via-[#f4ede4]/68 to-transparent lg:from-[#f4ede4]/92 lg:via-[#f4ede4]/38 lg:to-transparent"
+        className="absolute inset-y-0 right-0 w-[32%] bg-[#f4ede4]/[0.06] sm:w-[40%] lg:w-[45%]"
       />
       <div
         aria-hidden="true"
@@ -91,28 +101,47 @@ function Hero() {
           mixBlendMode: "normal",
         }}
       />
-      <div className="relative mx-auto flex min-h-[840px] max-w-7xl flex-col justify-end px-5 pt-40 pb-36 sm:min-h-[900px] lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
-        <div className="animate-rise max-w-xl lg:max-w-[38rem]">
-          <p className="eyebrow text-primary">{t("hero.eyebrow")}</p>
-          <div aria-hidden="true" className="hairline mt-4 w-14" />
-          <h1 className="mt-6 text-4xl leading-[1.05] sm:text-6xl lg:text-7xl">
-            <span className="text-primary">{titleBeforeGold}</span>
-            {titleGold && <span className="text-gold-deep">{titleGold}</span>}
-          </h1>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-foreground/80 sm:text-base">
+      <div className="relative mx-auto flex min-h-[840px] max-w-7xl flex-col justify-end px-5 pt-40 pb-0 sm:min-h-[900px] sm:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
+        <div className="animate-rise max-w-[11.75rem] sm:max-w-xl lg:max-w-[38rem]">
+          <div className="relative -top-[13rem] sm:top-0">
+            <p className="eyebrow whitespace-nowrap text-[0.58rem] tracking-[0.18em] text-primary sm:text-[0.6875rem] sm:tracking-[0.28em]">
+              {t("hero.eyebrow")}
+            </p>
+            <div aria-hidden="true" className="hairline mt-4 w-14" />
+            <h1 className="mt-6 text-[1.75rem] leading-[1.08] sm:text-6xl lg:text-7xl">
+              {lang === "en" ? (
+                englishTitleParts.map((part, index) => (
+                  <span
+                    key={`${part}-${index}`}
+                    className={
+                      part === "Science" || part === "Beauty" ? "text-gold-deep" : "text-primary"
+                    }
+                  >
+                    {part}
+                  </span>
+                ))
+              ) : (
+                <>
+                  <span className="text-primary">{titleBeforeGold}</span>
+                  {titleGold && <span className="text-gold-deep">{titleGold}</span>}
+                </>
+              )}
+            </h1>
+          </div>
+          <p className="mt-6 max-w-[11.75rem] text-sm leading-relaxed text-foreground/80 sm:max-w-xl sm:text-base">
             {t("hero.sub")}
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-3 py-4 text-[0.58rem] tracking-[0.12em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-7 sm:text-[0.7rem] sm:tracking-[0.2em]"
             >
               {t("hero.cta1")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
               href="#services"
-              className="inline-flex items-center rounded-full border border-primary/45 bg-white/25 px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50"
+              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-3 py-4 text-[0.58rem] tracking-[0.12em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 sm:w-auto sm:px-7 sm:text-[0.7rem] sm:tracking-[0.2em]"
             >
               {t("hero.cta2")}
             </a>
@@ -561,7 +590,7 @@ function FinalCta() {
               {t("contact.sub")}
             </p>
             <a
-              href="https://wa.me/49000000000"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="mt-10 inline-flex items-center gap-3 border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -569,6 +598,17 @@ function FinalCta() {
               <MessageCircle className="h-4 w-4" />
               {t("cta.whatsapp")}
             </a>
+            <div className="mt-6 grid gap-2 text-xs tracking-[0.12em] text-primary-foreground/70">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="hover:text-accent"
+              >
+                {WHATSAPP_NUMBER}
+              </a>
+              <span>{COMPANY_ADDRESS}</span>
+            </div>
           </div>
         </Reveal>
 
@@ -577,6 +617,20 @@ function FinalCta() {
             className="grid gap-5 bg-primary-foreground/5 p-7 backdrop-blur-sm sm:p-9"
             onSubmit={(e) => {
               e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const whatsappMessage = [
+                `${COMPANY_NAME} — Partnership Request`,
+                `${t("form.name")}: ${formData.get("name") ?? ""}`,
+                `${t("form.email")}: ${formData.get("email") ?? ""}`,
+                `${t("form.country")}: ${formData.get("country") ?? ""}`,
+                `${t("form.message")}: ${formData.get("message") ?? ""}`,
+              ].join("\n");
+
+              window.open(
+                `${WHATSAPP_URL}?text=${encodeURIComponent(whatsappMessage)}`,
+                "_blank",
+                "noopener,noreferrer",
+              );
               setSent(true);
             }}
           >

@@ -1,6 +1,9 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n";
+import Image from "next/image";
+
+import logoImg from "@/assets/Logo.png";
+import { COMPANY_NAME } from "@/lib/company";
 
 export function Monogram({ className = "" }: { className?: string }) {
   return (
@@ -18,25 +21,25 @@ export function Monogram({ className = "" }: { className?: string }) {
 }
 
 export function BrandLock({ light = false }: { light?: boolean }) {
-  const { t } = useI18n();
   return (
-    <span className="flex min-w-0 items-center gap-2.5">
-      <Monogram className={`h-9 w-9 shrink-0 ${light ? "text-accent" : "text-primary"}`} />
-      <span className="flex min-w-0 flex-col leading-none">
+    <span className="flex min-w-0 items-center gap-3">
+      <Image
+        src={logoImg}
+        alt="SECRO-FILL logo"
+        width={120}
+        height={80}
+        priority
+        className={`h-12 w-[72px] shrink-0 object-contain ${light ? "brightness-0 invert" : ""}`}
+      />
+      <span className="flex min-w-0 max-w-[150px] flex-col justify-center leading-tight">
         <span
-          className={`truncate text-[0.95rem] tracking-[0.3em] ${
-            light ? "text-primary-foreground" : "text-foreground"
+          className={`text-[0.53rem] font-medium tracking-[0.12em] ${
+            light ? "text-primary-foreground/90" : "text-primary"
           }`}
         >
-          SECRO-FILL
+          {COMPANY_NAME}
         </span>
-        <span
-          className={`mt-1 truncate text-[0.55rem] tracking-[0.22em] uppercase ${
-            light ? "text-primary-foreground/70" : "text-muted-foreground"
-          }`}
-        >
-          {t("brand.tag")}
-        </span>
+        <span aria-hidden="true" className="mt-1.5 h-px w-8 bg-accent" />
       </span>
     </span>
   );
