@@ -19,12 +19,12 @@ export function Reveal({
     if (!el) return;
     const io = new IntersectionObserver(
       (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
+        setShown(entries[0]?.isIntersecting ?? false);
       },
-      { rootMargin: "-8% 0px" },
+      {
+        rootMargin: "-12% 0px -12% 0px",
+        threshold: 0.12,
+      },
     );
     io.observe(el);
     return () => io.disconnect();
