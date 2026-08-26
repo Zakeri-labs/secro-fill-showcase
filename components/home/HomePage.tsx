@@ -59,6 +59,7 @@ function SectionHead({
 
 function Hero() {
   const { lang, t } = useI18n();
+  const isRtl = lang !== "en";
   const title = t("hero.title");
   const goldPhrase = {
     en: "Refined Beauty",
@@ -76,23 +77,47 @@ function Hero() {
       className="relative min-h-[790px] overflow-hidden sm:min-h-[900px] lg:min-h-[94svh]"
     >
       <picture className="absolute inset-0 block">
-        <source media="(max-width: 639px)" srcSet={mobileHeroImg.src} />
+        <source
+          media={
+            isRtl
+              ? "(max-width: 899px), (max-width: 1100px) and (orientation: portrait)"
+              : "(max-width: 639px)"
+          }
+          srcSet={mobileHeroImg.src}
+        />
         <Image
           src={heroImg}
           alt="Close-up portrait of a woman with luminous skin illustrating premium medical aesthetics results"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[100%_center] sm:object-[62%_center] lg:object-center"
+          className={
+            isRtl
+              ? "object-cover object-[42%_center] sm:object-center"
+              : "object-cover object-[100%_center] sm:object-[62%_center] lg:object-center"
+          }
         />
       </picture>
       <div className="relative mx-auto flex min-h-[790px] max-w-7xl flex-col justify-start px-5 pt-36 pb-16 sm:min-h-[900px] sm:justify-end sm:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
-        <div className="animate-rise max-w-[9.75rem] sm:max-w-xl lg:max-w-[38rem]">
+        <div
+          className={`animate-rise ${
+            isRtl
+              ? "mr-auto ml-0 w-full max-w-[9.25rem] text-right sm:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
+              : "max-w-[9.75rem] sm:max-w-xl lg:max-w-[38rem]"
+          }`}
+        >
           <p className="eyebrow whitespace-nowrap text-[0.55rem] tracking-[0.16em] text-primary sm:text-[0.6875rem] sm:tracking-[0.28em]">
             {t("hero.eyebrow")}
           </p>
-          <div aria-hidden="true" className="hairline mt-3 w-12 sm:mt-4 sm:w-14" />
-          <h1 className="mt-5 text-[1.62rem] leading-[1.08] sm:mt-6 sm:text-6xl lg:text-7xl">
+          <div
+            aria-hidden="true"
+            className={`hairline mt-3 w-12 sm:mt-4 sm:w-14 ${isRtl ? "ml-auto" : ""}`}
+          />
+          <h1
+            className={`mt-5 text-[1.62rem] leading-[1.08] sm:mt-6 ${
+              isRtl ? "sm:text-5xl lg:text-[3.5rem] xl:text-6xl" : "sm:text-6xl lg:text-7xl"
+            }`}
+          >
             {lang === "en" ? (
               englishTitleParts.map((part, index) => (
                 <span
@@ -111,10 +136,18 @@ function Hero() {
               </>
             )}
           </h1>
-          <p className="mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 sm:mt-6 sm:max-w-xl sm:text-base sm:leading-relaxed">
+          <p
+            className={`mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 sm:mt-6 sm:text-base sm:leading-relaxed ${
+              isRtl ? "sm:max-w-none" : "sm:max-w-xl"
+            }`}
+          >
             {t("hero.sub")}
           </p>
-          <div className="mt-6 flex flex-col gap-2.5 sm:mt-10 sm:gap-3 sm:flex-row">
+          <div
+            className={`mt-6 flex flex-col gap-2.5 sm:mt-10 sm:gap-3 ${
+              isRtl ? "lg:flex-row" : "sm:flex-row"
+            }`}
+          >
             <a
               href="#contact"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em]"
