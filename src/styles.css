@@ -50,6 +50,16 @@
 
 :root {
   --radius: 0.25rem;
+  --header-height: 5.625rem;
+  --anchor-content-inset: 6rem;
+  --anchor-gap: 1.5rem;
+  --header-offset: max(
+    0px,
+    calc(
+      var(--header-height) + var(--anchor-gap) -
+        var(--anchor-content-inset)
+    )
+  );
   --ivory: oklch(0.978 0.008 90);
   --emerald-deep: oklch(0.32 0.062 165);
   --gold: oklch(0.78 0.079 84);
@@ -82,9 +92,25 @@
   --shadow-card: 0 2px 30px -18px oklch(0.32 0.062 165 / 0.35);
 }
 
+@media (min-width: 40rem) {
+  :root {
+    --header-height: 6.125rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --anchor-content-inset: 8rem;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
+  }
+
+  html {
+    scroll-padding-top: var(--header-offset);
   }
 
   body {
