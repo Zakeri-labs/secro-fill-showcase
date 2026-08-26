@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
-import heroImg from "@/assets/Hero-image-Web.png";
+import heroImg from "@/assets/Hero-image-Web.webp";
 import mobileHeroImg from "@/assets/Hero-image-Mobile.png";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
@@ -223,16 +223,16 @@ function Services() {
   const { t } = useI18n();
   const products = [
     {
-      img: deep10Img,
-      name: "services.p1.name",
-      desc: "services.p1.desc",
-      alt: "SECRO-FILL DEEP 10ml dermal filler syringe with premium packaging — replaceable product image",
-    },
-    {
       img: deep3xImg,
       name: "services.p2.name",
       desc: "services.p2.desc",
       alt: "SECRO-FILL DEEP three 3.2ml syringe clinical set — replaceable product image",
+    },
+    {
+      img: deep10Img,
+      name: "services.p1.name",
+      desc: "services.p1.desc",
+      alt: "SECRO-FILL DEEP 10ml dermal filler syringe with premium packaging — replaceable product image",
     },
     {
       img: bodyImg,

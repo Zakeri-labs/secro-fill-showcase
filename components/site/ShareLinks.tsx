@@ -5,7 +5,7 @@ import { MessageCircle, Send } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 type SharePlatform = "whatsapp" | "telegram";
-const SOCIAL_SHARE_VERSION = "20260827";
+const SOCIAL_SHARE_VERSION = "20260827b";
 
 export function ShareLinks() {
   const { t } = useI18n();
