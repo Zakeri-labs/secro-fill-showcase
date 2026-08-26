@@ -126,6 +126,10 @@ const en: Dict = {
 
   "footer.rights": "All rights reserved.",
   "footer.note": "Professional use only. For clinics, physicians and distributors.",
+  "share.title": "Share this page",
+  "share.whatsapp": "Share on WhatsApp",
+  "share.telegram": "Share on Telegram",
+  "share.message": "Discover SECRO-FILL — German premium dermal fillers.",
 
   "page.about.title": "About SECRO-FILL",
   "page.about.body":
@@ -233,6 +237,10 @@ const ar: Dict = {
 
   "footer.rights": "جميع الحقوق محفوظة.",
   "footer.note": "للاستخدام المهني فقط. للعيادات والأطباء والموزعين.",
+  "share.title": "مشاركة هذه الصفحة",
+  "share.whatsapp": "المشاركة عبر واتساب",
+  "share.telegram": "المشاركة عبر تيليجرام",
+  "share.message": "اكتشف SECRO-FILL — فيلر جلدي ألماني فاخر.",
 
   "page.about.title": "عن SECRO-FILL",
   "page.about.body":
@@ -350,6 +358,10 @@ const de: Dict = {
 
   "footer.rights": "Alle Rechte vorbehalten.",
   "footer.note": "Nur für den professionellen Gebrauch. Für Kliniken, Ärzte und Vertriebspartner.",
+  "share.title": "Diese Seite teilen",
+  "share.whatsapp": "Über WhatsApp teilen",
+  "share.telegram": "Über Telegram teilen",
+  "share.message": "Entdecken Sie SECRO-FILL — hochwertige Dermalfiller aus Deutschland.",
 
   "page.about.title": "Über SECRO-FILL",
   "page.about.body":

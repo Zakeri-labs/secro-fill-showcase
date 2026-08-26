@@ -8,6 +8,8 @@ import logoImg from "@/assets/Logo.png";
 import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
+import { ShareLinks } from "./ShareLinks";
+
 const footerLinks = [
   { to: "/about", key: "nav.about" },
   { to: "/services", key: "nav.services" },
@@ -73,6 +75,7 @@ export function Footer() {
                 {COMPANY_ADDRESS}
               </span>
             </div>
+            <ShareLinks />
           </div>
 
           <nav className="self-end" aria-label="Footer">
