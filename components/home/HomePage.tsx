@@ -32,7 +32,7 @@ import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
 import { Reveal } from "@/components/site/Reveal";
-import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
+import { COMPANY_NAME, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 function SectionHead({
@@ -609,22 +609,11 @@ function FinalCta() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-10 inline-flex items-center gap-3 border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="mt-10 inline-flex items-center gap-3 rounded-full border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               <MessageCircle className="h-4 w-4" />
               {t("cta.whatsapp")}
             </a>
-            <div className="mt-6 grid gap-2 text-xs tracking-[0.12em] text-primary-foreground/70">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="hover:text-accent"
-              >
-                {WHATSAPP_NUMBER}
-              </a>
-              <span>{COMPANY_ADDRESS}</span>
-            </div>
           </div>
         </Reveal>
 
