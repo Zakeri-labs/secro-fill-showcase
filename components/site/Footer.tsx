@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, MapPin, Phone, Sparkles } from "lucide-react";
 
 import logoImg from "@/assets/Logo.png";
-import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
+import { COMPANY_ADDRESS, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 import { ShareLinks } from "./ShareLinks";
@@ -46,10 +46,6 @@ export function Footer() {
               height={140}
               className="h-20 w-40 object-contain object-left brightness-0 invert sm:h-24 sm:w-44"
             />
-            <p className="mt-2 text-[0.66rem] font-medium tracking-[0.22em] uppercase text-accent sm:text-xs sm:tracking-[0.3em]">
-              {COMPANY_NAME}
-            </p>
-
             <div aria-hidden="true" className="mt-6 h-px w-11 bg-accent" />
             <p className="mt-5 max-w-sm text-base leading-relaxed tracking-[0.04em] text-primary-foreground/80 rtl:text-[1.0625rem] rtl:tracking-normal sm:text-lg sm:rtl:text-xl">
               {t("footer.note")}
@@ -108,9 +104,7 @@ export function Footer() {
               className="h-3 w-3 shrink-0 text-accent"
               strokeWidth={1.5}
             />
-            <span>
-              © {new Date().getFullYear()} {COMPANY_NAME} — {t("footer.rights")}
-            </span>
+            <span>© {new Date().getFullYear()} SECRO-FILL — {t("footer.rights")}</span>
             <Sparkles
               aria-hidden="true"
               className="h-3 w-3 shrink-0 text-accent"

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 import heroImg from "@/assets/Hero-image-Web.png";
 import { PageShell } from "@/components/site/PageShell";
-import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
+import { COMPANY_ADDRESS, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 export function ContactPage() {
@@ -77,7 +77,7 @@ export function ContactPage() {
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
               const whatsappMessage = [
-                `${COMPANY_NAME} — Partnership Request`,
+                "SECRO-FILL — Partnership Request",
                 `${t("form.name")}: ${formData.get("name") ?? ""}`,
                 `${t("form.email")}: ${formData.get("email") ?? ""}`,
                 `${t("form.country")}: ${formData.get("country") ?? ""}`,

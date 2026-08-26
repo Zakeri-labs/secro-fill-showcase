@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 import logoImg from "@/assets/Logo.png";
-import { COMPANY_NAME } from "@/lib/company";
 
 export function Monogram({ className = "" }: { className?: string }) {
   return (
@@ -22,7 +21,7 @@ export function Monogram({ className = "" }: { className?: string }) {
 
 export function BrandLock({ light = false }: { light?: boolean }) {
   return (
-    <span className="flex min-w-0 items-center gap-3">
+    <span className="flex min-w-0 items-center">
       <Image
         src={logoImg}
         alt="SECRO-FILL logo"
@@ -31,16 +30,6 @@ export function BrandLock({ light = false }: { light?: boolean }) {
         priority
         className={`h-12 w-[72px] shrink-0 object-contain ${light ? "brightness-0 invert" : ""}`}
       />
-      <span className="flex min-w-0 max-w-[150px] flex-col justify-center leading-tight">
-        <span
-          className={`text-[0.53rem] font-medium tracking-[0.12em] ${
-            light ? "text-primary-foreground/90" : "text-primary"
-          }`}
-        >
-          {COMPANY_NAME}
-        </span>
-        <span aria-hidden="true" className="mt-1.5 h-px w-8 bg-accent" />
-      </span>
     </span>
   );
 }

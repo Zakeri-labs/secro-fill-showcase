@@ -32,7 +32,7 @@ import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
 import { Reveal } from "@/components/site/Reveal";
-import { COMPANY_NAME, WHATSAPP_URL } from "@/lib/company";
+import { WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
 function DecoratedEyebrow({
@@ -729,7 +729,7 @@ function FinalCta() {
               e.preventDefault();
               const formData = new FormData(e.currentTarget);
               const whatsappMessage = [
-                `${COMPANY_NAME} — Partnership Request`,
+                "SECRO-FILL — Partnership Request",
                 `${t("form.name")}: ${formData.get("name") ?? ""}`,
                 `${t("form.email")}: ${formData.get("email") ?? ""}`,
                 `${t("form.country")}: ${formData.get("country") ?? ""}`,

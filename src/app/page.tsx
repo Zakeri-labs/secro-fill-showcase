@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 import { HomePage } from "@/components/home/HomePage";
-import { COMPANY_ADDRESS, COMPANY_NAME, WHATSAPP_NUMBER } from "@/lib/company";
+import { COMPANY_ADDRESS, WHATSAPP_NUMBER } from "@/lib/company";
 import { createOpenGraph } from "@/lib/site";
 
-const description = `${COMPANY_NAME} — SECRO-FILL is a German medical aesthetics brand producing premium dermal fillers for clinics, physicians and distributors in ${COMPANY_ADDRESS}.`;
+const description = `SECRO-FILL is a German medical aesthetics brand producing premium dermal fillers for clinics, physicians and distributors in ${COMPANY_ADDRESS}.`;
 
 export const metadata: Metadata = {
   title: "SECRO-FILL — German Premium Dermal Fillers for Clinics",
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: COMPANY_NAME,
-  alternateName: "SECRO-FILL",
+  name: "SECRO-FILL",
   description:
     "German medical aesthetics brand producing premium dermal fillers for professional use.",
   address: { "@type": "PostalAddress", addressLocality: "Hamburg", addressCountry: "DE" },
