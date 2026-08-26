@@ -10,12 +10,12 @@ import {
   type ReactNode,
 } from "react";
 
-export type Lang = "en" | "ar" | "fa";
+export type Lang = "en" | "de" | "ar";
 
 export const LANGS: { code: Lang; label: string; short: string }[] = [
   { code: "en", label: "English", short: "EN" },
+  { code: "de", label: "Deutsch", short: "DE" },
   { code: "ar", label: "العربية", short: "AR" },
-  { code: "fa", label: "فارسی", short: "FA" },
 ];
 
 type Dict = Record<string, string>;
@@ -240,115 +240,124 @@ const ar: Dict = {
   "page.back": "العودة إلى الصفحة الرئيسية",
 };
 
-const fa: Dict = {
-  "brand.tag": "زیبایی پزشکی آلمان",
-  "nav.home": "خانه",
-  "nav.about": "درباره ما",
-  "nav.services": "خدمات",
-  "nav.portfolio": "نمونه کارها",
-  "nav.testimonials": "نظرات",
-  "nav.contact": "تماس",
-  "cta.partner": "همکاری با ما",
-  "cta.whatsapp": "گفتگو در واتساپ",
+const de: Dict = {
+  "brand.tag": "Deutsche Medizinästhetik",
+  "nav.home": "Startseite",
+  "nav.about": "Über uns",
+  "nav.services": "Leistungen",
+  "nav.portfolio": "Portfolio",
+  "nav.testimonials": "Referenzen",
+  "nav.contact": "Kontakt",
+  "cta.partner": "Partner werden",
+  "cta.whatsapp": "Über WhatsApp kontaktieren",
 
-  "hero.eyebrow": "ساخت آلمان",
-  "hero.title": "دانش زیبایی اصیل",
+  "hero.eyebrow": "Entwickelt in Deutschland",
+  "hero.title": "Die Wissenschaft vollendeter Schönheit",
   "hero.sub":
-    "SECRO-FILL فیلرهای پوستی ممتاز را برای کلینیک‌ها، پزشکان و توزیع‌کنندگانی می‌سازد که به کمتر از دقت آلمانی رضایت نمی‌دهند.",
-  "hero.cta1": "درخواست همکاری",
-  "hero.cta2": "مشاهده محصولات",
+    "SECRO-FILL entwickelt hochwertige Dermalfiller für Kliniken, Ärzte und Vertriebspartner, die bei deutscher Präzision keine Kompromisse eingehen.",
+  "hero.cta1": "Partnerschaft anfragen",
+  "hero.cta2": "Produkte entdecken",
 
-  "trust.germany": "ساخت آلمان",
-  "trust.years": "بیش از ۱۰ سال تخصص",
-  "trust.medical": "زیبایی پزشکی",
-  "trust.pro": "راهکارهای حرفه‌ای",
+  "trust.germany": "Made in Germany",
+  "trust.years": "Über 10 Jahre Expertise",
+  "trust.medical": "Medizinästhetik",
+  "trust.pro": "Professionelle Lösungen",
 
-  "services.eyebrow": "سبد محصولات",
-  "services.title": "مجموعه فیلرهای ما",
+  "services.eyebrow": "Unsere Produkte",
+  "services.title": "Unsere Filler-Kollektion",
   "services.sub":
-    "فرمولاسیون‌های هیالورونیک اسید شبکه‌ای، تنظیم‌شده برای کنتور صورت و حجم‌دهی بدن.",
-  "services.p1.name": "SECRO-FILL DEEP ۱۰ میلی‌لیتر",
+    "Vernetzte Hyaluronsäure-Formulierungen, abgestimmt auf Gesichtskonturierung und Körpervolumenaufbau.",
+  "services.p1.name": "SECRO-FILL DEEP 10ml",
   "services.p1.desc":
-    "فیلر عمقی با چسبندگی بالا در یک سرنگ ۱۰ میلی‌لیتری برای کنتور حجیم صورت و پشتیبانی ساختاری بادوام.",
-  "services.p2.name": "SECRO-FILL DEEP ۳×۳٫۲ میلی‌لیتر",
+    "Hochkohäsiver Deep Filler in einer einzelnen 10-ml-Spritze für großvolumige Gesichtskonturierung und lang anhaltenden strukturellen Halt.",
+  "services.p2.name": "SECRO-FILL DEEP 3×3.2ml",
   "services.p2.desc":
-    "ست بالینی سه‌سرنگی برای درمان‌های دقیق چندناحیه‌ای — مناسب گونه، خط فک و چانه.",
+    "Ein klinisches Set mit drei Spritzen für präzise Behandlungen mehrerer Zonen — ideal für Wangen, Kieferlinie und Kinnkontur.",
   "services.p3.name": "SECRO-FILL BODY FILLER",
-  "services.p3.desc": "طراحی‌شده برای حجم‌دهی بدن با ماتریس ژل پرتراکم و نتیجه‌ای یکدست و طبیعی.",
-  "services.cta": "دریافت اطلاعات",
+  "services.p3.desc":
+    "Entwickelt für den Körpervolumenaufbau mit einer hochdichten Gelmatrix für gleichmäßige, natürliche Konturergebnisse.",
+  "services.cta": "Details anfragen",
 
-  "about.eyebrow": "جایگاه ما",
-  "about.title": "نوآوری آلمانی، زیبایی جهانی",
+  "about.eyebrow": "Positionierung",
+  "about.title": "Deutsche Innovation, globale Ästhetik",
   "about.sub":
-    "SECRO-FILL در تلاقی علم آزمایشگاهی و هنر زیبایی قرار دارد و به متخصصان در بیش از ۲۰ بازار خدمت می‌کند.",
-  "about.c1.title": "نوآوری علمی",
+    "SECRO-FILL verbindet Laborwissenschaft mit ästhetischer Kunst und beliefert Fachanwender in über 20 Märkten.",
+  "about.c1.title": "Wissenschaftliche Innovation",
   "about.c1.desc":
-    "پژوهش اختصاصی شبکه‌سازی، ژل هیالورونیک پایدار و بسیار خالص با رفتار بالینی قابل پیش‌بینی ارائه می‌دهد.",
-  "about.c2.title": "تولید پیشرفته",
+    "Proprietäre Vernetzungsforschung ermöglicht stabile, hochreine Hyaluronsäuregele mit vorhersehbarem klinischem Verhalten.",
+  "about.c2.title": "Fortschrittliche Herstellung",
   "about.c2.desc":
-    "تولید در تأسیسات دارای گواهی آلمان با کنترل کیفیت سخت‌گیرانه، ردیابی بچ و استانداردهای استریل.",
-  "about.c3.title": "راهکارهای جهانی زیبایی",
+    "Hergestellt in zertifizierten deutschen Produktionsstätten unter strenger Qualitätskontrolle, mit Chargenrückverfolgbarkeit und Standards für sterile Verarbeitung.",
+  "about.c3.title": "Globale ästhetische Lösungen",
   "about.c3.desc":
-    "مدل همکاری برای کلینیک‌ها، پزشکان و توزیع‌کنندگان همراه با آموزش، مستندات و تأمین مطمئن.",
+    "Ein Partnerschaftsmodell für Kliniken, Ärzte und Vertriebspartner mit Schulungen, Dokumentation und zuverlässiger Versorgung.",
 
-  "portfolio.eyebrow": "نمونه نتایج",
-  "portfolio.title": "گالری قبل و بعد",
+  "portfolio.eyebrow": "Behandlungsergebnisse",
+  "portfolio.title": "Vorher-Nachher-Galerie",
   "portfolio.sub":
-    "مستندات نمونه از نتایج کنتور صورت و تغییر فرم بدن. این تصاویر جایگزین‌پذیر هستند.",
-  "portfolio.before": "قبل",
-  "portfolio.after": "بعد",
-  "portfolio.i1": "کنتور میان‌صورت",
-  "portfolio.i2": "تعریف خط فک",
-  "portfolio.i3": "حجم‌دهی بدن",
-  "portfolio.i4": "هارمونی کامل صورت",
+    "Repräsentative Dokumentation der Ergebnisse von Gesichtskonturierung und Körperformung. Ersetzen Sie diese Platzhalter durch Ihre eigenen klinischen Aufnahmen.",
+  "portfolio.before": "Vorher",
+  "portfolio.after": "Nachher",
+  "portfolio.i1": "Konturierung des Mittelgesichts",
+  "portfolio.i2": "Definition der Kieferlinie",
+  "portfolio.i3": "Körpervolumenaufbau",
+  "portfolio.i4": "Ganzheitliche Gesichtsharmonie",
 
-  "process.eyebrow": "فرایند کار",
-  "process.title": "مسیر همکاری",
-  "process.s1.title": "مشاوره",
+  "process.eyebrow": "So funktioniert es",
+  "process.title": "Der Weg zur Partnerschaft",
+  "process.s1.title": "Beratung",
   "process.s1.desc":
-    "بازار، پروفایل بالینی و حجم مورد انتظار شما را در مشاوره‌ای خصوصی بررسی می‌کنیم.",
-  "process.s2.title": "انتخاب محصول",
-  "process.s2.desc": "با هم فرمولاسیون و بسته‌بندی مناسب پروتکل‌های شما را تعیین می‌کنیم.",
-  "process.s3.title": "همکاری",
-  "process.s3.desc": "شرایط، مستندات و قلمرو توافق می‌شود و نخستین ارسال آماده می‌گردد.",
-  "process.s4.title": "پشتیبانی",
-  "process.s4.desc": "آموزش بالینی مستمر، منابع بازاریابی و تأمین مجدد مطمئن از آلمان.",
+    "In einem vertraulichen Beratungsgespräch analysieren wir Ihren Markt, Ihr klinisches Profil und Ihre Mengenerwartungen.",
+  "process.s2.title": "Produktauswahl",
+  "process.s2.desc":
+    "Gemeinsam bestimmen wir die passenden Formulierungen und Verpackungen für Ihre Behandlungsprotokolle.",
+  "process.s3.title": "Partnerschaft",
+  "process.s3.desc":
+    "Konditionen, Dokumentation und Vertriebsgebiet werden vereinbart und Ihre erste Lieferung wird vorbereitet.",
+  "process.s4.title": "Support",
+  "process.s4.desc":
+    "Kontinuierliche klinische Schulungen, Marketingmaterialien und zuverlässige Nachlieferungen aus Deutschland.",
 
-  "testi.eyebrow": "نظرات",
-  "testi.title": "اعتماد متخصصان",
-  "testi.sub": "نظرات شرکا در اینجا اضافه می‌شود.",
-  "testi.t1": "یکدستی میان بچ‌ها کلینیک ما را متقاعد کرد. نتایج در هر درمان قابل پیش‌بینی است.",
-  "testi.t2": "مستندات و لجستیک با نظم واقعی آلمانی انجام شد. راه‌اندازی توزیع ما بی‌دغدغه بود.",
-  "testi.t3": "بیماران نرمی نتیجه را حس می‌کنند. برای کنتور بدن انتخاب استاندارد ما شده است.",
-  "testi.r1": "مدیر کلینیک زیبایی",
-  "testi.r2": "توزیع‌کننده منطقه‌ای",
-  "testi.r3": "جراح پلاستیک",
+  "testi.eyebrow": "Referenzen",
+  "testi.title": "Das Vertrauen von Fachanwendern",
+  "testi.sub": "Hier werden Erfahrungsberichte unserer Partner ergänzt.",
+  "testi.t1":
+    "Die Konsistenz von Charge zu Charge hat unsere Klinik überzeugt. Die Ergebnisse sind bei jeder Behandlung vorhersehbar.",
+  "testi.t2":
+    "Dokumentation und Logistik wurden mit echter deutscher Disziplin umgesetzt. Der Start unseres Vertriebs verlief reibungslos.",
+  "testi.t3":
+    "Patienten bemerken, wie gleichmäßig das Ergebnis wirkt. Für die Körperkonturierung ist es zu unserer Standardlösung geworden.",
+  "testi.r1": "Leitung einer ästhetischen Klinik",
+  "testi.r2": "Regionaler Vertriebspartner",
+  "testi.r3": "Facharzt für Plastische Chirurgie",
 
-  "contact.eyebrow": "همکاری",
-  "contact.title": "بیایید چیزی ماندگار بسازیم",
+  "contact.eyebrow": "Partnerschaft",
+  "contact.title": "Lassen Sie uns gemeinsam etwas Vollendetes schaffen",
   "contact.sub":
-    "شبکه کلینیک‌ها، پزشکان و توزیع‌کنندگان خود را گسترش می‌دهیم. از بازار خود بگویید تا تیم همکاری ما در دو روز کاری پاسخ دهد.",
-  "form.name": "نام و نام خانوادگی",
-  "form.email": "ایمیل",
-  "form.country": "کشور / بازار",
-  "form.message": "چگونه می‌خواهید با SECRO-FILL کار کنید؟",
-  "form.submit": "ارسال درخواست همکاری",
-  "form.sent": "واتساپ باز شد و درخواست شما آماده ارسال است.",
+    "Wir erweitern unser Netzwerk aus Kliniken, Ärzten und Vertriebspartnern. Erzählen Sie uns von Ihrem Markt — unser Partnerschaftsteam antwortet innerhalb von zwei Werktagen.",
+  "form.name": "Vollständiger Name",
+  "form.email": "E-Mail-Adresse",
+  "form.country": "Land / Markt",
+  "form.message": "Wie möchten Sie mit SECRO-FILL zusammenarbeiten?",
+  "form.submit": "Partnerschaftsanfrage senden",
+  "form.sent": "WhatsApp wurde geöffnet und Ihre Anfrage ist versandbereit.",
 
-  "footer.rights": "تمام حقوق محفوظ است.",
-  "footer.note": "تنها برای استفاده حرفه‌ای. کلینیک‌ها، پزشکان و توزیع‌کنندگان.",
+  "footer.rights": "Alle Rechte vorbehalten.",
+  "footer.note": "Nur für den professionellen Gebrauch. Für Kliniken, Ärzte und Vertriebspartner.",
 
-  "page.about.title": "درباره SECRO-FILL",
+  "page.about.title": "Über SECRO-FILL",
   "page.about.body":
-    "برندی آلمانی در حوزه زیبایی پزشکی، متمرکز بر فناوری فیلر پوستی ممتاز با دقت آزمایشگاهی برای متخصصان سراسر جهان.",
-  "page.services.title": "خدمات و محصولات",
-  "page.services.body": "سبد فیلرها و خدمات حرفه‌ای همراه هر همکاری را ببینید.",
-  "page.contact.title": "تماس با ما",
-  "page.contact.body": "برای قیمت، مستندات و بررسی قلمرو با تیم همکاری SECRO-FILL تماس بگیرید.",
-  "page.back": "بازگشت به صفحه اصلی",
+    "Eine deutsche Marke für Medizinästhetik, die sich hochwertiger Dermalfiller-Technologie widmet — mit Laborpräzision entwickelt und für Fachanwender weltweit bereitgestellt.",
+  "page.services.title": "Services & Produkte",
+  "page.services.body":
+    "Entdecken Sie unser Dermalfiller-Portfolio und die professionellen Services, die jede Partnerschaft begleiten.",
+  "page.contact.title": "Kontakt",
+  "page.contact.body":
+    "Kontaktieren Sie das SECRO-FILL Partnerschaftsteam für Preise, Dokumentation und Informationen zur Gebietsverfügbarkeit.",
+  "page.back": "Zurück zur Startseite",
 };
 
-const dicts: Record<Lang, Dict> = { en, ar, fa };
+const dicts: Record<Lang, Dict> = { en, de, ar };
 
 type Ctx = {
   lang: Lang;
@@ -367,7 +376,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (stored && stored in dicts) setLangState(stored);
   }, []);
 
-  const dir: "ltr" | "rtl" = lang === "en" ? "ltr" : "rtl";
+  const dir: "ltr" | "rtl" = lang === "ar" ? "rtl" : "ltr";
 
   useEffect(() => {
     document.documentElement.lang = lang;

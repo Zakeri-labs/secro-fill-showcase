@@ -24,7 +24,7 @@ There is currently no automated test script or test suite in this repository. Ve
 
 ## Coding Style & Naming Conventions
 
-Use strict TypeScript, two-space indentation, double quotes, and trailing commas as enforced by Prettier. Name React components and component files in PascalCase (`PageShell.tsx`); use camelCase for functions, hooks, and variables (`useMobile`). Use the `@/*` alias for imports from `src`, and prefer existing `cn`/utility helpers and shared site components over duplicating styles. Follow TanStack file-based route naming; preserve the existing RTL/i18n behavior for Arabic and Persian.
+Use strict TypeScript, two-space indentation, double quotes, and trailing commas as enforced by Prettier. Name React components and component files in PascalCase (`PageShell.tsx`); use camelCase for functions, hooks, and variables (`useMobile`). Use the `@/*` alias for imports from `src`, and prefer existing `cn`/utility helpers and shared site components over duplicating styles. Follow TanStack file-based route naming; preserve the existing RTL/i18n behavior for Arabic and LTR behavior for English and German.
 
 ## Commit & Pull Request Guidelines
 

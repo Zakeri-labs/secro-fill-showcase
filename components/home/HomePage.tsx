@@ -87,12 +87,12 @@ function SectionHead({
 
 function Hero() {
   const { lang, t } = useI18n();
-  const isRtl = lang !== "en";
+  const isRtl = lang === "ar";
   const title = t("hero.title");
   const goldPhrase = {
     en: "Refined Beauty",
+    de: "vollendeter Schönheit",
     ar: "الراقي",
-    fa: "اصیل",
   }[lang];
   const goldStart = title.lastIndexOf(goldPhrase);
   const titleBeforeGold = goldStart >= 0 ? title.slice(0, goldStart) : title;

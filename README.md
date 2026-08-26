@@ -144,9 +144,9 @@ Support:
 
 English
 
-Arabic
+German
 
-Persian
+Arabic
 
 Default language:
 English
@@ -155,7 +155,7 @@ Implement:
 
 Language switcher
 
-Correct RTL layout for Arabic/Persian
+Correct RTL layout for Arabic
 
 Mirrored directional layouts
 
@@ -203,4 +203,4 @@ npm run build     # Create the production build
 npm run start     # Serve the production build
 ```
 
-The application exposes `/`, `/about`, `/services`, and `/contact`. The homepage preserves English, Arabic, and Persian language switching, including RTL layout behavior.
+The application exposes `/`, `/about`, `/services`, and `/contact`. The site supports English, German, and Arabic language switching, including RTL layout behavior for Arabic.
