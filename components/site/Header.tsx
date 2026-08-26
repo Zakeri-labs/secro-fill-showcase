@@ -93,7 +93,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
                 key={l.key}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/45 py-3 text-sm tracking-[0.18em] uppercase text-foreground rtl:text-[0.9375rem] rtl:tracking-normal rtl:normal-case"
+                className="border-b border-border/45 py-3 text-[0.68rem] tracking-[0.12em] uppercase text-foreground transition-colors rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case"
               >
                 {t(l.key)}
               </a>
@@ -104,7 +104,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             <a
               href="/#contact"
               onClick={() => setOpen(false)}
-              className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+              className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("cta.partner")}
             </a>
