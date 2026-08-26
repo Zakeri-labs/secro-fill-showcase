@@ -43,7 +43,7 @@ const en: Dict = {
   "trust.medical": "Medical Aesthetics",
   "trust.pro": "Professional Solutions",
 
-  "services.eyebrow": "Product Range",
+  "services.eyebrow": "Our Product",
   "services.title": "Our Filler Collection",
   "services.sub":
     "Cross-linked hyaluronic acid formulations calibrated for facial contouring and body volumisation.",

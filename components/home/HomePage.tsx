@@ -35,6 +35,34 @@ import { Reveal } from "@/components/site/Reveal";
 import { COMPANY_NAME, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";
 
+function DecoratedEyebrow({
+  text,
+  center = false,
+  dark = false,
+  className = "",
+}: {
+  text: string;
+  center?: boolean;
+  dark?: boolean;
+  className?: string;
+}) {
+  const surfaceClass = dark ? "divider-on-dark" : "";
+
+  return (
+    <p className={`eyebrow flex items-center gap-3 ${center ? "justify-center" : ""} ${className}`}>
+      <span
+        aria-hidden="true"
+        className={`product-card-divider-gold divider-diamond-end w-10 sm:w-14 ${surfaceClass}`}
+      />
+      <span>{text}</span>
+      <span
+        aria-hidden="true"
+        className={`product-card-divider-gold divider-diamond-start w-10 sm:w-14 ${surfaceClass}`}
+      />
+    </p>
+  );
+}
+
 function SectionHead({
   eyebrow,
   title,
@@ -48,7 +76,7 @@ function SectionHead({
 }) {
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
-      <p className="eyebrow">{eyebrow}</p>
+      <DecoratedEyebrow text={eyebrow} center={center} />
       <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
       {sub && (
         <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{sub}</p>
@@ -227,7 +255,7 @@ function Services() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {products.map((p, i) => (
             <Reveal key={p.name} delay={i * 120}>
-              <article className="card-luxe flex h-full flex-col">
+              <article className="card-luxe product-card-gold flex h-full flex-col">
                 <div className="relative aspect-4/3 overflow-hidden bg-secondary">
                   <Image
                     src={p.img}
@@ -239,7 +267,7 @@ function Services() {
                 </div>
                 <div className="flex flex-1 flex-col p-7">
                   <h3 className="text-xl">{t(p.name)}</h3>
-                  <div className="hairline mt-4 w-12" />
+                  <div className="product-card-divider-gold mt-4 w-2/3" />
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {t(p.desc)}
                   </p>
@@ -285,8 +313,7 @@ function About() {
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-accent">{t("about.eyebrow")}</p>
-            <div aria-hidden="true" className="hairline mt-4 w-14" />
+            <DecoratedEyebrow text={t("about.eyebrow")} className="text-accent" dark />
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               {t("about.title")}
             </h2>
@@ -544,8 +571,7 @@ function Testimonials() {
               aria-hidden="true"
               className="absolute -end-2 top-5 hidden h-16 w-16 rotate-180 text-gold-deep/10 lg:block"
             />
-            <p className="eyebrow text-gold-deep">{t("testi.eyebrow")}</p>
-            <div aria-hidden="true" className="hairline mx-auto mt-4 w-16" />
+            <DecoratedEyebrow text={t("testi.eyebrow")} className="text-gold-deep" center />
             <h2 className="mt-5 text-4xl leading-tight text-primary sm:text-5xl lg:text-6xl">
               {t("testi.title")}
             </h2>
@@ -557,7 +583,7 @@ function Testimonials() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {items.map((it, i) => (
             <Reveal key={it.q} delay={i * 120}>
-              <blockquote className="card-luxe relative flex h-full flex-col p-8">
+              <blockquote className="card-luxe product-card-gold relative flex h-full flex-col p-8">
                 <Quote className="h-10 w-10 text-gold-deep rtl:rotate-180" />
                 <Quote
                   aria-hidden="true"
@@ -598,7 +624,7 @@ function FinalCta() {
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div>
-            <p className="eyebrow text-accent">{t("contact.eyebrow")}</p>
+            <DecoratedEyebrow text={t("contact.eyebrow")} className="text-accent" dark />
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               {t("contact.title")}
             </h2>
@@ -619,7 +645,7 @@ function FinalCta() {
 
         <Reveal delay={140}>
           <form
-            className="grid gap-5 bg-primary-foreground/5 p-7 backdrop-blur-sm sm:p-9"
+            className="gold-border-panel grid gap-5 bg-primary-foreground/5 p-7 backdrop-blur-sm sm:p-9"
             onSubmit={(e) => {
               e.preventDefault();
               const formData = new FormData(e.currentTarget);
