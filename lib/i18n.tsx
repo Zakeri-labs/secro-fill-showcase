@@ -110,6 +110,8 @@ const en: Dict = {
   "testi.r1": "Aesthetic Clinic Director",
   "testi.r2": "Regional Distributor",
   "testi.r3": "Plastic Surgeon",
+  "testi.previous": "Previous testimonial",
+  "testi.next": "Next testimonial",
 
   "contact.eyebrow": "Partnership",
   "contact.title": "Let's Build Something Refined",
@@ -215,6 +217,8 @@ const ar: Dict = {
   "testi.r1": "مدير عيادة تجميل",
   "testi.r2": "موزع إقليمي",
   "testi.r3": "جراح تجميل",
+  "testi.previous": "الشهادة السابقة",
+  "testi.next": "الشهادة التالية",
 
   "contact.eyebrow": "الشراكة",
   "contact.title": "لنبنِ شيئاً راقياً",
@@ -330,6 +334,8 @@ const de: Dict = {
   "testi.r1": "Leitung einer ästhetischen Klinik",
   "testi.r2": "Regionaler Vertriebspartner",
   "testi.r3": "Facharzt für Plastische Chirurgie",
+  "testi.previous": "Vorherige Referenz",
+  "testi.next": "Nächste Referenz",
 
   "contact.eyebrow": "Partnerschaft",
   "contact.title": "Lassen Sie uns gemeinsam etwas Vollendetes schaffen",

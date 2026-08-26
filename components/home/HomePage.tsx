@@ -542,12 +542,54 @@ function Process() {
 }
 
 function Testimonials() {
-  const { t } = useI18n();
+  const { dir, t } = useI18n();
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const items = [
     { q: "testi.t1", r: "testi.r1", avatar: testimonialClinicDirector },
     { q: "testi.t2", r: "testi.r2", avatar: testimonialDistributor },
     { q: "testi.t3", r: "testi.r3", avatar: testimonialPhysician },
   ];
+
+  const scrollToTestimonial = (delta: number) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    const cards = scroller.querySelectorAll<HTMLElement>("[data-testimonial-card]");
+    const nextIndex = Math.min(items.length - 1, Math.max(0, currentIndex + delta));
+    const nextCard = cards[nextIndex];
+    if (!nextCard) return;
+
+    const scrollerBounds = scroller.getBoundingClientRect();
+    const cardBounds = nextCard.getBoundingClientRect();
+    const offset =
+      dir === "rtl"
+        ? cardBounds.right - scrollerBounds.right
+        : cardBounds.left - scrollerBounds.left;
+
+    scroller.scrollBy({ left: offset, behavior: "smooth" });
+    setCurrentIndex(nextIndex);
+  };
+
+  const updateCurrentTestimonial = () => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    const scrollerBounds = scroller.getBoundingClientRect();
+    const targetEdge = dir === "rtl" ? scrollerBounds.right : scrollerBounds.left;
+    const cards = [...scroller.querySelectorAll<HTMLElement>("[data-testimonial-card]")];
+    const closestIndex = cards.reduce((closest, card, index) => {
+      const cardBounds = card.getBoundingClientRect();
+      const cardEdge = dir === "rtl" ? cardBounds.right : cardBounds.left;
+      const closestBounds = cards[closest]?.getBoundingClientRect();
+      const closestEdge = dir === "rtl" ? closestBounds?.right : closestBounds?.left;
+      return Math.abs(cardEdge - targetEdge) < Math.abs((closestEdge ?? targetEdge) - targetEdge)
+        ? index
+        : closest;
+    }, 0);
+
+    setCurrentIndex(closestIndex);
+  };
 
   return (
     <section
@@ -582,10 +624,45 @@ function Testimonials() {
             </p>
           </div>
         </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+        <div className="mt-8 flex justify-end md:hidden" dir="ltr">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold-deep/25 bg-card/90 p-1.5 shadow-card backdrop-blur-sm">
+            <button
+              type="button"
+              aria-label={t(dir === "rtl" ? "testi.next" : "testi.previous")}
+              onClick={() => scrollToTestimonial(dir === "rtl" ? 1 : -1)}
+              disabled={dir === "rtl" ? currentIndex === items.length - 1 : currentIndex === 0}
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-deep/30 text-primary transition-colors hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-35"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label={t(dir === "rtl" ? "testi.previous" : "testi.next")}
+              onClick={() => scrollToTestimonial(dir === "rtl" ? -1 : 1)}
+              disabled={dir === "rtl" ? currentIndex === 0 : currentIndex === items.length - 1}
+              className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-emerald-deep/90 disabled:cursor-not-allowed disabled:opacity-35"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={scrollerRef}
+          onScroll={updateCurrentTestimonial}
+          className="scrollbar-none -mb-6 mt-3 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pt-2 pb-10 md:mb-0 md:mt-16 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pt-0 md:pb-0"
+        >
           {items.map((it, i) => (
-            <Reveal key={it.q} delay={i * 120}>
-              <blockquote className="card-luxe product-card-gold relative flex h-full flex-col p-8">
+            <Reveal
+              key={it.q}
+              delay={i * 120}
+              className="h-full w-[78vw] max-w-[21rem] shrink-0 snap-start md:w-auto md:max-w-none md:shrink"
+            >
+              <blockquote
+                data-testimonial-card
+                className="card-luxe product-card-gold relative flex h-full flex-col p-8"
+              >
                 <Quote className="h-10 w-10 text-gold-deep rtl:rotate-180" />
                 <Quote
                   aria-hidden="true"

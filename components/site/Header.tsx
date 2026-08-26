@@ -86,25 +86,25 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       </div>
 
       {open && (
-        <div className="animate-rise border-t border-border/60 bg-background/95 px-5 pt-4 pb-8 backdrop-blur-xl xl:hidden">
+        <div className="animate-rise mt-2 rounded-[22px] border border-border/60 bg-secondary/95 px-4 pt-2 pb-4 shadow-[0_18px_45px_-35px_var(--primary)] backdrop-blur-xl xl:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
             {links.map((l) => (
               <a
                 key={l.key}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/50 py-4 text-sm tracking-[0.18em] uppercase text-foreground rtl:text-base rtl:tracking-normal rtl:normal-case"
+                className="border-b border-border/45 py-3 text-sm tracking-[0.18em] uppercase text-foreground rtl:text-[0.9375rem] rtl:tracking-normal rtl:normal-case"
               >
                 {t(l.key)}
               </a>
             ))}
           </nav>
-          <div className="mt-6 flex items-center justify-between gap-4">
+          <div className="mt-4 flex items-center justify-between gap-3">
             <LanguageSwitcher />
             <a
               href="/#contact"
               onClick={() => setOpen(false)}
-              className="bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+              className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("cta.partner")}
             </a>
