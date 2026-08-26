@@ -51,7 +51,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
               <a
                 key={l.key}
                 href={l.href}
-                className={`text-[0.68rem] tracking-[0.12em] uppercase transition-colors ${
+                className={`text-[0.68rem] tracking-[0.12em] uppercase transition-colors rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case ${
                   solid
                     ? "text-muted-foreground hover:text-primary"
                     : "text-primary/80 hover:text-primary"
@@ -68,7 +68,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
 
           <a
             href="/#contact"
-            className="hidden shrink-0 rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_-16px_var(--primary)] transition-transform hover:-translate-y-0.5 xl:inline-block"
+            className="hidden shrink-0 rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_-16px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case xl:inline-block"
           >
             <span>{t("cta.partner")}</span>
           </a>
@@ -93,7 +93,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
                 key={l.key}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/50 py-4 text-sm tracking-[0.18em] uppercase text-foreground"
+                className="border-b border-border/50 py-4 text-sm tracking-[0.18em] uppercase text-foreground rtl:text-base rtl:tracking-normal rtl:normal-case"
               >
                 {t(l.key)}
               </a>
@@ -104,7 +104,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             <a
               href="/#contact"
               onClick={() => setOpen(false)}
-              className="bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white"
+              className="bg-primary px-5 py-3 text-[0.68rem] tracking-[0.2em] uppercase text-white rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("cta.partner")}
             </a>

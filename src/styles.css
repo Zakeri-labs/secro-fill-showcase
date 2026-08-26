@@ -138,6 +138,7 @@
   [dir="rtl"] h3 {
     font-family: "Vazirmatn", var(--font-display);
     font-weight: 500;
+    letter-spacing: 0;
   }
 }
 
@@ -146,6 +147,13 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+
+  [dir="rtl"] & {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
 }
 
 @utility text-gradient-gold {

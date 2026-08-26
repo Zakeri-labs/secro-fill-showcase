@@ -49,7 +49,7 @@ export function Footer() {
             </p>
 
             <div aria-hidden="true" className="mt-6 h-px w-11 bg-accent" />
-            <p className="mt-5 max-w-sm text-base leading-relaxed tracking-[0.04em] text-primary-foreground/80 sm:text-lg">
+            <p className="mt-5 max-w-sm text-base leading-relaxed tracking-[0.04em] text-primary-foreground/80 rtl:text-[1.0625rem] rtl:tracking-normal sm:text-lg sm:rtl:text-xl">
               {t("footer.note")}
             </p>
 
@@ -83,7 +83,7 @@ export function Footer() {
                   href={link.to}
                   className="group flex items-center justify-between gap-6 border-b border-accent/30 py-5 last:border-b-0 sm:py-6"
                 >
-                  <span className="flex items-center gap-4 text-sm tracking-[0.24em] uppercase text-primary-foreground/90 sm:text-base sm:tracking-[0.3em]">
+                  <span className="flex items-center gap-4 text-sm tracking-[0.24em] uppercase text-primary-foreground/90 rtl:text-[0.9375rem] rtl:tracking-[0.02em] rtl:normal-case sm:text-base sm:tracking-[0.3em] sm:rtl:text-[1.0625rem]">
                     <Sparkles className="h-3 w-3 shrink-0 text-accent" strokeWidth={1.5} />
                     {t(link.key)}
                   </span>
@@ -99,7 +99,7 @@ export function Footer() {
             aria-hidden="true"
             className="absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-accent shadow-[0_0_0_4px_#002d27]"
           />
-          <div className="flex min-h-20 items-center justify-center gap-4 py-6 text-center text-[0.58rem] tracking-[0.16em] uppercase text-accent/90 sm:text-[0.68rem] sm:tracking-[0.26em]">
+          <div className="flex min-h-20 items-center justify-center gap-4 py-6 text-center text-[0.58rem] tracking-[0.16em] uppercase text-accent/90 rtl:text-[0.68rem] rtl:tracking-[0.02em] rtl:normal-case sm:text-[0.68rem] sm:tracking-[0.26em] sm:rtl:text-xs">
             <Sparkles
               aria-hidden="true"
               className="h-3 w-3 shrink-0 text-accent"

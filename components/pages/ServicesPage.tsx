@@ -67,11 +67,11 @@ export function ServicesPage() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-7 sm:p-8">
-                <h2 className="text-2xl leading-tight text-primary">
+                <h2 className="text-2xl leading-tight text-primary rtl:text-[1.625rem]">
                   {t(`services.${product.key}.name`)}
                 </h2>
                 <div className="hairline mt-5 w-12" />
-                <p className="mt-5 flex-1 text-sm leading-[1.8] text-muted-foreground">
+                <p className="mt-5 flex-1 text-sm leading-[1.8] text-muted-foreground rtl:text-[0.9375rem]">
                   {t(`services.${product.key}.desc`)}
                 </p>
               </div>

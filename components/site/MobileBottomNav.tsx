@@ -27,7 +27,9 @@ export function MobileBottomNav() {
             className="flex flex-col items-center justify-center gap-1 py-3 text-muted-foreground"
           >
             <Icon className="h-4 w-4" />
-            <span className="text-[0.55rem] tracking-[0.14em] uppercase">{t(key)}</span>
+            <span className="text-[0.55rem] tracking-[0.14em] uppercase rtl:text-[0.65rem] rtl:tracking-normal rtl:normal-case">
+              {t(key)}
+            </span>
           </a>
         ))}
         <a

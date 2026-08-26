@@ -45,20 +45,20 @@ export function ContactPage() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex w-full items-center justify-center gap-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90 rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto"
                 >
                   <MessageCircle className="h-4 w-4" />
                   {t("cta.whatsapp")}
                 </a>
                 <Link
                   href="/#contact"
-                  className="inline-flex w-full items-center justify-center border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground sm:w-auto"
+                  className="inline-flex w-full items-center justify-center border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto"
                 >
                   {t("cta.partner")}
                 </Link>
               </div>
             </div>
-            <div className="mt-10 grid gap-3 text-xs tracking-[0.12em] text-primary-foreground/70">
+            <div className="mt-10 grid gap-3 text-xs tracking-[0.12em] text-primary-foreground/70 rtl:text-[0.8125rem] rtl:tracking-normal">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -100,7 +100,7 @@ export function ContactPage() {
               <div key={field.id} className="grid gap-2">
                 <label
                   htmlFor={`contact-${field.id}`}
-                  className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70"
+                  className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
                 >
                   {t(field.label)}
                 </label>
@@ -109,14 +109,14 @@ export function ContactPage() {
                   name={field.id}
                   type={field.type}
                   required
-                  className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none transition-colors focus:border-accent"
+                  className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none transition-colors focus:border-accent rtl:text-[0.9375rem]"
                 />
               </div>
             ))}
             <div className="grid gap-2">
               <label
                 htmlFor="contact-message"
-                className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70"
+                className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
               >
                 {t("form.message")}
               </label>
@@ -124,12 +124,12 @@ export function ContactPage() {
                 id="contact-message"
                 name="message"
                 rows={3}
-                className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none transition-colors focus:border-accent"
+                className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none transition-colors focus:border-accent rtl:text-[0.9375rem]"
               />
             </div>
             <button
               type="submit"
-              className="mt-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90"
+              className="mt-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90 rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("form.submit")}
             </button>

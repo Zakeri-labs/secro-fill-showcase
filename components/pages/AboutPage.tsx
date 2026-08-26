@@ -46,11 +46,11 @@ export function AboutPage() {
               <div className="grid h-16 w-16 place-items-center border border-accent/70 text-primary">
                 <Icon className="h-7 w-7" strokeWidth={1.35} />
               </div>
-              <h2 className="mt-8 max-w-[15rem] text-2xl leading-tight text-primary">
+              <h2 className="mt-8 max-w-[15rem] text-2xl leading-tight text-primary rtl:text-[1.625rem]">
                 {t(`about.${key}.title`)}
               </h2>
               <div className="hairline mt-5 w-12" />
-              <p className="mt-5 text-sm leading-[1.8] text-muted-foreground">
+              <p className="mt-5 text-sm leading-[1.8] text-muted-foreground rtl:text-[0.9375rem]">
                 {t(`about.${key}.desc`)}
               </p>
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1 bg-accent" />

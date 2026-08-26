@@ -77,9 +77,13 @@ function SectionHead({
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       <DecoratedEyebrow text={eyebrow} center={center} />
-      <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
+      <h2 className="mt-4 text-3xl leading-tight rtl:text-[2.125rem] sm:text-4xl sm:rtl:text-[2.625rem] lg:text-5xl lg:rtl:text-[3.25rem]">
+        {title}
+      </h2>
       {sub && (
-        <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{sub}</p>
+        <p className="mt-5 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
+          {sub}
+        </p>
       )}
     </div>
   );
@@ -141,11 +145,7 @@ function Hero() {
             aria-hidden="true"
             className={`hairline mt-3 w-12 sm:mt-4 sm:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
-          <h1
-            className={`mt-5 text-[1.62rem] leading-[1.08] sm:mt-6 ${
-              isRtl ? "sm:text-5xl lg:text-[3.5rem] xl:text-6xl" : "sm:text-6xl lg:text-7xl"
-            }`}
-          >
+          <h1 className="mt-5 text-[1.62rem] leading-[1.08] rtl:text-[2rem] sm:mt-6 sm:text-6xl sm:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
               englishTitleParts.map((part, index) => (
                 <span
@@ -165,7 +165,7 @@ function Hero() {
             )}
           </h1>
           <p
-            className={`mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 sm:mt-6 sm:text-base sm:leading-relaxed ${
+            className={`mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 rtl:text-[0.8125rem] sm:mt-6 sm:text-base sm:leading-relaxed sm:rtl:text-[1.0625rem] ${
               isRtl ? "sm:max-w-none" : "sm:max-w-xl"
             }`}
           >
@@ -178,14 +178,14 @@ function Hero() {
           >
             <a
               href="#contact"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em]"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-[0.625rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em] sm:rtl:text-xs"
             >
               {t("hero.cta1")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
               href="#services"
-              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em]"
+              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 rtl:text-[0.625rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em] sm:rtl:text-xs"
             >
               {t("hero.cta2")}
             </a>
@@ -207,7 +207,7 @@ function TrustBar() {
         <div className="animate-marquee flex shrink-0 items-center gap-12 pe-12 whitespace-nowrap">
           {loop.map((k, i) => (
             <span key={i} className="flex items-center gap-12">
-              <span className="text-[0.68rem] tracking-[0.28em] uppercase text-muted-foreground">
+              <span className="text-[0.68rem] tracking-[0.28em] uppercase text-muted-foreground rtl:text-xs rtl:tracking-[0.04em] rtl:normal-case">
                 {t(k)}
               </span>
               <span aria-hidden="true" className="h-1 w-1 rounded-full bg-accent" />
@@ -266,14 +266,14 @@ function Services() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-7">
-                  <h3 className="text-xl">{t(p.name)}</h3>
+                  <h3 className="text-xl rtl:text-[1.375rem]">{t(p.name)}</h3>
                   <div className="product-card-divider-gold mt-4 w-2/3" />
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
                     {t(p.desc)}
                   </p>
                   <a
                     href="#contact"
-                    className="mt-7 inline-flex items-center gap-2 self-start border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary"
+                    className="mt-7 inline-flex items-center gap-2 self-start border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
                   >
                     {t("services.cta")}
                     <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
@@ -314,10 +314,10 @@ function About() {
         <Reveal>
           <div className="max-w-2xl">
             <DecoratedEyebrow text={t("about.eyebrow")} className="text-accent" dark />
-            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight rtl:text-[2.125rem] sm:text-4xl sm:rtl:text-[2.625rem] lg:text-5xl lg:rtl:text-[3.25rem]">
               {t("about.title")}
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75 sm:text-base">
+            <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75 rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
               {t("about.sub")}
             </p>
           </div>
@@ -332,9 +332,11 @@ function About() {
                 <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-accent/80 text-accent">
                   <Icon className="h-9 w-9" strokeWidth={1.25} />
                 </div>
-                <h3 className="mt-5 text-xl text-primary-foreground">{t(`about.${key}.title`)}</h3>
+                <h3 className="mt-5 text-xl text-primary-foreground rtl:text-[1.375rem]">
+                  {t(`about.${key}.title`)}
+                </h3>
                 <div className="hairline mt-3 w-12" />
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-primary-foreground/80">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-primary-foreground/80 rtl:text-[0.9375rem]">
                   {t(`about.${key}.desc`)}
                 </p>
                 <div
@@ -446,16 +448,16 @@ function BeforeAfterCard({
           </span>
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between p-4">
-          <span className="rounded-full bg-primary/80 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-white backdrop-blur-sm">
+          <span className="rounded-full bg-primary/80 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-white backdrop-blur-sm rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
             {t("portfolio.before")}
           </span>
-          <span className="rounded-full bg-accent/90 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-accent-foreground backdrop-blur-sm">
+          <span className="rounded-full bg-accent/90 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-accent-foreground backdrop-blur-sm rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
             {t("portfolio.after")}
           </span>
         </div>
       </div>
       <figcaption className="p-6">
-        <h3 className="text-xl">{title}</h3>
+        <h3 className="text-xl rtl:text-[1.375rem]">{title}</h3>
       </figcaption>
     </figure>
   );
@@ -526,8 +528,8 @@ function Process() {
                   </span>
                   <span className="hairline hidden flex-1 opacity-60 md:block" />
                 </div>
-                <h3 className="mt-6 text-xl">{t(`process.${s}.title`)}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="mt-6 text-xl rtl:text-[1.375rem]">{t(`process.${s}.title`)}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
                   {t(`process.${s}.desc`)}
                 </p>
               </li>
@@ -572,10 +574,10 @@ function Testimonials() {
               className="absolute -end-2 top-5 hidden h-16 w-16 rotate-180 text-gold-deep/10 lg:block"
             />
             <DecoratedEyebrow text={t("testi.eyebrow")} className="text-gold-deep" center />
-            <h2 className="mt-5 text-4xl leading-tight text-primary sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 text-4xl leading-tight text-primary rtl:text-[2.5rem] sm:text-5xl sm:rtl:text-[3.25rem] lg:text-6xl lg:rtl:text-[4rem]">
               {t("testi.title")}
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
               {t("testi.sub")}
             </p>
           </div>
@@ -589,11 +591,11 @@ function Testimonials() {
                   aria-hidden="true"
                   className="absolute end-8 top-8 h-12 w-12 rotate-180 text-gold-deep/10"
                 />
-                <p className="mt-8 flex-1 text-base leading-[1.9] text-foreground sm:text-[1.05rem]">
+                <p className="mt-8 flex-1 text-base leading-[1.9] text-foreground rtl:text-[1.0625rem] sm:text-[1.05rem] sm:rtl:text-lg">
                   {t(it.q)}
                 </p>
                 <div className="hairline mt-8 w-14" />
-                <footer className="mt-6 flex items-center gap-4 text-[0.65rem] tracking-[0.2em] uppercase text-primary">
+                <footer className="mt-6 flex items-center gap-4 text-[0.65rem] tracking-[0.2em] uppercase text-primary rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
                   <Image
                     src={it.avatar}
                     alt={t(it.r)}
@@ -625,17 +627,17 @@ function FinalCta() {
         <Reveal>
           <div>
             <DecoratedEyebrow text={t("contact.eyebrow")} className="text-accent" dark />
-            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight rtl:text-[2.125rem] sm:text-4xl sm:rtl:text-[2.625rem] lg:text-5xl lg:rtl:text-[3.25rem]">
               {t("contact.title")}
             </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-primary-foreground/75 sm:text-base">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-primary-foreground/75 rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
               {t("contact.sub")}
             </p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-10 inline-flex items-center gap-3 rounded-full border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="mt-10 inline-flex items-center gap-3 rounded-full border border-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent transition-colors hover:bg-accent hover:text-accent-foreground rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case"
             >
               <MessageCircle className="h-4 w-4" />
               {t("cta.whatsapp")}
@@ -673,7 +675,7 @@ function FinalCta() {
               <div key={f.id} className="grid gap-2">
                 <label
                   htmlFor={f.id}
-                  className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70"
+                  className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
                 >
                   {t(f.label)}
                 </label>
@@ -682,14 +684,14 @@ function FinalCta() {
                   name={f.id}
                   type={f.type}
                   required
-                  className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none focus:border-accent"
+                  className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none focus:border-accent rtl:text-[0.9375rem]"
                 />
               </div>
             ))}
             <div className="grid gap-2">
               <label
                 htmlFor="message"
-                className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70"
+                className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/70 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
               >
                 {t("form.message")}
               </label>
@@ -697,12 +699,12 @@ function FinalCta() {
                 id="message"
                 name="message"
                 rows={3}
-                className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none focus:border-accent"
+                className="border-b border-primary-foreground/25 bg-transparent py-2.5 text-sm text-primary-foreground outline-none focus:border-accent rtl:text-[0.9375rem]"
               />
             </div>
             <button
               type="submit"
-              className="mt-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90"
+              className="mt-3 bg-accent px-7 py-4 text-[0.7rem] tracking-[0.2em] uppercase text-accent-foreground transition-opacity hover:opacity-90 rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("form.submit")}
             </button>

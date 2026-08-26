@@ -41,10 +41,10 @@ export function PageShell({
             <header className="max-w-2xl">
               <p className="eyebrow text-primary">{eyebrow}</p>
               <div className="hairline mt-4 w-14" />
-              <h1 className="mt-6 text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-4xl leading-[1.05] text-primary rtl:text-[2.5rem] sm:text-5xl sm:rtl:text-[3.25rem] lg:text-6xl lg:rtl:text-[4rem]">
                 {title}
               </h1>
-              <p className="mt-6 max-w-xl text-sm leading-[1.8] text-muted-foreground sm:text-base sm:leading-[1.85]">
+              <p className="mt-6 max-w-xl text-sm leading-[1.8] text-muted-foreground rtl:text-[0.9375rem] sm:text-base sm:leading-[1.85] sm:rtl:text-[1.0625rem]">
                 {body}
               </p>
             </header>
@@ -57,7 +57,7 @@ export function PageShell({
             {children}
             <Link
               href="/"
-              className="mt-16 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep lg:mt-20"
+              className="mt-16 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case lg:mt-20"
             >
               <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" />
               {t("page.back")}
