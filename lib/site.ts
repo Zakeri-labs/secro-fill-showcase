@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 
 export const SITE_NAME = "SECRO-FILL";
-export const SITE_URL = new URL(process.env["NEXT_PUBLIC_SITE_URL"] ?? "http://localhost:3000");
+export const SITE_URL = new URL(process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://www.secrofill.com");
+
+const socialImageUrl = new URL("/secro-fill-social-card.jpg?v=20260827", SITE_URL).toString();
 
 export const SOCIAL_IMAGE = {
-  url: "/secro-fill-social-card.jpg",
+  url: socialImageUrl,
+  secureUrl: socialImageUrl,
   width: 1200,
   height: 630,
   type: "image/jpeg",
