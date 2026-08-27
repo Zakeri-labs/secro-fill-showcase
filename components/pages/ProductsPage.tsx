@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 
-import bodyImg from "@/assets/product-body.jpg";
+import bodyImg from "@/assets/body-filler-2x50ml.jpg";
 import deep10Img from "@/assets/product-deep-10ml.jpg";
-import deep3xImg from "@/assets/product-deep-3x.jpg";
-import productDetailImg from "@/assets/product-80 mg.jpg";
+import deep3xImg from "@/assets/product-deep-3x3.2ml.jpg";
+import productDetailImg from "@/assets/product-Secro-marvel.png";
 import { ProductShowcase, type ProductShowcaseItem } from "@/components/products/ProductShowcase";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";

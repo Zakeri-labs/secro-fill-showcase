@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import heroImg from "@/assets/Hero-image-Web.webp";
+import heroImg from "@/assets/Hero-image-Web.jpg";
 import { PageShell } from "@/components/site/PageShell";
 import { COMPANY_ADDRESS, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/company";
 import { useI18n } from "@/lib/i18n";

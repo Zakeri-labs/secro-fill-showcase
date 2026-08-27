@@ -307,7 +307,7 @@ function Services() {
                       alt={t(product.alt)}
                       fill
                       loading="eager"
-                      unoptimized={product.unoptimized}
+                      unoptimized={product.unoptimized ?? false}
                       sizes="(min-width: 1024px) 27vw, (min-width: 768px) 30vw, 92vw"
                       className={`object-contain ${product.imageClassName} ${product.shadowClassName}`}
                     />
