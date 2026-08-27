@@ -10,7 +10,7 @@ import { useI18n } from "@/lib/i18n";
 
 const links = [
   { key: "nav.home", href: "/#top" },
-  { key: "nav.products", href: "/products" },
+  { key: "nav.products", href: "/#products" },
   { key: "nav.portfolio", href: "/#portfolio" },
   { key: "nav.testimonials", href: "/#testimonials" },
   { key: "nav.about", href: "/about" },

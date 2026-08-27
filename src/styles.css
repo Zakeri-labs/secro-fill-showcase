@@ -232,48 +232,6 @@
   }
 }
 
-.product-shadow-deep-3x {
-  filter: drop-shadow(3px 14px 23px rgb(86 72 57 / 0.14));
-}
-
-.product-shadow-deep-10 {
-  filter: drop-shadow(4px 16px 27px rgb(82 69 55 / 0.15));
-}
-
-.product-shadow-body {
-  filter: drop-shadow(3px 13px 24px rgb(96 78 54 / 0.13));
-}
-
-.product-shadow-marvel {
-  filter: drop-shadow(4px 14px 24px rgb(77 80 120 / 0.15));
-}
-
-.product-shadow-hyac {
-  filter: drop-shadow(5px 17px 29px rgb(75 63 51 / 0.16));
-}
-
-@media (min-width: 40rem) {
-  .product-shadow-deep-3x {
-    filter: drop-shadow(5px 19px 31px rgb(86 72 57 / 0.16));
-  }
-
-  .product-shadow-deep-10 {
-    filter: drop-shadow(7px 21px 35px rgb(82 69 55 / 0.17));
-  }
-
-  .product-shadow-body {
-    filter: drop-shadow(5px 18px 33px rgb(96 78 54 / 0.145));
-  }
-
-  .product-shadow-marvel {
-    filter: drop-shadow(6px 19px 33px rgb(77 80 120 / 0.17));
-  }
-
-  .product-shadow-hyac {
-    filter: drop-shadow(8px 23px 38px rgb(75 63 51 / 0.18));
-  }
-}
-
 @utility gold-border-panel {
   border: 1.5px solid transparent;
   border-image: linear-gradient(
