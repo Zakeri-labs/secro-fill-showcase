@@ -292,12 +292,12 @@ function Services() {
                 <div className="relative h-72 w-full max-w-md overflow-hidden sm:h-80 md:h-72 lg:h-84">
                   <Reveal
                     once
-                    delay={250 + (lang === "ar" ? products.length - 1 - index : index) * 800}
-                    distance={140}
-                    scale={0.96}
-                    duration={1200}
-                    threshold={0.9}
-                    rootMargin="0px"
+                    delay={100 + (lang === "ar" ? products.length - 1 - index : index) * 140}
+                    distance={72}
+                    scale={0.98}
+                    duration={800}
+                    threshold={0.2}
+                    rootMargin="0px 0px 12% 0px"
                     trigger="closest-article"
                     fitThresholdToViewport
                     className="absolute inset-3 sm:inset-4"
