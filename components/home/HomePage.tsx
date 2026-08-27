@@ -136,7 +136,7 @@ function Hero() {
           className={`mobile-hero-copy animate-rise ${
             isRtl
               ? "mr-auto ml-0 w-[46%] max-w-[12rem] text-right [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
-              : "w-[46%] max-w-[12rem] [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
+              : "w-[85%] max-w-[18rem] [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
           }`}
         >
           <p className="mobile-hero-eyebrow eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
