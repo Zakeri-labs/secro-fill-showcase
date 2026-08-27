@@ -26,7 +26,7 @@ export function ShareLinks() {
   };
 
   return (
-    <div className="mt-8">
+    <div>
       <p className="text-[0.62rem] tracking-[0.22em] uppercase text-primary-foreground/60 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
         {t("share.title")}
       </p>
