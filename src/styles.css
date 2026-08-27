@@ -232,13 +232,37 @@
   }
 }
 
-.collection-product-shadow {
-  filter: drop-shadow(2px 13px 19px rgb(83 71 57 / 0.13));
+.product-shadow-deep-3x {
+  filter: drop-shadow(3px 14px 23px rgb(86 72 57 / 0.14));
+}
+
+.product-shadow-deep-10 {
+  filter: drop-shadow(4px 16px 27px rgb(82 69 55 / 0.15));
+}
+
+.product-shadow-body {
+  filter: drop-shadow(3px 13px 24px rgb(96 78 54 / 0.13));
+}
+
+.product-shadow-hyac {
+  filter: drop-shadow(5px 17px 29px rgb(75 63 51 / 0.16));
 }
 
 @media (min-width: 40rem) {
-  .collection-product-shadow {
-    filter: drop-shadow(4px 18px 27px rgb(83 71 57 / 0.15));
+  .product-shadow-deep-3x {
+    filter: drop-shadow(5px 19px 31px rgb(86 72 57 / 0.16));
+  }
+
+  .product-shadow-deep-10 {
+    filter: drop-shadow(7px 21px 35px rgb(82 69 55 / 0.17));
+  }
+
+  .product-shadow-body {
+    filter: drop-shadow(5px 18px 33px rgb(96 78 54 / 0.145));
+  }
+
+  .product-shadow-hyac {
+    filter: drop-shadow(8px 23px 38px rgb(75 63 51 / 0.18));
   }
 }
 

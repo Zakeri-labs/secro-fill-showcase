@@ -243,7 +243,7 @@ function ProductLineHeading({ children }: { children: string }) {
 }
 
 function Services() {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
   const products = [
     {
       img: deep3xImg,
@@ -251,6 +251,7 @@ function Services() {
       desc: "services.p2.desc",
       alt: "services.p2.alt",
       imageClassName: "scale-[0.98]",
+      shadowClassName: "product-shadow-deep-3x",
     },
     {
       img: deep10Img,
@@ -258,6 +259,7 @@ function Services() {
       desc: "services.p1.desc",
       alt: "services.p1.alt",
       imageClassName: "scale-[1.05]",
+      shadowClassName: "product-shadow-deep-10",
     },
     {
       img: bodyFillerImg,
@@ -265,6 +267,7 @@ function Services() {
       desc: "services.p3.desc",
       alt: "services.p3.alt",
       imageClassName: "scale-[0.94]",
+      shadowClassName: "product-shadow-body",
       unoptimized: true,
     },
   ];
@@ -290,11 +293,11 @@ function Services() {
                 <div className="relative h-72 w-full max-w-md overflow-hidden sm:h-80 md:h-72 lg:h-84">
                   <Reveal
                     once
-                    delay={index * 140}
-                    distance={90}
+                    delay={250 + (lang === "ar" ? products.length - 1 - index : index) * 800}
+                    distance={140}
                     scale={0.96}
-                    duration={1150}
-                    threshold={0.72}
+                    duration={1200}
+                    threshold={0.9}
                     rootMargin="0px"
                     trigger="closest-article"
                     fitThresholdToViewport
@@ -307,7 +310,7 @@ function Services() {
                       loading="eager"
                       unoptimized={product.unoptimized}
                       sizes="(min-width: 1024px) 27vw, (min-width: 768px) 30vw, 92vw"
-                      className={`collection-product-shadow object-contain ${product.imageClassName}`}
+                      className={`object-contain ${product.imageClassName} ${product.shadowClassName}`}
                     />
                   </Reveal>
                 </div>
@@ -338,10 +341,11 @@ function Services() {
             <div className="relative h-72 w-full overflow-hidden sm:h-96 lg:h-[30rem]">
               <Reveal
                 once
-                distance={90}
+                delay={250}
+                distance={140}
                 scale={0.96}
-                duration={1150}
-                threshold={0.72}
+                duration={1200}
+                threshold={0.9}
                 rootMargin="0px"
                 trigger="closest-article"
                 fitThresholdToViewport
@@ -353,7 +357,7 @@ function Services() {
                   fill
                   unoptimized
                   sizes="(min-width: 1024px) 60rem, (min-width: 640px) 85vw, 94vw"
-                  className="collection-product-shadow scale-[1.03] object-contain"
+                  className="product-shadow-hyac scale-[1.03] object-contain"
                 />
               </Reveal>
             </div>
