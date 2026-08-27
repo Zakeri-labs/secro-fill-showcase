@@ -34,7 +34,7 @@ const en: Dict = {
   "cta.whatsapp": "Chat on WhatsApp",
 
   "hero.eyebrow": "Engineered in Germany",
-  "hero.title": "The Science of Refined Beauty",
+  "hero.title": "Luxury Beauty, Safe Injection",
   "hero.sub":
     "SECRO-FILL develops premium dermal fillers for clinics, physicians and distributors who accept nothing less than German precision.",
   "hero.cta1": "Request Partnership",

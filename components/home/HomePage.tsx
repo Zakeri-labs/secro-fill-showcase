@@ -252,6 +252,8 @@ function Services() {
       alt: "services.p2.alt",
       imageClassName: "scale-[0.98]",
       shadowClassName: "product-shadow-deep-3x",
+      pdfHref: "/downloads/secro-fill-deep-3x3.2ml.pdf",
+      downloadName: "SECRO-FILL-DEEP-3x3.2ml.pdf",
     },
     {
       img: deep10Img,
@@ -260,6 +262,8 @@ function Services() {
       alt: "services.p1.alt",
       imageClassName: "scale-[1.05]",
       shadowClassName: "product-shadow-deep-10",
+      pdfHref: "/downloads/secro-fill-deep-10ml.pdf",
+      downloadName: "SECRO-FILL-DEEP-10ml.pdf",
     },
     {
       img: bodyFillerImg,
@@ -268,6 +272,8 @@ function Services() {
       alt: "services.p3.alt",
       imageClassName: "scale-[0.94]",
       shadowClassName: "product-shadow-body",
+      pdfHref: "/downloads/secro-fill-body.pdf",
+      downloadName: "SECRO-FILL-BODY.pdf",
       unoptimized: true,
     },
   ];
@@ -323,7 +329,8 @@ function Services() {
                   {t(product.desc)}
                 </p>
                 <a
-                  href="#contact"
+                  href={product.pdfHref}
+                  download={product.downloadName}
                   className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
                 >
                   {t("services.cta")}
@@ -370,7 +377,8 @@ function Services() {
               {t("services.hyac.desc")}
             </p>
             <a
-              href="#contact"
+              href="/downloads/hyac-lift-16-chac.pdf"
+              download="HYAC-LIFT-16-CHAC.pdf"
               className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
             >
               {t("services.cta")}
