@@ -379,19 +379,19 @@
 
 @media (min-height: 651px) and (max-width: 767px) and (orientation: portrait) {
   .mobile-hero-section {
-    height: min(100svh, 37.5rem);
-    min-height: 0;
+    height: 100svh;
+    min-height: 52rem;
   }
 
   .mobile-hero-picture {
     top: 0;
-    bottom: 0;
+    bottom: 3.75rem;
     height: auto;
   }
 
   .mobile-hero-picture img {
     object-fit: cover;
-    object-position: right center;
+    object-position: 80% center;
   }
 
   .mobile-hero-frame {
@@ -404,9 +404,27 @@
     max-width: 10.5rem;
   }
 
+  .mobile-hero-eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .mobile-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .mobile-hero-description {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+  }
+
   .mobile-hero-actions {
+    margin-top: 3.25rem;
     width: 100%;
     max-width: none;
+  }
+
+  .mobile-hero-actions a {
+    font-size: 0.67rem;
   }
 }
 

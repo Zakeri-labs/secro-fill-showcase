@@ -14,6 +14,7 @@ import {
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
 import heroImg from "@/assets/Hero-image-Web.jpg";
+import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
@@ -101,7 +102,6 @@ function Hero() {
   const goldStart = title.lastIndexOf(goldPhrase);
   const titleBeforeGold = goldStart >= 0 ? title.slice(0, goldStart) : title;
   const titleGold = goldStart >= 0 ? title.slice(goldStart) : "";
-  const englishTitleParts = title.split(/(Science|Beauty)/g);
 
   return (
     <section
@@ -115,7 +115,7 @@ function Hero() {
               ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
               : "(max-width: 639px)"
           }
-          srcSet={heroImg.src}
+          srcSet={mobileHeroImg.src}
         />
         <Image
           src={heroImg}
@@ -138,27 +138,21 @@ function Hero() {
               : "w-[46%] max-w-[12rem] [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
           }`}
         >
-          <p className="eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
+          <p className="mobile-hero-eyebrow eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
             {t("hero.eyebrow")}
           </p>
           <div
             aria-hidden="true"
             className={`hairline mt-2.5 w-12 [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
-          <h1 className="mt-4 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
+          <h1 className="mobile-hero-title mt-4 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
-              englishTitleParts.map((part, index) => (
-                <span
-                  key={`${part}-${index}`}
-                  className={
-                    part === "Science" || part === "Beauty"
-                      ? "text-gold-soft"
-                      : "text-primary-foreground"
-                  }
-                >
-                  {part}
-                </span>
-              ))
+              <>
+                <span className="text-primary-foreground">Luxury </span>
+                <span className="text-gold-soft">Beauty,</span>
+                <br className="md:hidden" />
+                <span className="text-primary-foreground"> Safe Injection</span>
+              </>
             ) : (
               <>
                 <span className="text-primary-foreground">{titleBeforeGold}</span>
@@ -167,7 +161,7 @@ function Hero() {
             )}
           </h1>
           <p
-            className={`mt-4 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
+            className={`mobile-hero-description mt-4 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
               isRtl ? "md:max-w-none" : "md:max-w-xl"
             }`}
           >
