@@ -12,7 +12,7 @@ import { ShareLinks } from "./ShareLinks";
 
 const footerLinks = [
   { to: "/about", key: "nav.about" },
-  { to: "/services", key: "nav.services" },
+  { to: "/products", key: "nav.products" },
   { to: "/contact", key: "nav.contact" },
 ] as const;
 
@@ -104,7 +104,9 @@ export function Footer() {
               className="h-3 w-3 shrink-0 text-accent"
               strokeWidth={1.5}
             />
-            <span>© {new Date().getFullYear()} SECRO-FILL — {t("footer.rights")}</span>
+            <span>
+              © {new Date().getFullYear()} SECRO-FILL — {t("footer.rights")}
+            </span>
             <Sparkles
               aria-hidden="true"
               className="h-3 w-3 shrink-0 text-accent"

@@ -184,7 +184,7 @@ function Hero() {
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
-              href="#services"
+              href="#products"
               className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 rtl:text-[0.625rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em] sm:rtl:text-xs"
             >
               {t("hero.cta2")}
@@ -243,7 +243,7 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="px-5 py-24 lg:px-10 lg:py-32">
+    <section id="products" className="px-5 py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead

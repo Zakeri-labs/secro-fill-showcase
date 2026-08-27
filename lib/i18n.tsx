@@ -10,6 +10,8 @@ import {
   type ReactNode,
 } from "react";
 
+import { pageDictionaries } from "@/lib/i18n-page-content";
+
 export type Lang = "en" | "de" | "ar";
 
 export const LANGS: { code: Lang; label: string; short: string }[] = [
@@ -21,10 +23,10 @@ export const LANGS: { code: Lang; label: string; short: string }[] = [
 type Dict = Record<string, string>;
 
 const en: Dict = {
+  ...pageDictionaries.en,
   "brand.tag": "German Medical Aesthetics",
   "nav.home": "Home",
   "nav.about": "About",
-  "nav.services": "Services",
   "nav.portfolio": "Portfolio",
   "nav.testimonials": "Testimonials",
   "nav.contact": "Contact",
@@ -144,10 +146,10 @@ const en: Dict = {
 };
 
 const ar: Dict = {
+  ...pageDictionaries.ar,
   "brand.tag": "تجميل طبي ألماني",
   "nav.home": "الرئيسية",
   "nav.about": "من نحن",
-  "nav.services": "الخدمات",
   "nav.portfolio": "الأعمال",
   "nav.testimonials": "الشهادات",
   "nav.contact": "اتصل بنا",
@@ -253,10 +255,10 @@ const ar: Dict = {
 };
 
 const de: Dict = {
+  ...pageDictionaries.de,
   "brand.tag": "Deutsche Medizinästhetik",
   "nav.home": "Startseite",
   "nav.about": "Über uns",
-  "nav.services": "Leistungen",
   "nav.portfolio": "Portfolio",
   "nav.testimonials": "Referenzen",
   "nav.contact": "Kontakt",

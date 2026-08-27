@@ -10,10 +10,10 @@ import { useI18n } from "@/lib/i18n";
 
 const links = [
   { key: "nav.home", href: "/#top" },
-  { key: "nav.about", href: "/#about" },
-  { key: "nav.services", href: "/#services" },
+  { key: "nav.products", href: "/products" },
   { key: "nav.portfolio", href: "/#portfolio" },
   { key: "nav.testimonials", href: "/#testimonials" },
+  { key: "nav.about", href: "/about" },
   { key: "nav.contact", href: "/#contact" },
 ];
 
@@ -46,7 +46,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
         </Link>
 
         <div className="flex items-center justify-end gap-4 xl:contents">
-          <nav className="hidden items-center justify-center gap-6 xl:flex" aria-label="Main">
+          <nav className="hidden items-center justify-center gap-5 xl:flex" aria-label="Main">
             {links.map((l) => (
               <a
                 key={l.key}

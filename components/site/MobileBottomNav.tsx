@@ -9,7 +9,7 @@ export function MobileBottomNav() {
   const { t } = useI18n();
 
   const items = [
-    { href: "/#services", key: "nav.services", Icon: Package },
+    { href: "/products", key: "nav.products", Icon: Package },
     { href: "/#portfolio", key: "nav.portfolio", Icon: Sparkles },
     { href: "/#contact", key: "nav.contact", Icon: Phone },
   ];
