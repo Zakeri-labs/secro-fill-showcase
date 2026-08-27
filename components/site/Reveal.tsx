@@ -13,6 +13,7 @@ export function Reveal({
   rootMargin = "-12% 0px -12% 0px",
   trigger = "self",
   fitThresholdToViewport = false,
+  replayOnDesktop = false,
   className = "",
 }: {
   children: ReactNode;
@@ -25,6 +26,7 @@ export function Reveal({
   rootMargin?: string;
   trigger?: "self" | "closest-article";
   fitThresholdToViewport?: boolean;
+  replayOnDesktop?: boolean;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -53,9 +55,15 @@ export function Reveal({
     const io = new IntersectionObserver(
       (entries) => {
         const isIntersecting = entries[0]?.isIntersecting ?? false;
-        setShown(isIntersecting);
+        const shouldReplay = replayOnDesktop && window.matchMedia("(min-width: 64rem)").matches;
 
-        if (isIntersecting && once) {
+        if (isIntersecting) {
+          setShown(true);
+        } else if (shouldReplay) {
+          setShown(false);
+        }
+
+        if (isIntersecting && once && !replayOnDesktop) {
           io.disconnect();
         }
       },
@@ -66,7 +74,7 @@ export function Reveal({
     );
     io.observe(observedElement);
     return () => io.disconnect();
-  }, [fitThresholdToViewport, once, rootMargin, threshold, trigger]);
+  }, [fitThresholdToViewport, once, replayOnDesktop, rootMargin, threshold, trigger]);
 
   return (
     <div

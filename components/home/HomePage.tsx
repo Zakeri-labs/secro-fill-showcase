@@ -282,7 +282,7 @@ function Services() {
   ];
 
   return (
-    <section id="products" className="overflow-hidden bg-secondary/35 px-5 py-24 lg:px-10 lg:py-32">
+    <section id="products" className="overflow-hidden bg-secondary/35 px-5 py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHead
           eyebrow={t("services.eyebrow")}
@@ -290,10 +290,10 @@ function Services() {
           sub={t("services.sub")}
         />
 
-        <div className="mt-16 sm:mt-20">
+        <div className="mt-12 sm:mt-14">
           <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
 
-          <div className="mt-10 grid gap-x-7 gap-y-14 sm:grid-cols-2 md:mt-12 lg:grid-cols-4 lg:gap-x-8">
+          <div className="mt-8 grid gap-x-7 gap-y-12 sm:grid-cols-2 md:mt-10 lg:grid-cols-4 lg:gap-x-8">
             {products.map((product, index) => (
               <article
                 key={product.name}
@@ -302,6 +302,7 @@ function Services() {
                 <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
                   <Reveal
                     once
+                    replayOnDesktop
                     delay={100 + (lang === "ar" ? products.length - 1 - index : index) * 140}
                     distance={72}
                     scale={0.98}
@@ -344,39 +345,40 @@ function Services() {
           </div>
         </div>
 
-        <div className="mt-24 sm:mt-28 lg:mt-32">
+        <div className="mt-16 sm:mt-18 lg:mt-20">
           <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
 
-          <article className="mx-auto mt-10 flex max-w-4xl flex-col items-center text-center sm:mt-12">
-            <div className="relative h-72 w-full overflow-hidden sm:h-96 lg:h-[30rem]">
+          <article className="mx-auto mt-8 flex w-full flex-col items-center text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/4)]">
+            <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
               <Reveal
                 once
-                delay={250}
-                distance={140}
-                scale={0.96}
-                duration={1200}
-                threshold={0.9}
-                rootMargin="0px"
+                replayOnDesktop
+                delay={100}
+                distance={72}
+                scale={0.98}
+                duration={800}
+                threshold={0.2}
+                rootMargin="0px 0px 12% 0px"
                 trigger="closest-article"
                 fitThresholdToViewport
-                className="absolute inset-3 sm:inset-5"
+                className="absolute inset-3 sm:inset-4"
               >
                 <Image
                   src={hyacLiftImg.src.replaceAll("%", "%25")}
                   alt={t("services.hyac.alt")}
                   fill
                   unoptimized
-                  sizes="(min-width: 1024px) 60rem, (min-width: 640px) 85vw, 94vw"
+                  sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
                   className="product-shadow-hyac scale-[1.03] object-contain"
                 />
               </Reveal>
             </div>
 
-            <h4 className="mt-5 text-2xl leading-tight text-primary rtl:text-[1.625rem] sm:text-3xl sm:rtl:text-[2rem]">
+            <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
               {t("services.hyac.name")}
             </h4>
             <span aria-hidden="true" className="hairline mt-4 w-12" />
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
+            <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
               {t("services.hyac.desc")}
             </p>
             <a

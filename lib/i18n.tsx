@@ -74,18 +74,18 @@ const en: Dict = {
   "services.cta": "Request Details",
 
   "about.eyebrow": "Positioning",
-  "about.title": "German Innovation, Global Aesthetics",
+  "about.title": "Innovation, Quality & Expertise",
   "about.sub":
-    "SECRO-FILL exists at the intersection of laboratory science and aesthetic artistry, supplying professionals in over 20 markets.",
-  "about.c1.title": "Scientific Innovation",
+    "For more than a decade, we have developed and manufactured high-quality products for the global medical aesthetics industry — including advanced dermal fillers, skin boosters, and skin, hair and aesthetic care solutions — supplied to markets worldwide and trusted by physicians, aesthetic practitioners and professionals internationally.",
+  "about.c1.title": "Research & Development",
   "about.c1.desc":
-    "Proprietary cross-linking research delivers stable, highly purified hyaluronic acid gels with predictable clinical behaviour.",
+    "Our R&D team continuously explores new technologies, ingredients, formulations and scientific advancements in skin, hair and medical aesthetics — introducing the next generation of products through careful research and rigorous scientific testing.",
   "about.c2.title": "Advanced Manufacturing",
   "about.c2.desc":
-    "Produced in certified German facilities under strict quality control, batch traceability and sterile processing standards.",
-  "about.c3.title": "Global Aesthetic Solutions",
+    "Built on experienced specialists, advanced manufacturing technologies and state-of-the-art production equipment, upholding high manufacturing standards to deliver reliable, innovative solutions.",
+  "about.c3.title": "Global Vision",
   "about.c3.desc":
-    "A partnership model built for clinics, physicians and distributors, with training, documentation and dependable supply.",
+    "Our vision is to expand our presence in the international aesthetics market with products that meet the highest expectations of professionals worldwide — over 10 years of expertise, advanced technology and continuous innovation.",
 
   "portfolio.eyebrow": "Work Proof",
   "portfolio.title": "Before & After Gallery",
@@ -207,16 +207,18 @@ const ar: Dict = {
   "services.cta": "اطلب التفاصيل",
 
   "about.eyebrow": "التوجه",
-  "about.title": "ابتكار ألماني، جمال عالمي",
+  "about.title": "الابتكار والجودة والخبرة",
   "about.sub":
-    "تقف SECRO-FILL عند تقاطع علوم المختبر وفن التجميل، وتخدم المحترفين في أكثر من ٢٠ سوقاً.",
-  "about.c1.title": "الابتكار العلمي",
-  "about.c1.desc": "أبحاث تشابك خاصة تنتج جل حمض هيالورونيك نقي ومستقر بسلوك سريري متوقع.",
+    "منذ أكثر من عقد، ونحن نطوّر ونصنّع منتجات عالية الجودة لصناعة التجميل الطبي العالمية - بما في ذلك حشوات الجلد المتقدمة، ومعزّزات البشرة، وحلول العناية بالبشرة والشعر والتجميل - تُورَّد إلى أسواق حول العالم ويثق بها الأطباء وممارسو التجميل والمحترفون دولياً.",
+  "about.c1.title": "البحث والتطوير",
+  "about.c1.desc":
+    "يستكشف فريق البحث والتطوير لدينا باستمرار تقنيات ومكونات وتركيبات وتطورات علمية جديدة في مجالات البشرة والشعر والتجميل الطبي، لتقديم الجيل القادم من المنتجات من خلال بحث دقيق واختبارات علمية صارمة.",
   "about.c2.title": "تصنيع متقدم",
   "about.c2.desc":
-    "يُنتج في مرافق ألمانية معتمدة وفق رقابة جودة صارمة وتتبع للدفعات ومعايير تعقيم دقيقة.",
-  "about.c3.title": "حلول تجميل عالمية",
-  "about.c3.desc": "نموذج شراكة للعيادات والأطباء والموزعين مع تدريب ووثائق وتوريد موثوق.",
+    "يعتمد على متخصصين ذوي خبرة وتقنيات تصنيع متقدمة ومعدات إنتاج حديثة، مع الحفاظ على معايير تصنيع عالية لتقديم حلول موثوقة ومبتكرة.",
+  "about.c3.title": "رؤية عالمية",
+  "about.c3.desc":
+    "تتمثل رؤيتنا في توسيع حضورنا في سوق التجميل الدولي وتطوير منتجات تلبي أعلى توقعات المحترفين حول العالم - بخبرة تتجاوز 10 سنوات وتقنية متقدمة وابتكار مستمر.",
 
   "portfolio.eyebrow": "دليل العمل",
   "portfolio.title": "معرض قبل وبعد",
@@ -331,18 +333,18 @@ const de: Dict = {
   "services.cta": "Details anfragen",
 
   "about.eyebrow": "Positionierung",
-  "about.title": "Deutsche Innovation, globale Ästhetik",
+  "about.title": "Innovation, Qualität & Expertise",
   "about.sub":
-    "SECRO-FILL verbindet Laborwissenschaft mit ästhetischer Kunst und beliefert Fachanwender in über 20 Märkten.",
-  "about.c1.title": "Wissenschaftliche Innovation",
+    "Seit mehr als einem Jahrzehnt entwickeln und fertigen wir hochwertige Produkte für die globale Medizinästhetik-Branche – darunter fortschrittliche dermale Filler, Skin Booster sowie Lösungen für Haut-, Haar- und Ästhetikpflege – die weltweit an Märkte geliefert und von Ärzten, ästhetischen Fachkräften und Experten international vertraut werden.",
+  "about.c1.title": "Forschung & Entwicklung",
   "about.c1.desc":
-    "Proprietäre Vernetzungsforschung ermöglicht stabile, hochreine Hyaluronsäuregele mit vorhersehbarem klinischem Verhalten.",
+    "Unser F&E-Team erforscht kontinuierlich neue Technologien, Inhaltsstoffe, Formulierungen und wissenschaftliche Fortschritte in den Bereichen Haut, Haar und Medizinästhetik – und führt durch sorgfältige Forschung und strenge wissenschaftliche Tests die nächste Produktgeneration ein.",
   "about.c2.title": "Fortschrittliche Herstellung",
   "about.c2.desc":
-    "Hergestellt in zertifizierten deutschen Produktionsstätten unter strenger Qualitätskontrolle, mit Chargenrückverfolgbarkeit und Standards für sterile Verarbeitung.",
-  "about.c3.title": "Globale ästhetische Lösungen",
+    "Basierend auf erfahrenen Spezialisten, fortschrittlichen Fertigungstechnologien und modernster Produktionsausrüstung, mit hohen Fertigungsstandards für zuverlässige, innovative Lösungen.",
+  "about.c3.title": "Globale Vision",
   "about.c3.desc":
-    "Ein Partnerschaftsmodell für Kliniken, Ärzte und Vertriebspartner mit Schulungen, Dokumentation und zuverlässiger Versorgung.",
+    "Unsere Vision ist es, unsere Präsenz auf dem internationalen Ästhetikmarkt auszubauen und Produkte zu entwickeln, die den höchsten Erwartungen von Fachleuten weltweit gerecht werden – über 10 Jahre Expertise, fortschrittliche Technologie und kontinuierliche Innovation.",
 
   "portfolio.eyebrow": "Behandlungsergebnisse",
   "portfolio.title": "Vorher-Nachher-Galerie",
