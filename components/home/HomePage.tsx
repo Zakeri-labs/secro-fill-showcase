@@ -15,15 +15,16 @@ import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } 
 
 import heroImg from "@/assets/Hero-image-Web.webp";
 import mobileHeroImg from "@/assets/Hero-image-Mobile-cropped.webp";
+import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
 import afterNose from "@/assets/After-nose.png";
 import beforeBody from "@/assets/Before-Body.png";
 import beforeChin from "@/assets/before-chin.png";
 import beforeNose from "@/assets/Before-nose.png";
-import bodyImg from "@/assets/product-body.jpg";
-import deep3xImg from "@/assets/product-deep-3x.jpg";
-import deep10Img from "@/assets/product-deep-10ml.jpg";
+import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
+import deep10Img from "@/assets/product-deep-10ml.png";
+import deep3xImg from "@/assets/product-deep-3x3.2ml.png";
 import positioningImg from "@/assets/Positiononig-Section.webp";
 import testimonialClinicDirector from "@/assets/testimonial-clinic-director.webp";
 import testimonialDistributor from "@/assets/testimonial-distributor.webp";
@@ -221,6 +222,26 @@ function TrustBar() {
   );
 }
 
+function ProductLineHeading({ children }: { children: string }) {
+  return (
+    <div className="mx-auto flex max-w-4xl items-center justify-center gap-3 sm:gap-5">
+      <span
+        aria-hidden="true"
+        className="h-px min-w-6 flex-1 bg-gradient-to-r from-transparent via-gold-deep/55 to-accent/80"
+      />
+      <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rotate-45 border border-accent" />
+      <h3 className="shrink-0 text-center text-xl tracking-[0.12em] text-primary uppercase rtl:text-[1.375rem] rtl:tracking-[0.03em] rtl:normal-case sm:text-2xl sm:tracking-[0.18em]">
+        {children}
+      </h3>
+      <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rotate-45 border border-accent" />
+      <span
+        aria-hidden="true"
+        className="h-px min-w-6 flex-1 bg-gradient-to-l from-transparent via-gold-deep/55 to-accent/80"
+      />
+    </div>
+  );
+}
+
 function Services() {
   const { t } = useI18n();
   const products = [
@@ -228,62 +249,130 @@ function Services() {
       img: deep3xImg,
       name: "services.p2.name",
       desc: "services.p2.desc",
-      alt: "SECRO-FILL DEEP three 3.2ml syringe clinical set — replaceable product image",
+      alt: "services.p2.alt",
+      imageClassName: "scale-[0.98]",
     },
     {
       img: deep10Img,
       name: "services.p1.name",
       desc: "services.p1.desc",
-      alt: "SECRO-FILL DEEP 10ml dermal filler syringe with premium packaging — replaceable product image",
+      alt: "services.p1.alt",
+      imageClassName: "scale-[1.05]",
     },
     {
-      img: bodyImg,
+      img: bodyFillerImg,
       name: "services.p3.name",
       desc: "services.p3.desc",
-      alt: "SECRO-FILL body filler product with emerald and gold packaging — replaceable product image",
+      alt: "services.p3.alt",
+      imageClassName: "scale-[0.94]",
+      unoptimized: true,
     },
   ];
 
   return (
-    <section id="products" className="px-5 py-24 lg:px-10 lg:py-32">
+    <section id="products" className="overflow-hidden bg-secondary/35 px-5 py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <Reveal>
-          <SectionHead
-            eyebrow={t("services.eyebrow")}
-            title={t("services.title")}
-            sub={t("services.sub")}
-          />
-        </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {products.map((p, i) => (
-            <Reveal key={p.name} delay={i * 120}>
-              <article className="card-luxe product-card-gold flex h-full flex-col">
-                <div className="relative aspect-4/3 overflow-hidden bg-secondary">
-                  <Image
-                    src={p.img}
-                    alt={p.alt}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <h3 className="text-xl rtl:text-[1.375rem]">{t(p.name)}</h3>
-                  <div className="product-card-divider-gold mt-4 w-2/3" />
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-                    {t(p.desc)}
-                  </p>
-                  <a
-                    href="#contact"
-                    className="mt-7 inline-flex items-center gap-2 self-start border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+        <SectionHead
+          eyebrow={t("services.eyebrow")}
+          title={t("services.title")}
+          sub={t("services.sub")}
+        />
+
+        <div className="mt-16 sm:mt-20">
+          <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
+
+          <div className="mt-10 grid gap-x-8 gap-y-16 md:mt-12 md:grid-cols-3 lg:gap-x-12">
+            {products.map((product, index) => (
+              <article
+                key={product.name}
+                className="flex min-w-0 flex-col items-center text-center"
+              >
+                <div className="relative h-72 w-full max-w-md overflow-hidden sm:h-80 md:h-72 lg:h-84">
+                  <Reveal
+                    once
+                    delay={index * 140}
+                    distance={90}
+                    scale={0.96}
+                    duration={1150}
+                    threshold={0.72}
+                    rootMargin="0px"
+                    trigger="closest-article"
+                    fitThresholdToViewport
+                    className="absolute inset-3 sm:inset-4"
                   >
-                    {t("services.cta")}
-                    <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-                  </a>
+                    <Image
+                      src={product.img}
+                      alt={t(product.alt)}
+                      fill
+                      loading="eager"
+                      unoptimized={product.unoptimized}
+                      sizes="(min-width: 1024px) 27vw, (min-width: 768px) 30vw, 92vw"
+                      className={`collection-product-shadow object-contain ${product.imageClassName}`}
+                    />
+                  </Reveal>
                 </div>
+
+                <h4 className="mt-5 text-2xl leading-tight text-primary rtl:text-[1.625rem]">
+                  {t(product.name)}
+                </h4>
+                <span aria-hidden="true" className="hairline mt-4 w-12" />
+                <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+                  {t(product.desc)}
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+                >
+                  {t("services.cta")}
+                  <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+                </a>
               </article>
-            </Reveal>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-24 sm:mt-28 lg:mt-32">
+          <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
+
+          <article className="mx-auto mt-10 flex max-w-4xl flex-col items-center text-center sm:mt-12">
+            <div className="relative h-72 w-full overflow-hidden sm:h-96 lg:h-[30rem]">
+              <Reveal
+                once
+                distance={90}
+                scale={0.96}
+                duration={1150}
+                threshold={0.72}
+                rootMargin="0px"
+                trigger="closest-article"
+                fitThresholdToViewport
+                className="absolute inset-3 sm:inset-5"
+              >
+                <Image
+                  src={hyacLiftImg.src.replaceAll("%", "%25")}
+                  alt={t("services.hyac.alt")}
+                  fill
+                  unoptimized
+                  sizes="(min-width: 1024px) 60rem, (min-width: 640px) 85vw, 94vw"
+                  className="collection-product-shadow scale-[1.03] object-contain"
+                />
+              </Reveal>
+            </div>
+
+            <h4 className="mt-5 text-2xl leading-tight text-primary rtl:text-[1.625rem] sm:text-3xl sm:rtl:text-[2rem]">
+              {t("services.hyac.name")}
+            </h4>
+            <span aria-hidden="true" className="hairline mt-4 w-12" />
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem]">
+              {t("services.hyac.desc")}
+            </p>
+            <a
+              href="#contact"
+              className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+            >
+              {t("services.cta")}
+              <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+            </a>
+          </article>
         </div>
       </div>
     </section>

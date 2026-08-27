@@ -52,12 +52,21 @@ const en: Dict = {
   "services.p1.name": "SECRO-FILL DEEP 10ml",
   "services.p1.desc":
     "High-cohesion deep filler in a single 10ml syringe for large-volume facial contouring and long-lasting structural support.",
+  "services.p1.alt": "SECRO-FILL DEEP 10ml packaging and syringe",
   "services.p2.name": "SECRO-FILL DEEP 3×3.2ml",
   "services.p2.desc":
     "A three-syringe clinical set for precise, multi-zone treatments — ideal for cheeks, jawline and chin definition.",
+  "services.p2.alt": "SECRO-FILL DEEP 3×3.2ml packaging with three syringes",
   "services.p3.name": "SECRO-FILL BODY FILLER",
   "services.p3.desc":
     "Engineered for body volumisation with a high-density gel matrix designed for smooth, natural contour results.",
+  "services.p3.alt": "SECRO-FILL BODY FILLER packaging with two syringes",
+  "services.line.secro": "SECRO-FILL LINE",
+  "services.line.hyac": "HYAC LINE",
+  "services.hyac.name": "HYAC-LIFT (16% CHAC)",
+  "services.hyac.desc":
+    "A professional hyaluronic acid formulation presented for precise, considered lifting protocols.",
+  "services.hyac.alt": "HYAC-LIFT 16% CHAC packaging and syringe",
   "services.cta": "Request Details",
 
   "about.eyebrow": "Positioning",
@@ -174,11 +183,19 @@ const ar: Dict = {
   "services.p1.name": "SECRO-FILL DEEP ١٠ مل",
   "services.p1.desc":
     "فيلر عميق عالي التماسك في محقنة واحدة ١٠ مل لنحت الوجه بحجم كبير ودعم بنيوي طويل الأمد.",
+  "services.p1.alt": "عبوة ومحقنة SECRO-FILL DEEP سعة ١٠ مل",
   "services.p2.name": "SECRO-FILL DEEP ٣×٣٫٢ مل",
   "services.p2.desc":
     "طقم سريري بثلاث محاقن لعلاجات دقيقة متعددة المناطق — مثالي للخدود وخط الفك والذقن.",
+  "services.p2.alt": "عبوة SECRO-FILL DEEP سعة ٣×٣٫٢ مل مع ثلاث محاقن",
   "services.p3.name": "SECRO-FILL BODY FILLER",
   "services.p3.desc": "مصمم لزيادة حجم الجسم بمصفوفة جل عالية الكثافة لنتائج انسيابية وطبيعية.",
+  "services.p3.alt": "عبوة SECRO-FILL BODY FILLER مع محقنتين",
+  "services.line.secro": "خط SECRO-FILL",
+  "services.line.hyac": "خط HYAC",
+  "services.hyac.name": "HYAC-LIFT ‏(16% CHAC)",
+  "services.hyac.desc": "تركيبة احترافية من حمض الهيالورونيك مصممة لبروتوكولات رفع دقيقة ومدروسة.",
+  "services.hyac.alt": "عبوة ومحقنة HYAC-LIFT بتركيز 16% CHAC",
   "services.cta": "اطلب التفاصيل",
 
   "about.eyebrow": "التوجه",
@@ -284,12 +301,21 @@ const de: Dict = {
   "services.p1.name": "SECRO-FILL DEEP 10ml",
   "services.p1.desc":
     "Hochkohäsiver Deep Filler in einer einzelnen 10-ml-Spritze für großvolumige Gesichtskonturierung und lang anhaltenden strukturellen Halt.",
+  "services.p1.alt": "SECRO-FILL DEEP 10ml Verpackung und Spritze",
   "services.p2.name": "SECRO-FILL DEEP 3×3.2ml",
   "services.p2.desc":
     "Ein klinisches Set mit drei Spritzen für präzise Behandlungen mehrerer Zonen — ideal für Wangen, Kieferlinie und Kinnkontur.",
+  "services.p2.alt": "SECRO-FILL DEEP 3×3.2ml Verpackung mit drei Spritzen",
   "services.p3.name": "SECRO-FILL BODY FILLER",
   "services.p3.desc":
     "Entwickelt für den Körpervolumenaufbau mit einer hochdichten Gelmatrix für gleichmäßige, natürliche Konturergebnisse.",
+  "services.p3.alt": "SECRO-FILL BODY FILLER Verpackung mit zwei Spritzen",
+  "services.line.secro": "SECRO-FILL LINIE",
+  "services.line.hyac": "HYAC LINIE",
+  "services.hyac.name": "HYAC-LIFT (16% CHAC)",
+  "services.hyac.desc":
+    "Eine professionelle Hyaluronsäure-Formulierung für präzise und durchdachte Lifting-Protokolle.",
+  "services.hyac.alt": "HYAC-LIFT 16% CHAC Verpackung und Spritze",
   "services.cta": "Details anfragen",
 
   "about.eyebrow": "Positionierung",

@@ -232,6 +232,16 @@
   }
 }
 
+.collection-product-shadow {
+  filter: drop-shadow(2px 13px 19px rgb(83 71 57 / 0.13));
+}
+
+@media (min-width: 40rem) {
+  .collection-product-shadow {
+    filter: drop-shadow(4px 18px 27px rgb(83 71 57 / 0.15));
+  }
+}
+
 @utility gold-border-panel {
   border: 1.5px solid transparent;
   border-image: linear-gradient(
