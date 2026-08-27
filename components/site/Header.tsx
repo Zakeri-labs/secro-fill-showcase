@@ -34,8 +34,24 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 sm:px-5 sm:pt-5 lg:px-8">
+      <div className="flex items-start justify-between xl:hidden" dir="ltr">
+        <Link href="/" className="min-w-0" aria-label="SECRO-FILL home">
+          <BrandLock light={false} />
+        </Link>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Menu"
+          aria-expanded={open}
+          className="shrink-0 p-2 text-foreground"
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
       <div
-        className={`mx-auto grid max-w-[1480px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-[24px] border px-4 py-3.5 shadow-[0_18px_45px_-35px_var(--primary)] transition-all duration-500 sm:px-5 xl:grid-cols-[auto_minmax(0,1fr)_auto_auto] xl:px-7 ${
+        className={`mx-auto hidden max-w-[1480px] grid-cols-[auto_minmax(0,1fr)_auto_auto] items-center gap-4 rounded-[24px] border px-7 py-3.5 shadow-[0_18px_45px_-35px_var(--primary)] transition-all duration-500 xl:grid ${
           solid
             ? "border-border/80 bg-background backdrop-blur-xl"
             : "border-white/10 bg-white/[0.02] backdrop-blur-xl"
@@ -45,8 +61,8 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           <BrandLock light={false} />
         </Link>
 
-        <div className="flex items-center justify-end gap-4 xl:contents">
-          <nav className="hidden items-center justify-center gap-5 xl:flex" aria-label="Main">
+        <div className="contents">
+          <nav className="flex items-center justify-center gap-5" aria-label="Main">
             {links.map((l) => (
               <a
                 key={l.key}
@@ -62,26 +78,16 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             ))}
           </nav>
 
-          <div className="hidden xl:block">
+          <div>
             <LanguageSwitcher light={false} />
           </div>
 
           <a
             href="/#contact"
-            className="hidden shrink-0 rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_-16px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case xl:inline-block"
+            className="shrink-0 rounded-full bg-primary px-5 py-3 text-[0.68rem] tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_-16px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
           >
             <span>{t("cta.partner")}</span>
           </a>
-
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-            aria-expanded={open}
-            className={`shrink-0 p-2 xl:hidden ${"text-foreground"}`}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
         </div>
       </div>
 

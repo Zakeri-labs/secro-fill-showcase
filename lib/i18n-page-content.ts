@@ -3,57 +3,100 @@ export const pageDictionaries = {
     "nav.products": "Products",
     "seo.about.title": "About SECRO-FILL",
     "seo.about.description":
-      "A concise introduction to SECRO-FILL, its principles and professional medical-aesthetics philosophy.",
+      "Learn about more than a decade of expertise, advanced manufacturing, continuous research and global reach in medical aesthetics.",
     "seo.products.title": "Professional Products",
     "seo.products.description":
       "Explore the SECRO-FILL professional product collection and its quality-focused development approach.",
 
-    "aboutPage.hero.eyebrow": "About SECRO-FILL",
-    "aboutPage.hero.title": "Precision with an aesthetic purpose",
+    "aboutPage.hero.eyebrow": "About us",
+    "aboutPage.hero.title": "A decade of expertise. A future shaped by innovation.",
     "aboutPage.hero.body":
-      "A premium medical-aesthetics brand shaped by German precision and professional partnership.",
-    "aboutPage.hero.visualLabel": "Medical aesthetics · Germany",
-    "aboutPage.intro.eyebrow": "Brand introduction",
-    "aboutPage.intro.title": "Science, experience and considered design",
+      "For more than a decade, we have developed and manufactured high-quality products for the global medical aesthetics industry.",
+    "aboutPage.hero.visualLabel": "Global medical aesthetics",
+    "aboutPage.intro.eyebrow": "Our foundation",
+    "aboutPage.intro.title": "Developed for the global aesthetics industry",
     "aboutPage.intro.body":
-      "This section is prepared for the company background, experience and market positioning.",
-    "aboutPage.intro.note": "Final brand history and supporting details will be added here.",
-    "aboutPage.principles.eyebrow": "Our principles",
-    "aboutPage.principles.title": "A disciplined foundation",
+      "For more than a decade, we have been dedicated to developing and manufacturing high-quality products for the global medical aesthetics industry. Our portfolio includes advanced dermal fillers, skin boosters, and innovative solutions for skin, hair, and aesthetic care, developed with a strong commitment to quality, safety, and performance.",
+    "aboutPage.intro.global":
+      "Our products are supplied to markets across the world and are trusted and used by physicians, aesthetic practitioners, and professionals internationally.",
+    "aboutPage.intro.note": "Quality, safety and performance guide every product we develop.",
+    "aboutPage.intro.years": "Years of expertise",
+    "aboutPage.intro.imageAlt": "Professional medical aesthetics portrait",
+    "aboutPage.portfolio.eyebrow": "Our portfolio",
+    "aboutPage.portfolio.title": "A complete view of aesthetic care",
+    "aboutPage.portfolio.body":
+      "Our expanding portfolio brings together advanced dermal fillers, skin boosters, and innovative solutions across skin, hair and aesthetic care.",
+    "aboutPage.portfolio.fillers.title": "Dermal fillers",
+    "aboutPage.portfolio.fillers.body":
+      "Advanced professional solutions developed with a focus on quality, safety and performance.",
+    "aboutPage.portfolio.boosters.title": "Skin boosters",
+    "aboutPage.portfolio.boosters.body":
+      "Modern products created to support evolving professional approaches to skin care.",
+    "aboutPage.portfolio.skinHair.title": "Skin & hair solutions",
+    "aboutPage.portfolio.skinHair.body":
+      "Innovative solutions informed by ongoing research into skin and hair aesthetics.",
+    "aboutPage.portfolio.care.title": "Aesthetic care",
+    "aboutPage.portfolio.care.body":
+      "A growing range designed around the expectations of international professionals.",
+    "aboutPage.principles.eyebrow": "Innovation, quality & expertise",
+    "aboutPage.principles.title": "Built on expertise. Advanced by technology.",
     "aboutPage.principles.body":
-      "Four concise principles provide a flexible structure for the final brand narrative.",
-    "aboutPage.principles.quality.title": "Quality",
-    "aboutPage.principles.quality.body": "A clear place for quality standards and consistency.",
-    "aboutPage.principles.precision.title": "Precision",
-    "aboutPage.principles.precision.body":
-      "A clear place for German expertise and exacting detail.",
-    "aboutPage.principles.innovation.title": "Innovation",
-    "aboutPage.principles.innovation.body": "A clear place for research and product development.",
-    "aboutPage.principles.partnership.title": "Professional partnership",
-    "aboutPage.principles.partnership.body": "A clear place for long-term B2B collaboration.",
-    "aboutPage.trust.eyebrow": "Experience and trust",
-    "aboutPage.trust.title": "Built for professional confidence",
+      "Our success is built on the combination of experienced specialists, advanced manufacturing technologies, and state-of-the-art production equipment. We continuously adapt our products and development strategies to meet the evolving needs of the global aesthetics market.",
+    "aboutPage.principles.specialists.title": "Experienced specialists",
+    "aboutPage.principles.specialists.body":
+      "Specialist knowledge and practical experience shape every stage of development.",
+    "aboutPage.principles.manufacturing.title": "Advanced manufacturing",
+    "aboutPage.principles.manufacturing.body":
+      "Modern manufacturing technologies support consistent, high-quality production.",
+    "aboutPage.principles.equipment.title": "State-of-the-art equipment",
+    "aboutPage.principles.equipment.body":
+      "Advanced production equipment enables precision, control and dependable performance.",
+    "aboutPage.principles.evolution.title": "Continuous evolution",
+    "aboutPage.principles.evolution.body":
+      "Products and development strategies evolve with the needs of the global market.",
+    "aboutPage.trust.eyebrow": "What defines us",
+    "aboutPage.trust.title": "A foundation for global confidence",
     "aboutPage.trust.body":
-      "Placeholder indicators ready for verified facts and final market information.",
+      "Maintaining high manufacturing standards and delivering reliable, innovative solutions have always been at the core of our philosophy.",
     "aboutPage.trust.years.value": "10+",
-    "aboutPage.trust.years.label": "Years of experience",
-    "aboutPage.trust.quality.value": "DE",
-    "aboutPage.trust.quality.label": "German quality focus",
-    "aboutPage.trust.markets.value": "20+",
-    "aboutPage.trust.markets.label": "Markets placeholder",
-    "aboutPage.trust.professional.value": "B2B",
-    "aboutPage.trust.professional.label": "Professional market",
-    "aboutPage.philosophy.eyebrow": "Medical philosophy",
-    "aboutPage.philosophy.title": "Natural balance, professional standards",
-    "aboutPage.philosophy.body":
-      "This editorial area is ready for the final philosophy on beauty, balance, safety and professional-grade solutions.",
-    "aboutPage.philosophy.note": "Final medical and brand language will be inserted later.",
-    "aboutPage.cta.eyebrow": "Continue the conversation",
-    "aboutPage.cta.title": "Explore the collection or discuss a partnership",
-    "aboutPage.cta.body": "Choose the next step for product or partnership information.",
+    "aboutPage.trust.years.label": "Years of expertise",
+    "aboutPage.trust.technology.value": "ADV",
+    "aboutPage.trust.technology.label": "Advanced technology",
+    "aboutPage.trust.innovation.value": "R&D",
+    "aboutPage.trust.innovation.label": "Continuous innovation",
+    "aboutPage.trust.reach.value": "GLOBAL",
+    "aboutPage.trust.reach.label": "International reach",
+    "aboutPage.research.eyebrow": "Research & Development",
+    "aboutPage.research.title": "Innovation is an ongoing process",
+    "aboutPage.research.body":
+      "Our Research & Development team continuously explores new technologies, ingredients, formulations, and scientific advancements in the fields of skin, hair, and medical aesthetics.",
+    "aboutPage.research.note":
+      "Through careful research, development, and rigorous scientific testing, we aim to introduce the next generation of aesthetic products that combine innovation, quality, safety, and performance.",
+    "aboutPage.research.technologies.title": "New technologies",
+    "aboutPage.research.technologies.body":
+      "Exploring emerging technologies with meaningful potential for medical aesthetics.",
+    "aboutPage.research.ingredients.title": "Ingredients",
+    "aboutPage.research.ingredients.body":
+      "Studying ingredients through a disciplined quality and performance lens.",
+    "aboutPage.research.formulations.title": "Formulations",
+    "aboutPage.research.formulations.body":
+      "Developing considered formulations for the next generation of aesthetic products.",
+    "aboutPage.research.science.title": "Scientific testing",
+    "aboutPage.research.science.body":
+      "Applying careful development and rigorous testing throughout the innovation process.",
+    "aboutPage.vision.eyebrow": "Our vision",
+    "aboutPage.vision.title": "Expanding a global vision",
+    "aboutPage.vision.body":
+      "Our vision is to continue expanding our presence in the international aesthetics market while developing products that meet the highest expectations of professionals worldwide.",
+    "aboutPage.vision.statement":
+      "Over 10 years of expertise. Advanced technology. Continuous innovation. Global reach.",
+    "aboutPage.cta.eyebrow": "The next chapter",
+    "aboutPage.cta.title": "Discover our products or start a professional conversation",
+    "aboutPage.cta.body":
+      "Explore the portfolio or connect with our team to discuss product and partnership opportunities.",
     "aboutPage.cta.primary": "Explore products",
     "aboutPage.cta.secondary": "Contact us",
-    "aboutPage.imageAlt": "SECRO-FILL medical aesthetics visual",
+    "aboutPage.imageAlt": "SECRO-FILL medical aesthetics and product development visual",
 
     "productsPage.hero.eyebrow": "Professional collection",
     "productsPage.hero.title": "Products developed for aesthetic professionals",
@@ -114,57 +157,101 @@ export const pageDictionaries = {
     "nav.products": "Produkte",
     "seo.about.title": "Über SECRO-FILL",
     "seo.about.description":
-      "Eine kompakte Einführung in SECRO-FILL, seine Prinzipien und seine professionelle medizinästhetische Philosophie.",
+      "Erfahren Sie mehr über ein Jahrzehnt Expertise, moderne Fertigung, kontinuierliche Forschung und globale Reichweite in der Medizinästhetik.",
     "seo.products.title": "Professionelle Produkte",
     "seo.products.description":
       "Entdecken Sie die professionelle SECRO-FILL Produktkollektion und ihren qualitätsorientierten Entwicklungsansatz.",
 
-    "aboutPage.hero.eyebrow": "Über SECRO-FILL",
-    "aboutPage.hero.title": "Präzision mit ästhetischem Anspruch",
+    "aboutPage.hero.eyebrow": "Über uns",
+    "aboutPage.hero.title": "Ein Jahrzehnt Expertise. Eine Zukunft voller Innovation.",
     "aboutPage.hero.body":
-      "Eine hochwertige Marke für Medizinästhetik, geprägt von deutscher Präzision und professioneller Partnerschaft.",
-    "aboutPage.hero.visualLabel": "Medizinästhetik · Deutschland",
-    "aboutPage.intro.eyebrow": "Markeneinführung",
-    "aboutPage.intro.title": "Wissenschaft, Erfahrung und durchdachtes Design",
+      "Seit mehr als einem Jahrzehnt entwickeln und fertigen wir hochwertige Produkte für die globale Medizinästhetik.",
+    "aboutPage.hero.visualLabel": "Globale Medizinästhetik",
+    "aboutPage.intro.eyebrow": "Unser Fundament",
+    "aboutPage.intro.title": "Entwickelt für die internationale Ästhetikbranche",
     "aboutPage.intro.body":
-      "Dieser Abschnitt ist für Unternehmensgeschichte, Erfahrung und Marktpositionierung vorbereitet.",
+      "Seit mehr als einem Jahrzehnt widmen wir uns der Entwicklung und Herstellung hochwertiger Produkte für die globale Medizinästhetik. Unser Portfolio umfasst fortschrittliche Dermalfiller, Skin Booster sowie innovative Lösungen für Haut, Haar und ästhetische Pflege — entwickelt mit einem starken Anspruch an Qualität, Sicherheit und Leistung.",
+    "aboutPage.intro.global":
+      "Unsere Produkte werden in Märkte weltweit geliefert und von Ärzten, ästhetischen Behandlern und Fachanwendern international eingesetzt und geschätzt.",
     "aboutPage.intro.note":
-      "Die finale Markengeschichte und ergänzende Details werden hier später eingefügt.",
-    "aboutPage.principles.eyebrow": "Unsere Prinzipien",
-    "aboutPage.principles.title": "Ein diszipliniertes Fundament",
+      "Qualität, Sicherheit und Leistung leiten jede unserer Produktentwicklungen.",
+    "aboutPage.intro.years": "Jahre Expertise",
+    "aboutPage.intro.imageAlt": "Professionelle Darstellung der Medizinästhetik",
+    "aboutPage.portfolio.eyebrow": "Unser Portfolio",
+    "aboutPage.portfolio.title": "Ein umfassender Blick auf ästhetische Pflege",
+    "aboutPage.portfolio.body":
+      "Unser wachsendes Portfolio vereint fortschrittliche Dermalfiller, Skin Booster und innovative Lösungen für Haut, Haar und ästhetische Pflege.",
+    "aboutPage.portfolio.fillers.title": "Dermalfiller",
+    "aboutPage.portfolio.fillers.body":
+      "Fortschrittliche professionelle Lösungen mit Fokus auf Qualität, Sicherheit und Leistung.",
+    "aboutPage.portfolio.boosters.title": "Skin Booster",
+    "aboutPage.portfolio.boosters.body":
+      "Moderne Produkte für sich weiterentwickelnde professionelle Ansätze in der Hautpflege.",
+    "aboutPage.portfolio.skinHair.title": "Haut- & Haarlösungen",
+    "aboutPage.portfolio.skinHair.body":
+      "Innovative Lösungen auf Basis kontinuierlicher Forschung zu Haut und Haar.",
+    "aboutPage.portfolio.care.title": "Ästhetische Pflege",
+    "aboutPage.portfolio.care.body":
+      "Ein wachsendes Sortiment, ausgerichtet auf die Erwartungen internationaler Fachanwender.",
+    "aboutPage.principles.eyebrow": "Innovation, Qualität & Expertise",
+    "aboutPage.principles.title": "Auf Expertise gebaut. Durch Technologie weiterentwickelt.",
     "aboutPage.principles.body":
-      "Vier klare Prinzipien schaffen eine flexible Struktur für die finale Markenerzählung.",
-    "aboutPage.principles.quality.title": "Qualität",
-    "aboutPage.principles.quality.body": "Platz für Qualitätsstandards und Beständigkeit.",
-    "aboutPage.principles.precision.title": "Präzision",
-    "aboutPage.principles.precision.body": "Platz für deutsche Expertise und Sorgfalt.",
-    "aboutPage.principles.innovation.title": "Innovation",
-    "aboutPage.principles.innovation.body": "Platz für Forschung und Produktentwicklung.",
-    "aboutPage.principles.partnership.title": "Professionelle Partnerschaft",
-    "aboutPage.principles.partnership.body": "Platz für langfristige B2B-Zusammenarbeit.",
-    "aboutPage.trust.eyebrow": "Erfahrung und Vertrauen",
-    "aboutPage.trust.title": "Für professionelles Vertrauen geschaffen",
-    "aboutPage.trust.body": "Platzhalter für geprüfte Fakten und finale Marktinformationen.",
+      "Unser Erfolg beruht auf dem Zusammenspiel erfahrener Spezialisten, fortschrittlicher Fertigungstechnologien und modernster Produktionsanlagen. Wir passen unsere Produkte und Entwicklungsstrategien kontinuierlich an die wachsenden Anforderungen des globalen Ästhetikmarktes an.",
+    "aboutPage.principles.specialists.title": "Erfahrene Spezialisten",
+    "aboutPage.principles.specialists.body":
+      "Fachwissen und praktische Erfahrung prägen jede Phase der Entwicklung.",
+    "aboutPage.principles.manufacturing.title": "Fortschrittliche Fertigung",
+    "aboutPage.principles.manufacturing.body":
+      "Moderne Fertigungstechnologien unterstützen eine beständige, hochwertige Produktion.",
+    "aboutPage.principles.equipment.title": "Modernste Ausstattung",
+    "aboutPage.principles.equipment.body":
+      "Fortschrittliche Produktionsanlagen ermöglichen Präzision, Kontrolle und zuverlässige Leistung.",
+    "aboutPage.principles.evolution.title": "Kontinuierliche Entwicklung",
+    "aboutPage.principles.evolution.body":
+      "Produkte und Strategien entwickeln sich mit den Anforderungen des globalen Marktes weiter.",
+    "aboutPage.trust.eyebrow": "Was uns auszeichnet",
+    "aboutPage.trust.title": "Ein Fundament für globales Vertrauen",
+    "aboutPage.trust.body":
+      "Hohe Fertigungsstandards und zuverlässige, innovative Lösungen stehen seit jeher im Mittelpunkt unserer Philosophie.",
     "aboutPage.trust.years.value": "10+",
-    "aboutPage.trust.years.label": "Jahre Erfahrung",
-    "aboutPage.trust.quality.value": "DE",
-    "aboutPage.trust.quality.label": "Deutscher Qualitätsfokus",
-    "aboutPage.trust.markets.value": "20+",
-    "aboutPage.trust.markets.label": "Märkte – Platzhalter",
-    "aboutPage.trust.professional.value": "B2B",
-    "aboutPage.trust.professional.label": "Professioneller Markt",
-    "aboutPage.philosophy.eyebrow": "Medizinische Philosophie",
-    "aboutPage.philosophy.title": "Natürliche Balance, professionelle Standards",
-    "aboutPage.philosophy.body":
-      "Dieser redaktionelle Bereich ist für die finale Philosophie zu Schönheit, Balance, Sicherheit und professionellen Lösungen vorbereitet.",
-    "aboutPage.philosophy.note": "Finale medizinische und markenbezogene Inhalte folgen später.",
-    "aboutPage.cta.eyebrow": "Im Gespräch bleiben",
-    "aboutPage.cta.title": "Kollektion entdecken oder Partnerschaft besprechen",
+    "aboutPage.trust.years.label": "Jahre Expertise",
+    "aboutPage.trust.technology.value": "ADV",
+    "aboutPage.trust.technology.label": "Fortschrittliche Technologie",
+    "aboutPage.trust.innovation.value": "F&E",
+    "aboutPage.trust.innovation.label": "Kontinuierliche Innovation",
+    "aboutPage.trust.reach.value": "GLOBAL",
+    "aboutPage.trust.reach.label": "Internationale Reichweite",
+    "aboutPage.research.eyebrow": "Forschung & Entwicklung",
+    "aboutPage.research.title": "Innovation ist ein fortlaufender Prozess",
+    "aboutPage.research.body":
+      "Unser Forschungs- und Entwicklungsteam untersucht kontinuierlich neue Technologien, Inhaltsstoffe, Formulierungen und wissenschaftliche Fortschritte in den Bereichen Haut, Haar und Medizinästhetik.",
+    "aboutPage.research.note":
+      "Durch sorgfältige Forschung, Entwicklung und strenge wissenschaftliche Tests wollen wir die nächste Generation ästhetischer Produkte schaffen, die Innovation, Qualität, Sicherheit und Leistung verbindet.",
+    "aboutPage.research.technologies.title": "Neue Technologien",
+    "aboutPage.research.technologies.body":
+      "Wir untersuchen neue Technologien mit relevantem Potenzial für die Medizinästhetik.",
+    "aboutPage.research.ingredients.title": "Inhaltsstoffe",
+    "aboutPage.research.ingredients.body":
+      "Wir bewerten Inhaltsstoffe konsequent unter Qualitäts- und Leistungsaspekten.",
+    "aboutPage.research.formulations.title": "Formulierungen",
+    "aboutPage.research.formulations.body":
+      "Wir entwickeln durchdachte Formulierungen für die nächste Produktgeneration.",
+    "aboutPage.research.science.title": "Wissenschaftliche Tests",
+    "aboutPage.research.science.body":
+      "Sorgfältige Entwicklung und strenge Prüfungen begleiten den gesamten Innovationsprozess.",
+    "aboutPage.vision.eyebrow": "Unsere Vision",
+    "aboutPage.vision.title": "Eine globale Vision weiterentwickeln",
+    "aboutPage.vision.body":
+      "Unsere Vision ist es, unsere Präsenz im internationalen Ästhetikmarkt weiter auszubauen und Produkte zu entwickeln, die den höchsten Erwartungen von Fachanwendern weltweit entsprechen.",
+    "aboutPage.vision.statement":
+      "Über 10 Jahre Expertise. Fortschrittliche Technologie. Kontinuierliche Innovation. Globale Reichweite.",
+    "aboutPage.cta.eyebrow": "Das nächste Kapitel",
+    "aboutPage.cta.title": "Produkte entdecken oder ein professionelles Gespräch beginnen",
     "aboutPage.cta.body":
-      "Wählen Sie den nächsten Schritt für Produkt- oder Partnerschaftsinformationen.",
+      "Entdecken Sie das Portfolio oder sprechen Sie mit unserem Team über Produkt- und Partnerschaftsmöglichkeiten.",
     "aboutPage.cta.primary": "Produkte entdecken",
     "aboutPage.cta.secondary": "Kontakt",
-    "aboutPage.imageAlt": "SECRO-FILL Visual zur Medizinästhetik",
+    "aboutPage.imageAlt": "SECRO-FILL Visual für Medizinästhetik und Produktentwicklung",
 
     "productsPage.hero.eyebrow": "Professionelle Kollektion",
     "productsPage.hero.title": "Produkte für ästhetische Fachanwender",
@@ -224,52 +311,97 @@ export const pageDictionaries = {
     "nav.products": "المنتجات",
     "seo.about.title": "عن SECRO-FILL",
     "seo.about.description":
-      "مقدمة موجزة عن SECRO-FILL ومبادئها وفلسفتها المهنية في مجال التجميل الطبي.",
+      "تعرّف على أكثر من عقد من الخبرة والتصنيع المتقدم والبحث المستمر والحضور العالمي في مجال التجميل الطبي.",
     "seo.products.title": "المنتجات المهنية",
     "seo.products.description":
       "استكشف مجموعة SECRO-FILL المهنية ونهجها المرتكز على الجودة في تطوير المنتجات.",
 
-    "aboutPage.hero.eyebrow": "عن SECRO-FILL",
-    "aboutPage.hero.title": "دقة تحمل هدفاً جمالياً",
-    "aboutPage.hero.body": "علامة متميزة في التجميل الطبي تشكلها الدقة الألمانية والشراكة المهنية.",
-    "aboutPage.hero.visualLabel": "التجميل الطبي · ألمانيا",
-    "aboutPage.intro.eyebrow": "تقديم العلامة",
-    "aboutPage.intro.title": "العلم والخبرة والتصميم المدروس",
-    "aboutPage.intro.body": "هذا القسم جاهز لخلفية الشركة وخبرتها ومكانتها في السوق.",
-    "aboutPage.intro.note": "ستُضاف هنا قصة العلامة النهائية والتفاصيل الداعمة لاحقاً.",
-    "aboutPage.principles.eyebrow": "مبادئنا",
-    "aboutPage.principles.title": "أساس منضبط",
-    "aboutPage.principles.body": "توفر أربعة مبادئ موجزة بنية مرنة لسرد قصة العلامة النهائية.",
-    "aboutPage.principles.quality.title": "الجودة",
-    "aboutPage.principles.quality.body": "مساحة واضحة لمعايير الجودة والثبات.",
-    "aboutPage.principles.precision.title": "الدقة",
-    "aboutPage.principles.precision.body": "مساحة واضحة للخبرة الألمانية والعناية بالتفاصيل.",
-    "aboutPage.principles.innovation.title": "الابتكار",
-    "aboutPage.principles.innovation.body": "مساحة واضحة للبحث وتطوير المنتجات.",
-    "aboutPage.principles.partnership.title": "الشراكة المهنية",
-    "aboutPage.principles.partnership.body": "مساحة واضحة للتعاون المهني طويل الأمد.",
-    "aboutPage.trust.eyebrow": "الخبرة والثقة",
-    "aboutPage.trust.title": "مصمم لبناء الثقة المهنية",
-    "aboutPage.trust.body": "مؤشرات مؤقتة جاهزة للحقائق الموثقة ومعلومات السوق النهائية.",
+    "aboutPage.hero.eyebrow": "من نحن",
+    "aboutPage.hero.title": "عقد من الخبرة. مستقبل يصوغه الابتكار.",
+    "aboutPage.hero.body":
+      "منذ أكثر من عقد، نطوّر ونصنّع منتجات عالية الجودة لصناعة التجميل الطبي العالمية.",
+    "aboutPage.hero.visualLabel": "التجميل الطبي العالمي",
+    "aboutPage.intro.eyebrow": "أساسنا",
+    "aboutPage.intro.title": "تطوير مخصص لصناعة التجميل العالمية",
+    "aboutPage.intro.body":
+      "منذ أكثر من عقد، نكرّس خبراتنا لتطوير وتصنيع منتجات عالية الجودة لصناعة التجميل الطبي العالمية. تشمل مجموعتنا فيلر الجلد المتقدم ومحفزات البشرة وحلولاً مبتكرة للعناية بالبشرة والشعر والجمال، مطوّرة بالتزام راسخ بالجودة والسلامة والأداء.",
+    "aboutPage.intro.global":
+      "تُورّد منتجاتنا إلى أسواق حول العالم وتحظى بثقة واستخدام الأطباء وممارسي التجميل والمتخصصين دولياً.",
+    "aboutPage.intro.note": "الجودة والسلامة والأداء توجه كل منتج نقوم بتطويره.",
+    "aboutPage.intro.years": "سنوات من الخبرة",
+    "aboutPage.intro.imageAlt": "مشهد احترافي للتجميل الطبي",
+    "aboutPage.portfolio.eyebrow": "مجموعة منتجاتنا",
+    "aboutPage.portfolio.title": "رؤية متكاملة للعناية الجمالية",
+    "aboutPage.portfolio.body":
+      "تجمع مجموعتنا المتنامية بين فيلر الجلد المتقدم ومحفزات البشرة والحلول المبتكرة للعناية بالبشرة والشعر والجمال.",
+    "aboutPage.portfolio.fillers.title": "فيلر الجلد",
+    "aboutPage.portfolio.fillers.body":
+      "حلول مهنية متقدمة مطوّرة مع التركيز على الجودة والسلامة والأداء.",
+    "aboutPage.portfolio.boosters.title": "محفزات البشرة",
+    "aboutPage.portfolio.boosters.body":
+      "منتجات حديثة تدعم الأساليب المهنية المتطورة في العناية بالبشرة.",
+    "aboutPage.portfolio.skinHair.title": "حلول البشرة والشعر",
+    "aboutPage.portfolio.skinHair.body":
+      "حلول مبتكرة تستند إلى البحث المستمر في مجالي البشرة والشعر.",
+    "aboutPage.portfolio.care.title": "العناية الجمالية",
+    "aboutPage.portfolio.care.body": "مجموعة متنامية مصممة لتلبية توقعات المتخصصين حول العالم.",
+    "aboutPage.principles.eyebrow": "الابتكار والجودة والخبرة",
+    "aboutPage.principles.title": "أساسه الخبرة. وتدفعه التكنولوجيا.",
+    "aboutPage.principles.body":
+      "يقوم نجاحنا على الجمع بين المتخصصين ذوي الخبرة وتقنيات التصنيع المتقدمة وأحدث معدات الإنتاج. نطوّر منتجاتنا واستراتيجياتنا باستمرار لتلبية الاحتياجات المتغيرة لسوق التجميل العالمي.",
+    "aboutPage.principles.specialists.title": "متخصصون ذوو خبرة",
+    "aboutPage.principles.specialists.body":
+      "تشكّل المعرفة المتخصصة والخبرة العملية كل مرحلة من مراحل التطوير.",
+    "aboutPage.principles.manufacturing.title": "تصنيع متقدم",
+    "aboutPage.principles.manufacturing.body":
+      "تدعم تقنيات التصنيع الحديثة إنتاجاً ثابتاً وعالي الجودة.",
+    "aboutPage.principles.equipment.title": "أحدث المعدات",
+    "aboutPage.principles.equipment.body":
+      "تتيح معدات الإنتاج المتقدمة الدقة والتحكم والأداء الموثوق.",
+    "aboutPage.principles.evolution.title": "تطور مستمر",
+    "aboutPage.principles.evolution.body":
+      "تتطور منتجاتنا واستراتيجياتنا مع احتياجات السوق العالمي.",
+    "aboutPage.trust.eyebrow": "ما يميزنا",
+    "aboutPage.trust.title": "أساس للثقة العالمية",
+    "aboutPage.trust.body":
+      "لطالما كان الحفاظ على معايير تصنيع عالية وتقديم حلول موثوقة ومبتكرة جوهر فلسفتنا.",
     "aboutPage.trust.years.value": "+١٠",
     "aboutPage.trust.years.label": "سنوات من الخبرة",
-    "aboutPage.trust.quality.value": "DE",
-    "aboutPage.trust.quality.label": "تركيز على الجودة الألمانية",
-    "aboutPage.trust.markets.value": "+٢٠",
-    "aboutPage.trust.markets.label": "عدد الأسواق مؤقت",
-    "aboutPage.trust.professional.value": "B2B",
-    "aboutPage.trust.professional.label": "السوق المهني",
-    "aboutPage.philosophy.eyebrow": "الفلسفة الطبية",
-    "aboutPage.philosophy.title": "توازن طبيعي ومعايير مهنية",
-    "aboutPage.philosophy.body":
-      "هذه المساحة التحريرية جاهزة للفلسفة النهائية حول الجمال والتوازن والسلامة والحلول المهنية.",
-    "aboutPage.philosophy.note": "ستُضاف اللغة الطبية والهوية النهائية لاحقاً.",
-    "aboutPage.cta.eyebrow": "واصل الحوار",
-    "aboutPage.cta.title": "استكشف المجموعة أو ناقش شراكة",
-    "aboutPage.cta.body": "اختر الخطوة التالية للحصول على معلومات المنتجات أو الشراكة.",
+    "aboutPage.trust.technology.value": "متقدم",
+    "aboutPage.trust.technology.label": "تكنولوجيا متقدمة",
+    "aboutPage.trust.innovation.value": "R&D",
+    "aboutPage.trust.innovation.label": "ابتكار مستمر",
+    "aboutPage.trust.reach.value": "عالمي",
+    "aboutPage.trust.reach.label": "حضور دولي",
+    "aboutPage.research.eyebrow": "البحث والتطوير",
+    "aboutPage.research.title": "الابتكار عملية مستمرة",
+    "aboutPage.research.body":
+      "يستكشف فريق البحث والتطوير لدينا باستمرار التقنيات والمكونات والتركيبات والتطورات العلمية الجديدة في مجالات البشرة والشعر والتجميل الطبي.",
+    "aboutPage.research.note":
+      "من خلال البحث والتطوير الدقيق والاختبارات العلمية الصارمة، نهدف إلى تقديم الجيل القادم من المنتجات الجمالية التي تجمع بين الابتكار والجودة والسلامة والأداء.",
+    "aboutPage.research.technologies.title": "تقنيات جديدة",
+    "aboutPage.research.technologies.body":
+      "نستكشف التقنيات الناشئة ذات الإمكانات المؤثرة في مجال التجميل الطبي.",
+    "aboutPage.research.ingredients.title": "المكونات",
+    "aboutPage.research.ingredients.body": "ندرس المكونات بمنهج منضبط يركز على الجودة والأداء.",
+    "aboutPage.research.formulations.title": "التركيبات",
+    "aboutPage.research.formulations.body":
+      "نطوّر تركيبات مدروسة للجيل القادم من المنتجات الجمالية.",
+    "aboutPage.research.science.title": "الاختبارات العلمية",
+    "aboutPage.research.science.body":
+      "نطبق التطوير الدقيق والاختبارات الصارمة طوال مسار الابتكار.",
+    "aboutPage.vision.eyebrow": "رؤيتنا",
+    "aboutPage.vision.title": "توسيع رؤية عالمية",
+    "aboutPage.vision.body":
+      "تتمثل رؤيتنا في مواصلة توسيع حضورنا في سوق التجميل الدولي مع تطوير منتجات تلبي أعلى توقعات المتخصصين حول العالم.",
+    "aboutPage.vision.statement":
+      "أكثر من ١٠ سنوات من الخبرة. تكنولوجيا متقدمة. ابتكار مستمر. حضور عالمي.",
+    "aboutPage.cta.eyebrow": "الفصل التالي",
+    "aboutPage.cta.title": "اكتشف منتجاتنا أو ابدأ حواراً مهنياً",
+    "aboutPage.cta.body": "استكشف المجموعة أو تواصل مع فريقنا لمناقشة فرص المنتجات والشراكة.",
     "aboutPage.cta.primary": "استكشف المنتجات",
     "aboutPage.cta.secondary": "اتصل بنا",
-    "aboutPage.imageAlt": "مشهد بصري للتجميل الطبي من SECRO-FILL",
+    "aboutPage.imageAlt": "مشهد SECRO-FILL للتجميل الطبي وتطوير المنتجات",
 
     "productsPage.hero.eyebrow": "المجموعة المهنية",
     "productsPage.hero.title": "منتجات مطورة لمختصي التجميل",
