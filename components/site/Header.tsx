@@ -20,6 +20,7 @@ const links = [
 export function Header({ overlay = false }: { overlay?: boolean }) {
   const { t } = useI18n();
   const [scrolled, setScrolled] = useState(!overlay);
+  const [mobileScrolled, setMobileScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -30,12 +31,29 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [overlay]);
 
+  useEffect(() => {
+    const onScroll = () => setMobileScrolled(window.scrollY > 40);
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const solid = scrolled || open;
+  const glassMobileMenu = open || mobileScrolled;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 sm:px-5 sm:pt-5 lg:px-8">
       <div className="flex items-start justify-between xl:hidden" dir="ltr">
-        <Link href="/" className="min-w-0" aria-label="SECRO-FILL home">
+        <Link
+          href="/"
+          className={`min-w-0 transition-[transform,opacity] duration-300 ease-out ${
+            mobileScrolled
+              ? "pointer-events-none -translate-y-6 opacity-0"
+              : "translate-y-0 opacity-100"
+          }`}
+          aria-label="SECRO-FILL home"
+        >
           <BrandLock light={false} />
         </Link>
 
@@ -44,7 +62,11 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
           aria-expanded={open}
-          className="shrink-0 p-2 text-foreground"
+          className={`shrink-0 rounded-full p-2 text-foreground transition-[background-color,box-shadow] duration-300 ${
+            glassMobileMenu
+              ? "bg-background/85 shadow-[0_12px_30px_-20px_var(--primary)] backdrop-blur-xl"
+              : "bg-transparent shadow-none"
+          }`}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
