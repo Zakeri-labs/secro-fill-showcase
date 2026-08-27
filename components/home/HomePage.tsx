@@ -23,6 +23,7 @@ import beforeBody from "@/assets/Before-Body.png";
 import beforeChin from "@/assets/before-chin.png";
 import beforeNose from "@/assets/Before-nose.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
+import secroMarvelImg from "@/assets/product-Secro-marvel.png";
 import deep10Img from "@/assets/product-deep-10ml.png";
 import deep3xImg from "@/assets/product-deep-3x3.2ml.png";
 import positioningImg from "@/assets/Positiononig-Section.webp";
@@ -269,6 +270,15 @@ function Services() {
       downloadName: "SECRO-FILL-BODY.pdf",
       unoptimized: true,
     },
+    {
+      img: secroMarvelImg,
+      name: "services.p4.name",
+      desc: "services.p4.desc",
+      alt: "services.p4.alt",
+      imageClassName: "scale-[0.9]",
+      shadowClassName: "product-shadow-marvel",
+      pdfHref: WHATSAPP_URL,
+    },
   ];
 
   return (
@@ -283,13 +293,13 @@ function Services() {
         <div className="mt-16 sm:mt-20">
           <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
 
-          <div className="mt-10 grid gap-x-8 gap-y-16 md:mt-12 md:grid-cols-3 lg:gap-x-12">
+          <div className="mt-10 grid gap-x-7 gap-y-14 sm:grid-cols-2 md:mt-12 lg:grid-cols-4 lg:gap-x-8">
             {products.map((product, index) => (
               <article
                 key={product.name}
                 className="flex min-w-0 flex-col items-center text-center"
               >
-                <div className="relative h-72 w-full max-w-md overflow-hidden sm:h-80 md:h-72 lg:h-84">
+                <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
                   <Reveal
                     once
                     delay={100 + (lang === "ar" ? products.length - 1 - index : index) * 140}
@@ -308,22 +318,22 @@ function Services() {
                       fill
                       loading="eager"
                       unoptimized={product.unoptimized ?? false}
-                      sizes="(min-width: 1024px) 27vw, (min-width: 768px) 30vw, 92vw"
+                      sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
                       className={`object-contain ${product.imageClassName} ${product.shadowClassName}`}
                     />
                   </Reveal>
                 </div>
 
-                <h4 className="mt-5 text-2xl leading-tight text-primary rtl:text-[1.625rem]">
+                <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
                   {t(product.name)}
                 </h4>
                 <span aria-hidden="true" className="hairline mt-4 w-12" />
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+                <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
                   {t(product.desc)}
                 </p>
                 <a
                   href={product.pdfHref}
-                  download={product.downloadName}
+                  download={product.downloadName ?? undefined}
                   className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
                 >
                   {t("services.cta")}

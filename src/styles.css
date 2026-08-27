@@ -244,6 +244,10 @@
   filter: drop-shadow(3px 13px 24px rgb(96 78 54 / 0.13));
 }
 
+.product-shadow-marvel {
+  filter: drop-shadow(4px 14px 24px rgb(77 80 120 / 0.15));
+}
+
 .product-shadow-hyac {
   filter: drop-shadow(5px 17px 29px rgb(75 63 51 / 0.16));
 }
@@ -259,6 +263,10 @@
 
   .product-shadow-body {
     filter: drop-shadow(5px 18px 33px rgb(96 78 54 / 0.145));
+  }
+
+  .product-shadow-marvel {
+    filter: drop-shadow(6px 19px 33px rgb(77 80 120 / 0.17));
   }
 
   .product-shadow-hyac {

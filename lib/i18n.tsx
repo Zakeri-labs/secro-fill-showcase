@@ -61,6 +61,10 @@ const en: Dict = {
   "services.p3.desc":
     "Engineered for body volumisation with a high-density gel matrix designed for smooth, natural contour results.",
   "services.p3.alt": "SECRO-FILL BODY FILLER packaging with two syringes",
+  "services.p4.name": "SECRO-MARVEL",
+  "services.p4.desc":
+    "A premium presentation set designed for precise professional treatments, combining controlled delivery with SECRO-FILL quality.",
+  "services.p4.alt": "Open SECRO-MARVEL presentation box with a professional syringe",
   "services.line.secro": "SECRO-FILL LINE",
   "services.line.hyac": "HYAC LINE",
   "services.hyac.name": "HYAC-LIFT (16% CHAC)",
@@ -191,6 +195,10 @@ const ar: Dict = {
   "services.p3.name": "SECRO-FILL BODY FILLER",
   "services.p3.desc": "مصمم لزيادة حجم الجسم بمصفوفة جل عالية الكثافة لنتائج انسيابية وطبيعية.",
   "services.p3.alt": "عبوة SECRO-FILL BODY FILLER مع محقنتين",
+  "services.p4.name": "SECRO-MARVEL",
+  "services.p4.desc":
+    "مجموعة فاخرة مصممة للعلاجات الاحترافية الدقيقة، تجمع بين التحكم في الاستخدام وجودة SECRO-FILL.",
+  "services.p4.alt": "علبة SECRO-MARVEL مفتوحة مع محقنة احترافية",
   "services.line.secro": "خط SECRO-FILL",
   "services.line.hyac": "خط HYAC",
   "services.hyac.name": "HYAC-LIFT ‏(16% CHAC)",
@@ -310,6 +318,10 @@ const de: Dict = {
   "services.p3.desc":
     "Entwickelt für den Körpervolumenaufbau mit einer hochdichten Gelmatrix für gleichmäßige, natürliche Konturergebnisse.",
   "services.p3.alt": "SECRO-FILL BODY FILLER Verpackung mit zwei Spritzen",
+  "services.p4.name": "SECRO-MARVEL",
+  "services.p4.desc":
+    "Ein hochwertiges Präsentationsset für präzise professionelle Behandlungen, das kontrollierte Anwendung mit SECRO-FILL Qualität verbindet.",
+  "services.p4.alt": "Geöffnete SECRO-MARVEL Präsentationsbox mit professioneller Spritze",
   "services.line.secro": "SECRO-FILL LINIE",
   "services.line.hyac": "HYAC LINIE",
   "services.hyac.name": "HYAC-LIFT (16% CHAC)",
