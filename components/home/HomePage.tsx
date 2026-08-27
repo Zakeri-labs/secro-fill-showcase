@@ -14,7 +14,7 @@ import {
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
 import heroImg from "@/assets/Hero-image-Web.webp";
-import mobileHeroImg from "@/assets/Hero-image-Mobile.png";
+import mobileHeroImg from "@/assets/Hero-image-Mobile-cropped.webp";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
 import afterNose from "@/assets/After-nose.png";
@@ -106,13 +106,13 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[790px] overflow-hidden sm:min-h-[900px] lg:min-h-[94svh]"
+      className="mobile-hero-section relative min-h-[100svh] overflow-hidden bg-hero-surface md:min-h-[900px] lg:min-h-[94svh]"
     >
-      <picture className="absolute inset-0 block">
+      <picture className="mobile-hero-picture absolute inset-x-0 top-0 bottom-15 block bg-hero-surface md:bottom-0">
         <source
           media={
             isRtl
-              ? "(max-width: 899px), (max-width: 1100px) and (orientation: portrait)"
+              ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
               : "(max-width: 639px)"
           }
           srcSet={mobileHeroImg.src}
@@ -125,33 +125,35 @@ function Hero() {
           sizes="100vw"
           className={
             isRtl
-              ? "object-cover object-[42%_center] sm:object-center"
-              : "object-cover object-[100%_center] sm:object-[62%_center] lg:object-center"
+              ? "object-contain object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-cover [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-cover md:object-center"
+              : "object-contain object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-cover [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-cover md:object-[62%_center] lg:object-center"
           }
         />
       </picture>
-      <div className="relative mx-auto flex min-h-[790px] max-w-7xl flex-col justify-start px-5 pt-36 pb-16 sm:min-h-[900px] sm:justify-end sm:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
+      <div className="mobile-hero-frame relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-start px-4 pt-28 pb-20 [@media(max-height:650px)_and_(orientation:portrait)]:pt-20 [@media(max-width:899px)_and_(orientation:landscape)]:pt-22 md:min-h-[900px] md:justify-end md:px-5 md:pt-36 md:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
         <div
-          className={`animate-rise ${
+          className={`mobile-hero-copy animate-rise ${
             isRtl
-              ? "mr-auto ml-0 w-full max-w-[9.25rem] text-right sm:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
-              : "max-w-[9.75rem] sm:max-w-xl lg:max-w-[38rem]"
+              ? "mr-auto ml-0 w-[46%] max-w-[12rem] text-right [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
+              : "w-[46%] max-w-[12rem] [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
           }`}
         >
-          <p className="eyebrow whitespace-nowrap text-[0.55rem] tracking-[0.16em] text-primary sm:text-[0.6875rem] sm:tracking-[0.28em]">
+          <p className="eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
             {t("hero.eyebrow")}
           </p>
           <div
             aria-hidden="true"
-            className={`hairline mt-3 w-12 sm:mt-4 sm:w-14 ${isRtl ? "ml-auto" : ""}`}
+            className={`hairline mt-2.5 w-12 [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
-          <h1 className="mt-5 text-[1.62rem] leading-[1.08] rtl:text-[2rem] sm:mt-6 sm:text-6xl sm:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
+          <h1 className="mt-4 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
               englishTitleParts.map((part, index) => (
                 <span
                   key={`${part}-${index}`}
                   className={
-                    part === "Science" || part === "Beauty" ? "text-gold-deep" : "text-primary"
+                    part === "Science" || part === "Beauty"
+                      ? "text-gold-soft"
+                      : "text-primary-foreground"
                   }
                 >
                   {part}
@@ -159,33 +161,33 @@ function Hero() {
               ))
             ) : (
               <>
-                <span className="text-primary">{titleBeforeGold}</span>
-                {titleGold && <span className="text-gold-deep">{titleGold}</span>}
+                <span className="text-primary-foreground">{titleBeforeGold}</span>
+                {titleGold && <span className="text-gold-soft">{titleGold}</span>}
               </>
             )}
           </h1>
           <p
-            className={`mt-5 text-[0.72rem] leading-[1.55] text-foreground/80 rtl:text-[0.8125rem] sm:mt-6 sm:text-base sm:leading-relaxed sm:rtl:text-[1.0625rem] ${
-              isRtl ? "sm:max-w-none" : "sm:max-w-xl"
+            className={`mt-4 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
+              isRtl ? "md:max-w-none" : "md:max-w-xl"
             }`}
           >
             {t("hero.sub")}
           </p>
           <div
-            className={`mt-6 flex flex-col gap-2.5 sm:mt-10 sm:gap-3 ${
+            className={`mobile-hero-actions mt-7 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
               isRtl ? "lg:flex-row" : "sm:flex-row"
             }`}
           >
             <a
               href="#contact"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-[0.625rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em] sm:rtl:text-xs"
+              className="group inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
             >
               {t("hero.cta1")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
             <a
               href="#products"
-              className="inline-flex w-full items-center justify-center rounded-full border border-primary/45 bg-white/25 px-2 py-3 text-[0.52rem] tracking-[0.08em] uppercase text-primary transition-colors hover:border-primary hover:bg-white/50 rtl:text-[0.625rem] rtl:tracking-[0.02em] rtl:normal-case sm:w-auto sm:px-7 sm:py-4 sm:text-[0.7rem] sm:tracking-[0.2em] sm:rtl:text-xs"
+              className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-primary-foreground/55 bg-black/15 px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-primary-foreground backdrop-blur-sm transition-colors hover:border-gold-soft hover:bg-primary-foreground/10 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
             >
               {t("hero.cta2")}
             </a>

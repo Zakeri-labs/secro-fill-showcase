@@ -54,7 +54,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           }`}
           aria-label="SECRO-FILL home"
         >
-          <BrandLock light={false} />
+          <BrandLock light={overlay && !mobileScrolled} />
         </Link>
 
         <button
@@ -62,10 +62,12 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
           aria-expanded={open}
-          className={`shrink-0 rounded-full p-2 text-foreground transition-[background-color,box-shadow] duration-300 ${
+          className={`shrink-0 rounded-full p-2 transition-[color,background-color,box-shadow] duration-300 ${
             glassMobileMenu
-              ? "bg-background/85 shadow-[0_12px_30px_-20px_var(--primary)] backdrop-blur-xl"
-              : "bg-transparent shadow-none"
+              ? "bg-background/85 text-foreground shadow-[0_12px_30px_-20px_var(--primary)] backdrop-blur-xl"
+              : overlay
+                ? "bg-transparent text-primary-foreground shadow-none"
+                : "bg-transparent text-foreground shadow-none"
           }`}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -80,7 +82,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
         }`}
       >
         <Link href="/" className="min-w-0" aria-label="SECRO-FILL home">
-          <BrandLock light={false} />
+          <BrandLock light={!solid} />
         </Link>
 
         <div className="contents">
@@ -92,7 +94,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
                 className={`text-[0.68rem] tracking-[0.12em] uppercase transition-colors rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case ${
                   solid
                     ? "text-muted-foreground hover:text-primary"
-                    : "text-primary/80 hover:text-primary"
+                    : "text-primary-foreground/75 hover:text-primary-foreground"
                 }`}
               >
                 {t(l.key)}
@@ -101,7 +103,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           </nav>
 
           <div>
-            <LanguageSwitcher light={false} />
+            <LanguageSwitcher light={!solid} />
           </div>
 
           <a
