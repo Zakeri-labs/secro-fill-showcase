@@ -144,9 +144,9 @@ function Hero() {
           </p>
           <div
             aria-hidden="true"
-            className={`hairline mt-4 w-12 [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
+            className={`hairline mt-6 w-12 [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
-          <h1 className="mobile-hero-title mt-6 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
+          <h1 className="mobile-hero-title mt-8 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
               <>
                 <span className="text-primary-foreground">Luxury </span>
@@ -162,14 +162,14 @@ function Hero() {
             )}
           </h1>
           <p
-            className={`mobile-hero-description mt-6 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
+            className={`mobile-hero-description mt-8 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
               isRtl ? "md:max-w-none" : "md:max-w-xl"
             }`}
           >
             {t("hero.sub")}
           </p>
           <div
-            className={`mobile-hero-actions mt-10 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
+            className={`mobile-hero-actions mt-14 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
               isRtl ? "lg:flex-row" : "sm:flex-row"
             }`}
           >
