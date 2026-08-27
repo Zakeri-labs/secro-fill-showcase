@@ -400,6 +400,14 @@
   }
 }
 
+@utility animate-marquee-slow {
+  animation: marquee 26s linear infinite;
+
+  [dir="rtl"] & {
+    animation-name: marquee-rtl;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;

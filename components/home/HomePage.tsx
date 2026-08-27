@@ -236,6 +236,86 @@ function ProductLineHeading({ children }: { children: string }) {
   );
 }
 
+type ServiceProduct = {
+  img: typeof deep3xImg;
+  name: string;
+  desc: string;
+  alt: string;
+  imageClassName: string;
+  shadowClassName: string;
+  pdfHref: string;
+  downloadName?: string;
+  unoptimized?: boolean;
+};
+
+function ProductCard({
+  product,
+  t,
+  withReveal,
+  revealDelay = 0,
+  className = "",
+}: {
+  product: ServiceProduct;
+  t: (key: string) => string;
+  withReveal: boolean;
+  revealDelay?: number;
+  className?: string;
+}) {
+  const image = (
+    <Image
+      src={product.img}
+      alt={t(product.alt)}
+      fill
+      loading="eager"
+      unoptimized={product.unoptimized ?? false}
+      sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
+      className={`object-contain ${product.imageClassName} ${product.shadowClassName}`}
+    />
+  );
+
+  return (
+    <article className={`flex min-w-0 flex-col items-center text-center ${className}`}>
+      <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
+        {withReveal ? (
+          <Reveal
+            once
+            replayOnDesktop
+            delay={revealDelay}
+            distance={72}
+            scale={0.98}
+            duration={800}
+            threshold={0.2}
+            rootMargin="0px 0px 12% 0px"
+            trigger="closest-article"
+            fitThresholdToViewport
+            className="absolute inset-3 sm:inset-4"
+          >
+            {image}
+          </Reveal>
+        ) : (
+          <div className="absolute inset-3 sm:inset-4">{image}</div>
+        )}
+      </div>
+
+      <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
+        {t(product.name)}
+      </h4>
+      <span aria-hidden="true" className="hairline mt-4 w-12" />
+      <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+        {t(product.desc)}
+      </p>
+      <a
+        href={product.pdfHref}
+        download={product.downloadName ?? undefined}
+        className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+      >
+        {t("services.cta")}
+        <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+      </a>
+    </article>
+  );
+}
+
 function Services() {
   const { lang, t } = useI18n();
   const products = [
@@ -293,55 +373,31 @@ function Services() {
         <div className="mt-12 sm:mt-14">
           <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
 
-          <div className="mt-8 grid gap-x-7 gap-y-12 sm:grid-cols-2 md:mt-10 lg:grid-cols-4 lg:gap-x-8">
+          <div className="mt-8 hidden gap-x-7 gap-y-12 sm:grid sm:grid-cols-2 md:mt-10 lg:grid-cols-4 lg:gap-x-8">
             {products.map((product, index) => (
-              <article
+              <ProductCard
                 key={product.name}
-                className="flex min-w-0 flex-col items-center text-center"
-              >
-                <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
-                  <Reveal
-                    once
-                    replayOnDesktop
-                    delay={100 + (lang === "ar" ? products.length - 1 - index : index) * 140}
-                    distance={72}
-                    scale={0.98}
-                    duration={800}
-                    threshold={0.2}
-                    rootMargin="0px 0px 12% 0px"
-                    trigger="closest-article"
-                    fitThresholdToViewport
-                    className="absolute inset-3 sm:inset-4"
-                  >
-                    <Image
-                      src={product.img}
-                      alt={t(product.alt)}
-                      fill
-                      loading="eager"
-                      unoptimized={product.unoptimized ?? false}
-                      sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
-                      className={`object-contain ${product.imageClassName} ${product.shadowClassName}`}
-                    />
-                  </Reveal>
-                </div>
-
-                <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
-                  {t(product.name)}
-                </h4>
-                <span aria-hidden="true" className="hairline mt-4 w-12" />
-                <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-                  {t(product.desc)}
-                </p>
-                <a
-                  href={product.pdfHref}
-                  download={product.downloadName ?? undefined}
-                  className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
-                >
-                  {t("services.cta")}
-                  <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-                </a>
-              </article>
+                product={product}
+                t={t}
+                withReveal
+                revealDelay={100 + (lang === "ar" ? products.length - 1 - index : index) * 140}
+              />
             ))}
+          </div>
+
+          <div className="mt-8 -mx-5 overflow-hidden sm:hidden">
+            <div className="animate-marquee-slow flex w-max gap-x-6 px-5">
+              {[...products, ...products].map((product, index) => (
+                <ProductCard
+                  key={`${product.name}-${index}`}
+                  product={product}
+                  t={t}
+                  withReveal
+                  revealDelay={100 + index * 140}
+                  className="w-60 shrink-0"
+                />
+              ))}
+            </div>
           </div>
         </div>
 
