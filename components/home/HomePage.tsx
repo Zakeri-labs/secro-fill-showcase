@@ -109,7 +109,7 @@ function Hero() {
       id="top"
       className="mobile-hero-section relative min-h-[100svh] overflow-hidden bg-hero-surface md:min-h-[900px] lg:min-h-[94svh]"
     >
-      <picture className="mobile-hero-picture absolute inset-x-0 top-0 bottom-15 block bg-hero-surface md:bottom-0">
+      <picture className="mobile-hero-picture absolute inset-0 block bg-hero-surface">
         <source
           media={
             isRtl
@@ -126,8 +126,8 @@ function Hero() {
           sizes="100vw"
           className={
             isRtl
-              ? "object-contain object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-cover [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-cover md:object-center"
-              : "object-contain object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-cover [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-cover md:object-[62%_center] lg:object-center"
+              ? "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-center"
+              : "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-[62%_center] lg:object-center"
           }
         />
       </picture>

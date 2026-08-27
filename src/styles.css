@@ -349,17 +349,6 @@
     min-height: 52rem;
   }
 
-  .mobile-hero-picture {
-    top: 0;
-    bottom: 3.75rem;
-    height: auto;
-  }
-
-  .mobile-hero-picture img {
-    object-fit: cover;
-    object-position: 80% center;
-  }
-
   .mobile-hero-frame {
     min-height: 100%;
     padding-top: 7rem;
