@@ -16,11 +16,9 @@ import {
   UsersRound,
 } from "lucide-react";
 
-import heroImg from "@/assets/Hero-image-Web.webp";
-import positioningImg from "@/assets/Positiononig-Section.webp";
-import bodyImg from "@/assets/product-body.jpg";
-import deep10Img from "@/assets/product-deep-10ml.jpg";
-import deep3xImg from "@/assets/product-deep-3x.jpg";
+import aboutHeroImg from "@/assets/about-1.webp";
+import aboutIntroImg from "@/assets/about-2.webp";
+import aboutVisionImg from "@/assets/about-3.webp";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import {
@@ -41,8 +39,6 @@ const principleIcons = [UsersRound, Factory, Settings2, TrendingUp] as const;
 const trustKeys = ["years", "technology", "innovation", "reach"] as const;
 const researchKeys = ["technologies", "ingredients", "formulations", "science"] as const;
 const researchIcons = [Microscope, Droplets, FlaskConical, Atom] as const;
-const visionImages = [deep3xImg, deep10Img, bodyImg] as const;
-
 export function AboutPage() {
   const { t } = useI18n();
 
@@ -58,7 +54,7 @@ export function AboutPage() {
           visual={
             <div className="relative aspect-[5/4] min-h-72 overflow-hidden border border-border bg-primary shadow-luxe sm:aspect-[16/11]">
               <Image
-                src={positioningImg}
+                src={aboutHeroImg}
                 alt={t("aboutPage.imageAlt")}
                 fill
                 priority
@@ -81,7 +77,7 @@ export function AboutPage() {
             <Reveal distance={48} scale={0.985}>
               <div className="relative aspect-[4/5] overflow-hidden bg-secondary shadow-luxe sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
-                  src={heroImg}
+                  src={aboutIntroImg}
                   alt={t("aboutPage.intro.imageAlt")}
                   fill
                   sizes="(min-width: 1024px) 46vw, 100vw"
@@ -267,18 +263,14 @@ export function AboutPage() {
           reverse
           visual={
             <Reveal distance={56} scale={0.98}>
-              <div className="relative grid aspect-[5/4] grid-cols-3 overflow-hidden border border-border bg-card shadow-luxe">
-                {visionImages.map((image) => (
-                  <div key={image.src} className="relative border-e border-border last:border-e-0">
-                    <Image
-                      src={image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 16vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
+              <div className="relative aspect-[5/4] overflow-hidden border border-border bg-card shadow-luxe">
+                <Image
+                  src={aboutVisionImg}
+                  alt={t("aboutPage.imageAlt")}
+                  fill
+                  sizes="(min-width: 1024px) 46vw, 100vw"
+                  className="object-cover"
+                />
                 <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
               </div>
             </Reveal>
