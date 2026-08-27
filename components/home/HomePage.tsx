@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
-import heroImg from "@/assets/Hero-image-Web.webp";
-import mobileHeroImg from "@/assets/Hero-image-Mobile-cropped.webp";
+import heroImg from "@/assets/Hero-image-Web.jpg";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
 import afterBody from "@/assets/After-Body.png";
 import afterChin from "@/assets/after-chin.png";
@@ -116,7 +115,7 @@ function Hero() {
               ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
               : "(max-width: 639px)"
           }
-          srcSet={mobileHeroImg.src}
+          srcSet={heroImg.src}
         />
         <Image
           src={heroImg}
