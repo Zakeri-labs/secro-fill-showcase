@@ -74,19 +74,27 @@ const en: Dict = {
   "services.cta": "Request Details",
   "services.catalogCta": "Download Catalog",
 
+  "film.eyebrow": "The SECRO-FILL Experience",
+  "film.title": "Precision, Captured in Motion",
+  "film.sub":
+    "Discover the discipline, detail and refined aesthetic behind every SECRO-FILL professional solution.",
+  "film.frame.eyebrow": "Engineered in Germany",
+  "film.frame.title": "Where science meets refinement",
+  "film.frame.label": "Brand Film",
+
   "about.eyebrow": "Positioning",
   "about.title": "Innovation, Quality & Expertise",
   "about.sub":
-    "For more than a decade, we have developed and manufactured high-quality products for the global medical aesthetics industry — including advanced dermal fillers, skin boosters, and skin, hair and aesthetic care solutions — supplied to markets worldwide and trusted by physicians, aesthetic practitioners and professionals internationally.",
+    "For more than a decade, we have developed and manufactured high-quality products for the global medical aesthetics industry.",
   "about.c1.title": "Research & Development",
   "about.c1.desc":
-    "Our R&D team continuously explores new technologies, ingredients, formulations and scientific advancements in skin, hair and medical aesthetics — introducing the next generation of products through careful research and rigorous scientific testing.",
+    "Our R&D team continuously explores new technologies, ingredients, formulations and scientific advancements in skin, hair and medical aesthetics.",
   "about.c2.title": "Advanced Manufacturing",
   "about.c2.desc":
-    "Built on experienced specialists, advanced manufacturing technologies and state-of-the-art production equipment, upholding high manufacturing standards to deliver reliable, innovative solutions.",
+    "Built on experienced specialists, advanced manufacturing technologies and state-of-the-art production equipment.",
   "about.c3.title": "Global Vision",
   "about.c3.desc":
-    "Our vision is to expand our presence in the international aesthetics market with products that meet the highest expectations of professionals worldwide — over 10 years of expertise, advanced technology and continuous innovation.",
+    "Our vision is to expand our presence in the international aesthetics market with products that meet the highest expectations of professionals worldwide.",
 
   "portfolio.eyebrow": "Work Proof",
   "portfolio.title": "Before & After Gallery",
@@ -213,19 +221,26 @@ const ar: Dict = {
   "services.cta": "اطلب التفاصيل",
   "services.catalogCta": "تحميل الكتالوج",
 
+  "film.eyebrow": "تجربة SECRO-FILL",
+  "film.title": "الدقة في كل مشهد",
+  "film.sub":
+    "اكتشف الانضباط والاهتمام بالتفاصيل والرؤية الراقية التي تقف خلف كل حل احترافي من SECRO-FILL.",
+  "film.frame.eyebrow": "مصنوع في ألمانيا",
+  "film.frame.title": "حيث يلتقي العلم بالرقي",
+  "film.frame.label": "فيلم العلامة",
+
   "about.eyebrow": "التوجه",
   "about.title": "الابتكار والجودة والخبرة",
   "about.sub":
-    "منذ أكثر من عقد، ونحن نطوّر ونصنّع منتجات عالية الجودة لصناعة التجميل الطبي العالمية - بما في ذلك حشوات الجلد المتقدمة، ومعزّزات البشرة، وحلول العناية بالبشرة والشعر والتجميل - تُورَّد إلى أسواق حول العالم ويثق بها الأطباء وممارسو التجميل والمحترفون دولياً.",
+    "منذ أكثر من عقد، ونحن نطوّر ونصنّع منتجات عالية الجودة لصناعة التجميل الطبي العالمية.",
   "about.c1.title": "البحث والتطوير",
   "about.c1.desc":
-    "يستكشف فريق البحث والتطوير لدينا باستمرار تقنيات ومكونات وتركيبات وتطورات علمية جديدة في مجالات البشرة والشعر والتجميل الطبي، لتقديم الجيل القادم من المنتجات من خلال بحث دقيق واختبارات علمية صارمة.",
+    "يستكشف فريق البحث والتطوير لدينا باستمرار تقنيات ومكونات وتركيبات وتطورات علمية جديدة في مجالات البشرة والشعر والتجميل الطبي.",
   "about.c2.title": "تصنيع متقدم",
-  "about.c2.desc":
-    "يعتمد على متخصصين ذوي خبرة وتقنيات تصنيع متقدمة ومعدات إنتاج حديثة، مع الحفاظ على معايير تصنيع عالية لتقديم حلول موثوقة ومبتكرة.",
+  "about.c2.desc": "يعتمد على متخصصين ذوي خبرة وتقنيات تصنيع متقدمة ومعدات إنتاج حديثة.",
   "about.c3.title": "رؤية عالمية",
   "about.c3.desc":
-    "تتمثل رؤيتنا في توسيع حضورنا في سوق التجميل الدولي وتطوير منتجات تلبي أعلى توقعات المحترفين حول العالم - بخبرة تتجاوز 10 سنوات وتقنية متقدمة وابتكار مستمر.",
+    "تتمثل رؤيتنا في توسيع حضورنا في سوق التجميل الدولي وتطوير منتجات تلبي أعلى توقعات المحترفين حول العالم.",
 
   "portfolio.eyebrow": "دليل العمل",
   "portfolio.title": "معرض قبل وبعد",
@@ -345,19 +360,27 @@ const de: Dict = {
   "services.cta": "Details anfragen",
   "services.catalogCta": "Katalog herunterladen",
 
+  "film.eyebrow": "Das SECRO-FILL Erlebnis",
+  "film.title": "Präzision in Bewegung",
+  "film.sub":
+    "Entdecken Sie die Disziplin, Sorgfalt und raffinierte Ästhetik hinter jeder professionellen Lösung von SECRO-FILL.",
+  "film.frame.eyebrow": "Entwickelt in Deutschland",
+  "film.frame.title": "Wo Wissenschaft auf Ästhetik trifft",
+  "film.frame.label": "Markenfilm",
+
   "about.eyebrow": "Positionierung",
   "about.title": "Innovation, Qualität & Expertise",
   "about.sub":
-    "Seit mehr als einem Jahrzehnt entwickeln und fertigen wir hochwertige Produkte für die globale Medizinästhetik-Branche – darunter fortschrittliche dermale Filler, Skin Booster sowie Lösungen für Haut-, Haar- und Ästhetikpflege – die weltweit an Märkte geliefert und von Ärzten, ästhetischen Fachkräften und Experten international vertraut werden.",
+    "Seit mehr als einem Jahrzehnt entwickeln und fertigen wir hochwertige Produkte für die globale Medizinästhetik-Branche.",
   "about.c1.title": "Forschung & Entwicklung",
   "about.c1.desc":
-    "Unser F&E-Team erforscht kontinuierlich neue Technologien, Inhaltsstoffe, Formulierungen und wissenschaftliche Fortschritte in den Bereichen Haut, Haar und Medizinästhetik – und führt durch sorgfältige Forschung und strenge wissenschaftliche Tests die nächste Produktgeneration ein.",
+    "Unser F&E-Team erforscht kontinuierlich neue Technologien, Inhaltsstoffe, Formulierungen und wissenschaftliche Fortschritte in den Bereichen Haut, Haar und Medizinästhetik.",
   "about.c2.title": "Fortschrittliche Herstellung",
   "about.c2.desc":
-    "Basierend auf erfahrenen Spezialisten, fortschrittlichen Fertigungstechnologien und modernster Produktionsausrüstung, mit hohen Fertigungsstandards für zuverlässige, innovative Lösungen.",
+    "Basierend auf erfahrenen Spezialisten, fortschrittlichen Fertigungstechnologien und modernster Produktionsausrüstung.",
   "about.c3.title": "Globale Vision",
   "about.c3.desc":
-    "Unsere Vision ist es, unsere Präsenz auf dem internationalen Ästhetikmarkt auszubauen und Produkte zu entwickeln, die den höchsten Erwartungen von Fachleuten weltweit gerecht werden – über 10 Jahre Expertise, fortschrittliche Technologie und kontinuierliche Innovation.",
+    "Unsere Vision ist es, unsere Präsenz auf dem internationalen Ästhetikmarkt auszubauen und Produkte zu entwickeln, die den höchsten Erwartungen von Fachleuten weltweit gerecht werden.",
 
   "portfolio.eyebrow": "Behandlungsergebnisse",
   "portfolio.title": "Vorher-Nachher-Galerie",

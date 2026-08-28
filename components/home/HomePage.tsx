@@ -37,6 +37,7 @@ import positioningImg from "@/assets/Positiononig-Section.webp";
 import testimonialClinicDirector from "@/assets/testimonial-clinic-director.webp";
 import testimonialDistributor from "@/assets/testimonial-distributor.webp";
 import testimonialPhysician from "@/assets/testimonial-physician.webp";
+import { DeferredBrandFilm } from "@/components/home/DeferredBrandFilm";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
@@ -470,7 +471,7 @@ function About() {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden bg-emerald-gradient px-5 py-24 text-primary-foreground lg:px-10 lg:py-32"
+      className="relative isolate overflow-hidden bg-emerald-gradient px-5 py-20 text-primary-foreground lg:px-10 lg:py-28"
     >
       <Image
         src={positioningImg}
@@ -483,7 +484,7 @@ function About() {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-primary/35" />
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <DecoratedEyebrow text={t("about.eyebrow")} className="text-accent" dark />
             <h2 className="mt-4 text-3xl leading-tight rtl:text-[2.125rem] sm:text-4xl sm:rtl:text-[2.625rem] lg:text-5xl lg:rtl:text-[3.25rem]">
               {t("about.title")}
@@ -493,27 +494,27 @@ function About() {
             </p>
           </div>
         </Reveal>
-        <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
+        <div className="mt-12 grid border-y border-accent/25 md:grid-cols-3">
           {cards.map(({ key, Icon }, i) => (
-            <Reveal key={key} delay={i * 120}>
-              <div className="card-luxe relative flex h-full flex-col overflow-hidden !border-accent/35 !bg-primary/35 p-5 text-primary-foreground shadow-card backdrop-blur-sm">
-                <span className="absolute start-0 top-0 bg-gradient-to-br from-gold-soft to-gold-deep px-5 py-3 text-2xl leading-none text-accent-foreground">
-                  0{i + 1}
-                </span>
-                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-accent/80 text-accent">
-                  <Icon className="h-9 w-9" strokeWidth={1.25} />
+            <Reveal key={key} delay={i * 100} className="h-full">
+              <div
+                className={`flex h-full flex-col py-8 md:px-8 lg:px-10 ${
+                  i > 0 ? "border-t border-accent/25 md:border-t-0 md:border-s" : ""
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="grid h-11 w-11 place-items-center rounded-full border border-accent/45 text-accent">
+                    <Icon className="h-5 w-5" strokeWidth={1.25} />
+                  </div>
+                  <span className="text-xs tracking-[0.2em] text-accent/70">0{i + 1}</span>
                 </div>
-                <h3 className="mt-5 text-xl text-primary-foreground rtl:text-[1.375rem]">
+                <h3 className="mt-7 text-xl text-primary-foreground rtl:text-[1.375rem]">
                   {t(`about.${key}.title`)}
                 </h3>
                 <div className="hairline mt-3 w-12" />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-primary-foreground/80 rtl:text-[0.9375rem]">
                   {t(`about.${key}.desc`)}
                 </p>
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-gold-deep via-gold-soft to-gold-deep"
-                />
               </div>
             </Reveal>
           ))}
@@ -1021,6 +1022,7 @@ export function HomePage() {
         <Hero />
         <TrustBar />
         <Services />
+        <DeferredBrandFilm />
         <About />
         <Portfolio />
         <Process />
