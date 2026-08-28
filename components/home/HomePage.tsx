@@ -153,7 +153,7 @@ function Hero() {
             aria-hidden="true"
             className={`hairline mt-8 w-12 [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
-          <h1 className="mobile-hero-title mt-6 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
+          <h1 className="mobile-hero-title mt-6 text-[1.75rem] leading-[1.06] rtl:text-[2rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
               <>
                 <span className="text-primary-foreground">Luxury </span>
@@ -168,8 +168,8 @@ function Hero() {
               </>
             )}
           </h1>
-          <div className="relative left-1/2 mt-3 hidden w-[90vw] -translate-x-[45vw] bg-gradient-to-br from-gold-soft via-gold-deep to-gold-soft p-px shadow-[0_18px_40px_-26px_color-mix(in_oklch,var(--gold-deep)_88%,transparent)] [@media(max-width:767px)_and_(orientation:portrait)]:block">
-            <div className="relative aspect-video w-full overflow-hidden bg-hero-surface">
+          <div className="relative left-1/2 mt-3 hidden w-[94vw] -translate-x-[47vw] overflow-hidden rounded-[15px] bg-gradient-to-br from-gold-soft via-gold-deep to-gold-soft p-px shadow-[0_18px_40px_-26px_color-mix(in_oklch,var(--gold-deep)_88%,transparent)] [@media(max-width:767px)_and_(orientation:portrait)]:block">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-hero-surface">
               <video
                 autoPlay
                 muted
