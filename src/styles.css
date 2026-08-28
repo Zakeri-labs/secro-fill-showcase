@@ -368,12 +368,12 @@
   }
 
   .mobile-hero-description {
-    margin-top: 3.5rem;
+    margin-top: 1rem;
     font-size: 0.85rem;
   }
 
   .mobile-hero-actions {
-    margin-top: 5rem;
+    margin-top: 2rem;
     width: 100%;
     max-width: none;
   }
