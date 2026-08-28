@@ -72,6 +72,7 @@ const en: Dict = {
     "A professional hyaluronic acid formulation presented for precise, considered lifting protocols.",
   "services.hyac.alt": "HYAC-LIFT 16% CHAC packaging and syringe",
   "services.cta": "Request Details",
+  "services.catalogCta": "Download Catalog",
 
   "about.eyebrow": "Positioning",
   "about.title": "Innovation, Quality & Expertise",
@@ -210,6 +211,7 @@ const ar: Dict = {
   "services.hyac.desc": "تركيبة احترافية من حمض الهيالورونيك مصممة لبروتوكولات رفع دقيقة ومدروسة.",
   "services.hyac.alt": "عبوة ومحقنة HYAC-LIFT بتركيز 16% CHAC",
   "services.cta": "اطلب التفاصيل",
+  "services.catalogCta": "تحميل الكتالوج",
 
   "about.eyebrow": "التوجه",
   "about.title": "الابتكار والجودة والخبرة",
@@ -341,6 +343,7 @@ const de: Dict = {
     "Eine professionelle Hyaluronsäure-Formulierung für präzise und durchdachte Lifting-Protokolle.",
   "services.hyac.alt": "HYAC-LIFT 16% CHAC Verpackung und Spritze",
   "services.cta": "Details anfragen",
+  "services.catalogCta": "Katalog herunterladen",
 
   "about.eyebrow": "Positionierung",
   "about.title": "Innovation, Qualität & Expertise",

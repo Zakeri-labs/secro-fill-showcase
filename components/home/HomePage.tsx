@@ -11,7 +11,14 @@ import {
   Microscope,
   Quote,
 } from "lucide-react";
-import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type PointerEvent,
+} from "react";
 
 import heroImg from "@/assets/Hero-image-Web.jpg";
 import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
@@ -274,7 +281,7 @@ function ProductCard({
   );
 
   return (
-    <article className={`flex min-w-0 flex-col items-center text-center ${className}`}>
+    <article className={`flex min-w-0 self-stretch flex-col items-center text-center ${className}`}>
       <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
         {withReveal ? (
           <Reveal
@@ -307,9 +314,9 @@ function ProductCard({
       <a
         href={product.pdfHref}
         download={product.downloadName ?? undefined}
-        className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+        className="mt-auto inline-flex items-center gap-2 border-b border-accent pt-6 pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
       >
-        {t("services.cta")}
+        {t(product.downloadName ? "services.catalogCta" : "services.cta")}
         <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
       </a>
     </article>
@@ -404,7 +411,7 @@ function Services() {
         <div className="mt-16 sm:mt-18 lg:mt-20">
           <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
 
-          <article className="mx-auto mt-8 flex w-full flex-col items-center text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/4)]">
+          <article className="mx-auto mt-8 flex w-full flex-col items-center self-stretch text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/4)]">
             <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
               <Reveal
                 once
@@ -440,9 +447,9 @@ function Services() {
             <a
               href="/downloads/hyac-lift-16-chac.pdf"
               download="HYAC-LIFT-16-CHAC.pdf"
-              className="mt-6 inline-flex items-center gap-2 border-b border-accent pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+              className="mt-auto inline-flex items-center gap-2 border-b border-accent pt-6 pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
             >
-              {t("services.cta")}
+              {t("services.catalogCta")}
               <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
             </a>
           </article>
@@ -708,32 +715,79 @@ function Process() {
 function Testimonials() {
   const { dir, t } = useI18n();
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentIndexRef = useRef(0);
   const items = [
     { q: "testi.t1", r: "testi.r1", avatar: testimonialClinicDirector },
     { q: "testi.t2", r: "testi.r2", avatar: testimonialDistributor },
     { q: "testi.t3", r: "testi.r3", avatar: testimonialPhysician },
   ];
+  const itemCount = items.length;
+
+  const scrollToIndex = useCallback(
+    (index: number) => {
+      const scroller = scrollerRef.current;
+      if (!scroller) return;
+
+      const cards = scroller.querySelectorAll<HTMLElement>("[data-testimonial-card]");
+      const nextIndex = ((index % itemCount) + itemCount) % itemCount;
+      const nextCard = cards[nextIndex];
+      if (!nextCard) return;
+
+      const scrollerBounds = scroller.getBoundingClientRect();
+      const cardBounds = nextCard.getBoundingClientRect();
+      const offset =
+        dir === "rtl"
+          ? cardBounds.right - scrollerBounds.right
+          : cardBounds.left - scrollerBounds.left;
+
+      scroller.scrollBy({ left: offset, behavior: "smooth" });
+      currentIndexRef.current = nextIndex;
+    },
+    [dir, itemCount],
+  );
 
   const scrollToTestimonial = (delta: number) => {
-    const scroller = scrollerRef.current;
-    if (!scroller) return;
-
-    const cards = scroller.querySelectorAll<HTMLElement>("[data-testimonial-card]");
-    const nextIndex = Math.min(items.length - 1, Math.max(0, currentIndex + delta));
-    const nextCard = cards[nextIndex];
-    if (!nextCard) return;
-
-    const scrollerBounds = scroller.getBoundingClientRect();
-    const cardBounds = nextCard.getBoundingClientRect();
-    const offset =
-      dir === "rtl"
-        ? cardBounds.right - scrollerBounds.right
-        : cardBounds.left - scrollerBounds.left;
-
-    scroller.scrollBy({ left: offset, behavior: "smooth" });
-    setCurrentIndex(nextIndex);
+    scrollToIndex(currentIndexRef.current + delta);
   };
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let autoplayTimer: number | undefined;
+
+    const stopAutoplay = () => {
+      if (autoplayTimer !== undefined) {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = undefined;
+      }
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (!mobileQuery.matches || reducedMotionQuery.matches || document.hidden) return;
+
+      autoplayTimer = window.setInterval(() => {
+        const scroller = scrollerRef.current;
+        if (!scroller) return;
+
+        const bounds = scroller.getBoundingClientRect();
+        const isVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
+        if (isVisible) scrollToIndex(currentIndexRef.current + 1);
+      }, 5000);
+    };
+
+    startAutoplay();
+    mobileQuery.addEventListener("change", startAutoplay);
+    reducedMotionQuery.addEventListener("change", startAutoplay);
+    document.addEventListener("visibilitychange", startAutoplay);
+
+    return () => {
+      stopAutoplay();
+      mobileQuery.removeEventListener("change", startAutoplay);
+      reducedMotionQuery.removeEventListener("change", startAutoplay);
+      document.removeEventListener("visibilitychange", startAutoplay);
+    };
+  }, [scrollToIndex]);
 
   const updateCurrentTestimonial = () => {
     const scroller = scrollerRef.current;
@@ -752,7 +806,7 @@ function Testimonials() {
         : closest;
     }, 0);
 
-    setCurrentIndex(closestIndex);
+    currentIndexRef.current = closestIndex;
   };
 
   return (
@@ -795,8 +849,7 @@ function Testimonials() {
               type="button"
               aria-label={t(dir === "rtl" ? "testi.next" : "testi.previous")}
               onClick={() => scrollToTestimonial(dir === "rtl" ? 1 : -1)}
-              disabled={dir === "rtl" ? currentIndex === items.length - 1 : currentIndex === 0}
-              className="grid h-10 w-10 place-items-center rounded-full border border-gold-deep/30 text-primary transition-colors hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-35"
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-deep/30 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
@@ -804,8 +857,7 @@ function Testimonials() {
               type="button"
               aria-label={t(dir === "rtl" ? "testi.previous" : "testi.next")}
               onClick={() => scrollToTestimonial(dir === "rtl" ? -1 : 1)}
-              disabled={dir === "rtl" ? currentIndex === 0 : currentIndex === items.length - 1}
-              className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-emerald-deep/90 disabled:cursor-not-allowed disabled:opacity-35"
+              className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-emerald-deep/90"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
