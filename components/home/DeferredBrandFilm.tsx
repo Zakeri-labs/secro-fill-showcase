@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 import heroImg from "@/assets/Hero-image-Web.jpg";
-import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { useI18n } from "@/lib/i18n";
 
@@ -57,27 +56,17 @@ export function BrandExperience() {
             />
             <div className="relative m-[1px] overflow-hidden bg-hero-surface">
               <div className="relative aspect-video w-full overflow-hidden">
-                <picture className="absolute inset-0 block">
-                  <source
-                    media={
-                      isRtl
-                        ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
-                        : "(max-width: 639px)"
-                    }
-                    srcSet={mobileHeroImg.src}
-                  />
-                  <Image
-                    src={heroImg}
-                    alt={t("image.brandFilm")}
-                    fill
-                    sizes="(min-width: 1280px) 80rem, 100vw"
-                    className={
-                      isRtl
-                        ? "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-center"
-                        : "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-[62%_center] lg:object-center"
-                    }
-                  />
-                </picture>
+                <Image
+                  src={heroImg}
+                  alt={t("image.brandFilm")}
+                  fill
+                  sizes="(min-width: 1280px) 80rem, 100vw"
+                  className={
+                    isRtl
+                      ? "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-center"
+                      : "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-[62%_center] lg:object-center"
+                  }
+                />
 
                 <div
                   aria-hidden="true"
