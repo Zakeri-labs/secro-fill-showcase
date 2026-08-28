@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import logoImg from "@/assets/Logo.png";
+import { useI18n } from "@/lib/i18n";
 
 export function Monogram({ className = "" }: { className?: string }) {
   return (
@@ -20,11 +21,13 @@ export function Monogram({ className = "" }: { className?: string }) {
 }
 
 export function BrandLock({ light = false }: { light?: boolean }) {
+  const { t } = useI18n();
+
   return (
     <span className="flex min-w-0 items-center">
       <Image
         src={logoImg}
-        alt="SECRO-FILL logo"
+        alt={t("image.logo")}
         width={120}
         height={80}
         priority

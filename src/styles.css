@@ -7,6 +7,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/vazirmatn-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/vazirmatn-medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/vazirmatn-semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/vazirmatn-bold.ttf") format("truetype");
+}
+
 /*
  * SECRO-FILL design system.
  * Palette: ivory canvas, deep emerald, champagne gold.
@@ -120,6 +152,13 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
   h1,
   h2,
   h3,
@@ -135,7 +174,10 @@
 
   [dir="rtl"] h1,
   [dir="rtl"] h2,
-  [dir="rtl"] h3 {
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] .font-display,
+  [dir="rtl"] .font-sans {
     font-family: "Vazirmatn", var(--font-display);
     font-weight: 500;
     letter-spacing: 0;
@@ -341,8 +383,8 @@
   }
 
   .mobile-hero-copy {
-    width: 40%;
-    max-width: 10.5rem;
+    width: 85%;
+    max-width: 18rem;
   }
 
   .mobile-hero-eyebrow {

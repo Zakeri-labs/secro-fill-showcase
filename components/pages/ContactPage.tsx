@@ -23,7 +23,7 @@ export function ContactPage() {
         <div className="relative min-h-56 aspect-[16/10] overflow-hidden border border-border bg-secondary shadow-luxe">
           <Image
             src={heroImg}
-            alt="Close-up portrait illustrating premium medical aesthetics"
+            alt={t("image.contactHero")}
             fill
             priority
             sizes="(min-width: 1024px) 38vw, 100vw"
@@ -77,7 +77,7 @@ export function ContactPage() {
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
               const whatsappMessage = [
-                "SECRO-FILL — Partnership Request",
+                t("form.whatsappTitle"),
                 `${t("form.name")}: ${formData.get("name") ?? ""}`,
                 `${t("form.email")}: ${formData.get("email") ?? ""}`,
                 `${t("form.country")}: ${formData.get("country") ?? ""}`,

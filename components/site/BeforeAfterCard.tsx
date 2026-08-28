@@ -5,6 +5,8 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 
+import { useI18n } from "@/lib/i18n";
+
 export function BeforeAfterCard({
   before,
   after,
@@ -18,6 +20,7 @@ export function BeforeAfterCard({
   title: string;
   comparisonLabel?: string;
 }) {
+  const { t } = useI18n();
   const stageRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -62,7 +65,9 @@ export function BeforeAfterCard({
         ref={stageRef}
         role="slider"
         tabIndex={0}
-        aria-label={comparisonLabel ?? `${title} before and after comparison`}
+        aria-label={
+          comparisonLabel ?? `${title}: ${t("portfolio.before")} / ${t("portfolio.after")}`
+        }
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(position)}
@@ -75,7 +80,7 @@ export function BeforeAfterCard({
       >
         <Image
           src={after}
-          alt={`${alt} after`}
+          alt={`${alt} — ${t("portfolio.after")}`}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           draggable={false}
@@ -83,7 +88,7 @@ export function BeforeAfterCard({
         />
         <Image
           src={before}
-          alt={`${alt} before`}
+          alt={`${alt} — ${t("portfolio.before")}`}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           draggable={false}

@@ -1,60 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
+import heroImg from "@/assets/Hero-image-Web.jpg";
+import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { useI18n } from "@/lib/i18n";
 
-const VIDEO_SRC = "/media/secro-fill-film.mp4";
-const VIDEO_LOAD_DELAY_MS = 3500;
-
-type NavigatorWithConnection = Navigator & {
-  connection?: {
-    saveData?: boolean;
-  };
-};
-
-export function DeferredBrandFilm() {
-  const { t } = useI18n();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
-  const [videoUnavailable, setVideoUnavailable] = useState(false);
-
-  useEffect(() => {
-    let delayTimer: number | undefined;
-
-    const queueVideoLoad = () => {
-      delayTimer = window.setTimeout(() => {
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const saveData = (navigator as NavigatorWithConnection).connection?.saveData === true;
-
-        if (!reducedMotion && !saveData) setShouldLoadVideo(true);
-      }, VIDEO_LOAD_DELAY_MS);
-    };
-
-    if (document.readyState === "complete") {
-      queueVideoLoad();
-    } else {
-      window.addEventListener("load", queueVideoLoad, { once: true });
-    }
-
-    return () => {
-      window.removeEventListener("load", queueVideoLoad);
-      if (delayTimer !== undefined) window.clearTimeout(delayTimer);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (shouldLoadVideo) videoRef.current?.load();
-  }, [shouldLoadVideo]);
-
-  const startPlayback = () => {
-    setVideoReady(true);
-    void videoRef.current?.play().catch(() => {
-      // Autoplay can still be blocked by a browser policy; the composed frame remains visible.
-    });
-  };
+export function BrandExperience() {
+  const { lang, t } = useI18n();
+  const isRtl = lang === "ar";
 
   return (
     <section
@@ -102,38 +57,27 @@ export function DeferredBrandFilm() {
             />
             <div className="relative m-[1px] overflow-hidden bg-hero-surface">
               <div className="relative aspect-video w-full overflow-hidden">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,color-mix(in_oklch,var(--gold)_20%,transparent),transparent_32%),linear-gradient(135deg,color-mix(in_oklch,var(--emerald-deep)_88%,black),var(--hero-surface))]"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-[7%] border border-gold-soft/15 sm:inset-[5%]"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute top-1/2 left-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-gold-soft/35 text-gold-soft sm:h-28 sm:w-28"
-                >
-                  <span className="font-display text-4xl font-light sm:text-6xl">S</span>
-                </div>
-
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                  disablePictureInPicture
-                  aria-hidden="true"
-                  onCanPlay={startPlayback}
-                  onError={() => setVideoUnavailable(true)}
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-                    videoReady && !videoUnavailable ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  {shouldLoadVideo && <source src={VIDEO_SRC} type="video/mp4" />}
-                </video>
+                <picture className="absolute inset-0 block">
+                  <source
+                    media={
+                      isRtl
+                        ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
+                        : "(max-width: 639px)"
+                    }
+                    srcSet={mobileHeroImg.src}
+                  />
+                  <Image
+                    src={heroImg}
+                    alt={t("image.brandFilm")}
+                    fill
+                    sizes="(min-width: 1280px) 80rem, 100vw"
+                    className={
+                      isRtl
+                        ? "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-center"
+                        : "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-[62%_center] lg:object-center"
+                    }
+                  />
+                </picture>
 
                 <div
                   aria-hidden="true"

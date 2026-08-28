@@ -41,7 +41,7 @@ export function Footer() {
           <div className="flex min-w-0 max-w-sm flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Image
               src={logoImg}
-              alt="SECRO-FILL logo"
+              alt={t("image.logo")}
               width={256}
               height={140}
               className="h-12 w-24 shrink-0 object-contain object-left brightness-0 invert sm:h-16 sm:w-32"

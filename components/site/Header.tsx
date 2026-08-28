@@ -52,7 +52,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
               ? "pointer-events-none -translate-y-6 opacity-0"
               : "translate-y-0 opacity-100"
           }`}
-          aria-label="SECRO-FILL home"
+          aria-label={t("aria.home")}
         >
           <BrandLock light={overlay && !mobileScrolled} />
         </Link>
@@ -60,7 +60,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+          aria-label={t("aria.menu")}
           aria-expanded={open}
           className={`shrink-0 rounded-full p-2 transition-[color,background-color,box-shadow] duration-300 ${
             glassMobileMenu
@@ -81,12 +81,12 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
             : "border-white/10 bg-white/[0.02] backdrop-blur-xl"
         }`}
       >
-        <Link href="/" className="min-w-0" aria-label="SECRO-FILL home">
+        <Link href="/" className="min-w-0" aria-label={t("aria.home")}>
           <BrandLock light={!solid} />
         </Link>
 
         <div className="contents">
-          <nav className="flex items-center justify-center gap-5" aria-label="Main">
+          <nav className="flex items-center justify-center gap-5" aria-label={t("aria.mainNav")}>
             {links.map((l) => (
               <a
                 key={l.key}
@@ -117,7 +117,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
 
       {open && (
         <div className="animate-rise mt-2 rounded-[22px] border border-border/60 bg-secondary/95 px-4 pt-2 pb-4 shadow-[0_18px_45px_-35px_var(--primary)] backdrop-blur-xl xl:hidden">
-          <nav className="flex flex-col" aria-label="Mobile">
+          <nav className="flex flex-col" aria-label={t("aria.mobileNav")}>
             {links.map((l) => (
               <a
                 key={l.key}

@@ -3,7 +3,7 @@
 import { LANGS, useI18n } from "@/lib/i18n";
 
 export function LanguageSwitcher({ light = false }: { light?: boolean }) {
-  const { lang, setLang } = useI18n();
+  const { lang, setLang, t } = useI18n();
 
   return (
     <div
@@ -11,7 +11,7 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
         light ? "border-primary-foreground/25" : "border-border"
       }`}
       role="group"
-      aria-label="Language"
+      aria-label={t("aria.language")}
     >
       {LANGS.map((l) => {
         const active = l.code === lang;

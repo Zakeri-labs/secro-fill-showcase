@@ -16,7 +16,7 @@ export function MobileBottomNav() {
 
   return (
     <nav
-      aria-label="Quick navigation"
+      aria-label={t("aria.quickNav")}
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border/70 bg-background/92 backdrop-blur-xl lg:hidden"
     >
       <div className="grid grid-cols-4 items-stretch">
@@ -39,7 +39,9 @@ export function MobileBottomNav() {
           className="flex flex-col items-center justify-center gap-1 bg-primary py-3 text-primary-foreground"
         >
           <MessageCircle className="h-4 w-4" />
-          <span className="text-[0.55rem] tracking-[0.14em] uppercase">WhatsApp</span>
+          <span className="text-[0.55rem] tracking-[0.14em] uppercase rtl:text-[0.65rem] rtl:tracking-normal rtl:normal-case">
+            {t("social.whatsapp")}
+          </span>
         </a>
       </div>
     </nav>

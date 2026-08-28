@@ -14,8 +14,6 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import heroImg from "@/assets/Hero-image-Web.jpg";
-import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
 import afterBody from "@/assets/Before-After/After-Body.png";
 import afterNose from "@/assets/Before-After/After-nose.png";
@@ -41,7 +39,7 @@ import positioningImg from "@/assets/Positiononig-Section.webp";
 import testimonialClinicDirector from "@/assets/testimonial-clinic-director.webp";
 import testimonialDistributor from "@/assets/testimonial-distributor.webp";
 import testimonialPhysician from "@/assets/testimonial-physician.webp";
-import { DeferredBrandFilm } from "@/components/home/DeferredBrandFilm";
+import { BrandExperience } from "@/components/home/DeferredBrandFilm";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
@@ -122,34 +120,30 @@ function Hero() {
       id="top"
       className="mobile-hero-section relative min-h-[100svh] overflow-hidden bg-hero-surface md:min-h-[900px] lg:min-h-[94svh]"
     >
-      <picture className="mobile-hero-picture absolute inset-0 block bg-hero-surface">
-        <source
-          media={
-            isRtl
-              ? "(max-width: 639px), (max-width: 899px) and (orientation: portrait)"
-              : "(max-width: 639px)"
-          }
-          srcSet={mobileHeroImg.src}
+      <div className="absolute inset-0 bg-hero-surface">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center [@media(max-width:767px)_and_(orientation:portrait)]:scale-110 [@media(max-width:767px)_and_(orientation:portrait)]:opacity-70 [@media(max-width:767px)_and_(orientation:portrait)]:blur-lg [@media(max-width:767px)_and_(orientation:portrait)]:will-change-transform"
+        >
+          <source src="/media/secro-fill-film.mp4" type="video/mp4" />
+        </video>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-hero-surface/35 via-hero-surface/16 to-hero-surface/20"
         />
-        <Image
-          src={heroImg}
-          alt="Close-up portrait of a woman with luminous skin illustrating premium medical aesthetics results"
-          fill
-          priority
-          sizes="100vw"
-          className={
-            isRtl
-              ? "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-center"
-              : "object-cover object-bottom [@media(max-width:899px)_and_(orientation:landscape)]:object-right md:object-[62%_center] lg:object-center"
-          }
-        />
-      </picture>
+      </div>
       <div className="mobile-hero-frame relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-start px-4 pt-28 pb-20 [@media(max-height:650px)_and_(orientation:portrait)]:pt-20 [@media(max-width:899px)_and_(orientation:landscape)]:pt-22 md:min-h-[900px] md:justify-end md:px-5 md:pt-36 md:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
         <div
           className={`mobile-hero-copy animate-rise ${
             isRtl
-              ? "mr-auto ml-0 w-[46%] max-w-[12rem] text-right [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
-              : "w-[85%] max-w-[18rem] [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
+              ? "mr-auto ml-0 w-[85%] max-w-[18rem] text-right [@media(max-width:767px)_and_(orientation:portrait)]:!mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
+              : "w-[85%] max-w-[18rem] [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
           }`}
         >
           <p className="mobile-hero-eyebrow eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
@@ -157,7 +151,7 @@ function Hero() {
           </p>
           <div
             aria-hidden="true"
-            className={`hairline mt-8 w-12 [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
+            className={`hairline mt-8 w-12 [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
           />
           <h1 className="mobile-hero-title mt-6 text-[1.6rem] leading-[1.06] rtl:text-[1.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
@@ -174,15 +168,31 @@ function Hero() {
               </>
             )}
           </h1>
+          <div className="relative left-1/2 mt-3 hidden w-[90vw] -translate-x-[45vw] bg-gradient-to-br from-gold-soft via-gold-deep to-gold-soft p-px shadow-[0_18px_40px_-26px_color-mix(in_oklch,var(--gold-deep)_88%,transparent)] [@media(max-width:767px)_and_(orientation:portrait)]:block">
+            <div className="relative aspect-video w-full overflow-hidden bg-hero-surface">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                aria-hidden="true"
+                className="h-full w-full object-contain object-center"
+              >
+                <source src="/media/secro-fill-film.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
           <p
-            className={`mobile-hero-description mt-4 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
+            className={`mobile-hero-description mt-3 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
               isRtl ? "md:max-w-none" : "md:max-w-xl"
             }`}
           >
             {t("hero.sub")}
           </p>
           <div
-            className={`mobile-hero-actions mt-8 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
+            className={`mobile-hero-actions mt-3 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
               isRtl ? "lg:flex-row" : "sm:flex-row"
             }`}
           >
@@ -212,7 +222,10 @@ function TrustBar() {
   const loop = [...items, ...items, ...items, ...items];
 
   return (
-    <section aria-label="Brand credentials" className="border-y border-border bg-secondary/60 py-5">
+    <section
+      aria-label={t("aria.brandCredentials")}
+      className="border-y border-border bg-secondary/60 py-5"
+    >
       <div className="flex overflow-hidden">
         <div className="animate-marquee flex shrink-0 items-center gap-12 pe-12 whitespace-nowrap">
           {loop.map((k, i) => (
@@ -544,49 +557,49 @@ function Portfolio() {
       key: "portfolio.i7",
       before: buttocksBefore,
       after: buttocksAfter,
-      alt: "Buttocks contour aesthetic result documentation",
+      alt: t("portfolio.i7"),
     },
     {
       key: "portfolio.i2",
       before: beforeChin,
       after: afterChin,
-      alt: "Chin contour aesthetic result documentation",
+      alt: t("portfolio.i2"),
     },
     {
       key: "portfolio.i3",
       before: beforeBody,
       after: afterBody,
-      alt: "Body volumisation contour result documentation",
+      alt: t("portfolio.i3"),
     },
     {
       key: "portfolio.i4",
       before: cheekBefore,
       after: cheekAfter,
-      alt: "Cheek contour aesthetic result documentation",
+      alt: t("portfolio.i4"),
     },
     {
       key: "portfolio.i5",
       before: doubleChinBefore,
       after: doubleChinAfter,
-      alt: "Double chin aesthetic result documentation",
+      alt: t("portfolio.i5"),
     },
     {
       key: "portfolio.i6",
       before: templeBefore,
       after: templeAfter,
-      alt: "Temple contour aesthetic result documentation",
+      alt: t("portfolio.i6"),
     },
     {
       key: "portfolio.i1",
       before: beforeNose,
       after: afterNose,
-      alt: "Nose contour aesthetic result documentation",
+      alt: t("portfolio.i1"),
     },
     {
       key: "portfolio.i8",
       before: newChinBefore,
       after: newChinAfter,
-      alt: "Chin contour aesthetic result documentation",
+      alt: t("portfolio.i8"),
     },
   ];
 
@@ -977,7 +990,7 @@ function FinalCta() {
               e.preventDefault();
               const formData = new FormData(e.currentTarget);
               const whatsappMessage = [
-                "SECRO-FILL — Partnership Request",
+                t("form.whatsappTitle"),
                 `${t("form.name")}: ${formData.get("name") ?? ""}`,
                 `${t("form.email")}: ${formData.get("email") ?? ""}`,
                 `${t("form.country")}: ${formData.get("country") ?? ""}`,
@@ -1053,7 +1066,7 @@ export function HomePage() {
         <Hero />
         <TrustBar />
         <Services />
-        <DeferredBrandFilm />
+        <BrandExperience />
         <About />
         <Portfolio />
         <Process />

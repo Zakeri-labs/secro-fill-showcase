@@ -15,17 +15,17 @@ export function ServicesPage() {
     {
       key: "p1",
       image: deep10Img,
-      alt: "SECRO-FILL DEEP 10ml dermal filler syringe with premium packaging",
+      alt: "services.p1.alt",
     },
     {
       key: "p2",
       image: deep3xImg,
-      alt: "SECRO-FILL DEEP three 3.2ml syringe clinical set",
+      alt: "services.p2.alt",
     },
     {
       key: "p3",
       image: bodyImg,
-      alt: "SECRO-FILL body filler product with emerald and gold packaging",
+      alt: "services.p3.alt",
     },
   ];
 
@@ -59,7 +59,7 @@ export function ServicesPage() {
               <div className="relative aspect-4/3 overflow-hidden bg-secondary">
                 <Image
                   src={product.image}
-                  alt={product.alt}
+                  alt={t(product.alt)}
                   fill
                   priority
                   sizes="(min-width: 1024px) 33vw, 100vw"
