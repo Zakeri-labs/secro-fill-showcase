@@ -383,7 +383,8 @@ function Services() {
       alt: "services.p4.alt",
       imageClassName: "scale-[0.9]",
       shadowClassName: "product-shadow-marvel",
-      pdfHref: WHATSAPP_URL,
+      pdfHref: "/downloads/SECRO-MARVEL.pdf",
+      downloadName: "SECRO-MARVEL.pdf",
     },
   ];
 
