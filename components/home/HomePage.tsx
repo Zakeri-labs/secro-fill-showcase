@@ -142,7 +142,7 @@ function Hero() {
         <div
           className={`mobile-hero-copy animate-rise ${
             isRtl
-              ? "mr-auto ml-0 w-[85%] max-w-[18rem] text-right [@media(max-width:767px)_and_(orientation:portrait)]:!mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:max-w-[20rem] xl:max-w-[25rem]"
+              ? "mr-auto ml-0 w-[85%] max-w-[18rem] text-right [@media(max-width:767px)_and_(orientation:portrait)]:!mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:mr-0 lg:ml-auto lg:w-auto lg:max-w-[38rem] xl:max-w-[38rem]"
               : "w-[85%] max-w-[18rem] [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
           }`}
         >
@@ -169,7 +169,7 @@ function Hero() {
             )}
           </h1>
           <div className="relative left-1/2 mt-3 hidden w-[94vw] -translate-x-[47vw] overflow-hidden rounded-[15px] bg-gradient-to-br from-gold-soft via-gold-deep to-gold-soft p-px shadow-[0_18px_40px_-26px_color-mix(in_oklch,var(--gold-deep)_88%,transparent)] [@media(max-width:767px)_and_(orientation:portrait)]:block">
-            <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-hero-surface">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[14px] bg-hero-surface">
               <video
                 autoPlay
                 muted
@@ -178,7 +178,7 @@ function Hero() {
                 preload="auto"
                 disablePictureInPicture
                 aria-hidden="true"
-                className="h-full w-full object-contain object-center"
+                className="h-full w-full object-cover object-center"
               >
                 <source src="/media/secro-fill-film.mp4" type="video/mp4" />
               </video>
@@ -457,7 +457,7 @@ function Services() {
               </Reveal>
             </div>
 
-            <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
+            <h4 className="mt-4 text-2xl leading-tight text-primary rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
               {t("services.hyac.name")}
             </h4>
             <span aria-hidden="true" className="hairline mt-4 w-12" />

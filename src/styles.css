@@ -373,8 +373,8 @@
 
 @media (min-height: 651px) and (max-width: 767px) and (orientation: portrait) {
   .mobile-hero-section {
-    height: 100svh;
-    min-height: 52rem;
+    height: 93svh;
+    min-height: 48.5rem;
   }
 
   .mobile-hero-frame {
