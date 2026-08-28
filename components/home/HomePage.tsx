@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowRight,
   ChevronLeft,
@@ -29,8 +30,8 @@ import beforeBody from "@/assets/Before-After/Before-Body.png";
 import beforeNose from "@/assets/Before-After/Before-nose.png";
 import cheekAfter from "@/assets/Before-After/Cheek-after.png";
 import cheekBefore from "@/assets/Before-After/Cheek-before.png";
-import jawlineAfter from "@/assets/Before-After/Jawline-after.png";
-import jawlineBefore from "@/assets/Before-After/Jawline-before.png";
+import doubleChinAfter from "@/assets/Before-After/After-Double chin.png";
+import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
 import templeAfter from "@/assets/Before-After/Temple-after.png";
 import templeBefore from "@/assets/Before-After/Temple-before.png";
 import afterChin from "@/assets/Before-After/after-chin.png";
@@ -593,8 +594,7 @@ function BeforeAfterCard({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(position)}
-        style={{ aspectRatio: `${before.width} / ${before.height}` }}
-        className={`relative touch-none select-none overflow-hidden bg-secondary outline-none focus-visible:ring-2 focus-visible:ring-accent ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
+        className={`relative aspect-[5/6] touch-none select-none overflow-hidden bg-secondary outline-none focus-visible:ring-2 focus-visible:ring-accent ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
         onKeyDown={handleKeyDown}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -607,7 +607,7 @@ function BeforeAfterCard({
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           draggable={false}
-          className="pointer-events-none object-contain"
+          className="pointer-events-none object-cover"
         />
         <Image
           src={before}
@@ -615,7 +615,7 @@ function BeforeAfterCard({
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           draggable={false}
-          className="pointer-events-none object-contain"
+          className="pointer-events-none object-cover"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         />
         <div
@@ -638,7 +638,14 @@ function BeforeAfterCard({
 
 function Portfolio() {
   const { dir, t } = useI18n();
-  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [scrollerRef, scrollerApi] = useEmblaCarousel({
+    align: "start",
+    direction: dir,
+    loop: true,
+    watchDrag: (_api, event) =>
+      !(event.target instanceof Element && event.target.closest('[role="slider"]')),
+  });
+  const autoplayTimerRef = useRef<number | null>(null);
   const items = [
     {
       key: "portfolio.i7",
@@ -666,9 +673,9 @@ function Portfolio() {
     },
     {
       key: "portfolio.i5",
-      before: jawlineBefore,
-      after: jawlineAfter,
-      alt: "Jawline contour aesthetic result documentation",
+      before: doubleChinBefore,
+      after: doubleChinAfter,
+      alt: "Double chin aesthetic result documentation",
     },
     {
       key: "portfolio.i6",
@@ -690,19 +697,51 @@ function Portfolio() {
     },
   ];
 
+  const stopAutoplay = useCallback(() => {
+    if (autoplayTimerRef.current === null) return;
+
+    window.clearInterval(autoplayTimerRef.current);
+    autoplayTimerRef.current = null;
+  }, []);
+
+  const startAutoplay = useCallback(() => {
+    stopAutoplay();
+
+    if (
+      !scrollerApi ||
+      document.hidden ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    autoplayTimerRef.current = window.setInterval(() => {
+      scrollerApi.scrollNext();
+    }, 2800);
+  }, [scrollerApi, stopAutoplay]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    };
+
+    startAutoplay();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      stopAutoplay();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [startAutoplay, stopAutoplay]);
+
   const scrollPortfolio = (direction: "previous" | "next") => {
-    const scroller = scrollerRef.current;
-    const firstCard = scroller?.firstElementChild as HTMLElement | null;
-    if (!scroller || !firstCard) return;
+    if (!scrollerApi) return;
 
-    const gap = Number.parseFloat(window.getComputedStyle(scroller).columnGap) || 0;
-    const step = firstCard.getBoundingClientRect().width + gap;
-    const directionMultiplier = direction === "next" ? 1 : -1;
-
-    scroller.scrollBy({
-      left: step * directionMultiplier * (dir === "rtl" ? -1 : 1),
-      behavior: "smooth",
-    });
+    stopAutoplay();
+    if (direction === "next") scrollerApi.scrollNext();
+    else scrollerApi.scrollPrev();
+    startAutoplay();
   };
 
   return (
@@ -741,18 +780,38 @@ function Portfolio() {
           ref={scrollerRef}
           id="portfolio-gallery"
           aria-label={t("portfolio.galleryLabel")}
-          className="scrollbar-none mt-4 flex snap-x snap-proximity gap-6 overflow-x-auto overscroll-x-contain pb-1 sm:gap-8"
+          aria-roledescription="carousel"
+          aria-live="off"
+          className="mt-4 overflow-hidden pb-1"
           role="region"
+          onPointerEnter={stopAutoplay}
+          onPointerLeave={startAutoplay}
+          onPointerDown={stopAutoplay}
+          onPointerUp={startAutoplay}
+          onPointerCancel={startAutoplay}
+          onFocusCapture={stopAutoplay}
+          onBlurCapture={startAutoplay}
         >
-          {items.map((it, i) => (
-            <Reveal
-              key={it.key}
-              delay={i * 70}
-              className="w-[82vw] max-w-[21rem] shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-[calc((100%-4rem)/3)]"
-            >
-              <BeforeAfterCard before={it.before} after={it.after} alt={it.alt} title={t(it.key)} />
-            </Reveal>
-          ))}
+          <div className="flex gap-6 sm:gap-8">
+            {items.map((it, i) => (
+              <div
+                key={it.key}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${i + 1} / ${items.length}`}
+                className="w-[82vw] max-w-[21rem] min-w-0 shrink-0 sm:w-[44vw] sm:max-w-none lg:w-[calc((100%-4rem)/3)]"
+              >
+                <Reveal delay={i * 70} className="h-full">
+                  <BeforeAfterCard
+                    before={it.before}
+                    after={it.after}
+                    alt={it.alt}
+                    title={t(it.key)}
+                  />
+                </Reveal>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
