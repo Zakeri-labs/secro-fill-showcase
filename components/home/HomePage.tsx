@@ -23,12 +23,22 @@ import {
 import heroImg from "@/assets/Hero-image-Web.jpg";
 import mobileHeroImg from "@/assets/Hero-image-mobile.jpg";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
-import afterBody from "@/assets/After-Body.png";
-import afterChin from "@/assets/after-chin.png";
-import afterNose from "@/assets/After-nose.png";
-import beforeBody from "@/assets/Before-Body.png";
-import beforeChin from "@/assets/before-chin.png";
-import beforeNose from "@/assets/Before-nose.png";
+import afterBody from "@/assets/Before-After/After-Body.png";
+import afterNose from "@/assets/Before-After/After-nose.png";
+import beforeBody from "@/assets/Before-After/Before-Body.png";
+import beforeNose from "@/assets/Before-After/Before-nose.png";
+import cheekAfter from "@/assets/Before-After/Cheek-after.png";
+import cheekBefore from "@/assets/Before-After/Cheek-before.png";
+import jawlineAfter from "@/assets/Before-After/Jawline-after.png";
+import jawlineBefore from "@/assets/Before-After/Jawline-before.png";
+import templeAfter from "@/assets/Before-After/Temple-after.png";
+import templeBefore from "@/assets/Before-After/Temple-before.png";
+import afterChin from "@/assets/Before-After/after-chin.png";
+import beforeChin from "@/assets/Before-After/before-chin.png";
+import buttocksAfter from "@/assets/Before-After/buttocks-after.png";
+import buttocksBefore from "@/assets/Before-After/buttocks-before.png";
+import newChinAfter from "@/assets/Before-After/chin-after.png";
+import newChinBefore from "@/assets/Before-After/chin-before.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
 import secroMarvelImg from "@/assets/product-Secro-marvel.png";
 import deep10Img from "@/assets/product-deep-10ml.png";
@@ -535,7 +545,6 @@ function BeforeAfterCard({
   alt: string;
   title: string;
 }) {
-  const { t } = useI18n();
   const stageRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -575,7 +584,7 @@ function BeforeAfterCard({
   };
 
   return (
-    <figure className="card-luxe overflow-hidden rounded-[24px]">
+    <figure className="card-luxe h-full overflow-hidden rounded-[24px]">
       <div
         ref={stageRef}
         role="slider"
@@ -619,14 +628,6 @@ function BeforeAfterCard({
             <ChevronRight className="-ms-1 h-4 w-4" />
           </span>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between p-4">
-          <span className="rounded-full bg-primary/80 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-white backdrop-blur-sm rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
-            {t("portfolio.before")}
-          </span>
-          <span className="rounded-full bg-accent/90 px-3 py-1.5 text-[0.62rem] tracking-[0.18em] uppercase text-accent-foreground backdrop-blur-sm rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case">
-            {t("portfolio.after")}
-          </span>
-        </div>
       </div>
       <figcaption className="p-6">
         <h3 className="text-xl rtl:text-[1.375rem]">{title}</h3>
@@ -636,13 +637,14 @@ function BeforeAfterCard({
 }
 
 function Portfolio() {
-  const { t } = useI18n();
+  const { dir, t } = useI18n();
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const items = [
     {
-      key: "portfolio.i1",
-      before: beforeNose,
-      after: afterNose,
-      alt: "Nose contour aesthetic result documentation",
+      key: "portfolio.i7",
+      before: buttocksBefore,
+      after: buttocksAfter,
+      alt: "Buttocks contour aesthetic result documentation",
     },
     {
       key: "portfolio.i2",
@@ -656,7 +658,52 @@ function Portfolio() {
       after: afterBody,
       alt: "Body volumisation contour result documentation",
     },
+    {
+      key: "portfolio.i4",
+      before: cheekBefore,
+      after: cheekAfter,
+      alt: "Cheek contour aesthetic result documentation",
+    },
+    {
+      key: "portfolio.i5",
+      before: jawlineBefore,
+      after: jawlineAfter,
+      alt: "Jawline contour aesthetic result documentation",
+    },
+    {
+      key: "portfolio.i6",
+      before: templeBefore,
+      after: templeAfter,
+      alt: "Temple contour aesthetic result documentation",
+    },
+    {
+      key: "portfolio.i1",
+      before: beforeNose,
+      after: afterNose,
+      alt: "Nose contour aesthetic result documentation",
+    },
+    {
+      key: "portfolio.i8",
+      before: newChinBefore,
+      after: newChinAfter,
+      alt: "Chin contour aesthetic result documentation",
+    },
   ];
+
+  const scrollPortfolio = (direction: "previous" | "next") => {
+    const scroller = scrollerRef.current;
+    const firstCard = scroller?.firstElementChild as HTMLElement | null;
+    if (!scroller || !firstCard) return;
+
+    const gap = Number.parseFloat(window.getComputedStyle(scroller).columnGap) || 0;
+    const step = firstCard.getBoundingClientRect().width + gap;
+    const directionMultiplier = direction === "next" ? 1 : -1;
+
+    scroller.scrollBy({
+      left: step * directionMultiplier * (dir === "rtl" ? -1 : 1),
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section id="portfolio" className="px-5 py-24 lg:px-10 lg:py-32">
@@ -668,9 +715,41 @@ function Portfolio() {
             sub={t("portfolio.sub")}
           />
         </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 flex justify-end sm:mt-12" dir="ltr">
+          <div className="flex gap-3">
+            <button
+              type="button"
+              aria-controls="portfolio-gallery"
+              aria-label={t("portfolio.previous")}
+              onClick={() => scrollPortfolio("previous")}
+              className="grid h-10 w-10 place-items-center rounded-full border border-gold-deep/30 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-controls="portfolio-gallery"
+              aria-label={t("portfolio.next")}
+              onClick={() => scrollPortfolio("next")}
+              className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-emerald-deep/90"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={scrollerRef}
+          id="portfolio-gallery"
+          aria-label={t("portfolio.galleryLabel")}
+          className="scrollbar-none mt-4 flex snap-x snap-proximity gap-6 overflow-x-auto overscroll-x-contain pb-1 sm:gap-8"
+          role="region"
+        >
           {items.map((it, i) => (
-            <Reveal key={it.key} delay={i * 100}>
+            <Reveal
+              key={it.key}
+              delay={i * 70}
+              className="w-[82vw] max-w-[21rem] shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-[calc((100%-4rem)/3)]"
+            >
               <BeforeAfterCard before={it.before} after={it.after} alt={it.alt} title={t(it.key)} />
             </Reveal>
           ))}
