@@ -21,11 +21,9 @@ import afterChin from "@/assets/Before-After/after-chin.png";
 import beforeChin from "@/assets/Before-After/before-chin.png";
 import doubleChinAfter from "@/assets/Before-After/After-Double chin.png";
 import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
-import deepCinematicHero from "@/assets/product-1/deep-cinematic-hero.png";
-import deepProduct from "@/assets/product-1/deep-product.png";
-import indicationChin from "@/assets/product-1/indication-chin.png";
-import indicationJawline from "@/assets/product-1/indication-jawline.png";
-import indicationNose from "@/assets/product-1/indication-nose.png";
+import deepHeroImage from "@/assets/product-1/deep-hero-image.png";
+import deepIndications from "@/assets/product-1/deep-indications.png";
+import deepProductInformation from "@/assets/product-1/deep-product-information.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
@@ -197,7 +195,6 @@ const copy = {
 } satisfies Record<Lang, unknown>;
 
 const informationIcons = [Box, Syringe, Sparkles, Crosshair, Layers3];
-const indicationImages = [indicationNose, indicationChin, indicationJawline];
 const advantageIcons = [ShieldCheck, Clock3, Sparkles, Layers3];
 const uniqueAdvantageIcons = [Syringe, PackageCheck, ShieldCheck];
 
@@ -229,27 +226,23 @@ export function Deep32ProductPage() {
     <>
       <Header />
       <main className="overflow-hidden pb-24 sm:pb-28">
-        <section className="relative isolate min-h-[44rem] overflow-hidden border-b border-border bg-primary sm:min-h-[48rem] lg:min-h-[50rem]">
+        <section className="relative isolate min-h-[44rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
           <Image
-            src={deepCinematicHero}
+            src={deepHeroImage}
             alt={content.hero.heroAlt}
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover object-[55%_center] sm:object-center"
+            className="-z-20 object-contain object-top"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/[0.86] from-0% via-primary/[0.54] via-45% to-transparent to-78% rtl:bg-gradient-to-l"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-t from-primary/35 via-transparent to-transparent"
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-[#eee9de]/90 from-0% via-[#eee9de]/45 via-42% to-transparent to-72% rtl:bg-gradient-to-l"
           />
 
-          <div className="relative z-10 mx-auto flex min-h-[44rem] max-w-7xl items-end px-5 pt-32 pb-20 sm:min-h-[48rem] sm:px-8 sm:pt-36 lg:min-h-[50rem] lg:px-10 lg:pt-40 lg:pb-24">
-            <header className="max-w-2xl animate-rise text-primary-foreground lg:max-w-xl">
-              <p className="eyebrow text-accent">{content.hero.eyebrow}</p>
+          <div className="relative z-10 mx-auto flex min-h-[44rem] max-w-7xl items-start px-5 pt-[calc(56.28vw+2.5rem)] pb-20 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24">
+            <header className="max-w-2xl animate-rise text-primary lg:max-w-xl">
+              <p className="eyebrow text-gold-deep">{content.hero.eyebrow}</p>
               <div className="mt-4 h-px w-14 bg-accent" />
               <h1 className="mt-7 leading-[0.86]">
                 <span className="block text-[2.9rem] sm:text-6xl lg:text-[4.35rem] xl:text-[4.75rem]">
@@ -259,7 +252,7 @@ export function Deep32ProductPage() {
                   DEEP
                 </span>
               </h1>
-              <p className="mt-7 max-w-xl text-base leading-[1.8] text-primary-foreground/85 rtl:text-[1.0625rem] sm:text-lg">
+              <p className="mt-7 max-w-xl text-base leading-[1.8] text-primary/80 rtl:text-[1.0625rem] sm:text-lg">
                 {content.hero.productType}
               </p>
               <div className="mt-7 grid max-w-xl grid-cols-2 gap-3">
@@ -267,7 +260,7 @@ export function Deep32ProductPage() {
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card">
                     <Syringe className="h-5 w-5" strokeWidth={1.35} />
                   </span>
-                  <span className="text-[0.68rem] leading-relaxed tracking-[0.06em] text-primary-foreground rtl:text-sm rtl:tracking-normal sm:text-xs">
+                  <span className="text-[0.68rem] leading-relaxed tracking-[0.06em] text-primary/85 rtl:text-sm rtl:tracking-normal sm:text-xs">
                     {content.hero.volume}
                   </span>
                 </div>
@@ -275,7 +268,7 @@ export function Deep32ProductPage() {
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card">
                     <FlaskConical className="h-5 w-5" strokeWidth={1.35} />
                   </span>
-                  <span className="text-xs leading-relaxed tracking-[0.08em] text-primary-foreground rtl:text-sm rtl:tracking-normal">
+                  <span className="text-xs leading-relaxed tracking-[0.08em] text-primary/85 rtl:text-sm rtl:tracking-normal">
                     25mg/ml
                   </span>
                 </div>
@@ -293,7 +286,7 @@ export function Deep32ProductPage() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-accent/70 bg-primary/15 px-7 text-[0.68rem] tracking-[0.16em] uppercase text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary/30 rtl:text-sm rtl:tracking-normal rtl:normal-case"
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-primary/45 bg-background/35 px-7 text-[0.68rem] tracking-[0.16em] uppercase text-primary backdrop-blur-sm transition-colors hover:bg-background/60 rtl:text-sm rtl:tracking-normal rtl:normal-case"
                 >
                   {content.hero.contact}
                   <ArrowRight className="h-4 w-4 rtl:rotate-180" />
@@ -313,22 +306,14 @@ export function Deep32ProductPage() {
             </Reveal>
             <div className="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:gap-16">
               <Reveal distance={56} scale={0.98}>
-                <div className="relative isolate aspect-[5/4] overflow-hidden border border-border bg-secondary/55 shadow-luxe lg:sticky lg:top-32 lg:aspect-[4/5]">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-[12%] bottom-[10%] -z-10 h-20 rounded-full bg-primary/16 blur-2xl"
-                  />
+                <div className="relative isolate aspect-[1402/1122] overflow-hidden border border-border bg-secondary/55 shadow-luxe lg:sticky lg:top-32">
                   <Image
-                    src={deepProduct}
+                    src={deepProductInformation}
                     alt={content.hero.productAlt}
                     fill
                     sizes="(min-width: 1024px) 38vw, 100vw"
-                    className="scale-[0.9] object-contain"
+                    className="object-contain"
                   />
-                  <span className="absolute end-5 top-5 font-display text-5xl text-primary/10">
-                    01
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
                 </div>
               </Reveal>
 
@@ -358,51 +343,17 @@ export function Deep32ProductPage() {
           </div>
         </section>
 
-        <section className="relative isolate overflow-hidden bg-primary px-5 py-20 text-primary-foreground lg:px-10 lg:py-28">
-          <div
-            aria-hidden="true"
-            className="absolute -end-40 top-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-3xl"
-          />
-          <div className="mx-auto max-w-7xl">
-            <Reveal distance={40}>
-              <SectionHeading
-                eyebrow={content.indications.eyebrow}
-                title={content.indications.title}
-                className="[&_h2]:text-primary-foreground [&_p.eyebrow]:!text-accent"
-              />
-            </Reveal>
-            <div className="mt-14 grid gap-8 md:grid-cols-3 lg:gap-10">
-              {content.indications.items.map((label, index) => {
-                const image = indicationImages[index] ?? indicationNose;
-                return (
-                  <Reveal key={label} delay={index * 110} distance={52} scale={0.985}>
-                    <article className="group text-center">
-                      <div className="relative mx-auto aspect-square max-w-sm overflow-hidden rounded-full border border-primary-foreground/20 bg-card shadow-luxe">
-                        <Image
-                          src={image}
-                          alt={label}
-                          fill
-                          sizes="(min-width: 768px) 30vw, 90vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
-                        />
-                        <div
-                          aria-hidden="true"
-                          className="absolute inset-0 rounded-full ring-1 ring-inset ring-accent/25"
-                        />
-                      </div>
-                      <div className="mx-auto mt-7 flex max-w-xs items-center justify-center gap-3">
-                        <span className="font-display text-xl text-accent">0{index + 1}</span>
-                        <span aria-hidden="true" className="h-px w-8 bg-accent/65" />
-                        <h3 className="text-xl leading-tight text-primary-foreground rtl:text-[1.375rem]">
-                          {label}
-                        </h3>
-                      </div>
-                    </article>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
+        <section className="bg-primary">
+          <Reveal distance={40}>
+            <Image
+              src={deepIndications}
+              alt={`${content.indications.title}: ${content.indications.items.join(", ")}`}
+              width={1672}
+              height={941}
+              sizes="100vw"
+              className="h-auto w-full object-contain"
+            />
+          </Reveal>
         </section>
 
         <section className="border-y border-border bg-secondary/45 px-5 py-20 lg:px-10 lg:py-28">

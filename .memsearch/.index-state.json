@@ -1,11 +1,11 @@
 {
   "collection": "ms_secro_fill_showcase_21fa3097",
   "failed_files": [],
-  "indexed_chunks": 5,
+  "indexed_chunks": 0,
   "indexed_files": 4,
-  "last_completed_at": "2026-08-28T16:07:42.612264Z",
-  "last_started_at": "2026-08-28T16:07:39.100243Z",
-  "last_success_at": "2026-08-28T16:07:42.612264Z",
+  "last_completed_at": "2026-08-28T17:34:38.053133Z",
+  "last_started_at": "2026-08-28T17:34:35.353099Z",
+  "last_success_at": "2026-08-28T17:34:38.053133Z",
   "milvus_uri": "~/.memsearch/milvus.db",
   "operation": "index",
   "paths": [
@@ -14,5 +14,5 @@
   "schema_version": 1,
   "status": "ok",
   "total_files": 4,
-  "updated_at": "2026-08-28T16:07:42.612264Z"
+  "updated_at": "2026-08-28T17:34:38.053133Z"
 }

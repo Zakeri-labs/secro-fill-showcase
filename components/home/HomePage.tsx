@@ -8,8 +8,11 @@ import {
   ChevronRight,
   Factory,
   Globe2,
+  Handshake,
+  Headphones,
   MessageCircle,
   Microscope,
+  Package,
   Quote,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -138,12 +141,33 @@ function Hero() {
           className="absolute inset-0 bg-gradient-to-r from-hero-surface/35 via-hero-surface/16 to-hero-surface/20"
         />
       </div>
-      <div className="mobile-hero-frame relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-start px-4 pt-28 pb-20 [@media(max-height:650px)_and_(orientation:portrait)]:pt-20 [@media(max-width:899px)_and_(orientation:landscape)]:pt-22 md:min-h-[900px] md:justify-end md:px-5 md:pt-36 md:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
+      <div className="absolute inset-3 z-0 hidden overflow-hidden rounded-[15px] [@media(max-width:767px)_and_(orientation:portrait)]:block">
+        <div className="relative h-full w-full overflow-hidden rounded-[15px] bg-hero-surface">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            aria-hidden="true"
+            className="h-full w-full object-cover object-[40%_center]"
+          >
+            <source src="/media/secro-fill-film.mp4" type="video/mp4" />
+          </video>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-b from-hero-surface/45 via-transparent to-hero-surface/50"
+          />
+        </div>
+      </div>
+      <div className="mobile-hero-frame relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-center px-4 py-0 [@media(max-width:899px)_and_(orientation:landscape)]:items-start [@media(max-width:899px)_and_(orientation:landscape)]:justify-start [@media(max-width:899px)_and_(orientation:landscape)]:pt-22 md:min-h-[900px] md:items-start md:justify-end md:px-5 md:pt-36 md:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
         <div
+          dir={isRtl ? "rtl" : "ltr"}
           className={`mobile-hero-copy animate-rise ${
             isRtl
-              ? "mr-auto ml-0 w-[85%] max-w-[18rem] text-right [@media(max-width:767px)_and_(orientation:portrait)]:!mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-full md:max-w-[17rem] lg:mr-0 lg:ml-auto lg:w-auto lg:max-w-[38rem] xl:max-w-[38rem]"
-              : "w-[85%] max-w-[18rem] [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-width:767px)_and_(orientation:portrait)]:text-center [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] md:w-auto md:max-w-xl lg:max-w-[38rem]"
+              ? "mx-auto w-[85%] max-w-[18rem] text-center [@media(max-width:899px)_and_(orientation:landscape)]:mr-0 [@media(max-width:899px)_and_(orientation:landscape)]:ml-auto [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] [@media(max-width:899px)_and_(orientation:landscape)]:text-right md:mr-0 md:ml-auto md:w-full md:max-w-[17rem] md:text-right lg:w-auto lg:max-w-[38rem] xl:max-w-[38rem]"
+              : "mx-auto w-[85%] max-w-[18rem] text-center [@media(max-width:899px)_and_(orientation:landscape)]:mr-auto [@media(max-width:899px)_and_(orientation:landscape)]:ml-0 [@media(max-width:899px)_and_(orientation:landscape)]:w-[39%] [@media(max-width:899px)_and_(orientation:landscape)]:max-w-[17rem] [@media(max-width:899px)_and_(orientation:landscape)]:text-left md:mr-auto md:ml-0 md:w-auto md:max-w-xl md:text-left lg:max-w-[38rem]"
           }`}
         >
           <p className="mobile-hero-eyebrow eyebrow whitespace-nowrap text-[0.6rem] tracking-[0.12em] text-gold-soft md:text-[0.6875rem] md:tracking-[0.28em]">
@@ -151,7 +175,7 @@ function Hero() {
           </p>
           <div
             aria-hidden="true"
-            className={`hairline mt-8 w-12 [@media(max-width:767px)_and_(orientation:portrait)]:mx-auto [@media(max-height:650px)_and_(orientation:portrait)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 md:mt-4 md:w-14 ${isRtl ? "ml-auto" : ""}`}
+            className={`hairline mx-auto mt-8 w-12 [@media(max-width:899px)_and_(orientation:landscape)]:mt-1 [@media(max-width:899px)_and_(orientation:landscape)]:mx-0 md:mx-0 md:mt-4 md:w-14 ${isRtl ? "md:ml-auto" : ""}`}
           />
           <h1 className="mobile-hero-title mt-6 text-[1.75rem] leading-[1.06] rtl:text-[2rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-2 [@media(max-height:650px)_and_(orientation:portrait)]:text-[1.45rem] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[1.6rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-2 [@media(max-width:899px)_and_(orientation:landscape)]:text-[1.65rem] [@media(max-width:899px)_and_(orientation:landscape)]:rtl:text-[1.75rem] md:mt-6 md:text-6xl md:rtl:text-6xl lg:text-7xl lg:rtl:text-7xl xl:rtl:text-[5rem]">
             {lang === "en" ? (
@@ -168,47 +192,33 @@ function Hero() {
               </>
             )}
           </h1>
-          <div className="relative left-1/2 mt-3 hidden w-[94vw] -translate-x-[47vw] overflow-hidden rounded-[15px] bg-gradient-to-br from-gold-soft via-gold-deep to-gold-soft p-px shadow-[0_18px_40px_-26px_color-mix(in_oklch,var(--gold-deep)_88%,transparent)] [@media(max-width:767px)_and_(orientation:portrait)]:block">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[14px] bg-hero-surface">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                disablePictureInPicture
-                aria-hidden="true"
-                className="h-full w-full object-cover object-center"
+          <div className="mobile-hero-lower">
+            <p
+              className={`mobile-hero-description mt-3 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
+                isRtl ? "md:max-w-none" : "md:max-w-xl"
+              }`}
+            >
+              {t("hero.sub")}
+            </p>
+            <div
+              className={`mobile-hero-actions mt-3 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
+                isRtl ? "lg:flex-row" : "sm:flex-row"
+              }`}
+            >
+              <a
+                href="#contact"
+                className="group inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
               >
-                <source src="/media/secro-fill-film.mp4" type="video/mp4" />
-              </video>
+                {t("hero.cta1")}
+                <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+              </a>
+              <a
+                href="#products"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-primary-foreground/55 bg-black/15 px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-primary-foreground backdrop-blur-sm transition-colors hover:border-gold-soft hover:bg-primary-foreground/10 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
+              >
+                {t("hero.cta2")}
+              </a>
             </div>
-          </div>
-          <p
-            className={`mobile-hero-description mt-3 w-[calc(100%-0.5rem)] text-[0.78rem] leading-[1.48] text-primary-foreground/85 rtl:text-[0.8rem] [@media(max-height:650px)_and_(orientation:portrait)]:mt-3 [@media(max-height:650px)_and_(orientation:portrait)]:text-[0.72rem] [@media(max-height:650px)_and_(orientation:portrait)]:leading-[1.4] [@media(max-height:650px)_and_(orientation:portrait)]:rtl:text-[0.74rem] [@media(max-width:899px)_and_(orientation:landscape)]:mt-3 [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:text-[0.72rem] md:mt-6 md:w-auto md:text-base md:leading-relaxed md:rtl:text-[1.0625rem] ${
-              isRtl ? "md:max-w-none" : "md:max-w-xl"
-            }`}
-          >
-            {t("hero.sub")}
-          </p>
-          <div
-            className={`mobile-hero-actions mt-3 flex flex-col gap-2 [@media(max-height:650px)_and_(orientation:portrait)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:mt-4 [@media(max-width:899px)_and_(orientation:landscape)]:flex-row md:mt-10 md:gap-3 ${
-              isRtl ? "lg:flex-row" : "sm:flex-row"
-            }`}
-          >
-            <a
-              href="#contact"
-              className="group inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-accent-foreground shadow-[0_12px_30px_-18px_var(--primary)] transition-transform hover:-translate-y-0.5 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
-            >
-              {t("hero.cta1")}
-              <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-            </a>
-            <a
-              href="#products"
-              className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-primary-foreground/55 bg-black/15 px-3 py-2.5 text-center text-[0.6rem] leading-tight tracking-[0.06em] uppercase text-primary-foreground backdrop-blur-sm transition-colors hover:border-gold-soft hover:bg-primary-foreground/10 rtl:text-[0.65rem] rtl:tracking-[0.02em] rtl:normal-case [@media(max-width:899px)_and_(orientation:landscape)]:w-auto [@media(max-width:899px)_and_(orientation:landscape)]:px-4 md:w-auto md:px-7 md:py-4 md:text-[0.7rem] md:tracking-[0.2em] md:rtl:text-xs"
-            >
-              {t("hero.cta2")}
-            </a>
           </div>
         </div>
       </div>
@@ -431,7 +441,7 @@ function Services() {
         <div className="mt-16 sm:mt-18 lg:mt-20">
           <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
 
-          <article className="mx-auto mt-8 flex w-full flex-col items-center self-stretch text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/4)]">
+          <article className="mx-auto mt-8 flex w-full flex-col items-center self-stretch text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/3)]">
             <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
               <Reveal
                 once
@@ -457,7 +467,7 @@ function Services() {
               </Reveal>
             </div>
 
-            <h4 className="mt-4 text-2xl leading-tight text-primary rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
+            <h4 className="mt-4 whitespace-nowrap text-2xl leading-tight text-primary rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
               {t("services.hyac.name")}
             </h4>
             <span aria-hidden="true" className="hairline mt-4 w-12" />
@@ -727,7 +737,12 @@ function Portfolio() {
 
 function Process() {
   const { t } = useI18n();
-  const steps = ["s1", "s2", "s3", "s4"];
+  const steps = [
+    { key: "s1", icon: MessageCircle },
+    { key: "s2", icon: Package },
+    { key: "s3", icon: Handshake },
+    { key: "s4", icon: Headphones },
+  ];
 
   return (
     <section className="bg-secondary/50 px-5 py-24 lg:px-10 lg:py-32">
@@ -735,24 +750,53 @@ function Process() {
         <Reveal>
           <SectionHead eyebrow={t("process.eyebrow")} title={t("process.title")} />
         </Reveal>
-        <ol className="mt-16 grid gap-10 md:grid-cols-4">
-          {steps.map((s, i) => (
-            <Reveal key={s} delay={i * 110}>
-              <li className="relative">
-                <div className="flex items-center gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-accent text-xs tracking-[0.1em] text-primary">
-                    {i + 1}
+        <Reveal className="mx-auto mt-10 max-w-6xl sm:mt-12">
+          <div className="relative aspect-[1919/641] w-full">
+            <Image
+              src="/media/world-map.png"
+              alt=""
+              fill
+              sizes="(min-width: 1280px) 72rem, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+              aria-hidden="true"
+              className="pointer-events-none object-contain"
+            />
+          </div>
+        </Reveal>
+        <div className="relative mt-14 md:mt-20">
+          <span
+            aria-hidden="true"
+            className="absolute start-7 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-gold-deep/70 to-transparent md:start-0 md:top-7 md:right-0 md:bottom-auto md:h-px md:w-full md:bg-gradient-to-r md:from-transparent md:via-gold-deep/70 md:to-transparent"
+          />
+          <ol className="grid gap-6 md:grid-cols-4 md:gap-7 lg:gap-10">
+            {steps.map(({ key, icon: Icon }, i) => (
+              <Reveal key={key} delay={i * 110}>
+                <li className="relative grid grid-cols-[3.75rem_1fr] items-start gap-4 md:block md:pt-16">
+                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-full border-2 border-gold-deep bg-primary text-lg text-gold-soft shadow-[0_0_0_5px_color-mix(in_oklch,var(--gold-soft)_65%,transparent),0_12px_24px_-16px_var(--primary)] md:absolute md:start-1/2 md:top-0 md:-translate-x-1/2">
+                    <span className="font-display font-light">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </span>
-                  <span className="hairline hidden flex-1 opacity-60 md:block" />
-                </div>
-                <h3 className="mt-6 text-xl rtl:text-[1.375rem]">{t(`process.${s}.title`)}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-                  {t(`process.${s}.desc`)}
-                </p>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
+                  <article className="rounded-[1.35rem] border border-gold-deep/15 bg-card/90 px-5 py-6 shadow-[0_20px_40px_-30px_color-mix(in_oklch,var(--emerald-deep)_55%,transparent)] backdrop-blur-sm md:min-h-[17rem] md:px-6 md:py-7 md:text-center">
+                    <div className="flex items-start gap-4 md:block">
+                      <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-gold-deep/15 bg-secondary/55 text-primary md:mx-auto md:h-[4.75rem] md:w-[4.75rem]">
+                        <Icon aria-hidden="true" className="h-7 w-7 stroke-[1.35] text-primary" />
+                      </span>
+                      <div className="min-w-0 flex-1 md:mt-5">
+                        <h3 className="text-xl leading-tight text-primary rtl:text-[1.375rem]">
+                          {t(`process.${key}.title`)}
+                        </h3>
+                        <span aria-hidden="true" className="hairline mt-3 block w-10 md:mx-auto" />
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+                          {t(`process.${key}.desc`)}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
