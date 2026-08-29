@@ -96,7 +96,7 @@ const en: Dict = {
   "services.cta": "Request Details",
   "services.catalogCta": "Download Catalog",
 
-  "film.eyebrow": "The SECRO-FILL Experience",
+  "film.eyebrow": "Made for Modern Aesthetics",
   "film.title": "Precision, Captured in Motion",
   "film.sub":
     "Discover the discipline, detail and refined aesthetic behind every SECRO-FILL professional solution.",

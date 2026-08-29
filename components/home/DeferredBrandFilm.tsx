@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import heroImg from "@/assets/Hero-image-Web.jpg";
+import desktopBrandExperienceImg from "@/assets/brand-experience-desktop.jpg";
 import mobileBrandExperienceImg from "@/assets/brand-experience-mobile.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { useI18n } from "@/lib/i18n";
@@ -35,9 +35,10 @@ export function BrandExperience() {
             <div className="relative bg-hero-surface">
               <div className="relative min-h-[32rem] w-full overflow-hidden sm:min-h-[38rem] lg:min-h-[42rem]">
                 <Image
-                  src={heroImg}
+                  src={desktopBrandExperienceImg}
                   alt={t("image.brandFilm")}
                   fill
+                  unoptimized
                   sizes="(min-width: 1280px) 80rem, 100vw"
                   className="hidden object-cover object-center md:block"
                 />
@@ -49,40 +50,67 @@ export function BrandExperience() {
                   sizes="100vw"
                   className="object-cover object-right md:hidden"
                 />
-
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-r from-hero-surface/72 via-hero-surface/38 to-hero-surface/5 rtl:bg-gradient-to-l"
+                  className="absolute inset-0 bg-gradient-to-r from-[#1d120f]/75 via-[#1d120f]/55 via-40% to-transparent to-95% md:hidden"
                 />
                 <div
                   dir={isRtl ? "rtl" : "ltr"}
-                  className={`absolute inset-0 flex items-start justify-end p-6 text-right sm:p-10 lg:p-14 md:items-center ${
-                    isRtl ? "md:justify-end md:text-right" : "md:justify-start md:text-left"
+                  className={`absolute inset-0 flex items-start p-6 sm:p-10 lg:p-14 md:items-center ${
+                    isRtl ? "justify-end text-right" : "justify-start text-left"
                   }`}
                 >
-                  <div className="w-[78%] max-w-[17rem] sm:w-full sm:max-w-2xl">
+                  <div
+                    className={
+                      isRtl
+                        ? "w-36 max-w-36 md:w-full md:max-w-[28rem] md:translate-x-0 md:-translate-y-20 md:mr-16 lg:-translate-x-2 lg:-translate-y-24 lg:mr-24"
+                        : "w-36 max-w-36 md:w-full md:max-w-[26rem]"
+                    }
+                  >
                     <h2
                       id="brand-film-title"
-                      className="text-4xl leading-[1.05] text-primary-foreground rtl:text-[2.5rem] sm:text-5xl sm:rtl:text-[3.25rem] lg:text-6xl lg:rtl:text-[4rem]"
+                      className={`leading-[1.05] text-primary-foreground ${
+                        isRtl
+                          ? "text-[1.65rem] md:text-[3.25rem] lg:text-[4rem]"
+                          : "text-4xl sm:text-5xl lg:text-6xl"
+                      }`}
                     >
                       {t("film.frame.title")}
                     </h2>
                     <p
-                      className={`mt-5 ml-auto max-w-[12.5rem] text-sm leading-relaxed text-primary-foreground/80 rtl:text-[0.9375rem] sm:text-base sm:rtl:text-[1.0625rem] md:max-w-xl ${
-                        isRtl ? "" : "md:ml-0"
+                      className={`mt-5 leading-relaxed text-primary-foreground/80 md:max-w-xl ${
+                        isRtl
+                          ? "ml-auto max-w-[7.125rem] text-[0.7rem] md:max-w-xl md:text-[1.0625rem]"
+                          : "ml-0 max-w-[12.5rem] text-sm sm:text-base"
                       }`}
                     >
                       {t("film.sub")}
                     </p>
-                    <div className="mt-8 hidden items-center gap-3 text-[0.6rem] tracking-[0.2em] text-primary-foreground/75 uppercase rtl:text-xs rtl:tracking-[0.03em] rtl:normal-case sm:mt-10 md:flex">
+                    <div
+                      className={`text-primary-foreground/75 ${
+                        isRtl
+                          ? "mt-10 hidden items-center gap-3 text-xs tracking-[0.03em] md:flex"
+                          : "mt-8 hidden items-center gap-3 text-[0.6rem] tracking-[0.2em] uppercase sm:mt-10 md:flex"
+                      }`}
+                    >
                       <span className="h-1.5 w-1.5 rounded-full bg-gold-soft shadow-[0_0_12px_var(--gold-soft)]" />
                       <span>{t("film.frame.eyebrow")}</span>
-                      <span aria-hidden="true" className="h-px w-8 bg-gold-soft/65" />
+                      <span
+                        aria-hidden="true"
+                        className="hidden h-px w-8 bg-gold-soft/65 md:block"
+                      />
                       <span>{t("film.frame.label")}</span>
                     </div>
                   </div>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-end gap-3 p-6 whitespace-nowrap text-[0.6rem] tracking-[0.2em] text-primary-foreground/75 uppercase rtl:text-xs rtl:tracking-[0.03em] rtl:normal-case md:hidden">
+                <div
+                  dir={isRtl ? "rtl" : "ltr"}
+                  className={`absolute inset-x-0 bottom-0 flex items-center gap-3 whitespace-nowrap text-primary-foreground/75 md:hidden ${
+                    isRtl
+                      ? "justify-center bg-gradient-to-t from-black/55 to-transparent px-4 pt-12 pb-5 text-center text-xs tracking-[0.02em]"
+                      : "justify-start p-6 text-left text-[0.6rem] tracking-[0.2em] uppercase"
+                  }`}
+                >
                   <span className="h-1.5 w-1.5 rounded-full bg-gold-soft shadow-[0_0_12px_var(--gold-soft)]" />
                   <span>{t("film.frame.eyebrow")}</span>
                   <span aria-hidden="true" className="h-px w-8 bg-gold-soft/65" />

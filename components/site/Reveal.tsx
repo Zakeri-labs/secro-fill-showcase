@@ -13,6 +13,7 @@ export function Reveal({
   rootMargin = "-12% 0px -12% 0px",
   trigger = "self",
   fitThresholdToViewport = false,
+  replay = true,
   replayOnDesktop = false,
   className = "",
 }: {
@@ -26,6 +27,7 @@ export function Reveal({
   rootMargin?: string;
   trigger?: "self" | "closest-article";
   fitThresholdToViewport?: boolean;
+  replay?: boolean;
   replayOnDesktop?: boolean;
   className?: string;
 }) {
@@ -55,7 +57,8 @@ export function Reveal({
     const io = new IntersectionObserver(
       (entries) => {
         const isIntersecting = entries[0]?.isIntersecting ?? false;
-        const shouldReplay = replayOnDesktop && window.matchMedia("(min-width: 64rem)").matches;
+        const shouldReplay =
+          replay || (replayOnDesktop && window.matchMedia("(min-width: 64rem)").matches);
 
         if (isIntersecting) {
           setShown(true);
@@ -74,7 +77,7 @@ export function Reveal({
     );
     io.observe(observedElement);
     return () => io.disconnect();
-  }, [fitThresholdToViewport, once, replayOnDesktop, rootMargin, threshold, trigger]);
+  }, [fitThresholdToViewport, once, replay, replayOnDesktop, rootMargin, threshold, trigger]);
 
   return (
     <div
