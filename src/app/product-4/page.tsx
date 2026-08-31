@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-import { ProductPlaceholderPage } from "@/components/products/ProductPlaceholderPage";
+import { ProductDetailPage, product4 } from "@/components/products/ProductDetailPage";
 import { createOpenGraph } from "@/lib/site";
 
-const title = "Product 4";
-const description = "SECRO-FILL product page 4.";
+const title = "SECRO-MARVEL";
+const description =
+  "Advanced skin revitalizing injectable complex with HA, PN, PDRN, collagen and glutathione.";
 
 export const metadata: Metadata = {
   title,
@@ -14,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ProductPlaceholderPage productNumber={4} />;
+  return <ProductDetailPage product={product4} />;
 }

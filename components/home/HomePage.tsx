@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import hyacLiftImg from "@/assets/HYAC-LIFT-16% CHAC.png";
+import hyacLiftImg from "@/assets/hyac-lift-16-chac.jpg";
 import afterBody from "@/assets/Before-After/After-Body.png";
 import afterNose from "@/assets/Before-After/After-nose.png";
 import beforeBody from "@/assets/Before-After/Before-Body.png";

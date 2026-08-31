@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-import { ProductPlaceholderPage } from "@/components/products/ProductPlaceholderPage";
+import { ProductDetailPage, product5 } from "@/components/products/ProductDetailPage";
 import { createOpenGraph } from "@/lib/site";
 
-const title = "Product 5";
-const description = "SECRO-FILL product page 5.";
+const title = "HYAC-LIFT (16% CHAC)";
+const description = "Multi-molecular hyaluronic acid injectable booster with CHAC technology.";
 
 export const metadata: Metadata = {
   title,
@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ProductPlaceholderPage productNumber={5} />;
+  return <ProductDetailPage product={product5} />;
 }
