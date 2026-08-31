@@ -96,6 +96,20 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
 
         <div className="contents">
           <nav className="flex items-center justify-center gap-5" aria-label={t("aria.mainNav")}>
+            {links.slice(0, 1).map((l) => (
+              <a
+                key={l.key}
+                href={l.href}
+                className={`text-[0.68rem] tracking-[0.12em] uppercase transition-colors rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case ${
+                  solid
+                    ? "text-muted-foreground hover:text-primary"
+                    : "text-primary-foreground/75 hover:text-primary-foreground"
+                }`}
+              >
+                {t(l.key)}
+              </a>
+            ))}
+
             <div
               className="relative"
               onMouseEnter={() => setDesktopProductsOpen(true)}
@@ -121,26 +135,28 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
               </button>
 
               {desktopProductsOpen && (
-                <div
-                  role="menu"
-                  className="absolute top-full start-1/2 mt-3 w-64 -translate-x-1/2 rounded-2xl border border-border/80 bg-background/95 p-2 shadow-[0_18px_45px_-25px_var(--primary)] backdrop-blur-xl"
-                >
-                  {productLinks.map((product) => (
-                    <Link
-                      key={product.href}
-                      href={product.href}
-                      role="menuitem"
-                      onClick={() => setDesktopProductsOpen(false)}
-                      className="block rounded-xl px-3 py-2.5 text-[0.64rem] tracking-[0.08em] uppercase text-muted-foreground transition-colors hover:bg-secondary hover:text-primary rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
-                    >
-                      {product.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full start-1/2 w-64 -translate-x-1/2 pt-3">
+                  <div
+                    role="menu"
+                    className="rounded-2xl border border-border/80 bg-background/95 p-2 shadow-[0_18px_45px_-25px_var(--primary)] backdrop-blur-xl"
+                  >
+                    {productLinks.map((product) => (
+                      <Link
+                        key={product.href}
+                        href={product.href}
+                        role="menuitem"
+                        onClick={() => setDesktopProductsOpen(false)}
+                        className="block rounded-xl px-3 py-2.5 text-[0.64rem] tracking-[0.08em] uppercase text-muted-foreground transition-colors hover:bg-secondary hover:text-primary rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
+                      >
+                        {product.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
-            {links.map((l) => (
+            {links.slice(1).map((l) => (
               <a
                 key={l.key}
                 href={l.href}
@@ -171,6 +187,17 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       {open && (
         <div className="animate-rise mt-2 rounded-[22px] border border-border/60 bg-secondary/95 px-4 pt-2 pb-4 shadow-[0_18px_45px_-35px_var(--primary)] backdrop-blur-xl xl:hidden">
           <nav className="flex flex-col" aria-label={t("aria.mobileNav")}>
+            {links.slice(0, 1).map((l) => (
+              <a
+                key={l.key}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-border/45 py-3 text-[0.68rem] tracking-[0.12em] uppercase text-foreground transition-colors rtl:text-[0.8rem] rtl:tracking-[0.02em] rtl:normal-case"
+              >
+                {t(l.key)}
+              </a>
+            ))}
+
             <div className="border-b border-border/45">
               <button
                 type="button"
@@ -206,7 +233,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
               )}
             </div>
 
-            {links.map((l) => (
+            {links.slice(1).map((l) => (
               <a
                 key={l.key}
                 href={l.href}

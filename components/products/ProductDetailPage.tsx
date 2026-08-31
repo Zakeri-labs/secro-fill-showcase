@@ -24,10 +24,22 @@ import cheekBefore from "@/assets/Before-After/Cheek-before.png";
 import templeAfter from "@/assets/Before-After/Temple-after.png";
 import templeBefore from "@/assets/Before-After/Temple-before.png";
 import bodyBefore from "@/assets/Before-After/Before-Body.png";
-import hyacLiftImage from "@/assets/hyac-lift-16-chac.jpg";
+import hyacLiftImage from "@/assets/HYAC-LIFT-16 CHAC.png";
 import bodyFillerImage from "@/assets/body-filler-2x50ml.png";
 import deep10Image from "@/assets/product-deep-10ml.png";
 import marvelImage from "@/assets/product-Secro-marvel.png";
+import product2HeroImage from "@/assets/product-2/hero-image.png";
+import product2HeroImageMobile from "@/assets/product-2/hero-image-mobile.png";
+import product2InformationImage from "@/assets/product-2/product-info.png";
+import product3HeroImage from "@/assets/product-3/hero-image.png";
+import product3HeroImageMobile from "@/assets/product-3/Hero-image-mobile.png";
+import product3InformationImage from "@/assets/product-3/product-info.png";
+import product4HeroImage from "@/assets/product-4/hero-image.png";
+import product4HeroImageMobile from "@/assets/product-4/Hero-image-mobile.png";
+import product4InformationImage from "@/assets/product-4/product-info.png";
+import product5HeroImage from "@/assets/product-5/Hero-image.png";
+import product5HeroImageMobile from "@/assets/product-5/Hero-image-mobile.png";
+import product5InformationImage from "@/assets/product-5/product-info.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
@@ -48,6 +60,9 @@ type ProductDefinition = {
   downloadName: string;
   image: StaticImageData;
   imageAlt: string;
+  heroImage: StaticImageData;
+  heroImageMobile: StaticImageData;
+  informationImage: StaticImageData;
   information: Array<[string, string]>;
   indications: string[];
   advantages: string[];
@@ -114,6 +129,9 @@ export const product2: ProductDefinition = {
   downloadName: "SECRO-FILL-DEEP-10ml.pdf",
   image: deep10Image,
   imageAlt: "SECRO-FILL DEEP 10ml box with a pre-filled syringe",
+  heroImage: product2HeroImage,
+  heroImageMobile: product2HeroImageMobile,
+  informationImage: product2InformationImage,
   information: [
     ["Product Type", "Monophasic Cross-Linked Hyaluronic Acid Filler"],
     ["Volume", "10ml"],
@@ -155,6 +173,9 @@ export const product3: ProductDefinition = {
   downloadName: "SECRO-FILL-BODY-FILLER.pdf",
   image: bodyFillerImage,
   imageAlt: "SECRO-FILL BODY FILLER two 50ml pre-filled syringes",
+  heroImage: product3HeroImage,
+  heroImageMobile: product3HeroImageMobile,
+  informationImage: product3InformationImage,
   information: [
     ["Product Type", "Biphasic Cross-Linked Hyaluronic Acid Filler"],
     ["Volume", "2 × 50ml (Total 100ml, 2 pre-filled syringes)"],
@@ -192,6 +213,9 @@ export const product4: ProductDefinition = {
   downloadName: "SECRO-MARVEL.pdf",
   image: marvelImage,
   imageAlt: "SECRO-MARVEL advanced skin revitalizing complex packaging",
+  heroImage: product4HeroImage,
+  heroImageMobile: product4HeroImageMobile,
+  informationImage: product4InformationImage,
   information: [
     ["Product Type", "Advanced skin revitalizing injectable"],
     ["Volume", "2 pre-filled syringes × 3ml per box"],
@@ -230,6 +254,9 @@ export const product5: ProductDefinition = {
   downloadName: "HYAC-LIFT-16-CHAC.pdf",
   image: hyacLiftImage,
   imageAlt: "HYAC-LIFT 16% CHAC box and pre-filled syringe",
+  heroImage: product5HeroImage,
+  heroImageMobile: product5HeroImageMobile,
+  informationImage: product5InformationImage,
   information: [
     ["Product Type", "Anti-aging injectable booster with CHAC technology"],
     ["Volume", "1 × 2ml pre-filled syringe"],
@@ -271,12 +298,24 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
     <>
       <Header />
       <main className="overflow-hidden pb-24 sm:pb-28">
-        <section className="relative isolate overflow-hidden border-b border-border bg-[#eee9de]">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-[radial-gradient(circle_at_77%_26%,rgba(255,255,255,0.9),transparent_29%),linear-gradient(120deg,#f5f1e9_0%,#eee9de_100%)]"
+        <section className="relative isolate min-h-[46rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
+          <Image
+            src={product.heroImageMobile}
+            alt={product.imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-contain object-top sm:hidden"
           />
-          <div className="relative mx-auto grid min-h-[46rem] max-w-7xl items-end px-5 pt-28 pb-12 sm:min-h-[48rem] sm:px-8 sm:pt-36 sm:pb-20 lg:min-h-[min(56vw,52rem)] lg:grid-cols-[minmax(0,0.84fr)_minmax(30rem,1.16fr)] lg:px-10 lg:pt-40 lg:pb-24">
+          <Image
+            src={product.heroImage}
+            alt={product.imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 hidden object-cover object-center sm:block sm:object-contain sm:object-top"
+          />
+          <div className="relative mx-auto flex min-h-[46rem] max-w-7xl items-start px-5 pt-28 pb-12 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] sm:pb-20 lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24">
             <header className="relative z-10 max-w-[18rem] animate-rise text-primary sm:max-w-2xl lg:max-w-xl lg:pb-4">
               <p className="text-[0.56rem] tracking-[0.22em] text-gold-deep uppercase rtl:text-xs rtl:tracking-normal rtl:normal-case sm:eyebrow">
                 {product.madeIn}
@@ -317,20 +356,6 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
                 </a>
               </div>
             </header>
-            <Reveal
-              distance={44}
-              scale={0.98}
-              className="relative mt-10 min-h-[20rem] self-stretch sm:min-h-[26rem] lg:mt-0 lg:min-h-0"
-            >
-              <Image
-                src={product.image}
-                alt={product.imageAlt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-contain object-center lg:object-right"
-              />
-            </Reveal>
           </div>
         </section>
 
@@ -344,11 +369,11 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
                 <div className="lg:sticky lg:top-32">
                   <div className="relative isolate aspect-[1121/1403] overflow-hidden rounded-[15px] border border-border bg-secondary/55 shadow-luxe">
                     <Image
-                      src={product.image}
+                      src={product.informationImage}
                       alt={product.imageAlt}
                       fill
                       sizes="(min-width: 1024px) 38vw, 100vw"
-                      className="object-contain p-8"
+                      className="object-cover"
                     />
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowRight,
@@ -17,7 +18,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import hyacLiftImg from "@/assets/hyac-lift-16-chac.jpg";
+import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
 import afterBody from "@/assets/Before-After/After-Body.png";
 import afterNose from "@/assets/Before-After/After-nose.png";
 import beforeBody from "@/assets/Before-After/Before-Body.png";
@@ -279,6 +280,7 @@ type ServiceProduct = {
   alt: string;
   imageClassName: string;
   shadowClassName: string;
+  href: string;
   pdfHref: string;
   downloadName?: string;
   unoptimized?: boolean;
@@ -311,35 +313,41 @@ function ProductCard({
 
   return (
     <article className={`flex min-w-0 self-stretch flex-col items-center text-center ${className}`}>
-      <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
-        {withReveal ? (
-          <Reveal
-            once
-            replayOnDesktop
-            delay={revealDelay}
-            distance={72}
-            scale={0.98}
-            duration={800}
-            threshold={0.2}
-            rootMargin="0px 0px 12% 0px"
-            trigger="closest-article"
-            fitThresholdToViewport
-            className="absolute inset-3 sm:inset-4"
-          >
-            {image}
-          </Reveal>
-        ) : (
-          <div className="absolute inset-3 sm:inset-4">{image}</div>
-        )}
-      </div>
+      <Link
+        href={product.href}
+        aria-label={t(product.name)}
+        className="group flex w-full flex-col items-center text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"
+      >
+        <div className="relative h-64 w-full max-w-xs overflow-hidden sm:h-72 lg:h-64 xl:h-72">
+          {withReveal ? (
+            <Reveal
+              once
+              replayOnDesktop
+              delay={revealDelay}
+              distance={72}
+              scale={0.98}
+              duration={800}
+              threshold={0.2}
+              rootMargin="0px 0px 12% 0px"
+              trigger="closest-article"
+              fitThresholdToViewport
+              className="absolute inset-3 sm:inset-4"
+            >
+              {image}
+            </Reveal>
+          ) : (
+            <div className="absolute inset-3 sm:inset-4">{image}</div>
+          )}
+        </div>
 
-      <h4 className="mt-4 text-xl leading-tight text-primary rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
-        {t(product.name)}
-      </h4>
-      <span aria-hidden="true" className="hairline mt-4 w-12" />
-      <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-        {t(product.desc)}
-      </p>
+        <h4 className="mt-4 text-xl leading-tight text-primary transition-colors group-hover:text-gold-deep rtl:text-[1.375rem] xl:text-2xl xl:rtl:text-[1.625rem]">
+          {t(product.name)}
+        </h4>
+        <span aria-hidden="true" className="hairline mt-4 w-12" />
+        <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+          {t(product.desc)}
+        </p>
+      </Link>
       <a
         href={product.pdfHref}
         download={product.downloadName ?? undefined}
@@ -362,6 +370,7 @@ function Services() {
       alt: "services.p2.alt",
       imageClassName: "scale-[0.98]",
       shadowClassName: "product-shadow-deep-3x",
+      href: "/product-1",
       pdfHref: "/downloads/secro-fill-deep-3x3.2ml.pdf",
       downloadName: "SECRO-FILL-DEEP-3x3.2ml.pdf",
     },
@@ -372,6 +381,7 @@ function Services() {
       alt: "services.p1.alt",
       imageClassName: "scale-[1.05]",
       shadowClassName: "product-shadow-deep-10",
+      href: "/product-2",
       pdfHref: "/downloads/secro-fill-deep-10ml.pdf",
       downloadName: "SECRO-FILL-DEEP-10ml.pdf",
     },
@@ -382,6 +392,7 @@ function Services() {
       alt: "services.p3.alt",
       imageClassName: "scale-[0.94]",
       shadowClassName: "product-shadow-body",
+      href: "/product-3",
       pdfHref: "/downloads/secro-fill-body.pdf",
       downloadName: "SECRO-FILL-BODY.pdf",
       unoptimized: true,
@@ -393,6 +404,7 @@ function Services() {
       alt: "services.p4.alt",
       imageClassName: "scale-[0.9]",
       shadowClassName: "product-shadow-marvel",
+      href: "/product-4",
       pdfHref: "/downloads/SECRO-MARVEL.pdf",
       downloadName: "SECRO-MARVEL.pdf",
     },
@@ -442,38 +454,44 @@ function Services() {
           <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
 
           <article className="mx-auto mt-8 flex w-full flex-col items-center self-stretch text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/3)]">
-            <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
-              <Reveal
-                once
-                replayOnDesktop
-                delay={100}
-                distance={72}
-                scale={0.98}
-                duration={800}
-                threshold={0.2}
-                rootMargin="0px 0px 12% 0px"
-                trigger="closest-article"
-                fitThresholdToViewport
-                className="absolute inset-3 sm:inset-4"
-              >
-                <Image
-                  src={hyacLiftImg.src.replaceAll("%", "%25")}
-                  alt={t("services.hyac.alt")}
-                  fill
-                  unoptimized
-                  sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
-                  className="product-shadow-hyac scale-[1.03] object-contain"
-                />
-              </Reveal>
-            </div>
+            <Link
+              href="/product-5"
+              aria-label={t("services.hyac.name")}
+              className="group flex w-full flex-col items-center text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"
+            >
+              <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
+                <Reveal
+                  once
+                  replayOnDesktop
+                  delay={100}
+                  distance={72}
+                  scale={0.98}
+                  duration={800}
+                  threshold={0.2}
+                  rootMargin="0px 0px 12% 0px"
+                  trigger="closest-article"
+                  fitThresholdToViewport
+                  className="absolute inset-3 sm:inset-4"
+                >
+                  <Image
+                    src={hyacLiftImg}
+                    alt={t("services.hyac.alt")}
+                    fill
+                    unoptimized
+                    sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
+                    className="product-shadow-hyac scale-[1.03] object-contain"
+                  />
+                </Reveal>
+              </div>
 
-            <h4 className="mt-4 whitespace-nowrap text-2xl leading-tight text-primary rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
-              {t("services.hyac.name")}
-            </h4>
-            <span aria-hidden="true" className="hairline mt-4 w-12" />
-            <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-              {t("services.hyac.desc")}
-            </p>
+              <h4 className="mt-4 whitespace-nowrap text-2xl leading-tight text-primary transition-colors group-hover:text-gold-deep rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
+                {t("services.hyac.name")}
+              </h4>
+              <span aria-hidden="true" className="hairline mt-4 w-12" />
+              <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
+                {t("services.hyac.desc")}
+              </p>
+            </Link>
             <a
               href="/downloads/hyac-lift-16-chac.pdf"
               download="HYAC-LIFT-16-CHAC.pdf"

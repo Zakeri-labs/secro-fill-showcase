@@ -27,7 +27,7 @@ import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
 import deepHeroImage from "@/assets/product-1/deep-hero-image.png";
 import deepHeroImageMobile from "@/assets/product-1/deep-hero-image-mobile.png";
 import deepIndications from "@/assets/product-1/deep-indications.png";
-import deepProductInformation from "@/assets/product-1/deep-product-information.png";
+import deepProductInformation from "@/assets/product-1/product-info.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
