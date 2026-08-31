@@ -5,6 +5,8 @@ import {
   ArrowDownToLine,
   ArrowRight,
   Box,
+  ChevronLeft,
+  ChevronRight,
   Clock3,
   Crosshair,
   FlaskConical,
@@ -14,6 +16,7 @@ import {
   Sparkles,
   Syringe,
 } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import afterNose from "@/assets/Before-After/After-nose.png";
 import beforeNose from "@/assets/Before-After/Before-nose.png";
@@ -22,6 +25,7 @@ import beforeChin from "@/assets/Before-After/before-chin.png";
 import doubleChinAfter from "@/assets/Before-After/After-Double chin.png";
 import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
 import deepHeroImage from "@/assets/product-1/deep-hero-image.png";
+import deepHeroImageMobile from "@/assets/product-1/deep-hero-image-mobile.png";
 import deepIndications from "@/assets/product-1/deep-indications.png";
 import deepProductInformation from "@/assets/product-1/deep-product-information.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
@@ -86,6 +90,8 @@ const copy = {
       title: "Feedbacks",
       instruction: "Drag the handle to compare before and after.",
       comparison: (title: string) => `${title} before and after comparison`,
+      previous: "Show previous feedback",
+      next: "Show next feedback",
     },
   },
   de: {
@@ -138,6 +144,8 @@ const copy = {
       title: "Feedbacks",
       instruction: "Ziehen Sie den Regler, um Vorher und Nachher zu vergleichen.",
       comparison: (title: string) => `${title}: Vorher-Nachher-Vergleich`,
+      previous: "Vorheriges Feedback anzeigen",
+      next: "Nächstes Feedback anzeigen",
     },
   },
   ar: {
@@ -190,6 +198,8 @@ const copy = {
       title: "النتائج",
       instruction: "اسحب المؤشر للمقارنة بين قبل وبعد.",
       comparison: (title: string) => `مقارنة قبل وبعد: ${title}`,
+      previous: "عرض النتيجة السابقة",
+      next: "عرض النتيجة التالية",
     },
   },
 } satisfies Record<Lang, unknown>;
@@ -201,6 +211,9 @@ const uniqueAdvantageIcons = [Syringe, PackageCheck, ShieldCheck];
 export function Deep32ProductPage() {
   const { lang, t } = useI18n();
   const content = copy[lang];
+  const feedbackScrollRef = useRef<HTMLDivElement>(null);
+  const feedbackCardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [activeFeedbackIndex, setActiveFeedbackIndex] = useState(0);
   const feedbackItems = [
     {
       title: t("portfolio.i1"),
@@ -221,75 +234,117 @@ export function Deep32ProductPage() {
       alt: t("portfolio.i5"),
     },
   ];
+  const feedbackItemCount = feedbackItems.length;
+
+  const selectFeedbackCard = useCallback(
+    (nextIndex: number) => {
+      const normalizedIndex = (nextIndex + feedbackItemCount) % feedbackItemCount;
+      setActiveFeedbackIndex(normalizedIndex);
+    },
+    [feedbackItemCount],
+  );
+
+  useEffect(() => {
+    const isMobileCarousel = window.matchMedia("(max-width: 1023px)");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!isMobileCarousel.matches || prefersReducedMotion.matches) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveFeedbackIndex((currentIndex) => (currentIndex + 1) % feedbackItemCount);
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, [feedbackItemCount]);
+
+  useEffect(() => {
+    if (!window.matchMedia("(max-width: 1023px)").matches) return;
+
+    const scrollContainer = feedbackScrollRef.current;
+    const activeCard = feedbackCardRefs.current[activeFeedbackIndex];
+    if (!scrollContainer || !activeCard) return;
+
+    const containerBounds = scrollContainer.getBoundingClientRect();
+    const cardBounds = activeCard.getBoundingClientRect();
+    scrollContainer.scrollBy({
+      left: cardBounds.left - containerBounds.left,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }, [activeFeedbackIndex]);
 
   return (
     <>
       <Header />
       <main className="overflow-hidden pb-24 sm:pb-28">
-        <section className="relative isolate min-h-[44rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
+        <section className="relative isolate min-h-[46rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
+          <Image
+            src={deepHeroImageMobile}
+            alt={content.hero.heroAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-contain object-top sm:hidden"
+          />
           <Image
             src={deepHeroImage}
             alt={content.hero.heroAlt}
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-contain object-top"
+            className="-z-20 hidden object-cover object-[40%_center] sm:block sm:object-contain sm:object-top"
           />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-[#eee9de]/90 from-0% via-[#eee9de]/45 via-42% to-transparent to-72% rtl:bg-gradient-to-l"
-          />
-
-          <div className="relative z-10 mx-auto flex min-h-[44rem] max-w-7xl items-start px-5 pt-[calc(56.28vw+2.5rem)] pb-20 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24">
-            <header className="max-w-2xl animate-rise text-primary lg:max-w-xl">
-              <p className="eyebrow text-gold-deep">{content.hero.eyebrow}</p>
-              <div className="mt-4 h-px w-14 bg-accent" />
-              <h1 className="mt-7 leading-[0.86]">
-                <span className="block text-[2.9rem] sm:text-6xl lg:text-[4.35rem] xl:text-[4.75rem]">
+          <div className="relative z-10 mx-auto flex min-h-[46rem] max-w-7xl items-start px-5 pt-28 pb-12 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] sm:pb-20 lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24">
+            <header className="max-w-[13.5rem] animate-rise text-primary sm:max-w-2xl lg:max-w-xl">
+              <p className="text-[0.56rem] tracking-[0.22em] text-gold-deep uppercase rtl:text-xs rtl:tracking-normal rtl:normal-case sm:eyebrow">
+                {content.hero.eyebrow}
+              </p>
+              <div className="mt-3 h-px w-10 bg-accent sm:mt-4 sm:w-14" />
+              <h1 className="mt-5 leading-[0.86] sm:mt-7">
+                <span className="block text-[2.25rem] sm:text-6xl lg:text-[4.35rem] xl:text-[4.75rem]">
                   SECRO-FILL
                 </span>
-                <span className="mt-2 block text-[4.5rem] text-gradient-gold sm:text-[6rem] lg:text-[7rem] xl:text-[7.75rem]">
+                <span className="mt-1 block text-[3.6rem] text-gradient-gold sm:mt-2 sm:text-[6rem] lg:text-[7rem] xl:text-[7.75rem]">
                   DEEP
                 </span>
               </h1>
-              <p className="mt-7 max-w-xl text-base leading-[1.8] text-primary/80 rtl:text-[1.0625rem] sm:text-lg">
+              <p className="mt-4 max-w-[calc(100%-20px)] text-[0.72rem] leading-[1.55] text-primary/80 rtl:text-[0.8125rem] sm:mt-7 sm:max-w-xl sm:text-lg sm:leading-[1.8] sm:rtl:text-[1.0625rem]">
                 {content.hero.productType}
               </p>
-              <div className="mt-7 grid max-w-xl grid-cols-2 gap-3">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card">
-                    <Syringe className="h-5 w-5" strokeWidth={1.35} />
+              <div className="mt-4 flex max-w-xl flex-col gap-2 sm:mt-7 sm:gap-3">
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card sm:h-9 sm:w-9">
+                    <Syringe className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={1.35} />
                   </span>
-                  <span className="text-[0.68rem] leading-relaxed tracking-[0.06em] text-primary/85 rtl:text-sm rtl:tracking-normal sm:text-xs">
+                  <span className="text-[0.54rem] leading-relaxed tracking-[0.04em] text-primary/85 rtl:text-[0.6875rem] rtl:tracking-normal sm:text-xs sm:tracking-[0.06em] sm:rtl:text-sm">
                     {content.hero.volume}
                   </span>
                 </div>
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card">
-                    <FlaskConical className="h-5 w-5" strokeWidth={1.35} />
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent text-primary shadow-card sm:h-9 sm:w-9">
+                    <FlaskConical className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={1.35} />
                   </span>
-                  <span className="text-xs leading-relaxed tracking-[0.08em] text-primary/85 rtl:text-sm rtl:tracking-normal">
+                  <span className="text-[0.625rem] leading-relaxed tracking-[0.06em] text-primary/85 rtl:text-[0.6875rem] rtl:tracking-normal sm:text-xs sm:tracking-[0.08em] sm:rtl:text-sm">
                     25mg/ml
                   </span>
                 </div>
               </div>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-10 flex flex-col gap-2 sm:mt-9 sm:gap-3 sm:flex-row">
                 <a
                   href={productPdf}
                   download="SECRO-FILL-DEEP-3x3.2ml.pdf"
-                  className="animate-download-gold-glow inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-primary px-7 text-[0.68rem] tracking-[0.16em] uppercase text-primary-foreground transition-transform hover:-translate-y-0.5 rtl:text-sm rtl:tracking-normal rtl:normal-case"
+                  className="animate-download-gold-glow inline-flex w-fit self-start min-h-10 items-center justify-center gap-1.5 rounded-full bg-primary px-3 text-[0.52rem] tracking-[0.12em] uppercase text-primary-foreground transition-transform hover:-translate-y-0.5 rtl:text-xs rtl:tracking-normal rtl:normal-case sm:self-auto sm:min-h-12 sm:gap-3 sm:px-7 sm:text-[0.68rem] sm:tracking-[0.16em] sm:rtl:text-sm"
                 >
                   {content.hero.download}
-                  <ArrowDownToLine className="h-4 w-4" />
+                  <ArrowDownToLine className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </a>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-primary/45 bg-background/35 px-7 text-[0.68rem] tracking-[0.16em] uppercase text-primary backdrop-blur-sm transition-colors hover:bg-background/60 rtl:text-sm rtl:tracking-normal rtl:normal-case"
+                  className="inline-flex w-fit self-start min-h-10 items-center justify-center gap-1.5 rounded-full border border-primary/45 bg-background/35 px-3 text-[0.52rem] tracking-[0.12em] uppercase text-primary backdrop-blur-sm transition-colors hover:bg-background/60 rtl:text-xs rtl:tracking-normal rtl:normal-case sm:self-auto sm:min-h-12 sm:gap-3 sm:px-7 sm:text-[0.68rem] sm:tracking-[0.16em] sm:rtl:text-sm"
                 >
                   {content.hero.contact}
-                  <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+                  <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180 sm:h-4 sm:w-4" />
                 </a>
               </div>
             </header>
@@ -306,13 +361,13 @@ export function Deep32ProductPage() {
             </Reveal>
             <div className="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:gap-16">
               <Reveal distance={56} scale={0.98}>
-                <div className="relative isolate aspect-[1402/1122] overflow-hidden border border-border bg-secondary/55 shadow-luxe lg:sticky lg:top-32">
+                <div className="relative isolate aspect-[1121/1403] overflow-hidden rounded-[15px] border border-border bg-secondary/55 shadow-luxe lg:sticky lg:top-32">
                   <Image
                     src={deepProductInformation}
                     alt={content.hero.productAlt}
                     fill
                     sizes="(min-width: 1024px) 38vw, 100vw"
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
               </Reveal>
@@ -431,10 +486,34 @@ export function Deep32ProductPage() {
                 </p>
               </Reveal>
             </div>
-            <div className="scrollbar-none mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-5 sm:gap-8 lg:overflow-visible">
+            <div className="mt-8 flex justify-end gap-2 lg:hidden">
+              <button
+                type="button"
+                aria-label={content.feedback.previous}
+                onClick={() => selectFeedbackCard(activeFeedbackIndex - 1)}
+                className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-primary transition-colors hover:border-accent hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                <ChevronLeft className="h-4 w-4 rtl:rotate-180" strokeWidth={1.5} />
+              </button>
+              <button
+                type="button"
+                aria-label={content.feedback.next}
+                onClick={() => selectFeedbackCard(activeFeedbackIndex + 1)}
+                className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-primary transition-colors hover:border-accent hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                <ChevronRight className="h-4 w-4 rtl:rotate-180" strokeWidth={1.5} />
+              </button>
+            </div>
+            <div
+              ref={feedbackScrollRef}
+              className="scrollbar-none mt-4 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-5 sm:gap-8 lg:mt-12 lg:overflow-visible"
+            >
               {feedbackItems.map((item, index) => (
                 <div
                   key={item.title}
+                  ref={(element) => {
+                    feedbackCardRefs.current[index] = element;
+                  }}
                   className="w-[82vw] max-w-[21rem] shrink-0 snap-start sm:w-[44vw] sm:max-w-none lg:w-[calc((100%-4rem)/3)]"
                 >
                   <Reveal delay={index * 90} className="h-full">

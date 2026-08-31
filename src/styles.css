@@ -462,18 +462,20 @@
   0%,
   100% {
     box-shadow:
-      -10px 10px 30px -14px color-mix(in oklch, var(--gold-deep) 58%, transparent),
-      0 0 0 1px color-mix(in oklch, var(--gold) 12%, transparent);
+      0 0 15px 0 color-mix(in oklch, var(--gold) 72%, transparent),
+      0 0 24px 2px color-mix(in oklch, var(--gold-deep) 51%, transparent),
+      0 0 0 1px color-mix(in oklch, var(--gold) 33%, transparent);
   }
   50% {
     box-shadow:
-      12px 12px 34px -12px color-mix(in oklch, var(--gold) 68%, transparent),
-      0 0 18px -5px color-mix(in oklch, var(--gold-soft) 55%, transparent);
+      0 0 20px 3px color-mix(in oklch, var(--gold) 85%, transparent),
+      0 0 44px 8px color-mix(in oklch, var(--gold) 74%, transparent),
+      0 0 66px 10px color-mix(in oklch, var(--gold-soft) 62%, transparent);
   }
 }
 
 @utility animate-download-gold-glow {
-  animation: download-gold-glow 2.8s ease-in-out infinite;
+  animation: download-gold-glow 2.4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
