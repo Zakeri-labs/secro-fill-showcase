@@ -249,11 +249,11 @@ const ar: Dict = {
   "services.eyebrow": "مجموعة المنتجات",
   "services.title": "تشكيلة الفيلر لدينا",
   "services.sub": "تركيبات حمض هيالورونيك متشابك مصممة لنحت الوجه وزيادة حجم الجسم.",
-  "services.p1.name": "SECRO-FILL DEEP ١٠ مل",
+  "services.p1.name": "SECRO-FILL DEEP 10ml",
   "services.p1.desc":
     "فيلر عميق عالي التماسك في محقنة واحدة ١٠ مل لنحت الوجه بحجم كبير ودعم بنيوي طويل الأمد.",
   "services.p1.alt": "عبوة ومحقنة SECRO-FILL DEEP سعة ١٠ مل",
-  "services.p2.name": "SECRO-FILL DEEP ٣×٣٫٢ مل",
+  "services.p2.name": "SECRO-FILL DEEP 3×3.2ml",
   "services.p2.desc":
     "طقم سريري بثلاث محاقن لعلاجات دقيقة متعددة المناطق — مثالي للخدود وخط الفك والذقن.",
   "services.p2.alt": "عبوة SECRO-FILL DEEP سعة ٣×٣٫٢ مل مع ثلاث محاقن",
@@ -266,7 +266,7 @@ const ar: Dict = {
   "services.p4.alt": "علبة SECRO-MARVEL مفتوحة مع محقنة احترافية",
   "services.line.secro": "خط SECRO-FILL",
   "services.line.hyac": "خط HYAC",
-  "services.hyac.name": "HYAC-LIFT ‏(16% CHAC)",
+  "services.hyac.name": "HYAC-LIFT (16% CHAC)",
   "services.hyac.desc": "تركيبة احترافية من حمض الهيالورونيك مصممة لبروتوكولات رفع دقيقة ومدروسة.",
   "services.hyac.alt": "عبوة ومحقنة HYAC-LIFT بتركيز 16% CHAC",
   "services.cta": "اطلب التفاصيل",

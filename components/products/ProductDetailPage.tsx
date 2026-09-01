@@ -68,6 +68,7 @@ type ProductContent = {
 };
 
 type ProductDefinition = ProductContent & {
+  theme?: "cream-gold-blush";
   brand: string;
   name: string;
   pdf: string;
@@ -226,6 +227,7 @@ export const product2: ProductDefinition = {
 };
 
 export const product3: ProductDefinition = {
+  theme: "cream-gold-blush",
   brand: "SECRO-FILL",
   name: "BODY",
   madeIn: "Made in Germany",
@@ -582,12 +584,13 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
     content.profileTitle && content.profileItems?.length
       ? { title: content.profileTitle, items: content.profileItems }
       : null;
+  const themeClassName = product.theme === "cream-gold-blush" ? "product-theme-body" : "";
 
   return (
-    <>
+    <div className={themeClassName}>
       <Header />
       <main className="overflow-hidden pb-24 sm:pb-28">
-        <section className="relative isolate min-h-[46rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
+        <section className="product-detail-hero relative isolate min-h-[46rem] overflow-hidden border-b border-border bg-[#eee9de] sm:min-h-[48rem] lg:min-h-0 lg:aspect-[1672/941]">
           <Image
             src={product.heroImageMobile}
             alt={content.imageAlt}
@@ -835,7 +838,7 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
       </main>
       <Footer />
       <MobileBottomNav />
-    </>
+    </div>
   );
 }
 

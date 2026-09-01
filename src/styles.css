@@ -123,6 +123,45 @@
   --shadow-card: 0 2px 30px -18px oklch(0.32 0.062 165 / 0.35);
 }
 
+.product-theme-body {
+  --ivory: oklch(0.974 0.019 76);
+  --emerald-deep: oklch(0.43 0.064 27);
+  --gold: oklch(0.78 0.1 78);
+  --gold-deep: oklch(0.61 0.105 72);
+  --gold-soft: oklch(0.91 0.054 80);
+  --hero-surface: oklch(0.31 0.052 27);
+
+  --background: var(--ivory);
+  --foreground: oklch(0.27 0.036 28);
+  --card: oklch(0.988 0.018 49);
+  --card-foreground: oklch(0.27 0.036 28);
+  --popover: oklch(0.988 0.018 49);
+  --popover-foreground: oklch(0.27 0.036 28);
+  --primary: var(--emerald-deep);
+  --primary-foreground: oklch(0.985 0.018 75);
+  --secondary: oklch(0.932 0.035 28);
+  --secondary-foreground: oklch(0.37 0.052 27);
+  --muted: oklch(0.95 0.025 52);
+  --muted-foreground: oklch(0.5 0.035 28);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.3 0.04 30);
+  --border: oklch(0.865 0.038 43);
+  --input: oklch(0.865 0.038 43);
+  --ring: var(--gold);
+
+  --gradient-emerald: linear-gradient(135deg, oklch(0.37 0.055 25), oklch(0.51 0.074 29));
+  --gradient-gold: linear-gradient(100deg, var(--gold-deep), var(--gold-soft), var(--gold));
+  --shadow-luxe: 0 24px 60px -30px oklch(0.43 0.064 27 / 0.3);
+  --shadow-card: 0 2px 30px -18px oklch(0.5 0.06 30 / 0.28);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.product-theme-body .product-detail-hero {
+  background-color: oklch(0.956 0.028 67);
+}
+
 @media (min-width: 40rem) {
   :root {
     --header-height: 6.125rem;
