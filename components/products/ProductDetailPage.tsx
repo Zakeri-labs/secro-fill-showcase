@@ -19,8 +19,16 @@ import {
 import bodyAfter from "@/assets/Before-After/After-Body.png";
 import buttocksAfter from "@/assets/Before-After/buttocks-after.png";
 import buttocksBefore from "@/assets/Before-After/buttocks-before.png";
+import chinWrinklesAfter from "@/assets/Before-After/Chin wrinkles-after.png";
+import chinWrinklesBefore from "@/assets/Before-After/Chin wrinkles-before.png";
+import crowsFeetAfter from "@/assets/Before-After/Crow's feet-after.png";
+import crowsFeetBefore from "@/assets/Before-After/Crow's feet-before.png";
+import handAfter from "@/assets/Before-After/Hand-after.png";
+import handBefore from "@/assets/Before-After/Hand-before.png";
 import jawlineAfter from "@/assets/Before-After/Jawline-after.png";
 import jawlineBefore from "@/assets/Before-After/Jawline-before.png";
+import neckBrighteningAfter from "@/assets/Before-After/Neck-Brighting-after.png";
+import neckBrighteningBefore from "@/assets/Before-After/Neck-Brighting-before.png";
 import cheekAfter from "@/assets/Before-After/Cheek-after.png";
 import cheekBefore from "@/assets/Before-After/Cheek-before.png";
 import templeAfter from "@/assets/Before-After/Temple-after.png";
@@ -378,6 +386,11 @@ export const product4: ProductDefinition = {
     "pH-buffered, isotonic solution preserves the integrity of PN, PDRN and collagen",
     "Synergistic matrix combines hydration, regeneration, structural support and antioxidant protection",
   ],
+  feedback: [
+    { title: "Chin wrinkles", before: chinWrinklesBefore, after: chinWrinklesAfter },
+    { title: "Crow's feet", before: crowsFeetBefore, after: crowsFeetAfter },
+  ],
+  feedbackTitles: ["Chin wrinkles", "Crow's feet"],
   translations: {
     de: {
       madeIn: "Hautrevitalisierendes Injektionsprodukt mit deutscher Entwicklungskompetenz",
@@ -411,6 +424,7 @@ export const product4: ProductDefinition = {
         "pH-gepufferte, isotonische Lösung bewahrt die Integrität von PN, PDRN und Kollagen",
         "Synergetische Matrix vereint Hydration, Regeneration, strukturelle Unterstützung und antioxidativen Schutz",
       ],
+      feedbackTitles: ["Kinnfalten", "Krähenfüße"],
     },
     ar: {
       madeIn: "محلول حقني لتجديد البشرة بتقنية هندسية ألمانية",
@@ -444,6 +458,7 @@ export const product4: ProductDefinition = {
         "محلول متعادل الحموضة ومتساوي التوتر يحافظ على سلامة PN وPDRN والكولاجين",
         "مصفوفة متآزرة تجمع بين الترطيب والتجدد والدعم البنيوي والحماية المضادة للأكسدة",
       ],
+      feedbackTitles: ["تجاعيد الذقن", "تجاعيد حول العينين"],
     },
   },
 };
@@ -494,6 +509,28 @@ export const product5: ProductDefinition = {
     "Promotes collagen and elastin production for a fuller, smoother facial contour",
     "Helps restore elasticity, improve cell vitality and smooth fine lines and wrinkles",
   ],
+  feedback: [
+    {
+      title: "Face rejuvenation & brightening",
+      before: chinWrinklesBefore,
+      after: chinWrinklesAfter,
+    },
+    {
+      title: "Neck & décolleté rejuvenation",
+      before: neckBrighteningBefore,
+      after: neckBrighteningAfter,
+    },
+    {
+      title: "Hand rejuvenation & brightening",
+      before: handBefore,
+      after: handAfter,
+    },
+  ],
+  feedbackTitles: [
+    "Face rejuvenation & brightening",
+    "Neck & décolleté rejuvenation",
+    "Hand rejuvenation & brightening",
+  ],
   translations: {
     de: {
       madeIn: "Für die professionelle Anwendung · Hergestellt in Spanien",
@@ -532,6 +569,11 @@ export const product5: ProductDefinition = {
         "Versorgt die Haut intensiv mit Feuchtigkeit und Nährstoffen und unterstützt die Regulierung ihres Wasser-Öl-Gleichgewichts",
         "Fördert die Kollagen- und Elastinproduktion für vollere, glattere Gesichtskonturen",
         "Hilft, die Elastizität wiederherzustellen, die Zellvitalität zu verbessern und feine Linien und Falten zu glätten",
+      ],
+      feedbackTitles: [
+        "Gesichtsverjüngung und Aufhellung",
+        "Verjüngung von Hals und Dekolleté",
+        "Handverjüngung und Aufhellung",
       ],
     },
     ar: {
@@ -572,6 +614,11 @@ export const product5: ProductDefinition = {
         "يعزز إنتاج الكولاجين والإيلاستين لملامح وجه أكثر امتلاءً ونعومة",
         "يساعد على استعادة المرونة وتحسين حيوية الخلايا وتنعيم الخطوط الدقيقة والتجاعيد",
       ],
+      feedbackTitles: [
+        "تجديد وإشراق بشرة الوجه",
+        "تجديد بشرة الرقبة وأعلى الصدر",
+        "تجديد وإشراق بشرة اليدين",
+      ],
     },
   },
 };
@@ -597,7 +644,7 @@ export function ProductDetailPage({ product }: { product: ProductDefinition }) {
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-contain object-top sm:hidden"
+            className="-z-20 object-cover object-center sm:hidden"
           />
           <Image
             src={product.heroImage}

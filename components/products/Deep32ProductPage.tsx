@@ -284,7 +284,7 @@ export function Deep32ProductPage() {
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-contain object-top sm:hidden"
+            className="-z-20 object-cover object-center sm:hidden"
           />
           <Image
             src={deepHeroImage}
