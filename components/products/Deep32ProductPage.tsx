@@ -29,6 +29,7 @@ import deepHeroImageMobile from "@/assets/product-1/deep-hero-image-mobile.png";
 import deepIndications from "@/assets/product-1/deep-indications.png";
 import deepProductInformation from "@/assets/product-1/product-info.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
+import { ProductPdfDownload } from "@/components/products/ProductPdfDownload";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { SectionHeading } from "@/components/site/InnerPageSections";
@@ -293,8 +294,14 @@ export function Deep32ProductPage() {
             sizes="100vw"
             className="-z-20 hidden object-cover object-[40%_center] sm:block sm:object-contain sm:object-top"
           />
-          <div className="relative z-10 mx-auto flex min-h-[46rem] max-w-7xl items-start px-5 pt-28 pb-12 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] sm:pb-20 lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24">
-            <header className="max-w-[13.5rem] animate-rise text-primary sm:max-w-2xl lg:max-w-xl">
+          <div
+            dir="ltr"
+            className="relative z-10 mx-auto flex min-h-[46rem] max-w-7xl items-start px-5 pt-28 pb-12 sm:min-h-[48rem] sm:px-8 sm:pt-[calc(56.28vw+3rem)] sm:pb-20 lg:min-h-0 lg:items-end lg:px-10 lg:pt-40 lg:pb-24"
+          >
+            <header
+              dir={lang === "ar" ? "rtl" : "ltr"}
+              className="max-w-[13.5rem] animate-rise text-primary sm:max-w-2xl lg:max-w-xl"
+            >
               <p className="text-[0.56rem] tracking-[0.22em] text-gold-deep uppercase rtl:text-xs rtl:tracking-normal rtl:normal-case sm:eyebrow">
                 {content.hero.eyebrow}
               </p>
@@ -530,6 +537,11 @@ export function Deep32ProductPage() {
             </div>
           </div>
         </section>
+        <ProductPdfDownload
+          label={content.hero.download}
+          pdf={productPdf}
+          downloadName="SECRO-FILL-DEEP-3x3.2ml.pdf"
+        />
       </main>
       <Footer />
       <MobileBottomNav />

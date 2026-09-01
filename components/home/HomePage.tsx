@@ -133,7 +133,7 @@ function Hero() {
           preload="auto"
           disablePictureInPicture
           aria-hidden="true"
-          className="h-full w-full object-cover object-center [@media(max-width:767px)_and_(orientation:portrait)]:scale-110 [@media(max-width:767px)_and_(orientation:portrait)]:opacity-70 [@media(max-width:767px)_and_(orientation:portrait)]:blur-lg [@media(max-width:767px)_and_(orientation:portrait)]:will-change-transform"
+          className="h-full w-full object-cover object-[40%_center] md:object-center"
         >
           <source src="/media/secro-fill-film.mp4" type="video/mp4" />
         </video>
@@ -141,26 +141,6 @@ function Hero() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r from-hero-surface/35 via-hero-surface/16 to-hero-surface/20"
         />
-      </div>
-      <div className="absolute inset-3 z-0 hidden overflow-hidden rounded-[15px] [@media(max-width:767px)_and_(orientation:portrait)]:block">
-        <div className="relative h-full w-full overflow-hidden rounded-[15px] bg-hero-surface">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            aria-hidden="true"
-            className="h-full w-full object-cover object-[40%_center]"
-          >
-            <source src="/media/secro-fill-film.mp4" type="video/mp4" />
-          </video>
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-b from-hero-surface/45 via-transparent to-hero-surface/50"
-          />
-        </div>
       </div>
       <div className="mobile-hero-frame relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-center px-4 py-0 [@media(max-width:899px)_and_(orientation:landscape)]:items-start [@media(max-width:899px)_and_(orientation:landscape)]:justify-start [@media(max-width:899px)_and_(orientation:landscape)]:pt-22 md:min-h-[900px] md:items-start md:justify-end md:px-5 md:pt-36 md:pb-36 lg:min-h-[94svh] lg:justify-center lg:px-10 lg:pt-28 lg:pb-20">
         <div
