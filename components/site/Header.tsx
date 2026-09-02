@@ -84,7 +84,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       </div>
 
       <div
-        className={`mx-auto hidden max-w-[1480px] grid-cols-[auto_minmax(0,1fr)_auto_auto] items-center gap-4 rounded-[24px] border px-7 py-3.5 shadow-[0_18px_45px_-35px_var(--primary)] transition-all duration-500 xl:grid ${
+        className={`mx-auto hidden max-w-[1480px] grid-cols-[auto_minmax(0,1fr)_auto_auto] items-center gap-4 rounded-[24px] border px-7 py-2.5 shadow-[0_18px_45px_-35px_var(--primary)] transition-all duration-500 xl:grid ${
           solid
             ? "border-border/80 bg-background backdrop-blur-xl"
             : "border-white/10 bg-white/[0.02] backdrop-blur-xl"

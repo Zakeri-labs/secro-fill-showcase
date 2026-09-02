@@ -31,7 +31,7 @@ export function BrandLock({ light = false }: { light?: boolean }) {
         width={120}
         height={80}
         priority
-        className={`h-12 w-[72px] shrink-0 object-contain ${light ? "brightness-0 invert" : ""}`}
+        className={`h-12 w-[72px] shrink-0 object-contain xl:h-14 xl:w-[84px] ${light ? "brightness-0 invert" : ""}`}
       />
     </span>
   );
