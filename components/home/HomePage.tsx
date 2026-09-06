@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
 import afterBody from "@/assets/Before-After/After-Body.png";
 import afterNose from "@/assets/Before-After/After-nose.png";
 import beforeBody from "@/assets/Before-After/Before-Body.png";
@@ -428,59 +427,6 @@ function Services() {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="mt-16 sm:mt-18 lg:mt-20">
-          <ProductLineHeading>{t("services.line.hyac")}</ProductLineHeading>
-
-          <article className="mx-auto mt-8 flex w-full flex-col items-center self-stretch text-center sm:mt-10 sm:w-[calc((100%-1.75rem)/2)] lg:w-[calc((100%-6rem)/3)]">
-            <Link
-              href="/product-5"
-              aria-label={t("services.hyac.name")}
-              className="group flex w-full flex-col items-center text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"
-            >
-              <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-64 xl:h-72">
-                <Reveal
-                  once
-                  replayOnDesktop
-                  delay={100}
-                  distance={72}
-                  scale={0.98}
-                  duration={800}
-                  threshold={0.2}
-                  rootMargin="0px 0px 12% 0px"
-                  trigger="closest-article"
-                  fitThresholdToViewport
-                  className="absolute inset-3 sm:inset-4"
-                >
-                  <Image
-                    src={hyacLiftImg}
-                    alt={t("services.hyac.alt")}
-                    fill
-                    unoptimized
-                    sizes="(min-width: 1280px) 18rem, (min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
-                    className="product-shadow-hyac scale-[1.03] object-contain"
-                  />
-                </Reveal>
-              </div>
-
-              <h4 className="mt-4 whitespace-nowrap text-2xl leading-tight text-primary transition-colors group-hover:text-gold-deep rtl:text-[1.5rem] sm:text-[1.625rem] sm:rtl:text-[1.75rem] lg:text-3xl lg:rtl:text-[2rem] xl:text-[2rem] xl:rtl:text-[2.25rem]">
-                {t("services.hyac.name")}
-              </h4>
-              <span aria-hidden="true" className="hairline mt-4 w-12" />
-              <p className="mt-4 max-w-[17rem] text-sm leading-relaxed text-muted-foreground rtl:text-[0.9375rem]">
-                {t("services.hyac.desc")}
-              </p>
-            </Link>
-            <a
-              href="/downloads/hyac-lift-16-chac.pdf"
-              download="HYAC-LIFT-16-CHAC.pdf"
-              className="mt-auto inline-flex items-center gap-2 border-b border-accent pt-6 pb-1 text-[0.68rem] tracking-[0.2em] uppercase text-primary transition-colors hover:text-gold-deep rtl:text-xs rtl:tracking-[0.02em] rtl:normal-case"
-            >
-              {t("services.catalogCta")}
-              <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
-            </a>
-          </article>
         </div>
       </div>
     </section>

@@ -1,18 +1,16 @@
 {
   "collection": "ms_secro_fill_showcase_21fa3097",
   "failed_files": [],
-  "indexed_chunks": 5,
+  "indexed_chunks": 1,
   "indexed_files": 8,
-  "last_completed_at": "2026-09-02T06:49:17.107736Z",
-  "last_started_at": "2026-09-02T06:49:14.316458Z",
-  "last_success_at": "2026-09-02T06:49:17.107736Z",
+  "last_completed_at": "2026-09-02T09:20:48.060497Z",
+  "last_started_at": "2026-09-02T09:20:46.204243Z",
+  "last_success_at": "2026-09-02T09:20:48.060497Z",
   "milvus_uri": "~/.memsearch/milvus.db",
   "operation": "index",
-  "paths": [
-    "/Users/farzan/Workspace/Projects/secro-fill-showcase/.memsearch/memory"
-  ],
+  "paths": ["/Users/farzan/Workspace/Projects/secro-fill-showcase/.memsearch/memory"],
   "schema_version": 1,
   "status": "ok",
   "total_files": 8,
-  "updated_at": "2026-09-02T06:49:17.107736Z"
+  "updated_at": "2026-09-02T09:20:48.060497Z"
 }
