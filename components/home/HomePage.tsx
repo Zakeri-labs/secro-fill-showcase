@@ -24,8 +24,8 @@ import beforeBody from "@/assets/Before-After/Before-Body.png";
 import beforeNose from "@/assets/Before-After/Before-nose.png";
 import cheekAfter from "@/assets/Before-After/Cheek-after.png";
 import cheekBefore from "@/assets/Before-After/Cheek-before.png";
-import doubleChinAfter from "@/assets/Before-After/After-Double chin.png";
-import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
+import cheekFillerAfter from "@/assets/Before-After/cheek-filler-after.png";
+import cheekFillerBefore from "@/assets/Before-After/cheek-filler-before.png";
 import templeAfter from "@/assets/Before-After/Temple-after.png";
 import templeBefore from "@/assets/Before-After/Temple-before.png";
 import afterChin from "@/assets/Before-After/after-chin.png";
@@ -533,10 +533,10 @@ function Portfolio() {
       alt: t("portfolio.i4"),
     },
     {
-      key: "portfolio.i5",
-      before: doubleChinBefore,
-      after: doubleChinAfter,
-      alt: t("portfolio.i5"),
+      key: "portfolio.i9",
+      before: cheekFillerBefore,
+      after: cheekFillerAfter,
+      alt: t("portfolio.i9"),
     },
     {
       key: "portfolio.i6",

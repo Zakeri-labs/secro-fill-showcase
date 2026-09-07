@@ -22,8 +22,6 @@ import afterNose from "@/assets/Before-After/After-nose.png";
 import beforeNose from "@/assets/Before-After/Before-nose.png";
 import afterChin from "@/assets/Before-After/after-chin.png";
 import beforeChin from "@/assets/Before-After/before-chin.png";
-import doubleChinAfter from "@/assets/Before-After/After-Double chin.png";
-import doubleChinBefore from "@/assets/Before-After/Before-Double chin.png";
 import deepHeroImage from "@/assets/product-1/deep-hero-image.png";
 import deepHeroImageMobile from "@/assets/product-1/deep-hero-image-mobile.png";
 import deepIndications from "@/assets/product-1/deep-indications.png";
@@ -227,12 +225,6 @@ export function Deep32ProductPage() {
       before: beforeChin,
       after: afterChin,
       alt: t("portfolio.i2"),
-    },
-    {
-      title: t("portfolio.i5"),
-      before: doubleChinBefore,
-      after: doubleChinAfter,
-      alt: t("portfolio.i5"),
     },
   ];
   const feedbackItemCount = feedbackItems.length;
