@@ -125,7 +125,7 @@ export function Footer() {
               strokeWidth={1.5}
             />
             <span>
-              © {new Date().getFullYear()} SECRO-FILL — {t("footer.rights")}
+              © {new Date().getFullYear()} SECROMED — {t("footer.rights")}
             </span>
             <Sparkles
               aria-hidden="true"

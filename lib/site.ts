@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_NAME = "SECRO-FILL";
+export const SITE_NAME = "SECROMED";
 export const SITE_URL = new URL(process.env["NEXT_PUBLIC_SITE_URL"] ?? "https://www.secrofill.com");
 
 const socialImageUrl = new URL("/secro-fill-social-card.jpg?v=20260827b", SITE_URL).toString();

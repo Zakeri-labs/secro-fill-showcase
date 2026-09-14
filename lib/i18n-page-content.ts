@@ -1,12 +1,12 @@
 export const pageDictionaries = {
   en: {
     "nav.products": "Products",
-    "seo.about.title": "About SECRO-FILL",
+    "seo.about.title": "About SECROMED",
     "seo.about.description":
       "Learn about more than a decade of expertise, advanced manufacturing, continuous research and global reach in medical aesthetics.",
     "seo.products.title": "Professional Products",
     "seo.products.description":
-      "Explore the SECRO-FILL professional product collection and its quality-focused development approach.",
+      "Explore the SECROMED professional product collection and its quality-focused development approach.",
 
     "aboutPage.hero.eyebrow": "About us",
     "aboutPage.hero.title": "A decade of expertise. A future shaped by innovation.",
@@ -96,12 +96,12 @@ export const pageDictionaries = {
       "Explore the portfolio or connect with our team to discuss product and partnership opportunities.",
     "aboutPage.cta.primary": "Explore products",
     "aboutPage.cta.secondary": "Contact us",
-    "aboutPage.imageAlt": "SECRO-FILL medical aesthetics and product development visual",
+    "aboutPage.imageAlt": "SECROMED medical aesthetics and product development visual",
 
     "productsPage.hero.eyebrow": "Professional collection",
     "productsPage.hero.title": "Products developed for aesthetic professionals",
     "productsPage.hero.body":
-      "A structured presentation of the SECRO-FILL portfolio for clinics, physicians and partners.",
+      "A structured presentation of the SECROMED portfolio for clinics, physicians and partners.",
     "productsPage.hero.visualLabel": "Professional use only",
     "productsPage.collection.eyebrow": "The collection",
     "productsPage.collection.title": "A focused professional portfolio",
@@ -132,7 +132,7 @@ export const pageDictionaries = {
     "productsPage.technology.body":
       "This section is prepared for future information about hyaluronic acid technology, formulation and development standards.",
     "productsPage.technology.note": "Technical and regulatory details will be added later.",
-    "productsPage.technology.imageAlt": "SECRO-FILL professional product detail",
+    "productsPage.technology.imageAlt": "SECROMED professional product detail",
     "productsPage.benefits.eyebrow": "Product framework",
     "productsPage.benefits.title": "Designed for clear technical communication",
     "productsPage.benefits.body":
@@ -149,18 +149,18 @@ export const pageDictionaries = {
     "productsPage.benefits.support.body": "Placeholder for documentation and partner support.",
     "productsPage.cta.eyebrow": "Professional enquiries",
     "productsPage.cta.title": "Request product or partnership information",
-    "productsPage.cta.body": "Connect with the SECRO-FILL team for the appropriate next step.",
+    "productsPage.cta.body": "Connect with the SECROMED team for the appropriate next step.",
     "productsPage.cta.primary": "Become a partner",
     "productsPage.cta.secondary": "Contact us",
   },
   de: {
     "nav.products": "Produkte",
-    "seo.about.title": "Über SECRO-FILL",
+    "seo.about.title": "Über SECROMED",
     "seo.about.description":
       "Erfahren Sie mehr über ein Jahrzehnt Expertise, moderne Fertigung, kontinuierliche Forschung und globale Reichweite in der Medizinästhetik.",
     "seo.products.title": "Professionelle Produkte",
     "seo.products.description":
-      "Entdecken Sie die professionelle SECRO-FILL Produktkollektion und ihren qualitätsorientierten Entwicklungsansatz.",
+      "Entdecken Sie die professionelle SECROMED Produktkollektion und ihren qualitätsorientierten Entwicklungsansatz.",
 
     "aboutPage.hero.eyebrow": "Über uns",
     "aboutPage.hero.title": "Ein Jahrzehnt Expertise. Eine Zukunft voller Innovation.",
@@ -251,12 +251,12 @@ export const pageDictionaries = {
       "Entdecken Sie das Portfolio oder sprechen Sie mit unserem Team über Produkt- und Partnerschaftsmöglichkeiten.",
     "aboutPage.cta.primary": "Produkte entdecken",
     "aboutPage.cta.secondary": "Kontakt",
-    "aboutPage.imageAlt": "SECRO-FILL Visual für Medizinästhetik und Produktentwicklung",
+    "aboutPage.imageAlt": "SECROMED Visual für Medizinästhetik und Produktentwicklung",
 
     "productsPage.hero.eyebrow": "Professionelle Kollektion",
     "productsPage.hero.title": "Produkte für ästhetische Fachanwender",
     "productsPage.hero.body":
-      "Eine strukturierte Präsentation des SECRO-FILL Portfolios für Kliniken, Ärzte und Partner.",
+      "Eine strukturierte Präsentation des SECROMED Portfolios für Kliniken, Ärzte und Partner.",
     "productsPage.hero.visualLabel": "Nur für professionelle Anwendung",
     "productsPage.collection.eyebrow": "Die Kollektion",
     "productsPage.collection.title": "Ein fokussiertes professionelles Portfolio",
@@ -287,7 +287,7 @@ export const pageDictionaries = {
     "productsPage.technology.body":
       "Dieser Abschnitt ist für spätere Informationen zu Hyaluronsäuretechnologie, Formulierung und Entwicklungsstandards vorbereitet.",
     "productsPage.technology.note": "Technische und regulatorische Details werden später ergänzt.",
-    "productsPage.technology.imageAlt": "Detailansicht eines professionellen SECRO-FILL Produkts",
+    "productsPage.technology.imageAlt": "Detailansicht eines professionellen SECROMED Produkts",
     "productsPage.benefits.eyebrow": "Produktrahmen",
     "productsPage.benefits.title": "Für klare technische Kommunikation gestaltet",
     "productsPage.benefits.body":
@@ -303,18 +303,18 @@ export const pageDictionaries = {
     "productsPage.benefits.support.body": "Platzhalter für Dokumentation und Partnersupport.",
     "productsPage.cta.eyebrow": "Professionelle Anfragen",
     "productsPage.cta.title": "Produkt- oder Partnerschaftsinformationen anfragen",
-    "productsPage.cta.body": "Kontaktieren Sie SECRO-FILL für den passenden nächsten Schritt.",
+    "productsPage.cta.body": "Kontaktieren Sie SECROMED für den passenden nächsten Schritt.",
     "productsPage.cta.primary": "Partner werden",
     "productsPage.cta.secondary": "Kontakt",
   },
   ar: {
     "nav.products": "المنتجات",
-    "seo.about.title": "عن SECRO-FILL",
+    "seo.about.title": "عن SECROMED",
     "seo.about.description":
       "تعرّف على أكثر من عقد من الخبرة والتصنيع المتقدم والبحث المستمر والحضور العالمي في مجال التجميل الطبي.",
     "seo.products.title": "المنتجات المهنية",
     "seo.products.description":
-      "استكشف مجموعة SECRO-FILL المهنية ونهجها المرتكز على الجودة في تطوير المنتجات.",
+      "استكشف مجموعة SECROMED المهنية ونهجها المرتكز على الجودة في تطوير المنتجات.",
 
     "aboutPage.hero.eyebrow": "من نحن",
     "aboutPage.hero.title": "عقد من الخبرة. مستقبل يصوغه الابتكار.",
@@ -401,11 +401,11 @@ export const pageDictionaries = {
     "aboutPage.cta.body": "استكشف المجموعة أو تواصل مع فريقنا لمناقشة فرص المنتجات والشراكة.",
     "aboutPage.cta.primary": "استكشف المنتجات",
     "aboutPage.cta.secondary": "اتصل بنا",
-    "aboutPage.imageAlt": "مشهد SECRO-FILL للتجميل الطبي وتطوير المنتجات",
+    "aboutPage.imageAlt": "مشهد SECROMED للتجميل الطبي وتطوير المنتجات",
 
     "productsPage.hero.eyebrow": "المجموعة المهنية",
     "productsPage.hero.title": "منتجات مطورة لمختصي التجميل",
-    "productsPage.hero.body": "عرض منظم لمجموعة SECRO-FILL للعيادات والأطباء والشركاء.",
+    "productsPage.hero.body": "عرض منظم لمجموعة SECROMED للعيادات والأطباء والشركاء.",
     "productsPage.hero.visualLabel": "للاستخدام المهني فقط",
     "productsPage.collection.eyebrow": "المجموعة",
     "productsPage.collection.title": "مجموعة مهنية مركزة",
@@ -432,7 +432,7 @@ export const pageDictionaries = {
     "productsPage.technology.body":
       "هذا القسم جاهز لمعلومات مستقبلية عن تقنية حمض الهيالورونيك والتركيبة ومعايير التطوير.",
     "productsPage.technology.note": "ستُضاف التفاصيل التقنية والتنظيمية لاحقاً.",
-    "productsPage.technology.imageAlt": "تفاصيل منتج مهني من SECRO-FILL",
+    "productsPage.technology.imageAlt": "تفاصيل منتج مهني من SECROMED",
     "productsPage.benefits.eyebrow": "إطار المنتج",
     "productsPage.benefits.title": "مصمم لتواصل تقني واضح",
     "productsPage.benefits.body": "بنية هادئة للمزايا المهنية والتقنية النهائية.",
@@ -446,7 +446,7 @@ export const pageDictionaries = {
     "productsPage.benefits.support.body": "مساحة مؤقتة للوثائق ودعم الشركاء.",
     "productsPage.cta.eyebrow": "الاستفسارات المهنية",
     "productsPage.cta.title": "اطلب معلومات المنتج أو الشراكة",
-    "productsPage.cta.body": "تواصل مع فريق SECRO-FILL لاختيار الخطوة التالية المناسبة.",
+    "productsPage.cta.body": "تواصل مع فريق SECROMED لاختيار الخطوة التالية المناسبة.",
     "productsPage.cta.primary": "كن شريكاً",
     "productsPage.cta.secondary": "اتصل بنا",
   },

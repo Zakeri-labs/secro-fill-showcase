@@ -33,17 +33,17 @@ const en: Dict = {
   "cta.partner": "Become a Partner",
   "cta.whatsapp": "Chat on WhatsApp",
 
-  "aria.home": "SECRO-FILL home",
+  "aria.home": "SECROMED home",
   "aria.menu": "Menu",
   "aria.mainNav": "Main navigation",
   "aria.mobileNav": "Mobile navigation",
   "aria.language": "Language",
   "aria.quickNav": "Quick navigation",
   "aria.brandCredentials": "Brand credentials",
-  "image.logo": "SECRO-FILL logo",
+  "image.logo": "SECROMED logo",
   "image.contactHero": "Close-up portrait illustrating premium medical aesthetics",
   "image.brandFilm": "Close-up portrait illustrating premium medical aesthetics results",
-  "form.whatsappTitle": "SECRO-FILL — Partnership Request",
+  "form.whatsappTitle": "SECROMED — Partnership Request",
   "social.whatsapp": "WhatsApp",
   "social.telegram": "Telegram",
   "social.instagram": "Instagram",
@@ -58,7 +58,7 @@ const en: Dict = {
   "hero.eyebrow": "Engineered in Germany",
   "hero.title": "Luxury Beauty, Safe Injection",
   "hero.sub":
-    "SECRO-FILL develops premium dermal fillers for clinics, physicians and distributors who accept nothing less than German precision.",
+    "SECROMED develops premium dermal fillers for clinics, physicians and distributors who accept nothing less than German precision.",
   "hero.cta1": "Request Partnership",
   "hero.cta2": "Explore Products",
 
@@ -85,7 +85,7 @@ const en: Dict = {
   "services.p3.alt": "SECRO-FILL BODY FILLER packaging with two syringes",
   "services.p4.name": "SECRO-MARVEL",
   "services.p4.desc":
-    "A premium presentation set designed for precise professional treatments, combining controlled delivery with SECRO-FILL quality.",
+    "A premium presentation set designed for precise professional treatments, combining controlled delivery with SECROMED quality.",
   "services.p4.alt": "Open SECRO-MARVEL presentation box with a professional syringe",
   "services.line.secro": "SECRO-FILL LINE",
   "services.line.hyac": "HYAC LINE",
@@ -99,7 +99,7 @@ const en: Dict = {
   "film.eyebrow": "Made for Modern Aesthetics",
   "film.title": "Precision, Captured in Motion",
   "film.sub":
-    "Discover the discipline, detail and refined aesthetic behind every SECRO-FILL professional solution.",
+    "Discover the discipline, detail and refined aesthetic behind every SECROMED professional solution.",
   "film.frame.eyebrow": "Engineered in Germany",
   "film.frame.title": "Where science meets refinement",
   "film.frame.label": "Brand Film",
@@ -173,14 +173,14 @@ const en: Dict = {
   "form.name": "Full name",
   "form.email": "Email address",
   "form.country": "Country / Market",
-  "form.message": "How would you like to work with SECRO-FILL?",
+  "form.message": "How would you like to work with SECROMED?",
   "form.submit": "Send Partnership Request",
   "form.sent": "WhatsApp opened with your request ready to send.",
 
   "footer.rights": "All rights reserved.",
   "footer.note": "Professional use only. For clinics, physicians and distributors.",
   "footer.qr.label": "Scan to Connect",
-  "footer.qr.alt": "SECRO-FILL QR code",
+  "footer.qr.alt": "SECROMED QR code",
   "footer.contact.whatsapp": "WhatsApp",
   "footer.contact.phone": "Phone",
   "footer.contact.address": "View on map",
@@ -189,7 +189,7 @@ const en: Dict = {
   "share.telegram": "Chat on Telegram",
   "share.instagram": "Visit Instagram",
 
-  "page.about.title": "About SECRO-FILL",
+  "page.about.title": "About SECROMED",
   "page.about.body":
     "A German medical aesthetics brand dedicated to premium dermal filler technology, developed with laboratory precision and delivered to professionals worldwide.",
   "page.services.title": "Services & Products",
@@ -197,7 +197,7 @@ const en: Dict = {
     "Explore our dermal filler range and the professional services that accompany every partnership.",
   "page.contact.title": "Contact Us",
   "page.contact.body":
-    "Reach the SECRO-FILL partnership team for pricing, documentation and territory availability.",
+    "Reach the SECROMED partnership team for pricing, documentation and territory availability.",
   "page.back": "Back to homepage",
 };
 
@@ -212,17 +212,17 @@ const ar: Dict = {
   "cta.partner": "كن شريكاً",
   "cta.whatsapp": "تواصل على واتساب",
 
-  "aria.home": "الصفحة الرئيسية لـ SECRO-FILL",
+  "aria.home": "الصفحة الرئيسية لـ SECROMED",
   "aria.menu": "القائمة",
   "aria.mainNav": "التنقل الرئيسي",
   "aria.mobileNav": "تنقل الجوال",
   "aria.language": "اللغة",
   "aria.quickNav": "التنقل السريع",
   "aria.brandCredentials": "مزايا العلامة التجارية",
-  "image.logo": "شعار SECRO-FILL",
+  "image.logo": "شعار SECROMED",
   "image.contactHero": "صورة مقرّبة تجسد التجميل الطبي الراقي",
   "image.brandFilm": "صورة مقرّبة تجسد نتائج التجميل الطبي الراقي",
-  "form.whatsappTitle": "SECRO-FILL — طلب شراكة",
+  "form.whatsappTitle": "SECROMED — طلب شراكة",
   "social.whatsapp": "واتساب",
   "social.telegram": "تيليجرام",
   "social.instagram": "إنستغرام",
@@ -237,7 +237,7 @@ const ar: Dict = {
   "hero.eyebrow": "مصنوع في ألمانيا",
   "hero.title": "علم الجمال الراقي",
   "hero.sub":
-    "تطوّر SECRO-FILL فيلر جلدي متميز للعيادات والأطباء والموزعين الذين لا يقبلون أقل من الدقة الألمانية.",
+    "تطوّر SECROMED فيلر جلدي متميز للعيادات والأطباء والموزعين الذين لا يقبلون أقل من الدقة الألمانية.",
   "hero.cta1": "طلب شراكة",
   "hero.cta2": "استعرض المنتجات",
 
@@ -262,7 +262,7 @@ const ar: Dict = {
   "services.p3.alt": "عبوة SECRO-FILL BODY FILLER مع محقنتين",
   "services.p4.name": "SECRO-MARVEL",
   "services.p4.desc":
-    "مجموعة فاخرة مصممة للعلاجات الاحترافية الدقيقة، تجمع بين التحكم في الاستخدام وجودة SECRO-FILL.",
+    "مجموعة فاخرة مصممة للعلاجات الاحترافية الدقيقة، تجمع بين التحكم في الاستخدام وجودة SECROMED.",
   "services.p4.alt": "علبة SECRO-MARVEL مفتوحة مع محقنة احترافية",
   "services.line.secro": "خط SECRO-FILL",
   "services.line.hyac": "خط HYAC",
@@ -272,10 +272,10 @@ const ar: Dict = {
   "services.cta": "اطلب التفاصيل",
   "services.catalogCta": "تحميل الكتالوج",
 
-  "film.eyebrow": "تجربة SECRO-FILL",
+  "film.eyebrow": "تجربة SECROMED",
   "film.title": "الدقة في كل مشهد",
   "film.sub":
-    "اكتشف الانضباط والاهتمام بالتفاصيل والرؤية الراقية التي تقف خلف كل حل احترافي من SECRO-FILL.",
+    "اكتشف الانضباط والاهتمام بالتفاصيل والرؤية الراقية التي تقف خلف كل حل احترافي من SECROMED.",
   "film.frame.eyebrow": "مصنوع في ألمانيا",
   "film.frame.title": "حيث يلتقي العلم بالرقي",
   "film.frame.label": "فيلم العلامة",
@@ -340,14 +340,14 @@ const ar: Dict = {
   "form.name": "الاسم الكامل",
   "form.email": "البريد الإلكتروني",
   "form.country": "الدولة / السوق",
-  "form.message": "كيف ترغب في العمل مع SECRO-FILL؟",
+  "form.message": "كيف ترغب في العمل مع SECROMED؟",
   "form.submit": "إرسال طلب الشراكة",
   "form.sent": "تم فتح واتساب وطلبك جاهز للإرسال.",
 
   "footer.rights": "جميع الحقوق محفوظة.",
   "footer.note": "للاستخدام المهني فقط. للعيادات والأطباء والموزعين.",
   "footer.qr.label": "امسح للتواصل",
-  "footer.qr.alt": "رمز QR الخاص بـ SECRO-FILL",
+  "footer.qr.alt": "رمز QR الخاص بـ SECROMED",
   "footer.contact.whatsapp": "واتساب",
   "footer.contact.phone": "الهاتف",
   "footer.contact.address": "عرض على الخريطة",
@@ -356,13 +356,13 @@ const ar: Dict = {
   "share.telegram": "تواصل عبر تيليجرام",
   "share.instagram": "زيارة إنستغرام",
 
-  "page.about.title": "عن SECRO-FILL",
+  "page.about.title": "عن SECROMED",
   "page.about.body":
     "علامة تجميل طبي ألمانية مكرسة لتقنية الفيلر الجلدي المتميز، مطوّرة بدقة مختبرية وموجهة للمحترفين حول العالم.",
   "page.services.title": "الخدمات والمنتجات",
   "page.services.body": "استعرض تشكيلة الفيلر والخدمات المهنية المصاحبة لكل شراكة.",
   "page.contact.title": "اتصل بنا",
-  "page.contact.body": "تواصل مع فريق شراكات SECRO-FILL للأسعار والوثائق وتوفر المناطق.",
+  "page.contact.body": "تواصل مع فريق شراكات SECROMED للأسعار والوثائق وتوفر المناطق.",
   "page.back": "العودة إلى الصفحة الرئيسية",
 };
 
@@ -377,17 +377,17 @@ const de: Dict = {
   "cta.partner": "Partner werden",
   "cta.whatsapp": "Über WhatsApp kontaktieren",
 
-  "aria.home": "SECRO-FILL Startseite",
+  "aria.home": "SECROMED Startseite",
   "aria.menu": "Menü",
   "aria.mainNav": "Hauptnavigation",
   "aria.mobileNav": "Mobile Navigation",
   "aria.language": "Sprache",
   "aria.quickNav": "Schnellnavigation",
   "aria.brandCredentials": "Markenmerkmale",
-  "image.logo": "SECRO-FILL Logo",
+  "image.logo": "SECROMED Logo",
   "image.contactHero": "Nahaufnahme für hochwertige medizinische Ästhetik",
   "image.brandFilm": "Nahaufnahme für Ergebnisse hochwertiger medizinischer Ästhetik",
-  "form.whatsappTitle": "SECRO-FILL — Partnerschaftsanfrage",
+  "form.whatsappTitle": "SECROMED — Partnerschaftsanfrage",
   "social.whatsapp": "WhatsApp",
   "social.telegram": "Telegram",
   "social.instagram": "Instagram",
@@ -403,7 +403,7 @@ const de: Dict = {
   "hero.eyebrow": "Entwickelt in Deutschland",
   "hero.title": "Die Wissenschaft vollendeter Schönheit",
   "hero.sub":
-    "SECRO-FILL entwickelt hochwertige Dermalfiller für Kliniken, Ärzte und Vertriebspartner, die bei deutscher Präzision keine Kompromisse eingehen.",
+    "SECROMED entwickelt hochwertige Dermalfiller für Kliniken, Ärzte und Vertriebspartner, die bei deutscher Präzision keine Kompromisse eingehen.",
   "hero.cta1": "Partnerschaft anfragen",
   "hero.cta2": "Produkte entdecken",
 
@@ -430,7 +430,7 @@ const de: Dict = {
   "services.p3.alt": "SECRO-FILL BODY FILLER Verpackung mit zwei Spritzen",
   "services.p4.name": "SECRO-MARVEL",
   "services.p4.desc":
-    "Ein hochwertiges Präsentationsset für präzise professionelle Behandlungen, das kontrollierte Anwendung mit SECRO-FILL Qualität verbindet.",
+    "Ein hochwertiges Präsentationsset für präzise professionelle Behandlungen, das kontrollierte Anwendung mit SECROMED Qualität verbindet.",
   "services.p4.alt": "Geöffnete SECRO-MARVEL Präsentationsbox mit professioneller Spritze",
   "services.line.secro": "SECRO-FILL LINIE",
   "services.line.hyac": "HYAC LINIE",
@@ -441,10 +441,10 @@ const de: Dict = {
   "services.cta": "Details anfragen",
   "services.catalogCta": "Katalog herunterladen",
 
-  "film.eyebrow": "Das SECRO-FILL Erlebnis",
+  "film.eyebrow": "Das SECROMED Erlebnis",
   "film.title": "Präzision in Bewegung",
   "film.sub":
-    "Entdecken Sie die Disziplin, Sorgfalt und raffinierte Ästhetik hinter jeder professionellen Lösung von SECRO-FILL.",
+    "Entdecken Sie die Disziplin, Sorgfalt und raffinierte Ästhetik hinter jeder professionellen Lösung von SECROMED.",
   "film.frame.eyebrow": "Entwickelt in Deutschland",
   "film.frame.title": "Wo Wissenschaft auf Ästhetik trifft",
   "film.frame.label": "Markenfilm",
@@ -518,14 +518,14 @@ const de: Dict = {
   "form.name": "Vollständiger Name",
   "form.email": "E-Mail-Adresse",
   "form.country": "Land / Markt",
-  "form.message": "Wie möchten Sie mit SECRO-FILL zusammenarbeiten?",
+  "form.message": "Wie möchten Sie mit SECROMED zusammenarbeiten?",
   "form.submit": "Partnerschaftsanfrage senden",
   "form.sent": "WhatsApp wurde geöffnet und Ihre Anfrage ist versandbereit.",
 
   "footer.rights": "Alle Rechte vorbehalten.",
   "footer.note": "Nur für den professionellen Gebrauch. Für Kliniken, Ärzte und Vertriebspartner.",
   "footer.qr.label": "Scannen zum Verbinden",
-  "footer.qr.alt": "SECRO-FILL QR-Code",
+  "footer.qr.alt": "SECROMED QR-Code",
   "footer.contact.whatsapp": "WhatsApp",
   "footer.contact.phone": "Telefon",
   "footer.contact.address": "Auf der Karte ansehen",
@@ -534,7 +534,7 @@ const de: Dict = {
   "share.telegram": "Über Telegram schreiben",
   "share.instagram": "Instagram besuchen",
 
-  "page.about.title": "Über SECRO-FILL",
+  "page.about.title": "Über SECROMED",
   "page.about.body":
     "Eine deutsche Marke für Medizinästhetik, die sich hochwertiger Dermalfiller-Technologie widmet — mit Laborpräzision entwickelt und für Fachanwender weltweit bereitgestellt.",
   "page.services.title": "Services & Produkte",
@@ -542,7 +542,7 @@ const de: Dict = {
     "Entdecken Sie unser Dermalfiller-Portfolio und die professionellen Services, die jede Partnerschaft begleiten.",
   "page.contact.title": "Kontakt",
   "page.contact.body":
-    "Kontaktieren Sie das SECRO-FILL Partnerschaftsteam für Preise, Dokumentation und Informationen zur Gebietsverfügbarkeit.",
+    "Kontaktieren Sie das SECROMED Partnerschaftsteam für Preise, Dokumentation und Informationen zur Gebietsverfügbarkeit.",
   "page.back": "Zurück zur Startseite",
 };
 

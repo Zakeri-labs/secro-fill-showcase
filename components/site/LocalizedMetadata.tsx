@@ -14,7 +14,7 @@ export function LocalizedMetadata({
   const { t } = useI18n();
 
   useEffect(() => {
-    const localizedTitle = `${t(titleKey)} | SECRO-FILL`;
+    const localizedTitle = `${t(titleKey)} | SECROMED`;
     const localizedDescription = t(descriptionKey);
 
     const applyMetadata = () => {
