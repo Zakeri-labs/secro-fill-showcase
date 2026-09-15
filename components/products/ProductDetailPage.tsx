@@ -466,12 +466,12 @@ export const product4: ProductDefinition = {
 export const product5: ProductDefinition = {
   brand: "HYAC",
   name: "LIFT",
-  madeIn: "Professional use · Made in Spain",
+  madeIn: "Professional use · Made in Germany",
   productType: "Multi-molecular HA injectable booster with CHAC technology",
   volume: "1 × 2ml pre-filled syringe",
   concentration: "160mg/ml hyaluronic acid",
-  pdf: "/downloads/HYAC-LIFT%2016%25%20CHAC.pdf",
-  downloadName: "HYAC-LIFT-16-CHAC.pdf",
+  pdf: "/downloads/hyac-lift-16-chac.pdf",
+  downloadName: "SECROMED-HYAC-LIFT-16-CHAC.pdf",
   image: hyacLiftImage,
   imageAlt: "HYAC-LIFT 16% CHAC box and pre-filled syringe",
   heroImage: product5HeroImage,
@@ -533,7 +533,7 @@ export const product5: ProductDefinition = {
   ],
   translations: {
     de: {
-      madeIn: "Für die professionelle Anwendung · Hergestellt in Spanien",
+      madeIn: "Für die professionelle Anwendung · Hergestellt in Deutschland",
       productType: "Injektierbarer Multi-Molekular-HA-Booster mit CHAC-Technologie",
       volume: "1 × 2 ml vorgefüllte Spritze",
       concentration: "160 mg/ml Hyaluronsäure",
@@ -577,7 +577,7 @@ export const product5: ProductDefinition = {
       ],
     },
     ar: {
-      madeIn: "للاستخدام المهني · صنع في إسبانيا",
+      madeIn: "للاستخدام المهني · صنع في ألمانيا",
       productType: "معزز حقني متعدد الجزيئات من حمض الهيالورونيك بتقنية CHAC",
       volume: "محقنة واحدة معبأة مسبقاً × 2 مل",
       concentration: "160 ملغ/مل من حمض الهيالورونيك",

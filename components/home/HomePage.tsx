@@ -34,6 +34,7 @@ import buttocksAfter from "@/assets/Before-After/buttocks-after.png";
 import buttocksBefore from "@/assets/Before-After/buttocks-before.png";
 import newChinAfter from "@/assets/Before-After/chin-after.png";
 import newChinBefore from "@/assets/Before-After/chin-before.png";
+import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
 import secroMarvelImg from "@/assets/product-Secro-marvel.png";
 import deep10Img from "@/assets/product-deep-10ml.png";
@@ -387,6 +388,17 @@ function Services() {
       pdfHref: "/downloads/SECRO-MARVEL.pdf",
       downloadName: "SECRO-MARVEL.pdf",
     },
+    {
+      img: hyacLiftImg,
+      name: "services.hyac.name",
+      desc: "services.hyac.desc",
+      alt: "services.hyac.alt",
+      imageClassName: "scale-[0.95]",
+      shadowClassName: "product-shadow-hyac",
+      href: "/product-5",
+      pdfHref: "/downloads/hyac-lift-16-chac.pdf",
+      downloadName: "SECROMED-HYAC-LIFT-16-CHAC.pdf",
+    },
   ];
 
   return (
@@ -401,7 +413,7 @@ function Services() {
         <div className="mt-12 sm:mt-14">
           <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
 
-          <div className="mt-8 hidden gap-x-7 gap-y-12 sm:grid sm:grid-cols-2 md:mt-10 lg:grid-cols-4 lg:gap-x-8">
+          <div className="mt-8 hidden gap-x-7 gap-y-12 sm:grid sm:grid-cols-2 md:mt-10 lg:grid-cols-5 lg:gap-x-6">
             {products.map((product, index) => (
               <ProductCard
                 key={product.name}
