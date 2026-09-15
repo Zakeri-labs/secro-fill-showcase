@@ -34,6 +34,20 @@ import buttocksAfter from "@/assets/Before-After/buttocks-after.png";
 import buttocksBefore from "@/assets/Before-After/buttocks-before.png";
 import newChinAfter from "@/assets/Before-After/chin-after.png";
 import newChinBefore from "@/assets/Before-After/chin-before.png";
+import chinProfileAfter from "@/assets/Before-After/Chin-Profile-after.png";
+import chinProfileBefore from "@/assets/Before-After/Chin-Profile-before.png";
+import eyeCheekAfter from "@/assets/Before-After/Eye-Cheek-after.png";
+import eyeCheekBefore from "@/assets/Before-After/Eye-Cheek-before.png";
+import fullFaceAfter from "@/assets/Before-After/Full-Face-after.png";
+import fullFaceBefore from "@/assets/Before-After/Full-Face-before.png";
+import jawMarkingAfter from "@/assets/Before-After/Jaw-Marking-after.png";
+import jawMarkingBefore from "@/assets/Before-After/Jaw-Marking-before.png";
+import portraitJawAfter from "@/assets/Before-After/Portrait-Jaw-after.png";
+import portraitJawBefore from "@/assets/Before-After/Portrait-Jaw-before.png";
+import profileLiftAfter from "@/assets/Before-After/Profile-Lift-after.png";
+import profileLiftBefore from "@/assets/Before-After/Profile-Lift-before.png";
+import smileGlowAfter from "@/assets/Before-After/Smile-Glow-after.png";
+import smileGlowBefore from "@/assets/Before-After/Smile-Glow-before.png";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
 import secroMarvelImg from "@/assets/product-Secro-marvel.png";
@@ -567,6 +581,48 @@ function Portfolio() {
       before: newChinBefore,
       after: newChinAfter,
       alt: t("portfolio.i8"),
+    },
+    {
+      key: "portfolio.i10",
+      before: portraitJawBefore,
+      after: portraitJawAfter,
+      alt: t("portfolio.i10"),
+    },
+    {
+      key: "portfolio.i11",
+      before: chinProfileBefore,
+      after: chinProfileAfter,
+      alt: t("portfolio.i11"),
+    },
+    {
+      key: "portfolio.i12",
+      before: eyeCheekBefore,
+      after: eyeCheekAfter,
+      alt: t("portfolio.i12"),
+    },
+    {
+      key: "portfolio.i13",
+      before: fullFaceBefore,
+      after: fullFaceAfter,
+      alt: t("portfolio.i13"),
+    },
+    {
+      key: "portfolio.i14",
+      before: smileGlowBefore,
+      after: smileGlowAfter,
+      alt: t("portfolio.i14"),
+    },
+    {
+      key: "portfolio.i15",
+      before: jawMarkingBefore,
+      after: jawMarkingAfter,
+      alt: t("portfolio.i15"),
+    },
+    {
+      key: "portfolio.i16",
+      before: profileLiftBefore,
+      after: profileLiftAfter,
+      alt: t("portfolio.i16"),
     },
   ];
 
