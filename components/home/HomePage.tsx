@@ -49,6 +49,8 @@ import profileLiftBefore from "@/assets/Before-After/Profile-Lift-before.png";
 import smileGlowAfter from "@/assets/Before-After/Smile-Glow-after.png";
 import smileGlowBefore from "@/assets/Before-After/Smile-Glow-before.png";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
+import secroLipsImg from "@/assets/SECRO-LIPS.png";
+import secroThreadsImg from "@/assets/SECRO-THREADS.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
 import secroMarvelImg from "@/assets/product-Secro-marvel.png";
 import deep10Img from "@/assets/product-deep-10ml.png";
@@ -413,6 +415,28 @@ function Services() {
       pdfHref: "/downloads/hyac-lift-16-chac.pdf",
       downloadName: "SECROMED-HYAC-LIFT-16-CHAC.pdf",
     },
+    {
+      img: secroLipsImg,
+      name: "services.lips.name",
+      desc: "services.lips.desc",
+      alt: "services.lips.alt",
+      imageClassName: "scale-[0.95]",
+      shadowClassName: "product-shadow-lips",
+      href: "/product-6",
+      pdfHref: "/downloads/secro-lips.pdf",
+      downloadName: "SECROMED-SECRO-LIPS.pdf",
+    },
+    {
+      img: secroThreadsImg,
+      name: "services.threads.name",
+      desc: "services.threads.desc",
+      alt: "services.threads.alt",
+      imageClassName: "scale-[0.9]",
+      shadowClassName: "product-shadow-threads",
+      href: "/product-7",
+      pdfHref: "/downloads/secro-threads.pdf",
+      downloadName: "SECROMED-SECRO-THREADS.pdf",
+    },
   ];
 
   return (
@@ -427,7 +451,7 @@ function Services() {
         <div className="mt-12 sm:mt-14">
           <ProductLineHeading>{t("services.line.secro")}</ProductLineHeading>
 
-          <div className="mt-8 hidden gap-x-7 gap-y-12 sm:grid sm:grid-cols-2 md:mt-10 lg:grid-cols-5 lg:gap-x-6">
+          <div className="mt-8 hidden gap-x-7 gap-y-12 sm:grid sm:grid-cols-2 md:mt-10 lg:grid-cols-4 lg:gap-x-6">
             {products.map((product, index) => (
               <ProductCard
                 key={product.name}

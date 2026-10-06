@@ -50,6 +50,18 @@ import product4InformationImage from "@/assets/product-4/product-info.png";
 import product5HeroImage from "@/assets/product-5/Hero-image.png";
 import product5HeroImageMobile from "@/assets/product-5/Hero-image-mobile.png";
 import product5InformationImage from "@/assets/product-5/product-info.png";
+import lips1After from "@/assets/product-6/lips-1-after.jpg";
+import lips1Before from "@/assets/product-6/lips-1-before.jpg";
+import lips2After from "@/assets/product-6/lips-2-after.jpg";
+import lips2Before from "@/assets/product-6/lips-2-before.jpg";
+import product6HeroImage from "@/assets/product-6/hero-image.jpg";
+import product6HeroImageMobile from "@/assets/product-6/hero-image-mobile.jpg";
+import product6InformationImage from "@/assets/product-6/product-info.jpg";
+import product7HeroImage from "@/assets/product-7/hero-image.jpg";
+import product7HeroImageMobile from "@/assets/product-7/hero-image-mobile.jpg";
+import product7InformationImage from "@/assets/product-7/product-info.jpg";
+import secroLipsImage from "@/assets/SECRO-LIPS.png";
+import secroThreadsImage from "@/assets/SECRO-THREADS.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { ProductPdfDownload } from "@/components/products/ProductPdfDownload";
 import { Footer } from "@/components/site/Footer";
@@ -618,6 +630,261 @@ export const product5: ProductDefinition = {
         "تجديد وإشراق بشرة الوجه",
         "تجديد بشرة الرقبة وأعلى الصدر",
         "تجديد وإشراق بشرة اليدين",
+      ],
+    },
+  },
+};
+
+export const product6: ProductDefinition = {
+  brand: "SECRO",
+  name: "LIPS",
+  madeIn: "Professional use · Made in Germany",
+  productType: "Monophasic cross-linked hyaluronic acid lip filler with lidocaine",
+  volume: "1 × 10ml with lidocaine",
+  concentration: "20mg/ml hyaluronic acid",
+  pdf: "/downloads/secro-lips.pdf",
+  downloadName: "SECROMED-SECRO-LIPS.pdf",
+  image: secroLipsImage,
+  imageAlt: "SECRO-LIPS lip filler box, 1 × 10ml with lidocaine",
+  heroImage: product6HeroImage,
+  heroImageMobile: product6HeroImageMobile,
+  informationImage: product6InformationImage,
+  information: [
+    ["Product Type", "Monophasic cross-linked hyaluronic acid filler"],
+    ["Volume", "10ml with lidocaine"],
+    ["HA Concentration", "20mg/ml"],
+    [
+      "Core Application",
+      "Enhances lip volume for a plump, defined pout; shapes the cupid's bow and lip borders; improves lip asymmetry and hydration.",
+    ],
+    ["Suggested Injection Depth", "Superficial to mid-dermis"],
+  ],
+  indications: [
+    "Lip enhancement: more volume and a youthful look",
+    "Cupid's bow and lip border definition",
+    "Lip asymmetry correction and hydration",
+    "Nasolabial and glabellar line correction",
+  ],
+  advantages: [
+    "Balanced 20mg/ml HA gives ideal softness and support for a natural, kissable texture without stiffness",
+    "Long-lasting results of 8–18 months with minimal irritation or downtime",
+    "Customizable lip enhancement, from subtle hydration to a bold, plump pout",
+    "Monophasic gel structure spreads evenly and prevents lumps in the delicate lip area",
+  ],
+  advantagesTitle: "What are the advantages of SECRO-LIPS?",
+  profileTitle: "Clinical ease with SECRO-LIPS",
+  profileItems: [
+    "Suggested injection depth from superficial to mid-dermis for precise placement",
+    "Suits micro-droplet or cannula techniques for safe, consistent outcomes",
+    "Red VB12-infused formula with natural plumping and reliable safety",
+  ],
+  feedback: [
+    { title: "Lip volume & definition", before: lips1Before, after: lips1After },
+    { title: "Lip plumping & hydration", before: lips2Before, after: lips2After },
+  ],
+  feedbackTitles: ["Lip volume & definition", "Lip plumping & hydration"],
+  translations: {
+    de: {
+      madeIn: "Für die professionelle Anwendung · Hergestellt in Deutschland",
+      productType: "Monophasischer, quervernetzter Hyaluronsäure-Lippenfiller mit Lidocain",
+      volume: "1 × 10 ml mit Lidocain",
+      concentration: "20 mg/ml Hyaluronsäure",
+      imageAlt: "SECRO-LIPS Lippenfiller-Packung, 1 × 10 ml mit Lidocain",
+      information: [
+        ["Produkttyp", "Monophasischer, quervernetzter Hyaluronsäure-Filler"],
+        ["Volumen", "10 ml mit Lidocain"],
+        ["HA-Konzentration", "20 mg/ml"],
+        [
+          "Hauptanwendung",
+          "Mehr Lippenvolumen für einen vollen, definierten Schmollmund; formt Amorbogen und Lippenkontur; verbessert Asymmetrien und die Feuchtigkeit der Lippen.",
+        ],
+        ["Empfohlene Injektionstiefe", "Oberflächliche bis mittlere Dermis"],
+      ],
+      indications: [
+        "Lippenaufbau: mehr Volumen und ein jugendlicher Look",
+        "Definition von Amorbogen und Lippenkontur",
+        "Korrektur von Lippenasymmetrien und Feuchtigkeit",
+        "Korrektur von Nasolabial- und Glabellafalten",
+      ],
+      advantages: [
+        "Ausgewogene 20 mg/ml HA für ideale Weichheit und Stütze – natürlich und ohne Steifheit",
+        "Lang anhaltende Ergebnisse von 8–18 Monaten mit minimaler Reizung und Ausfallzeit",
+        "Individuell anpassbar, von dezenter Hydratation bis zu vollen, betonten Lippen",
+        "Monophasische Gelstruktur verteilt sich gleichmäßig und verhindert Knötchen im empfindlichen Lippenbereich",
+      ],
+      advantagesTitle: "Welche Vorteile bietet SECRO-LIPS?",
+      profileTitle: "Klinisch einfach mit SECRO-LIPS",
+      profileItems: [
+        "Empfohlene Injektionstiefe von oberflächlicher bis mittlerer Dermis für präzise Platzierung",
+        "Geeignet für Mikrotröpfchen- oder Kanülentechnik mit sicheren, gleichbleibenden Ergebnissen",
+        "Rote, mit Vitamin B12 angereicherte Formel mit natürlichem Plumping-Effekt und zuverlässiger Sicherheit",
+      ],
+      feedbackTitles: ["Lippenvolumen und Kontur", "Lippen-Plumping und Feuchtigkeit"],
+    },
+    ar: {
+      madeIn: "للاستخدام المهني · صنع في ألمانيا",
+      productType: "فيلر شفاه أحادي الطور من حمض الهيالورونيك المتشابك مع الليدوكائين",
+      volume: "1 × 10 مل مع الليدوكائين",
+      concentration: "20 ملغ/مل من حمض الهيالورونيك",
+      imageAlt: "عبوة فيلر الشفاه SECRO-LIPS، ‏1 × 10 مل مع الليدوكائين",
+      information: [
+        ["نوع المنتج", "فيلر أحادي الطور من حمض الهيالورونيك المتشابك"],
+        ["الحجم", "10 مل مع الليدوكائين"],
+        ["تركيز حمض الهيالورونيك", "20 ملغ/مل"],
+        [
+          "الاستخدام الأساسي",
+          "يزيد حجم الشفاه لمظهر ممتلئ ومحدد، ويرسم قوس كيوبيد وحدود الشفاه، ويحسّن عدم التناسق ويرطب الشفاه.",
+        ],
+        ["عمق الحقن المقترح", "من الأدمة السطحية إلى الأدمة المتوسطة"],
+      ],
+      indications: [
+        "تكبير الشفاه: حجم أكبر ومظهر شبابي",
+        "تحديد قوس كيوبيد وحدود الشفاه",
+        "تصحيح عدم تناسق الشفاه وترطيبها",
+        "تصحيح الخطوط الأنفية الشفوية وخطوط ما بين الحاجبين",
+      ],
+      advantages: [
+        "تركيز متوازن 20 ملغ/مل يمنح نعومة ودعماً مثاليين لملمس طبيعي دون تيبّس",
+        "نتائج تدوم من 8 إلى 18 شهراً مع أدنى قدر من التهيج وفترة التعافي",
+        "نتائج قابلة للتخصيص من ترطيب خفيف إلى شفاه ممتلئة وبارزة",
+        "بنية جل أحادية الطور تتوزع بالتساوي وتمنع التكتلات في منطقة الشفاه الحساسة",
+      ],
+      advantagesTitle: "ما مزايا SECRO-LIPS؟",
+      profileTitle: "سهولة سريرية مع SECRO-LIPS",
+      profileItems: [
+        "عمق حقن مقترح من الأدمة السطحية إلى المتوسطة لوضع دقيق",
+        "مناسب لتقنية القطرات الدقيقة أو الكانيولا لنتائج آمنة وثابتة",
+        "تركيبة حمراء غنية بفيتامين B12 مع امتلاء طبيعي وأمان موثوق",
+      ],
+      feedbackTitles: ["حجم الشفاه وتحديدها", "امتلاء الشفاه وترطيبها"],
+    },
+  },
+};
+
+export const product7: ProductDefinition = {
+  brand: "SECRO",
+  name: "THREADS",
+  madeIn: "Professional use · Absorbable PDO & PCL threads",
+  productType: "Absorbable PDO and PCL threads for lifting, contouring and collagen stimulation",
+  volume: "18G–30G needles · W, L & A types",
+  concentration: "Lifting · Basic · Volume · PDRN & Vitamin PCL",
+  pdf: "/downloads/secro-threads.pdf",
+  downloadName: "SECROMED-SECRO-THREADS.pdf",
+  image: secroThreadsImage,
+  imageAlt: "SECRO THREADS Fishbone PDO thread pouch",
+  heroImage: product7HeroImage,
+  heroImageMobile: product7HeroImageMobile,
+  informationImage: product7InformationImage,
+  information: [
+    ["Material", "PDO (polydioxanone) and PCL (polycaprolactone), fully absorbable"],
+    [
+      "Lifting line",
+      "Molding: Liftking, Arrow, Twin Arm · Cutting: Fox Eye, Nose, Cog, King Cobra (360° / 4D bidirectional)",
+    ],
+    ["Basic line", "Mono / Eye, Screw, Twin Mono and Twin Screw"],
+    ["Volume & bioactive line", "Bomb and Mesh (8 threads) · PDRN PCL and Vitamin PCL Arrow"],
+    [
+      "Needles & fixation",
+      "18G–30G, W / L / A needle types, bend or not-bend fixation, threads from 15mm to 400mm",
+    ],
+  ],
+  indications: [
+    "Lower face, jawline and neck lifting",
+    "Cheekbone, under-eye and eyebrow rejuvenation",
+    "Nose bridge and nose tip definition",
+    "Body: breast, butt lift, waist and thigh",
+  ],
+  advantages: [
+    "Lifting threads: strong grip and tensile strength with microfabricated barbs that minimise dimpling",
+    "Basic threads: natural-looking volume with an excellent tightening effect",
+    "Volume threads: multi-thread Bomb and Mesh designs reduce deep wrinkles and boost tissue creation",
+    "PDRN and Vitamin PCL threads: medical-grade PDRN or vitamin C for regeneration, brightening and elasticity",
+  ],
+  advantagesTitle: "What are the advantages of SECRO THREADS?",
+  profileTitle: "Collagen stimulation in every line",
+  profileItems: [
+    "Absorbable PDO and PCL materials that stimulate the skin's own collagen production",
+    "Molded and 360° cut cogs for secure anchoring and natural-looking lift",
+    "Sterile, single-use threads pre-loaded in the needle for fast, precise placement",
+  ],
+  translations: {
+    de: {
+      madeIn: "Für die professionelle Anwendung · Resorbierbare PDO- und PCL-Fäden",
+      productType:
+        "Resorbierbare PDO- und PCL-Fäden für Lifting, Konturierung und Kollagenstimulation",
+      volume: "Kanülen 18G–30G · W-, L- und A-Typ",
+      concentration: "Lifting · Basic · Volume · PDRN & Vitamin PCL",
+      imageAlt: "SECRO THREADS Fishbone PDO-Faden Verpackung",
+      information: [
+        ["Material", "PDO (Polydioxanon) und PCL (Polycaprolacton), vollständig resorbierbar"],
+        [
+          "Lifting-Linie",
+          "Molding: Liftking, Arrow, Twin Arm · Cutting: Fox Eye, Nose, Cog, King Cobra (360° / 4D bidirektional)",
+        ],
+        ["Basic-Linie", "Mono / Eye, Screw, Twin Mono und Twin Screw"],
+        ["Volume- & Bioaktiv-Linie", "Bomb und Mesh (8 Fäden) · PDRN PCL und Vitamin PCL Arrow"],
+        [
+          "Kanülen & Fixierung",
+          "18G–30G, Kanülentyp W / L / A, gebogene oder gerade Fixierung, Fadenlängen von 15 mm bis 400 mm",
+        ],
+      ],
+      indications: [
+        "Lifting von Untergesicht, Kieferlinie und Hals",
+        "Verjüngung von Wangenknochen, Augenpartie und Augenbrauen",
+        "Definition von Nasenrücken und Nasenspitze",
+        "Körper: Brust, Po-Lifting, Taille und Oberschenkel",
+      ],
+      advantages: [
+        "Lifting-Fäden: starker Halt und hohe Zugfestigkeit mit mikrogefertigten Widerhaken, die Dellen minimieren",
+        "Basic-Fäden: natürlich wirkendes Volumen mit ausgezeichnetem Straffungseffekt",
+        "Volume-Fäden: Bomb- und Mesh-Designs mit mehreren Fäden mildern tiefe Falten und fördern die Gewebebildung",
+        "PDRN- und Vitamin-PCL-Fäden: medizinisches PDRN oder Vitamin C für Regeneration, Aufhellung und Elastizität",
+      ],
+      advantagesTitle: "Welche Vorteile bieten SECRO THREADS?",
+      profileTitle: "Kollagenstimulation in jeder Linie",
+      profileItems: [
+        "Resorbierbare PDO- und PCL-Materialien, die die körpereigene Kollagenbildung anregen",
+        "Geformte und 360° geschnittene Widerhaken für sichere Verankerung und natürliches Lifting",
+        "Sterile Einmalfäden, in der Kanüle vorgeladen, für schnelle und präzise Platzierung",
+      ],
+    },
+    ar: {
+      madeIn: "للاستخدام المهني · خيوط PDO وPCL قابلة للامتصاص",
+      productType: "خيوط PDO وPCL قابلة للامتصاص للشد ونحت الملامح وتحفيز الكولاجين",
+      volume: "إبر من 18G إلى 30G · أنواع W وL وA",
+      concentration: "شد · أساسي · حجم · PDRN وفيتامين PCL",
+      imageAlt: "عبوة خيوط SECRO THREADS Fishbone PDO",
+      information: [
+        ["المادة", "PDO (بولي ديوكسانون) وPCL (بولي كابرولاكتون)، قابلة للامتصاص بالكامل"],
+        [
+          "خط الشد",
+          "Molding: Liftking وArrow وTwin Arm · Cutting: Fox Eye وNose وCog وKing Cobra (‏360° / 4D ثنائي الاتجاه)",
+        ],
+        ["الخط الأساسي", "Mono / Eye وScrew وTwin Mono وTwin Screw"],
+        ["خط الحجم والخيوط النشطة", "Bomb وMesh (8 خيوط) · PDRN PCL وVitamin PCL Arrow"],
+        [
+          "الإبر والتثبيت",
+          "من 18G إلى 30G، إبر من نوع W / L / A، تثبيت منحنٍ أو مستقيم، وأطوال خيوط من 15 إلى 400 ملم",
+        ],
+      ],
+      indications: [
+        "شد الوجه السفلي وخط الفك والرقبة",
+        "تجديد منطقة عظام الخد وتحت العينين والحاجبين",
+        "تحديد جسر الأنف وطرفه",
+        "الجسم: الصدر ورفع الأرداف والخصر والفخذين",
+      ],
+      advantages: [
+        "خيوط الشد: تثبيت قوي وقوة شد عالية مع نتوءات مصنّعة بدقة تقلل التنقر",
+        "الخيوط الأساسية: حجم طبيعي المظهر مع تأثير شد ممتاز",
+        "خيوط الحجم: تصاميم Bomb وMesh متعددة الخيوط تخفف التجاعيد العميقة وتعزز تكوين الأنسجة",
+        "خيوط PDRN وفيتامين PCL: ‏PDRN أو فيتامين C بدرجة طبية للتجديد والإشراق والمرونة",
+      ],
+      advantagesTitle: "ما مزايا SECRO THREADS؟",
+      profileTitle: "تحفيز الكولاجين في كل خط",
+      profileItems: [
+        "مواد PDO وPCL قابلة للامتصاص تحفز إنتاج الكولاجين الطبيعي في البشرة",
+        "نتوءات مقولبة ومقطوعة بزاوية 360° لتثبيت آمن وشد طبيعي المظهر",
+        "خيوط معقمة للاستخدام مرة واحدة ومحمّلة مسبقاً في الإبرة لوضع سريع ودقيق",
       ],
     },
   },

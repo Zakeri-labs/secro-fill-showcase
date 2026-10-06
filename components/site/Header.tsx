@@ -22,6 +22,8 @@ const productLinks = [
   { href: "/product-3", label: "SECRO-FILL BODY FILLER" },
   { href: "/product-4", label: "SECRO-MARVEL" },
   { href: "/product-5", label: "HYAC-LIFT (16% CHAC)" },
+  { href: "/product-6", label: "SECRO-LIPS" },
+  { href: "/product-7", label: "SECRO THREADS" },
 ];
 
 export function Header({ overlay = false }: { overlay?: boolean }) {

@@ -93,6 +93,14 @@ const en: Dict = {
   "services.hyac.desc":
     "A professional hyaluronic acid formulation presented for precise, considered lifting protocols.",
   "services.hyac.alt": "HYAC-LIFT 16% CHAC packaging and syringe",
+  "services.lips.name": "SECRO-LIPS",
+  "services.lips.desc":
+    "A 20mg/ml monophasic hyaluronic acid lip filler with lidocaine for natural volume, definition and hydration.",
+  "services.lips.alt": "SECRO-LIPS lip filler box, 1 × 10ml with lidocaine",
+  "services.threads.name": "SECRO THREADS",
+  "services.threads.desc":
+    "Absorbable PDO and PCL threads for lifting, contouring and collagen stimulation of face and body.",
+  "services.threads.alt": "SECRO THREADS Fishbone PDO thread pouch",
   "services.cta": "Request Details",
   "services.catalogCta": "Download Catalog",
 
@@ -276,6 +284,14 @@ const ar: Dict = {
   "services.hyac.name": "HYAC-LIFT (16% CHAC)",
   "services.hyac.desc": "تركيبة احترافية من حمض الهيالورونيك مصممة لبروتوكولات رفع دقيقة ومدروسة.",
   "services.hyac.alt": "عبوة ومحقنة HYAC-LIFT بتركيز 16% CHAC",
+  "services.lips.name": "SECRO-LIPS",
+  "services.lips.desc":
+    "فيلر شفاه من حمض الهيالورونيك أحادي الطور بتركيز 20 ملغ/مل مع الليدوكائين لحجم طبيعي وتحديد وترطيب.",
+  "services.lips.alt": "عبوة فيلر الشفاه SECRO-LIPS، ‏1 × 10 مل مع الليدوكائين",
+  "services.threads.name": "SECRO THREADS",
+  "services.threads.desc":
+    "خيوط PDO وPCL قابلة للامتصاص لشد الوجه والجسم ونحت الملامح وتحفيز الكولاجين.",
+  "services.threads.alt": "عبوة خيوط SECRO THREADS Fishbone PDO",
   "services.cta": "اطلب التفاصيل",
   "services.catalogCta": "تحميل الكتالوج",
 
@@ -452,6 +468,14 @@ const de: Dict = {
   "services.hyac.desc":
     "Eine professionelle Hyaluronsäure-Formulierung für präzise und durchdachte Lifting-Protokolle.",
   "services.hyac.alt": "HYAC-LIFT 16% CHAC Verpackung und Spritze",
+  "services.lips.name": "SECRO-LIPS",
+  "services.lips.desc":
+    "Monophasischer Hyaluronsäure-Lippenfiller mit 20 mg/ml und Lidocain für natürliches Volumen, Kontur und Feuchtigkeit.",
+  "services.lips.alt": "SECRO-LIPS Lippenfiller-Packung, 1 × 10 ml mit Lidocain",
+  "services.threads.name": "SECRO THREADS",
+  "services.threads.desc":
+    "Resorbierbare PDO- und PCL-Fäden für Lifting, Konturierung und Kollagenstimulation an Gesicht und Körper.",
+  "services.threads.alt": "SECRO THREADS Fishbone PDO-Faden Verpackung",
   "services.cta": "Details anfragen",
   "services.catalogCta": "Katalog herunterladen",
 
