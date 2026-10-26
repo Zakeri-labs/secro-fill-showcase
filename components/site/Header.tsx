@@ -24,6 +24,7 @@ const productLinks = [
   { href: "/product-5", label: "HYAC-LIFT (16% CHAC)" },
   { href: "/product-6", label: "SECRO-LIPS" },
   { href: "/product-7", label: "SECRO THREADS" },
+  { href: "/product-8", label: "SECRO-CAHA" },
 ];
 
 export function Header({ overlay = false }: { overlay?: boolean }) {
