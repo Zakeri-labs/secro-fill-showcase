@@ -49,6 +49,7 @@ import profileLiftBefore from "@/assets/Before-After/Profile-Lift-before.png";
 import smileGlowAfter from "@/assets/Before-After/Smile-Glow-after.png";
 import smileGlowBefore from "@/assets/Before-After/Smile-Glow-before.png";
 import hyacLiftImg from "@/assets/HYAC-LIFT-16 CHAC.png";
+import secroCahaImg from "@/assets/SECRO-CAHA.png";
 import secroLipsImg from "@/assets/SECRO-LIPS.png";
 import secroThreadsImg from "@/assets/SECRO-THREADS.png";
 import bodyFillerImg from "@/assets/body-filler-2x50ml.png";
@@ -436,6 +437,17 @@ function Services() {
       href: "/product-7",
       pdfHref: "/downloads/secro-threads.pdf",
       downloadName: "SECROMED-SECRO-THREADS.pdf",
+    },
+    {
+      img: secroCahaImg,
+      name: "services.caha.name",
+      desc: "services.caha.desc",
+      alt: "services.caha.alt",
+      imageClassName: "scale-[0.9]",
+      shadowClassName: "product-shadow-caha",
+      href: "/product-8",
+      pdfHref: "/downloads/secro-caha.pdf",
+      downloadName: "SECROMED-SECRO-CAHA.pdf",
     },
   ];
 

@@ -60,7 +60,11 @@ import product6InformationImage from "@/assets/product-6/product-info.jpg";
 import product7HeroImage from "@/assets/product-7/hero-image.jpg";
 import product7HeroImageMobile from "@/assets/product-7/hero-image-mobile.jpg";
 import product7InformationImage from "@/assets/product-7/product-info.jpg";
+import product8HeroImage from "@/assets/product-8/hero-image.jpg";
+import product8HeroImageMobile from "@/assets/product-8/hero-image-mobile.jpg";
+import product8InformationImage from "@/assets/product-8/product-info.jpg";
 import secroLipsImage from "@/assets/SECRO-LIPS.png";
+import secroCahaImage from "@/assets/SECRO-CAHA.png";
 import secroThreadsImage from "@/assets/SECRO-THREADS.png";
 import { BeforeAfterCard } from "@/components/site/BeforeAfterCard";
 import { ProductPdfDownload } from "@/components/products/ProductPdfDownload";
@@ -885,6 +889,131 @@ export const product7: ProductDefinition = {
         "مواد PDO وPCL قابلة للامتصاص تحفز إنتاج الكولاجين الطبيعي في البشرة",
         "نتوءات مقولبة ومقطوعة بزاوية 360° لتثبيت آمن وشد طبيعي المظهر",
         "خيوط معقمة للاستخدام مرة واحدة ومحمّلة مسبقاً في الإبرة لوضع سريع ودقيق",
+      ],
+    },
+  },
+};
+
+export const product8: ProductDefinition = {
+  brand: "SECRO",
+  name: "CAHA",
+  madeIn: "Professional use · Injectable facial implant-biostimulator",
+  productType: "Cross-linked calcium hydroxyapatite hyaluronic acid gel with lidocaine",
+  volume: "1 × 1.0ml syringe",
+  concentration: "30% CaHA · 70% cross-linked HA (20mg/ml) · Lidocaine 3mg/ml",
+  pdf: "/downloads/secro-caha.pdf",
+  downloadName: "SECROMED-SECRO-CAHA.pdf",
+  image: secroCahaImage,
+  imageAlt: "SECRO-CAHA box, cross-linked calcium hydroxyapatite hyaluronic acid gel, 1ml",
+  heroImage: product8HeroImage,
+  heroImageMobile: product8HeroImageMobile,
+  informationImage: product8InformationImage,
+  information: [
+    ["Package", "1 × 1.0ml pre-filled syringe"],
+    [
+      "Composition",
+      "30% calcium hydroxyapatite microspheres (25–45 µm), 70% cross-linked sodium hyaluronate gel (20mg/ml), phosphate buffer, lidocaine hydrochloride (3mg/ml)",
+    ],
+    ["Estimated duration", "18–24 months"],
+    [
+      "Application area",
+      "Deep and superficial biostimulation, placed subdermally with a cannula (ideally 22G)",
+    ],
+    ["Chemical formula", "Ca10(PO4)6(OH)2"],
+  ],
+  indications: [
+    "Jawline contour definition",
+    "Posterior midface volume restoration",
+    "Pre-auricular area",
+    "Deep dermal and subdermal facial contouring and restoration",
+  ],
+  advantages: [
+    "Immediate improvement: instantly fills lines, wrinkles and depressions and supports sagging tissue",
+    "Biostimulation: CaHA microspheres stimulate new collagen and elastin for firmer, more elastic skin",
+    "Long-lasting: a new collagen scaffold anchors the microspheres in place for results beyond normal HA fillers",
+    "Comfort: integrated lidocaine minimises pain and swelling and shortens treatment time",
+  ],
+  advantagesTitle: "What are the advantages of SECRO-CAHA?",
+  profileTitle: "Filler and biostimulator in one",
+  profileItems: [
+    "Biocompatible calcium hydroxyapatite, an inherent component of the human body, fully metabolised over time",
+    "Continued collagen production improves skin quality months after treatment",
+    "Fanning technique with a 22G cannula for precise subdermal placement",
+  ],
+  translations: {
+    de: {
+      madeIn: "Für die professionelle Anwendung · Injizierbares Gesichtsimplantat-Biostimulator",
+      productType: "Vernetztes Calciumhydroxylapatit-Hyaluronsäure-Gel mit Lidocain",
+      volume: "1 × 1,0 ml Spritze",
+      concentration: "30 % CaHA · 70 % vernetzte HA (20 mg/ml) · Lidocain 3 mg/ml",
+      imageAlt: "SECRO-CAHA Packung, vernetztes Calciumhydroxylapatit-Hyaluronsäure-Gel, 1 ml",
+      information: [
+        ["Packung", "1 × 1,0 ml Fertigspritze"],
+        [
+          "Zusammensetzung",
+          "30 % Calciumhydroxylapatit-Mikrosphären (25–45 µm), 70 % vernetztes Natriumhyaluronat-Gel (20 mg/ml), Phosphatpuffer, Lidocainhydrochlorid (3 mg/ml)",
+        ],
+        ["Geschätzte Wirkdauer", "18–24 Monate"],
+        [
+          "Anwendungsbereich",
+          "Tiefe und oberflächliche Biostimulation, subdermal mit Kanüle platziert (idealerweise 22G)",
+        ],
+        ["Chemische Formel", "Ca10(PO4)6(OH)2"],
+      ],
+      indications: [
+        "Definition der Kieferlinie",
+        "Volumenaufbau im hinteren Mittelgesicht",
+        "Präaurikulärer Bereich",
+        "Tiefe dermale und subdermale Konturierung und Wiederherstellung des Gesichts",
+      ],
+      advantages: [
+        "Sofortige Verbesserung: füllt Linien, Falten und Vertiefungen sofort auf und stützt erschlafftes Gewebe",
+        "Biostimulation: CaHA-Mikrosphären regen neues Kollagen und Elastin für straffere, elastischere Haut an",
+        "Langanhaltend: ein neues Kollagengerüst verankert die Mikrosphären für Ergebnisse über normale HA-Filler hinaus",
+        "Komfort: integriertes Lidocain minimiert Schmerzen und Schwellungen und verkürzt die Behandlungszeit",
+      ],
+      advantagesTitle: "Welche Vorteile bietet SECRO-CAHA?",
+      profileTitle: "Filler und Biostimulator in einem",
+      profileItems: [
+        "Biokompatibles Calciumhydroxylapatit, ein natürlicher Bestandteil des Körpers, das vollständig abgebaut wird",
+        "Fortgesetzte Kollagenbildung verbessert die Hautqualität noch Monate nach der Behandlung",
+        "Fächertechnik mit 22G-Kanüle für präzise subdermale Platzierung",
+      ],
+    },
+    ar: {
+      madeIn: "للاستخدام المهني · غرسة وجه قابلة للحقن ومحفز حيوي",
+      productType: "جل حمض الهيالورونيك المتشابك مع هيدروكسي أباتيت الكالسيوم والليدوكائين",
+      volume: "محقنة واحدة 1.0 مل",
+      concentration: "‏30% CaHA · ‏70% HA متشابك (20 ملغ/مل) · ليدوكائين 3 ملغ/مل",
+      imageAlt: "عبوة SECRO-CAHA، جل هيدروكسي أباتيت الكالسيوم وحمض الهيالورونيك المتشابك، 1 مل",
+      information: [
+        ["العبوة", "محقنة واحدة معبأة مسبقاً بسعة 1.0 مل"],
+        [
+          "التركيب",
+          "‏30% كريات دقيقة من هيدروكسي أباتيت الكالسيوم (25–45 ميكرون)، ‏70% جل هيالورونات الصوديوم المتشابك (20 ملغ/مل)، محلول فوسفات منظم، هيدروكلوريد الليدوكائين (3 ملغ/مل)",
+        ],
+        ["المدة التقديرية", "من 18 إلى 24 شهراً"],
+        ["منطقة التطبيق", "تحفيز حيوي عميق وسطحي، يُحقن تحت الجلد بالكانيولا (يفضل 22G)"],
+        ["الصيغة الكيميائية", "Ca10(PO4)6(OH)2"],
+      ],
+      indications: [
+        "تحديد خط الفك",
+        "استعادة الحجم في منتصف الوجه الخلفي",
+        "منطقة أمام الأذن",
+        "نحت الوجه واستعادة حجمه في الأدمة العميقة وتحت الجلد",
+      ],
+      advantages: [
+        "تحسن فوري: يملأ الخطوط والتجاعيد والانخفاضات فوراً ويدعم الأنسجة المترهلة",
+        "تحفيز حيوي: كريات CaHA الدقيقة تحفز الكولاجين والإيلاستين لبشرة أكثر تماسكاً ومرونة",
+        "نتائج طويلة الأمد: هيكل كولاجين جديد يثبت الكريات في مكانها لنتائج تدوم أطول من فيلر HA العادي",
+        "راحة أكبر: الليدوكائين المدمج يقلل الألم والتورم ويختصر مدة العلاج",
+      ],
+      advantagesTitle: "ما مزايا SECRO-CAHA؟",
+      profileTitle: "فيلر ومحفز حيوي في منتج واحد",
+      profileItems: [
+        "هيدروكسي أباتيت الكالسيوم متوافق حيوياً وهو مكون طبيعي في جسم الإنسان ويُستقلب بالكامل",
+        "استمرار إنتاج الكولاجين يحسن جودة البشرة لأشهر بعد العلاج",
+        "تقنية المروحة بكانيولا 22G لوضع دقيق تحت الجلد",
       ],
     },
   },

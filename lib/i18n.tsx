@@ -101,6 +101,10 @@ const en: Dict = {
   "services.threads.desc":
     "Absorbable PDO and PCL threads for lifting, contouring and collagen stimulation of face and body.",
   "services.threads.alt": "SECRO THREADS Fishbone PDO thread pouch",
+  "services.caha.name": "SECRO-CAHA",
+  "services.caha.desc":
+    "A cross-linked calcium hydroxyapatite hyaluronic acid gel with lidocaine for facial contouring and collagen biostimulation.",
+  "services.caha.alt": "SECRO-CAHA box, 1ml cross-linked CaHA hyaluronic acid gel",
   "services.cta": "Request Details",
   "services.catalogCta": "Download Catalog",
 
@@ -292,6 +296,10 @@ const ar: Dict = {
   "services.threads.desc":
     "خيوط PDO وPCL قابلة للامتصاص لشد الوجه والجسم ونحت الملامح وتحفيز الكولاجين.",
   "services.threads.alt": "عبوة خيوط SECRO THREADS Fishbone PDO",
+  "services.caha.name": "SECRO-CAHA",
+  "services.caha.desc":
+    "جل حمض الهيالورونيك المتشابك مع هيدروكسي أباتيت الكالسيوم والليدوكائين لنحت الوجه وتحفيز الكولاجين.",
+  "services.caha.alt": "عبوة SECRO-CAHA، جل CaHA وحمض الهيالورونيك المتشابك 1 مل",
   "services.cta": "اطلب التفاصيل",
   "services.catalogCta": "تحميل الكتالوج",
 
@@ -476,6 +484,10 @@ const de: Dict = {
   "services.threads.desc":
     "Resorbierbare PDO- und PCL-Fäden für Lifting, Konturierung und Kollagenstimulation an Gesicht und Körper.",
   "services.threads.alt": "SECRO THREADS Fishbone PDO-Faden Verpackung",
+  "services.caha.name": "SECRO-CAHA",
+  "services.caha.desc":
+    "Vernetztes Calciumhydroxylapatit-Hyaluronsäure-Gel mit Lidocain für Gesichtskonturierung und Kollagen-Biostimulation.",
+  "services.caha.alt": "SECRO-CAHA Packung, 1 ml vernetztes CaHA-Hyaluronsäure-Gel",
   "services.cta": "Details anfragen",
   "services.catalogCta": "Katalog herunterladen",
 
